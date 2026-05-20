@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "source": {
+    "id": "google-research-blog",
+    "category": "research",
+    "title": "The latest research from Google",
+    "sourceUrl": "https://research.google/blog/",
+    "rssUrl": "https://research.google/blog/rss/",
+    "limit": 10,
+    "status": "ok",
+    "fetchedAt": "2026-05-20T18:23:49.050Z",
+    "items": [
+      {
+        "title": "Empirical Research Assistance (ERA): From Nature publication to catalyzing Computational Discovery",
+        "link": "https://research.google/blog/empirical-research-assistance-era-from-nature-publication-to-catalyzing-computational-discovery/",
+        "id": "https://research.google/blog/empirical-research-assistance-era-from-nature-publication-to-catalyzing-computational-discovery/",
+        "publishedAt": "2026-05-19T17:52:00.000Z",
+        "author": "Google Research",
+        "summary": "General Science",
+        "categories": [
+          "General Science",
+          "Machine Intelligence",
+          "Natural Language Processing",
+          "Open Source Models & Datasets"
+        ]
+      },
+      {
+        "title": "Catalyzing scientific impact through global partnerships and open resources",
+        "link": "https://research.google/blog/catalyzing-scientific-impact-through-global-partnerships-and-open-resources/",
+        "id": "https://research.google/blog/catalyzing-scientific-impact-through-global-partnerships-and-open-resources/",
+        "publishedAt": "2026-05-01T16:37:00.000Z",
+        "author": "Google Research",
+        "summary": "Data Mining & Modeling",
+        "categories": [
+          "Data Mining & Modeling",
+          "General Science",
+          "Health & Bioscience",
+          "Open Source Models & Datasets"
+        ]
+      },
+      {
+        "title": "Four ways Google Research scientists have been using Empirical Research Assistance",
+        "link": "https://research.google/blog/four-ways-google-research-scientists-have-been-using-empirical-research-assistance/",
+        "id": "https://research.google/blog/four-ways-google-research-scientists-have-been-using-empirical-research-assistance/",
+        "publishedAt": "2026-04-29T21:07:00.000Z",
+        "author": "Google Research",
+        "summary": "Data Mining & Modeling",
+        "categories": [
+          "Data Mining & Modeling",
+          "General Science",
+          "Generative AI",
+          "Machine Intelligence"
+        ]
+      },
+      {
+        "title": "It's all about the angle: Your photos, re-composed",
+        "link": "https://research.google/blog/its-all-about-the-angle-your-photos-re-composed/",
+        "id": "https://research.google/blog/its-all-about-the-angle-your-photos-re-composed/",
+        "publishedAt": "2026-04-22T17:00:00.000Z",
+        "author": "Google Research",
+        "summary": "Generative AI",
+        "categories": [
+          "Generative AI",
+          "Photography"
+        ]
+      },
+      {
+        "title": "ReasoningBank: Enabling agents to learn from experience",
+        "link": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
+        "id": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
+        "publishedAt": "2026-04-21T16:42:22.000Z",
+        "author": "Google Research",
+        "summary": "Generative AI",
+        "categories": [
+          "Generative AI",
+          "Machine Intelligence",
+          "Natural Language Processing"
+        ]
+      },
+      {
+        "title": "Designing synthetic datasets for the real world: Mechanism design and reasoning from first principles",
+        "link": "https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles/",
+        "id": "https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles/",
+        "publishedAt": "2026-04-16T14:41:00.000Z",
+        "author": "Google Research",
+        "summary": "Generative AI",
+        "categories": [
+          "Generative AI",
+          "Machine Intelligence",
+          "Natural Language Processing"
+        ]
+      },
+      {
+        "title": "AI-generated synthetic neurons speed up brain mapping",
+        "link": "https://research.google/blog/ai-generated-synthetic-neurons-speed-up-brain-mapping/",
+        "id": "https://research.google/blog/ai-generated-synthetic-neurons-speed-up-brain-mapping/",
+        "publishedAt": "2026-04-16T12:18:00.000Z",
+        "author": "Google Research",
+        "summary": "General Science",
+        "categories": [
+          "General Science",
+          "Health & Bioscience",
+          "Machine Intelligence"
+        ]
+      },
+      {
+        "title": "Towards developing future-ready skills with generative AI",
+        "link": "https://research.google/blog/towards-developing-future-ready-skills-with-generative-ai/",
+        "id": "https://research.google/blog/towards-developing-future-ready-skills-with-generative-ai/",
+        "publishedAt": "2026-04-13T18:15:59.000Z",
+        "author": "Google Research",
+        "summary": "Education Innovation",
+        "categories": [
+          "Education Innovation",
+          "Generative AI"
+        ]
+      },
+      {
+        "title": "ConvApparel: Measuring and bridging the realism gap in user simulators",
+        "link": "https://research.google/blog/convapparel-measuring-and-bridging-the-realism-gap-in-user-simulators/",
+        "id": "https://research.google/blog/convapparel-measuring-and-bridging-the-realism-gap-in-user-simulators/",
+        "publishedAt": "2026-04-09T11:22:00.000Z",
+        "author": "Google Research",
+        "summary": "Generative AI",
+        "categories": [
+          "Generative AI",
+          "Machine Intelligence",
+          "Natural Language Processing"
+        ]
+      },
+      {
+        "title": "Improving the academic workflow: Introducing two AI agents for better figures and peer review",
+        "link": "https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/",
+        "id": "https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/",
+        "publishedAt": "2026-04-08T20:01:33.000Z",
+        "author": "Google Research",
+        "summary": "Generative AI",
+        "categories": [
+          "Generative AI",
+          "Natural Language Processing"
+        ]
+      }
+    ]
+  }
+}

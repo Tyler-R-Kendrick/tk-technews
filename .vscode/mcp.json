@@ -1,0 +1,32 @@
+{
+  "servers": {
+    "tk-technews-youtube-data": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/servers/youtube-data-mcp/server.mjs"],
+      "env": {
+        "YOUTUBE_API_KEY": "${input:youtubeApiKey}",
+        "YOUTUBE_OAUTH_TOKEN": "${input:youtubeOAuthToken}"
+      }
+    },
+    "tk-technews-youtube-transcript": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/servers/youtube-transcript-mcp/server.mjs"]
+    }
+  },
+  "inputs": [
+    {
+      "id": "youtubeApiKey",
+      "type": "promptString",
+      "description": "YouTube Data API key for public metadata calls",
+      "password": true
+    },
+    {
+      "id": "youtubeOAuthToken",
+      "type": "promptString",
+      "description": "Optional OAuth 2.0 bearer token for captions.list/download and mine=true calls",
+      "password": true
+    }
+  ]
+}

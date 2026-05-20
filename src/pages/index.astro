@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { dailyBrief, dailyLedger } from '../lib/daily-feed.mjs';
+
+const generatedAt = new Date(dailyBrief.generatedAt).toLocaleString('en-US', {
+  dateStyle: 'medium',
+  timeStyle: 'short'
+});
+const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateString('en-US', {
+  dateStyle: 'full'
+});
+const leadStub = dailyBrief.articleStubs[0];
+const remainingStubs = dailyBrief.articleStubs.slice(1);
+---
+
+<BaseLayout title="TK TechNews" description="Daily AI technology briefings deduplicated from monitored sources.">
+  <main class="site-shell">
+    <header class="masthead">
+      <a class="brand" href="/">TK TechNews</a>
+      <nav aria-label="Primary navigation">
+        <a href="/sources/">Sources</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/articles/last-week-in-ai-2026-05-20/">Weekly</a>
+      </nav>
+    </header>
+
+    <section class="hero daily-hero">
+      <div>
+        <p class="article-date">{displayDate}</p>
+        <h1>Today in AI</h1>
+        <p>
+          A deduplicated brief built from the day&apos;s monitored videos, feeds,
+          research posts, repositories, and social updates. Similar announcements
+          are grouped into one article stub with source links ready for expansion.
+        </p>
+      </div>
+      <aside class="process-panel" aria-label="Daily aggregation stats">
+        <span>{dailyLedger.sourceCount} sources checked</span>
+        <span>{dailyBrief.sourceItemCount} items today</span>
+        <span>{dailyBrief.articleStubs.length} deduped stubs</span>
+        <span>Updated {generatedAt}</span>
+      </aside>
+    </section>
+
+    {leadStub ? (
+      <section class="daily-lead" aria-labelledby="lead-heading">
+        <p class="article-date">Top consolidated stub</p>
+        <h2 id="lead-heading"><a href={leadStub.href}>{leadStub.title}</a></h2>
+        <p>{leadStub.dek}</p>
+        <div class="daily-stub-meta">
+          <span>{leadStub.sourceCount} sources</span>
+          <span>{leadStub.status}</span>
+        </div>
+      </section>
+    ) : (
+      <section class="daily-lead" aria-labelledby="lead-heading">
+        <p class="article-date">No source items yet</p>
+        <h2 id="lead-heading">Daily brief pending</h2>
+        <p>Run the source precompile pipeline to populate today&apos;s deduplicated article stubs.</p>
+      </section>
+    )}
+
+    <section class="article-list daily-stub-list" aria-labelledby="daily-heading">
+      <div class="section-heading">
+        <h2 id="daily-heading">Daily Article Stubs</h2>
+        <p>Each card consolidates similar monitored source items into one draftable story angle.</p>
+      </div>
+
+      <div class="cards">
+        {remainingStubs.map((stub) => (
+          <article class="article-card">
+            <div class="card-meta">
+              <time datetime={stub.latestPublishedAt}>{stub.latestPublishedAt?.slice(0, 10)}</time>
+              <span>{stub.sourceCount} sources</span>
+            </div>
+            <h3><a href={stub.href}>{stub.title}</a></h3>
+            <p>{stub.dek}</p>
+            <ul class="tags" aria-label="Tags">
+              {stub.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

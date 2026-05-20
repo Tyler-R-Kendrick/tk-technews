@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "source": {
+    "id": "anthropic-research",
+    "category": "research",
+    "title": "Anthropic Research",
+    "sourceUrl": "https://www.anthropic.com/research",
+    "limit": 10,
+    "status": "ok",
+    "fetchedAt": "2026-05-20T18:23:49.050Z",
+    "items": [
+      {
+        "title": "2028: Two scenarios for global AI leadership",
+        "link": "https://www.anthropic.com/research/2028-ai-leadership",
+        "id": "https://www.anthropic.com/research/2028-ai-leadership",
+        "publishedAt": "2026-05-14T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Policy"
+      },
+      {
+        "title": "Teaching Claude why",
+        "link": "https://www.anthropic.com/research/teaching-claude-why",
+        "id": "https://www.anthropic.com/research/teaching-claude-why",
+        "publishedAt": "2026-05-08T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "New research on how we've reduced agentic misalignment.",
+        "category": "Alignment"
+      },
+      {
+        "title": "Natural Language Autoencoders: Turning Claude’s thoughts into text",
+        "link": "https://www.anthropic.com/research/natural-language-autoencoders",
+        "id": "https://www.anthropic.com/research/natural-language-autoencoders",
+        "publishedAt": "2026-05-07T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "AI models like Claude talk in words but think in numbers. In this study, we train Claude to translate its thoughts into human-readable text.",
+        "category": "Interpretability"
+      },
+      {
+        "title": "Donating our open-source alignment tool",
+        "link": "https://www.anthropic.com/research/donating-open-source-petri",
+        "id": "https://www.anthropic.com/research/donating-open-source-petri",
+        "publishedAt": "2026-05-07T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Alignment"
+      },
+      {
+        "title": "Focus areas for The Anthropic Institute",
+        "link": "https://www.anthropic.com/research/anthropic-institute-agenda",
+        "id": "https://www.anthropic.com/research/anthropic-institute-agenda",
+        "publishedAt": "2026-05-07T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Policy"
+      },
+      {
+        "title": "How people ask Claude for personal guidance",
+        "link": "https://www.anthropic.com/research/claude-personal-guidance",
+        "id": "https://www.anthropic.com/research/claude-personal-guidance",
+        "publishedAt": "2026-04-30T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Societal Impacts"
+      },
+      {
+        "title": "Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench",
+        "link": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+        "id": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+        "publishedAt": "2026-04-29T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Science"
+      },
+      {
+        "title": "Announcing the Anthropic Economic Index Survey",
+        "link": "https://www.anthropic.com/research/economic-index-survey-announcement",
+        "id": "https://www.anthropic.com/research/economic-index-survey-announcement",
+        "publishedAt": "2026-04-22T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Economic Research"
+      },
+      {
+        "title": "What 81,000 people told us about the economics of AI",
+        "link": "https://www.anthropic.com/research/81k-economics",
+        "id": "https://www.anthropic.com/research/81k-economics",
+        "publishedAt": "2026-04-22T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Economic Research"
+      },
+      {
+        "title": "Automated Alignment Researchers: Using large language models to scale scalable oversight",
+        "link": "https://www.anthropic.com/research/automated-alignment-researchers",
+        "id": "https://www.anthropic.com/research/automated-alignment-researchers",
+        "publishedAt": "2026-04-14T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Alignment"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+      }
+    },
+    "tk-technews-youtube-data": {
+      "command": "node",
+      "args": ["servers/youtube-data-mcp/server.mjs"],
+      "env": {
+        "YOUTUBE_API_KEY": "${YOUTUBE_API_KEY}",
+        "YOUTUBE_OAUTH_TOKEN": "${YOUTUBE_OAUTH_TOKEN}"
+      }
+    },
+    "tk-technews-youtube-transcript": {
+      "command": "node",
+      "args": ["servers/youtube-transcript-mcp/server.mjs"]
+    }
+  }
+}

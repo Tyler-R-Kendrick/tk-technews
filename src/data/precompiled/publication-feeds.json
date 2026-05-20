@@ -1,0 +1,402 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "sources": [
+    {
+      "id": "towards-data-science",
+      "category": "publications",
+      "title": "Towards Data Science",
+      "sourceUrl": "https://towardsdatascience.com/",
+      "rssUrl": "https://medium.com/feed/towards-data-science",
+      "limit": 10,
+      "status": "ok",
+      "fetchedAt": "2026-05-20T18:23:49.050Z",
+      "items": [
+        {
+          "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
+          "link": "https://medium.com/data-science/diy-ai-how-to-build-a-linear-regression-model-from-scratch-7b4cc0efd235?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/7b4cc0efd235",
+          "publishedAt": "2025-02-03T18:54:44.000Z",
+          "author": "Jacob Ingle",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/diy-ai-how-to-build-a-linear-regression-model-from-scratch-7b4cc0efd235?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/2600/0*VAv-rUb3QaCnks82\" width=\"3840\"></a></p><p class=\"medium-feed-snippet\">How to implement a linear regression model in Python without using machine learning libraries</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/diy-ai-how-to-build-a-linear-regression-model-from-scratch-7b4cc0efd235?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "machine-learning",
+            "ai",
+            "getting-started",
+            "linear-regression",
+            "data-science"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "Support Vector Machines: A Progression of Algorithms",
+          "link": "https://medium.com/data-science/support-vector-machines-a-progression-of-algorithms-841d63574825?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/841d63574825",
+          "publishedAt": "2025-02-03T18:49:54.000Z",
+          "author": "Jimin Kang",
+          "summary": "",
+          "categories": [
+            "support-vector-classifier",
+            "support-vector-machine",
+            "classification-algorithms",
+            "machine-learning",
+            "statistical-learning"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "Are Public Agencies Letting Open-Source Software Down?",
+          "link": "https://medium.com/data-science/are-public-agencies-letting-open-source-software-down-7688c89e7c02?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/7688c89e7c02",
+          "publishedAt": "2025-02-03T18:46:56.000Z",
+          "author": "Ragnvald Larsen",
+          "summary": "",
+          "categories": [
+            "policy",
+            "government",
+            "gis",
+            "open-source",
+            "editors-pick"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "How to Get A Job in Data Science/Machine Learning With No Previous Experience",
+          "link": "https://medium.com/data-science/how-to-get-a-job-in-data-science-machine-learning-with-no-previous-experience-996cfc41e53e?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/996cfc41e53e",
+          "publishedAt": "2025-02-03T17:32:01.000Z",
+          "author": "Marina Wyss",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/how-to-get-a-job-in-data-science-machine-learning-with-no-previous-experience-996cfc41e53e?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/2600/1*naYHPO4ruX2jvdIV-TMBag.jpeg\" width=\"6000\"></a></p><p class=\"medium-feed-snippet\">Take charge of your job search</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/how-to-get-a-job-in-data-science-machine-learning-with-no-previous-experience-996cfc41e53e?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "job-search",
+            "job-hunting",
+            "machine-learning",
+            "tech",
+            "data-science"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "Image Captioning Paper Walkthrough: Show and Tell",
+          "link": "https://medium.com/data-science/show-and-tell-e1a1142456e2?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/e1a1142456e2",
+          "publishedAt": "2025-02-03T16:30:24.000Z",
+          "author": "Muhammad Ardi",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/show-and-tell-e1a1142456e2?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/2600/0*PwKPzH0bOaxiLRQH\" width=\"5472\"></a></p><p class=\"medium-feed-snippet\">Implementing one of the earliest neural image caption generator models with PyTorch.</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/show-and-tell-e1a1142456e2?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "hands-on-tutorials",
+            "nlp",
+            "computer-vision",
+            "artificial-intelligence",
+            "deep-learning"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "How to Get Promoted as a Data Scientist",
+          "link": "https://medium.com/data-science/how-to-get-promoted-as-a-data-scientist-25fa81daace4?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/25fa81daace4",
+          "publishedAt": "2025-02-03T14:02:06.000Z",
+          "author": "Marc Matterson",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/how-to-get-promoted-as-a-data-scientist-25fa81daace4?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/1024/1*Of14H0YfynTFmRRaWEaxdg.jpeg\" width=\"1024\"></a></p><p class=\"medium-feed-snippet\">Advice from a Lead Data Scientist with 2 promotions in under 2 years</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/how-to-get-promoted-as-a-data-scientist-25fa81daace4?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "careers",
+            "data-science-careers",
+            "office-hours",
+            "data-science",
+            "machine-learning"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "How to Find Seasonality Patterns in Time Series",
+          "link": "https://medium.com/data-science/how-to-find-seasonality-patterns-in-time-series-c3b9f11e89c6?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/c3b9f11e89c6",
+          "publishedAt": "2025-02-03T13:02:04.000Z",
+          "author": "Lorenzo Mezzini",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/how-to-find-seasonality-patterns-in-time-series-c3b9f11e89c6?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/1274/1*N7ZkfEKZFym8tsAfv17E4w.png\" width=\"1274\"></a></p><p class=\"medium-feed-snippet\">Using Fourier Transform to detect seasonal components</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/how-to-find-seasonality-patterns-in-time-series-c3b9f11e89c6?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "timeseries",
+            "seasonality",
+            "fourier-transform",
+            "data-science",
+            "programming"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "Quantifying Surprise — A Data Scientist’s Intro To Information Theory — Part 1/5: Foundations",
+          "link": "https://medium.com/data-science/quantifying-surprise-1eb9585b6f4e?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/1eb9585b6f4e",
+          "publishedAt": "2025-02-03T12:02:06.000Z",
+          "author": "Eyal Kazin PhD",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/quantifying-surprise-1eb9585b6f4e?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/2048/1*Dtc2beUUgkKjHiX4Isv4Bg.jpeg\" width=\"2048\"></a></p><p class=\"medium-feed-snippet\">Gain intuition into Information Theory and master its applications in Machine Learning and Data Analysis. Python code provided. &#x1F40D;</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/quantifying-surprise-1eb9585b6f4e?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "statistics",
+            "information-theory",
+            "editors-pick",
+            "machine-learning",
+            "data-science"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "Quantifying Uncertainty — A Data Scientist’s Intro To Information Theory — Part 2/5: Entropy",
+          "link": "https://medium.com/data-science/quantifying-uncertainty-4814b759da5f?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/4814b759da5f",
+          "publishedAt": "2025-02-03T12:02:03.000Z",
+          "author": "Eyal Kazin PhD",
+          "summary": "<div class=\"medium-feed-item\"><p class=\"medium-feed-image\"><a href=\"https://medium.com/data-science/quantifying-uncertainty-4814b759da5f?source=rss----7f60cf5620c9---4\"><img src=\"https://cdn-images-1.medium.com/max/1024/1*XmTQcwzHna-bACZuPSTg6A.png\" width=\"1024\"></a></p><p class=\"medium-feed-snippet\">Gain intuition into Entropy and master its applications in Machine Learning and Data Analysis. Python code provided. &#x1F40D;</p><p class=\"medium-feed-link\"><a href=\"https://medium.com/data-science/quantifying-uncertainty-4814b759da5f?source=rss----7f60cf5620c9---4\">Continue reading on TDS Archive »</a></p></div>",
+          "categories": [
+            "entropy",
+            "deep-dives",
+            "machine-learning",
+            "statistics",
+            "data-science"
+          ],
+          "source": "Towards Data Science"
+        },
+        {
+          "title": "Deep Dive into WebSockets and Their Role in Client-Server Communication",
+          "link": "https://medium.com/data-science/deep-dive-into-websockets-and-their-role-in-client-server-communication-aac387e10cb6?source=rss----7f60cf5620c9---4",
+          "id": "https://medium.com/p/aac387e10cb6",
+          "publishedAt": "2025-02-03T11:02:00.000Z",
+          "author": "Clara Chong",
+          "summary": "",
+          "categories": [
+            "software-development",
+            "system-design-concepts",
+            "websocket",
+            "client-server-model",
+            "getting-started"
+          ],
+          "source": "Towards Data Science"
+        }
+      ]
+    },
+    {
+      "id": "marktechpost",
+      "category": "publications",
+      "title": "MarkTechPost",
+      "sourceUrl": "https://www.marktechpost.com/",
+      "rssUrl": "https://www.marktechpost.com/feed/",
+      "limit": 10,
+      "status": "ok",
+      "fetchedAt": "2026-05-20T18:23:49.050Z",
+      "items": [
+        {
+          "title": "NVIDIA AI Releases Nemotron-Labs-Diffusion: A Tri-Mode Language Model with 6× Tokens Per Forward Over Qwen3-8B",
+          "link": "https://www.marktechpost.com/2026/05/20/nvidia-ai-releases-nemotron-labs-diffusion-a-tri-mode-language-model-with-6x-tokens-per-forward-over-qwen3-8b/",
+          "id": "https://www.marktechpost.com/?p=79982",
+          "publishedAt": "2026-05-20T10:41:02.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>NVIDIA researchers have released Nemotron-Labs-Diffusion, a language model family that unifies three decoding modes in one architecture. The model supports autoregressive (AR) decoding, diffusion-based parallel decoding, and self-speculation decoding. It is available in 3B, 8B, and 14B parameter sizes. The family includes base, instruct, and vision-language variants. Sequential Decoding Limits Throughput Standard autoregressive (AR) language [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/20/nvidia-ai-releases-nemotron-labs-diffusion-a-tri-mode-language-model-with-6x-tokens-per-forward-over-qwen3-8b/\">NVIDIA AI Releases Nemotron-Labs-Diffusion: A Tri-Mode Language Model with 6× Tokens Per Forward Over Qwen3-8B</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Infrastructure",
+            "AI Paper Summary",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "New Releases",
+            "Open Source",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Alibaba Qwen Team Introduces Qwen3.5-LiveTranslate-Flash: Real-Time Multimodal Interpretation Across 60 Languages at 2.8-Second Latency",
+          "link": "https://www.marktechpost.com/2026/05/20/alibaba-qwen-team-introduces-qwen3-5-livetranslate-flash-real-time-multimodal-interpretation-across-60-languages-at-2-8-second-latency/",
+          "id": "https://www.marktechpost.com/?p=79977",
+          "publishedAt": "2026-05-20T08:09:51.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Alibaba's Qwen team has released Qwen3.5-LiveTranslate-Flash, a real-time multimodal translation model that processes audio and video simultaneously. The model covers 60 input languages and produces speech output in 29 languages at 2.8 seconds of latency. Key additions over the previous Qwen3 version include real-time speaker voice cloning, vision-enhanced comprehension via lip movements and on-screen text, and dynamic keyword configuration for domain-specific terminology. On FLEURS and CoVoST2 benchmarks, the model outperforms major commercial alternatives. It is available as an API-only model through Alibaba Cloud Model Studio using a WebSocket-based protocol.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/20/alibaba-qwen-team-introduces-qwen3-5-livetranslate-flash-real-time-multimodal-interpretation-across-60-languages-at-2-8-second-latency/\">Alibaba Qwen Team Introduces Qwen3.5-LiveTranslate-Flash: Real-Time Multimodal Interpretation Across 60 Languages at 2.8-Second Latency</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Google Introduces Gemini 3.5 Flash at I/O 2026: A Faster and Cheaper Model for AI Agents and Coding",
+          "link": "https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/",
+          "id": "https://www.marktechpost.com/?p=79972",
+          "publishedAt": "2026-05-20T07:12:49.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Google's Gemini 3.5 Flash beats its own flagship on coding and agentic benchmarks while running four times faster and at half the cost.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/20/google-introduces-gemini-3-5-flash-at-i-o-2026-a-faster-and-cheaper-model-for-ai-agents-and-coding/\">Google Introduces Gemini 3.5 Flash at I/O 2026: A Faster and Cheaper Model for AI Agents and Coding</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Upstash for Redis vs Supabase vs Neon: Which One Fits Vibe Coding Workflows in 2026?",
+          "link": "https://www.marktechpost.com/2026/05/19/upstash-for-redis-vs-supabase-vs-neon-which-one-fits-vibe-coding-workflows-in-2026/",
+          "id": "https://www.marktechpost.com/?p=79969",
+          "publishedAt": "2026-05-19T22:10:39.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Not all database platforms are built for the same job.Not all database platforms are built for the same job. Here is how Upstash, Supabase, and Neon actually differ — and which one fits your vibe coding workflow in 2026.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/19/upstash-for-redis-vs-supabase-vs-neon-which-one-fits-vibe-coding-workflows-in-2026/\">Upstash for Redis vs Supabase vs Neon: Which One Fits Vibe Coding Workflows in 2026?</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "Databases",
+            "Editors Pick",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Vector Database",
+            "Vibe Coding"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Google Launches Antigravity 2.0 at I/O 2026: A Standalone Agent-First Platform with CLI, SDK, Managed Execution, and Enterprise Support",
+          "link": "https://www.marktechpost.com/2026/05/19/google-launches-antigravity-2-0-at-i-o-2026-a-standalone-agent-first-platform-with-cli-sdk-managed-execution-and-enterprise-support/",
+          "id": "https://www.marktechpost.com/?p=79966",
+          "publishedAt": "2026-05-19T20:30:58.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Google used its I/O 2026 developer keynote to ship a meaningful architectural shift in how it packages AI-assisted development. The company announced Google Antigravity 2.0 — a standalone desktop application built entirely around agent orchestration alongside an Antigravity CLI, an Antigravity SDK, Managed Agents in the Gemini API, and enterprise support through the Gemini Enterprise [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/19/google-launches-antigravity-2-0-at-i-o-2026-a-standalone-agent-first-platform-with-cli-sdk-managed-execution-and-enterprise-support/\">Google Launches Antigravity 2.0 at I/O 2026: A Standalone Agent-First Platform with CLI, SDK, Managed Execution, and Enterprise Support</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Best Enterprise Level Agentic AI Platforms for 2026",
+          "link": "https://www.marktechpost.com/2026/05/19/best-enterprise-level-agentic-ai-platforms-for-2026/",
+          "id": "https://www.marktechpost.com/?p=79962",
+          "publishedAt": "2026-05-19T08:24:58.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Enterprise agentic AI has moved from pilots to production in 2026. This guide ranks the top 10 platforms — Salesforce Agentforce, Microsoft Copilot Studio, ServiceNow, LangGraph, and more — with verified pricing, real adoption data, and honest constraints to help enterprise teams make the right platform decision.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/19/best-enterprise-level-agentic-ai-platforms-for-2026/\">Best Enterprise Level Agentic AI Platforms for 2026</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "Editors Pick",
+            "Enterprise AI",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Top"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "How to Build an Advanced Agentic AI System with Planning, Tool Calling, Memory, and Self-Critique Using OpenAI API",
+          "link": "https://www.marktechpost.com/2026/05/18/how-to-build-an-advanced-agentic-ai-system-with-planning-tool-calling-memory-and-self-critique-using-openai-api/",
+          "id": "https://www.marktechpost.com/?p=79959",
+          "publishedAt": "2026-05-19T05:29:40.000Z",
+          "author": "Sana Hassan",
+          "summary": "<p>In this tutorial, we build an advanced agentic AI system using the OpenAI API and a hidden terminal prompt for the API key. We design the agent as a small pipeline of specialized roles: planner, tool-using executor, and critic, so that we can separate strategy, action, and quality control. We also integrate structured tools (calculator, [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/18/how-to-build-an-advanced-agentic-ai-system-with-planning-tool-calling-memory-and-self-critique-using-openai-api/\">How to Build an Advanced Agentic AI System with Planning, Tool Calling, Memory, and Self-Critique Using OpenAI API</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "Editors Pick",
+            "Tutorials"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Meet MemPrivacy: An Edge-Cloud Framework that Uses Local Reversible Pseudonymization to Protect User Data Without Breaking Memory Utility",
+          "link": "https://www.marktechpost.com/2026/05/18/meet-memprivacy-an-edge-cloud-framework-that-uses-local-reversible-pseudonymization-to-protect-user-data-without-breaking-memory-utility/",
+          "id": "https://www.marktechpost.com/?p=79952",
+          "publishedAt": "2026-05-18T21:26:04.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>As LLM-powered agents move from research to production, one design tension is becoming harder to ignore: the more useful cloud-hosted memory becomes, the more private user data it exposes. Researchers from MemTensor (Shanghai), HONOR Device and Tongji University have introduced MemPrivacy, a framework that attempts to resolve this tension without sacrificing the utility that makes [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/18/meet-memprivacy-an-edge-cloud-framework-that-uses-local-reversible-pseudonymization-to-protect-user-data-without-breaking-memory-utility/\">Meet MemPrivacy: An Edge-Cloud Framework that Uses Local Reversible Pseudonymization to Protect User Data Without Breaking Memory Utility</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Infrastructure",
+            "AI Paper Summary",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Embedding Model",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "New Releases",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Stochastic Gradient Descent (SGD’s) Frequency Bias and How Adam Fixes It",
+          "link": "https://www.marktechpost.com/2026/05/18/stochastic-gradient-descent-sgds-frequency-bias-and-how-adam-fixes-it/",
+          "id": "https://www.marktechpost.com/?p=79939",
+          "publishedAt": "2026-05-18T20:18:55.000Z",
+          "author": "Arham Islam",
+          "summary": "<p>Modern language models are trained on data with extremely uneven token distributions. A small number of words appear in almost every sentence, while many rare but meaningful tokens occur only occasionally. This creates a hidden optimization challenge: parameters associated with common tokens receive constant gradient updates, while parameters tied to rare tokens may go hundreds [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/18/stochastic-gradient-descent-sgds-frequency-bias-and-how-adam-fixes-it/\">Stochastic Gradient Descent (SGD&#8217;s) Frequency Bias and How Adam Fixes It </a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Shorts",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Large Language Model",
+            "Machine Learning",
+            "Staff",
+            "Technology",
+            "Tutorials"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "NVIDIA Introduces a 4-Bit Pretraining Methodology Using NVFP4, Validated on a 12B Hybrid Mamba-Transformer at 10T Token Horizon",
+          "link": "https://www.marktechpost.com/2026/05/18/nvidia-introduces-a-4-bit-pretraining-methodology-using-nvfp4-validated-on-a-12b-hybrid-mamba-transformer-at-10t-token-horizon/",
+          "id": "https://www.marktechpost.com/?p=79934",
+          "publishedAt": "2026-05-18T08:42:52.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>NVIDIA introduces a 4-bit pretraining methodology built around the NVFP4 microscaling format — combining selective BF16 layers, 16×16 Random Hadamard Transforms on Wgrad inputs, 2D weight scaling, and stochastic rounding on gradients — validated on a 12B hybrid Mamba-Transformer trained on 10 trillion tokens, the longest publicly documented 4-bit pretraining run, with downstream accuracy closely tracking the FP8 baseline (62.58% vs 62.62% on MMLU-Pro).</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/18/nvidia-introduces-a-4-bit-pretraining-methodology-using-nvfp4-validated-on-a-12b-hybrid-mamba-transformer-at-10t-token-horizon/\">NVIDIA Introduces a 4-Bit Pretraining Methodology Using NVFP4, Validated on a 12B Hybrid Mamba-Transformer at 10T Token Horizon</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Paper Summary",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        }
+      ]
+    }
+  ]
+}

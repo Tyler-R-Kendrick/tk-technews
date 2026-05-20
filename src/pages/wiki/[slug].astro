@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import wikiData from '../../data/wiki/generated-wiki.json';
+
+type WikiPage = {
+  slug: string;
+  title: string;
+  dek: string;
+  summary: string;
+  status?: 'generated' | 'stub';
+  sections: Array<{ title: string; body: string; citationUrls: string[] }>;
+  keyDevelopments: Array<{ text: string; citationUrls: string[] }>;
+  whyItMatters: string;
+  openQuestions: Array<{ question: string; context: string; citationUrls: string[] }>;
+  relatedTopics: Array<{ slug: string; label: string; reason: string }>;
+  citations: Array<{ title: string; url: string; source: string }>;
+};
+
+type WikiData = {
+  generatedAt: string;
+  graphHash: string;
+  cache: { key: string; version: number; graphHash: string };
+  pages: WikiPage[];
+};
+
+const wiki = wikiData as WikiData;
+
+export function getStaticPaths() {
+  return (wikiData as WikiData).pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page }
+  }));
+}
+
+const { page } = Astro.props as { page: WikiPage };
+const sections = page.sections ?? [];
+const keyDevelopments = page.keyDevelopments ?? [];
+const openQuestions = page.openQuestions ?? [];
+const relatedTopics = page.relatedTopics ?? [];
+const citations = page.citations ?? [];
+const generatedAt = new Date(wiki.generatedAt).toLocaleString('en-US', {
+  dateStyle: 'medium',
+  timeStyle: 'short'
+});
+const cachePayload = {
+  path: `/wiki/${page.slug}/`,
+  cacheKey: wiki.cache.key,
+  generatedAt: wiki.generatedAt,
+  page: {
+    slug: page.slug,
+    title: page.title,
+    dek: page.dek,
+    summary: page.summary,
+    status: page.status,
+    sections,
+    keyDevelopments,
+    whyItMatters: page.whyItMatters,
+    openQuestions,
+    relatedTopics,
+    citations
+  }
+};
+---
+
+<BaseLayout title={`${page.title} | TK TechNews Wiki`} description={page.dek}>
+  <main class="site-shell wiki-shell">
+    <header class="masthead">
+      <a class="brand" href="/">TK TechNews</a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Sources</a>
+        <a href="/wiki/">Wiki</a>
+      </nav>
+    </header>
+
+    <article class="wiki-page">
+      <header class="wiki-hero">
+        <p class="article-date">{page.status === 'stub' ? 'Topic stub' : 'Topic brief'} - {generatedAt}</p>
+        <h1>{page.title}</h1>
+        <p>{page.dek}</p>
+      </header>
+
+      <div class="wiki-detail-grid">
+        <section class="prose wiki-prose" aria-label="Topic brief">
+          <p>{page.summary}</p>
+
+          {sections.map((section) => (
+            <section class="wiki-section">
+              <h2>{section.title}</h2>
+              <p>{section.body}</p>
+            </section>
+          ))}
+
+          {keyDevelopments.length > 0 && (
+            <>
+              <h2>Key Developments</h2>
+              <ul class="wiki-development-list">
+                {keyDevelopments.map((development) => (
+                  <li>{development.text}</li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          <h2>Why It Matters</h2>
+          <p>{page.whyItMatters}</p>
+
+          {openQuestions.length > 0 && (
+            <>
+              <h2>Open Questions</h2>
+              <ul class="wiki-question-list">
+                {openQuestions.map((question) => (
+                  <li>
+                    <strong>{question.question}</strong>
+                    <span>{question.context}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {relatedTopics.length > 0 && (
+            <>
+              <h2>Related Topics</h2>
+              <ul class="wiki-link-list">
+                {relatedTopics.map((link) => (
+                  <li>
+                    <a href={`/wiki/${link.slug}/`}>{link.label}</a>
+                    <span>{link.reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+
+        <aside class="citation-rail" aria-label="Wiki citations">
+          <h2>Citations</h2>
+          <ol>
+            {citations.map((citation) => (
+              <li>
+                <a href={citation.url} rel="noreferrer">{citation.title}</a>
+                <span>{citation.source}</span>
+              </li>
+            ))}
+          </ol>
+        </aside>
+      </div>
+    </article>
+
+    <script is:inline type="application/json" id="wiki-cache-payload" set:html={JSON.stringify(cachePayload)} />
+    <script is:inline>
+      (() => {
+        const payload = document.getElementById('wiki-cache-payload');
+        if (!payload || !window.localStorage) return;
+        try {
+          const parsed = JSON.parse(payload.textContent || '{}');
+          window.localStorage.setItem(parsed.cacheKey, JSON.stringify(parsed));
+          window.localStorage.setItem(`${parsed.cacheKey}:${parsed.path}`, document.documentElement.outerHTML);
+        } catch {
+          // Cache is an enhancement; rendering should never depend on it.
+        }
+      })();
+    </script>
+  </main>
+</BaseLayout>

@@ -1,0 +1,17 @@
+{
+  "id": "tk-technews",
+  "description": "Clear, cited, practical technology analysis for builders who want to understand what changed, why it matters, and what it could unlock.",
+  "rules": [
+    "Lead with the useful change, not hype.",
+    "Preserve citations for every sourced claim.",
+    "Separate observed facts from speculation.",
+    "Label speculative applied opportunities explicitly.",
+    "Prefer concrete implementation and product implications over generic market commentary."
+  ],
+  "avoid": [
+    "Uncited claims",
+    "Breathless superlatives",
+    "Treating speculation as fact",
+    "Long throat-clearing before the point"
+  ]
+}

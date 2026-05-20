@@ -1,0 +1,170 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "sources": [
+    {
+      "id": "meta-research",
+      "category": "research",
+      "title": "Meta Research",
+      "sourceUrl": "https://research.facebook.com/",
+      "rssUrl": "https://research.facebook.com/feed/",
+      "limit": 10,
+      "status": "ok",
+      "fetchedAt": "2026-05-20T18:23:49.050Z",
+      "items": [
+        {
+          "title": "How generational differences affect consumer attitudes towards ads",
+          "link": "https://research.facebook.com/blog/2023/5/how-generational-differences-affect-consumer-attitudes-towards-ads/",
+          "id": "https://research.facebook.com/blog/2023/5/how-generational-differences-affect-consumer-attitudes-towards-ads/",
+          "publishedAt": "2023-05-17T15:52:00.000Z",
+          "author": "Meta Research",
+          "summary": "Our research study, in collaboration with CrowdDNA, aims to understand people's relationship with social media ads across different social media platforms.",
+          "categories": [
+            "Marketing Science",
+            "Human Computer Interaction & UX"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "Every tree counts",
+          "link": "https://research.facebook.com/blog/2023/4/every-tree-counts-large-scale-mapping-of-canopy-height-at-the-resolution-of-individual-trees/",
+          "id": "https://research.facebook.com/blog/2023/4/every-tree-counts-large-scale-mapping-of-canopy-height-at-the-resolution-of-individual-trees/",
+          "publishedAt": "2023-04-17T06:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "Meta set a goal to reach net zero emissions by 2030. We are developing technology to mitigate our carbon footprint and making these openly available.",
+          "categories": [
+            "Computer Vision",
+            "Machine Learning",
+            "Research in Brief"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "How a non-traditional background led to cutting-edge XR tech",
+          "link": "https://www.metacareers.com/life/how-a-non-traditional-background-led-to-cutting-edge-xr-tech",
+          "id": "https://www.metacareers.com/life/how-a-non-traditional-background-led-to-cutting-edge-xr-tech",
+          "publishedAt": "2023-04-14T06:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "",
+          "categories": [
+            "Careers and Internships",
+            "AR/VR",
+            "People",
+            "Graduate Student"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "A new, unique AI dataset for animating amateur drawings",
+          "link": "https://ai.facebook.com/blog/ai-dataset-animation-drawings/",
+          "id": "https://ai.facebook.com/blog/ai-dataset-animation-drawings/",
+          "publishedAt": "2023-04-13T12:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "",
+          "categories": [
+            "Computer Vision"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "How the metaverse can transform education",
+          "link": "https://about.fb.com/news/2023/04/how-the-metaverse-can-transform-education/",
+          "id": "https://about.fb.com/news/2023/04/how-the-metaverse-can-transform-education/",
+          "publishedAt": "2023-04-12T06:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "",
+          "categories": [
+            "AR/VR"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "Build faster with Buck2: Our open source build system",
+          "link": "https://engineering.fb.com/2023/04/06/open-source/buck2-open-source-large-scale-build-system/",
+          "id": "https://engineering.fb.com/2023/04/06/open-source/buck2-open-source-large-scale-build-system/",
+          "publishedAt": "2023-04-06T06:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "",
+          "categories": [
+            "Systems & Infrastructure"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "Announcing the 2023 Meta Research PhD Fellowship award winners",
+          "link": "https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/",
+          "id": "https://research.facebook.com/blog/2023/4/announcing-the-2023-meta-research-phd-fellowship-award-winners/",
+          "publishedAt": "2023-04-05T14:30:00.000Z",
+          "author": "Meta Research",
+          "summary": "...",
+          "categories": [
+            "Academic Programs",
+            "Meta Research PhD Fellowship Program"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "Introducing Segment Anything: Working toward the first foundation model for image segmentation",
+          "link": "https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/",
+          "id": "https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/",
+          "publishedAt": "2023-04-05T06:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "",
+          "categories": [
+            "Computer Vision"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "Announcing the winners of the 2022 Foundational Integrity Research request for proposals",
+          "link": "https://research.facebook.com/blog/2023/3/announcing-the-winners-of-the-2022-foundational-integrity-research-request-for-proposals-/",
+          "id": "https://research.facebook.com/blog/2023/3/announcing-the-winners-of-the-2022-foundational-integrity-research-request-for-proposals-/",
+          "publishedAt": "2023-03-27T09:35:00.000Z",
+          "author": "Meta Research",
+          "summary": "In September, Meta launched the Foundational Integrity Research request for proposals. Today, we announce the winners of this award.",
+          "categories": [
+            "Academic Programs",
+            "Human Computer Interaction & UX"
+          ],
+          "source": "Meta Research"
+        },
+        {
+          "title": "Two meta sustainability grant and scholarship recipients share impact",
+          "link": "https://sustainability.fb.com/blog/2023/03/24/two-meta-sustainability-grant-and-scholarship-recipients-share-impact/",
+          "id": "https://sustainability.fb.com/blog/2023/03/24/two-meta-sustainability-grant-and-scholarship-recipients-share-impact/",
+          "publishedAt": "2023-03-24T12:00:00.000Z",
+          "author": "Meta Research",
+          "summary": "",
+          "categories": [
+            "Collaboration Opportunities",
+            "Community & Civic Integrity",
+            "Sustainability"
+          ],
+          "source": "Meta Research"
+        }
+      ]
+    }
+  ],
+  "aiResearch": {
+    "id": "meta-ai-research",
+    "category": "research",
+    "title": "Meta AI Research",
+    "sourceUrl": "https://ai.meta.com/research/",
+    "limit": 1,
+    "status": "ok",
+    "fetchedAt": "2026-05-20T18:23:49.050Z",
+    "items": [
+      {
+        "title": "AI Research: Introducing Muse Spark - New Foundation Model",
+        "link": "https://ai.meta.com/research/",
+        "id": "https://ai.meta.com/research/",
+        "publishedAt": null,
+        "author": "Meta AI",
+        "summary": "Explore Meta's latest AI research and advancements. Read the latest on our newest foundation model, Muse Spark from Meta Superintelligence Labs.",
+        "categories": [
+          "AI Research"
+        ],
+        "source": "Meta AI Research"
+      }
+    ]
+  }
+}

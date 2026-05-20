@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "sources": [
+    {
+      "id": "vercel-changelog",
+      "category": "announcements",
+      "title": "Vercel News",
+      "sourceUrl": "https://vercel.com/changelog",
+      "rssUrl": "https://vercel.com/changelog/rss",
+      "limit": 10,
+      "status": "ok",
+      "fetchedAt": "2026-05-20T18:23:49.050Z",
+      "items": [
+        {
+          "title": "Grok Build 0.1 now available on Vercel AI Gateway",
+          "link": "https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway",
+          "id": "https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway",
+          "publishedAt": "2026-05-20T07:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "Grok Build 0.1 is now available on .Vercel AI Gateway\nThis is a beta coding model trained for agentic coding, currently in early access, and powers the Grok Build CLI app. Reasoning effort is not configurable, and there is no non-reasoning mode.\nTo use Grok Build 0.1, set model to  in the .xai/grok-build-0.1AI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Gemini 3.5 Flash on AI Gateway",
+          "link": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
+          "id": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
+          "publishedAt": "2026-05-19T07:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "Gemini 3.5 Flash is now available on .Vercel AI Gateway\nThis model has improved coding proficiency and parallel agentic execution loops versus previous Flash versions. It also brings improvements to core reasoning, instruction following, and multi-turn coherence, with stronger performance on complex tasks and higher-quality reasoning traces in thinking mode.\n3.5 Flash defaults to the  thinking level, balancing response quality with faster, more cost-efficient generation.medium\nTo use Gemini 3.5 Flash, set model to  in the .google/gemini-3.5-flashAI SDK\nNote that , , , and  are not supported by this model.temperaturetopPtopKthinking_budget\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Flat Rate CDN in Limited Beta",
+          "link": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
+          "id": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
+          "publishedAt": "2026-05-19T00:00:00.000Z",
+          "author": "Jas Garcha",
+          "summary": "Flat Rate CDN is now available in Limited Beta for Pro teams. It replaces usage-based CDN pricing with a fixed monthly fee.\nViral posts, unfiltered bots, or misconfigured routes can turn a normal month into a surprise bill. Flat Rate CDN makes your cost predictable.\nFlat Rate CDN is a good fit for teams with unpredictable CDN bills, individual builders who don't want a usage spike to break the bank, and growing businesses that need to know their CDN costs before the month starts.\nPro teams can join  for early access and to help shape the GA release.the waitlist\nRead more\n\n:Pay a fixed amount for Vercel CDN each month, regardless of traffic and usage.Fixed monthly price \n\n:Edge Requests, Fast Data Transfer, and other products are no longer metered.Covers spikes across Vercel CDN \n\n:Your bill will never increase because of temporary usage spikes.No overages",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Run Claude Managed Agents with Vercel Sandbox",
+          "link": "https://vercel.com/changelog/run-claude-managed-agents-with-vercel-sandbox",
+          "id": "https://vercel.com/changelog/run-claude-managed-agents-with-vercel-sandbox",
+          "publishedAt": "2026-05-18T23:01:00.000Z",
+          "author": "Allen Zhou",
+          "summary": "You can now run  with .Claude Managed AgentsVercel Sandbox\nClaude Managed Agents handles the model, harness, tools, and session state. Self-hosting lets you bring the execution environment, so an agent's tool calls run on your existing Vercel infrastructure with your private APIs, internal services, and customer data.\nEach agent session runs in its own isolated Firecracker microVM, using the same infrastructure that powers 1B+ Vercel deployments with enterprise-grade security, availability, and performance.\nWhat you get:\nFollow the  for a reference implementation and learn more in the . step-by-step guideVercel Sandbox docs\nRead more\n\n from Anthropic, including the model, harness, tools, and session stateA managed agent loop\n\nthat spawns a sandbox per sessionA Vercel function control plane \n\n per session, with millisecond startupFirecracker microVM isolation\n\n at the firewall, so secrets never enter the sandboxCredential brokering\n\n with a domain allowlistDeny-by-default egress\n\n to your private network and cloud workloadsLow-latency connectivity",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Consolidated Commit Status now available on GitHub",
+          "link": "https://vercel.com/changelog/consolidated-commit-status-now-available-for-github",
+          "id": "https://vercel.com/changelog/consolidated-commit-status-now-available-for-github",
+          "publishedAt": "2026-05-18T20:42:00.000Z",
+          "author": "Mehul Kar",
+          "summary": "Monorepos can now opt in to a single, consolidated commit status on pull requests instead of one commit status per project. For repos with many projects, teams can configure GitHub branch protection once, then manage which Vercel projects are required for merge in each project’s settings. \nRead more about  and and enable Consolidated Commit Status from your .Github Commit statusesproject settings\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Firewall‑mitigated traffic is free on Vercel",
+          "link": "https://vercel.com/changelog/web-application-firewall-mitigated-traffic-is-free-on-vercel",
+          "id": "https://vercel.com/changelog/web-application-firewall-mitigated-traffic-is-free-on-vercel",
+          "publishedAt": "2026-05-18T20:00:00.000Z",
+          "author": "Sudais Moorad",
+          "summary": "Vercel Firewall now waives CDN Requests and Fast Data Transfer for any traffic denied, challenged, or rate‑limited by Web Application Firewall (WAF). \nVercel has always provided unlimited DDoS mitigation at no cost. Vercel WAF, included in CDN cost, gives you custom rules, managed rules, and rate limiting for bad traffic that isn't DDoS. With this change, you don't pay for requests or bandwidth that WAF denies, challenges, or rate‑limits. \nThat means no surprise bill when a scraper hammers your product pages, a credential‑stuffing botnet hits your login route, or a bot abuses an expensive endpoint.\nThe waiver applies automatically to every project using Vercel Firewall and no configuration is required. \nLearn how to implement WAF rules in the .Firewall documentation\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Use native curl syntax with Vercel CLI",
+          "link": "https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli",
+          "id": "https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli",
+          "publishedAt": "2026-05-15T00:00:00.000Z",
+          "author": "Melkey Moksyakov",
+          "summary": "You can now use native  syntax with the Vercel CLI. The  command accepts full URLs, bare hostnames, and the  flag, and uses your Vercel auth to bypass .curl--urlvercel curlDeployment Protection\nIf you've linked a project, you can also pass just a path:\nUpdate to the latest Vercel CLI version and run  to get started. Learn more in the .vercel curlVercel CLI documentation\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Sort providers by cost, latency, or throughput on AI Gateway",
+          "link": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway",
+          "id": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway",
+          "publishedAt": "2026-05-15T00:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "You can now sort the providers behind a model by cost, time to first token (TTFT), or throughput (TPS) in .AI Gateway\nThe default provider order blends provider reliability, quality of model output, cost, and speed of response. You can now use  for explicit control over ranking criteria.sort\nFor models with many providers and noticeable cost or speed variation, you can use  to optimize on your dimension of choice. Ranking is computed at request time, so newly added providers, price changes, and shifts in observed latency or throughput flow through automatically without any code changes.sort\nSet  on  to one of the three values:\nsortproviderOptions.gateway\nUse  to ensure optimizing for your metric of choice.sort\nIn this example, AI Gateway has over five providers for  with different prices, so sorting by cost is a useful option for requests that want to route through the lowest price provider.GPT OSS 120B\nProviders are tried in sort order. Fallback to the next provider only happens when the higher-ranked one is unavailable.\n is compatible with other gateway routing options like Zero Data Retention (ZDR).sort\nThe example below uses  for an interactive request where latency and data retention matter: AI Gateway filters to only providers for  that have zero data retention, and then sorts the remaining providers by time to first token (TTFT).deepseek/deepseek-v4-proDeepseek V4 Pro\n also composes with : providers listed in  are promoted to the front, and the remaining providers follow the requested sort criterion.sortorderorder\nSee exactly why each request landed where it did. Every response includes a  block in the routing metadata showing which providers were considered, the metric values used to rank them, the order they were attempted, and any that were deprioritized due to degraded health.sort\nFor more information on sorting via AI Gateway, read the .documentation\nRead more\n\n\nValue\n\nDescription\n\nDirection\n\nWhen to use\n\n\n'cost'\n\nSort by the provider's listed input price per million tokens\n\nLowest price first\n\nHigh-volume, cost-sensitive work\n\n\n'ttft'\n\nSort by median time to first token, in ms\n\nLowest latency first\n\nLatency-sensitive workloads where response speed matters \n\n\n'tps'\n\nSort by median tokens per second throughput\n\nHighest first\n\nLong-output generation where total response time matters most\n\n\nBasic usage\nCombine with other routing controls\nInspecting routing decisions",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Protected Source Maps: Ship browser source maps securely",
+          "link": "https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely",
+          "id": "https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely",
+          "publishedAt": "2026-05-14T00:00:00.000Z",
+          "author": "Andrew Gadzik",
+          "summary": "You can now restrict access to production source maps with , which puts browser  files behind . Your team can fetch them; everyone else gets a 404.Protected Source MapsVercel Authentication.map\nSource maps are how you debug minified production code. They give you readable stack traces and your original source code, with the real filenames and line numbers intact.\nNew projects have Protected Source Maps enabled by default. Existing projects can opt in from Settings → Deployment Protection, with no redeploy needed.\nLearn more in the .documentation\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Trusted Sources for Deployment Protection",
+          "link": "https://vercel.com/changelog/trusted-sources-for-deployment-protection",
+          "id": "https://vercel.com/changelog/trusted-sources-for-deployment-protection",
+          "publishedAt": "2026-05-13T00:00:00.000Z",
+          "author": "Kit Foster",
+          "summary": "lets protected deployments accept  from Vercel projects and external services you authorize, so you no longer have to share a long-lived  secret. Trusted Sources is the recommended approach, but Protection Bypass for Automation continues to workTrusted Sourcesshort-lived identity tokens (OIDC)Protection Bypass for Automation\nCallers attach an OIDC token in the  header. Vercel then verifies the signature, checks the claims you configured, and confirms the environment matches the rule.x-vercel-trusted-oidc-idp-token\nBy default, the  for a project can call its own deployments. To authorize another project in the same team, add it to Trusted Sources. Vercel OIDC token\nSelf-access and cross-project rules are both customizable with / environment pairs. To authenticate a request from a project, forward its Vercel OIDC token:fromto\nAny custom OIDC provider can be authorized as a trusted external service, such as GitHub Actions, or a Vercel project in another team.\nRead the  to learn more.documentation\nRead more\nAuthorize Vercel projects\nAuthorize external services",
+          "source": "Vercel Changelog"
+        }
+      ]
+    },
+    {
+      "id": "vercel-blog",
+      "category": "announcements",
+      "title": "Vercel News",
+      "sourceUrl": "https://vercel.com/blog",
+      "rssUrl": "https://vercel.com/blog/rss",
+      "limit": 10,
+      "status": "ok",
+      "fetchedAt": "2026-05-20T18:23:49.050Z",
+      "items": [
+        {
+          "title": "Grok Build 0.1 now available on Vercel AI Gateway",
+          "link": "https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway",
+          "id": "https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway",
+          "publishedAt": "2026-05-20T07:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "Grok Build 0.1 is now available on .Vercel AI Gateway\nThis is a beta coding model trained for agentic coding, currently in early access, and powers the Grok Build CLI app. Reasoning effort is not configurable, and there is no non-reasoning mode.\nTo use Grok Build 0.1, set model to  in the .xai/grok-build-0.1AI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Gemini 3.5 Flash on AI Gateway",
+          "link": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
+          "id": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
+          "publishedAt": "2026-05-19T07:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "Gemini 3.5 Flash is now available on .Vercel AI Gateway\nThis model has improved coding proficiency and parallel agentic execution loops versus previous Flash versions. It also brings improvements to core reasoning, instruction following, and multi-turn coherence, with stronger performance on complex tasks and higher-quality reasoning traces in thinking mode.\n3.5 Flash defaults to the  thinking level, balancing response quality with faster, more cost-efficient generation.medium\nTo use Gemini 3.5 Flash, set model to  in the .google/gemini-3.5-flashAI SDK\nNote that , , , and  are not supported by this model.temperaturetopPtopKthinking_budget\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Flat Rate CDN in Limited Beta",
+          "link": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
+          "id": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
+          "publishedAt": "2026-05-19T00:00:00.000Z",
+          "author": "Jas Garcha",
+          "summary": "Flat Rate CDN is now available in Limited Beta for Pro teams. It replaces usage-based CDN pricing with a fixed monthly fee.\nViral posts, unfiltered bots, or misconfigured routes can turn a normal month into a surprise bill. Flat Rate CDN makes your cost predictable.\nFlat Rate CDN is a good fit for teams with unpredictable CDN bills, individual builders who don't want a usage spike to break the bank, and growing businesses that need to know their CDN costs before the month starts.\nPro teams can join  for early access and to help shape the GA release.the waitlist\nRead more\n\n:Pay a fixed amount for Vercel CDN each month, regardless of traffic and usage.Fixed monthly price \n\n:Edge Requests, Fast Data Transfer, and other products are no longer metered.Covers spikes across Vercel CDN \n\n:Your bill will never increase because of temporary usage spikes.No overages",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Run Claude Managed Agents with Vercel Sandbox",
+          "link": "https://vercel.com/changelog/run-claude-managed-agents-with-vercel-sandbox",
+          "id": "https://vercel.com/changelog/run-claude-managed-agents-with-vercel-sandbox",
+          "publishedAt": "2026-05-18T23:01:00.000Z",
+          "author": "Allen Zhou",
+          "summary": "You can now run  with .Claude Managed AgentsVercel Sandbox\nClaude Managed Agents handles the model, harness, tools, and session state. Self-hosting lets you bring the execution environment, so an agent's tool calls run on your existing Vercel infrastructure with your private APIs, internal services, and customer data.\nEach agent session runs in its own isolated Firecracker microVM, using the same infrastructure that powers 1B+ Vercel deployments with enterprise-grade security, availability, and performance.\nWhat you get:\nFollow the  for a reference implementation and learn more in the . step-by-step guideVercel Sandbox docs\nRead more\n\n from Anthropic, including the model, harness, tools, and session stateA managed agent loop\n\nthat spawns a sandbox per sessionA Vercel function control plane \n\n per session, with millisecond startupFirecracker microVM isolation\n\n at the firewall, so secrets never enter the sandboxCredential brokering\n\n with a domain allowlistDeny-by-default egress\n\n to your private network and cloud workloadsLow-latency connectivity",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Consolidated Commit Status now available on GitHub",
+          "link": "https://vercel.com/changelog/consolidated-commit-status-now-available-for-github",
+          "id": "https://vercel.com/changelog/consolidated-commit-status-now-available-for-github",
+          "publishedAt": "2026-05-18T20:42:00.000Z",
+          "author": "Mehul Kar",
+          "summary": "Monorepos can now opt in to a single, consolidated commit status on pull requests instead of one commit status per project. For repos with many projects, teams can configure GitHub branch protection once, then manage which Vercel projects are required for merge in each project’s settings. \nRead more about  and and enable Consolidated Commit Status from your .Github Commit statusesproject settings\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Firewall‑mitigated traffic is free on Vercel",
+          "link": "https://vercel.com/changelog/web-application-firewall-mitigated-traffic-is-free-on-vercel",
+          "id": "https://vercel.com/changelog/web-application-firewall-mitigated-traffic-is-free-on-vercel",
+          "publishedAt": "2026-05-18T20:00:00.000Z",
+          "author": "Sudais Moorad",
+          "summary": "Vercel Firewall now waives CDN Requests and Fast Data Transfer for any traffic denied, challenged, or rate‑limited by Web Application Firewall (WAF). \nVercel has always provided unlimited DDoS mitigation at no cost. Vercel WAF, included in CDN cost, gives you custom rules, managed rules, and rate limiting for bad traffic that isn't DDoS. With this change, you don't pay for requests or bandwidth that WAF denies, challenges, or rate‑limits. \nThat means no surprise bill when a scraper hammers your product pages, a credential‑stuffing botnet hits your login route, or a bot abuses an expensive endpoint.\nThe waiver applies automatically to every project using Vercel Firewall and no configuration is required. \nLearn how to implement WAF rules in the .Firewall documentation\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Use native curl syntax with Vercel CLI",
+          "link": "https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli",
+          "id": "https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli",
+          "publishedAt": "2026-05-15T00:00:00.000Z",
+          "author": "Melkey Moksyakov",
+          "summary": "You can now use native  syntax with the Vercel CLI. The  command accepts full URLs, bare hostnames, and the  flag, and uses your Vercel auth to bypass .curl--urlvercel curlDeployment Protection\nIf you've linked a project, you can also pass just a path:\nUpdate to the latest Vercel CLI version and run  to get started. Learn more in the .vercel curlVercel CLI documentation\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Sort providers by cost, latency, or throughput on AI Gateway",
+          "link": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway",
+          "id": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway",
+          "publishedAt": "2026-05-15T00:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "You can now sort the providers behind a model by cost, time to first token (TTFT), or throughput (TPS) in .AI Gateway\nThe default provider order blends provider reliability, quality of model output, cost, and speed of response. You can now use  for explicit control over ranking criteria.sort\nFor models with many providers and noticeable cost or speed variation, you can use  to optimize on your dimension of choice. Ranking is computed at request time, so newly added providers, price changes, and shifts in observed latency or throughput flow through automatically without any code changes.sort\nSet  on  to one of the three values:\nsortproviderOptions.gateway\nUse  to ensure optimizing for your metric of choice.sort\nIn this example, AI Gateway has over five providers for  with different prices, so sorting by cost is a useful option for requests that want to route through the lowest price provider.GPT OSS 120B\nProviders are tried in sort order. Fallback to the next provider only happens when the higher-ranked one is unavailable.\n is compatible with other gateway routing options like Zero Data Retention (ZDR).sort\nThe example below uses  for an interactive request where latency and data retention matter: AI Gateway filters to only providers for  that have zero data retention, and then sorts the remaining providers by time to first token (TTFT).deepseek/deepseek-v4-proDeepseek V4 Pro\n also composes with : providers listed in  are promoted to the front, and the remaining providers follow the requested sort criterion.sortorderorder\nSee exactly why each request landed where it did. Every response includes a  block in the routing metadata showing which providers were considered, the metric values used to rank them, the order they were attempted, and any that were deprioritized due to degraded health.sort\nFor more information on sorting via AI Gateway, read the .documentation\nRead more\n\n\nValue\n\nDescription\n\nDirection\n\nWhen to use\n\n\n'cost'\n\nSort by the provider's listed input price per million tokens\n\nLowest price first\n\nHigh-volume, cost-sensitive work\n\n\n'ttft'\n\nSort by median time to first token, in ms\n\nLowest latency first\n\nLatency-sensitive workloads where response speed matters \n\n\n'tps'\n\nSort by median tokens per second throughput\n\nHighest first\n\nLong-output generation where total response time matters most\n\n\nBasic usage\nCombine with other routing controls\nInspecting routing decisions",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Protected Source Maps: Ship browser source maps securely",
+          "link": "https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely",
+          "id": "https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely",
+          "publishedAt": "2026-05-14T00:00:00.000Z",
+          "author": "Andrew Gadzik",
+          "summary": "You can now restrict access to production source maps with , which puts browser  files behind . Your team can fetch them; everyone else gets a 404.Protected Source MapsVercel Authentication.map\nSource maps are how you debug minified production code. They give you readable stack traces and your original source code, with the real filenames and line numbers intact.\nNew projects have Protected Source Maps enabled by default. Existing projects can opt in from Settings → Deployment Protection, with no redeploy needed.\nLearn more in the .documentation\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Trusted Sources for Deployment Protection",
+          "link": "https://vercel.com/changelog/trusted-sources-for-deployment-protection",
+          "id": "https://vercel.com/changelog/trusted-sources-for-deployment-protection",
+          "publishedAt": "2026-05-13T00:00:00.000Z",
+          "author": "Kit Foster",
+          "summary": "lets protected deployments accept  from Vercel projects and external services you authorize, so you no longer have to share a long-lived  secret. Trusted Sources is the recommended approach, but Protection Bypass for Automation continues to workTrusted Sourcesshort-lived identity tokens (OIDC)Protection Bypass for Automation\nCallers attach an OIDC token in the  header. Vercel then verifies the signature, checks the claims you configured, and confirms the environment matches the rule.x-vercel-trusted-oidc-idp-token\nBy default, the  for a project can call its own deployments. To authorize another project in the same team, add it to Trusted Sources. Vercel OIDC token\nSelf-access and cross-project rules are both customizable with / environment pairs. To authenticate a request from a project, forward its Vercel OIDC token:fromto\nAny custom OIDC provider can be authorized as a trusted external service, such as GitHub Actions, or a Vercel project in another team.\nRead the  to learn more.documentation\nRead more\nAuthorize Vercel projects\nAuthorize external services",
+          "source": "Vercel Blog"
+        }
+      ]
+    }
+  ]
+}

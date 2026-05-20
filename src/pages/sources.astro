@@ -1,0 +1,413 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import anthropicNews from '../data/precompiled/anthropic-news.json';
+import anthropicResearch from '../data/precompiled/anthropic-research.json';
+import googleNewsLatest from '../data/precompiled/google-news-latest.json';
+import googleResearchBlog from '../data/precompiled/google-research-blog.json';
+import githubOrganizations from '../data/precompiled/github-organizations.json';
+import huggingFaceDailyPapers from '../data/precompiled/huggingface-daily-papers.json';
+import metaResearch from '../data/precompiled/meta-research.json';
+import publicationFeeds from '../data/precompiled/publication-feeds.json';
+import sourceIndex from '../data/precompiled/source-index.json';
+import twitterFeeds from '../data/precompiled/twitter-feeds.json';
+import vercelAnnouncements from '../data/precompiled/vercel-announcements.json';
+import xaiResearch from '../data/precompiled/xai-research.json';
+import youtubeLatest from '../data/precompiled/youtube-latest.json';
+
+type FeedItem = {
+  title?: string;
+  summary?: string;
+  link: string;
+  publishedAt?: string | null;
+  [key: string]: unknown;
+};
+
+type FeedSource = {
+  title: string;
+  items: FeedItem[];
+};
+
+const truncateTitle = (title: string, maxLength = 84) => {
+  const normalized = title.replace(/\s+/g, ' ').trim();
+  return normalized.length > maxLength ? `${normalized.slice(0, maxLength - 3).trimEnd()}...` : normalized;
+};
+
+const videoCategoryKeys = ['news', 'dev', 'academics'] as const;
+const videoCategories = videoCategoryKeys.map((category) => ({
+  category,
+  label: category === 'academics' ? 'Academics' : category[0].toUpperCase() + category.slice(1),
+  channelCount: sourceIndex.summary.youtubeCategories[category],
+  items: youtubeLatest.sources
+    .filter((source) => source.category === category)
+    .flatMap((source) => source.items.slice(0, 2).map((item) => ({
+      ...item,
+      displayTitle: truncateTitle(item.title),
+      source
+    })))
+    .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+    .slice(0, 6)
+}));
+const latestGoogleNews = googleNewsLatest.sources
+  .flatMap((source) => source.items.slice(0, 2).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    source
+  })))
+  .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+  .slice(0, 8);
+const latestAcademicPapers = (huggingFaceDailyPapers.source?.items ?? [])
+  .map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 92),
+    meta: [item.id, item.upvotes ? `${item.upvotes} upvotes` : null].filter(Boolean).join(' - ')
+  }))
+  .slice(0, 8);
+const latestGoogleResearch = (googleResearchBlog.source?.items ?? [])
+  .map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.categories?.slice(0, 2).join(' - ') || item.author
+  }))
+  .slice(0, 8);
+const latestAnthropicResearch = (anthropicResearch.source?.items ?? [])
+  .map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.category || item.author
+  }))
+  .slice(0, 8);
+const latestAnthropicNews = (anthropicNews.source?.items ?? [])
+  .map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.category || item.author
+  }))
+  .slice(0, 8);
+const latestVercelAnnouncements = (vercelAnnouncements.sources ?? [])
+  .flatMap((source) => source.items.slice(0, 5).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.source,
+    source
+  })))
+  .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+  .slice(0, 8);
+const latestVercelLabsRepos = (githubOrganizations.sources ?? [])
+  .flatMap((source) => source.items.slice(0, 12).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: [item.language, item.stars ? `${item.stars} stars` : null].filter(Boolean).join(' - '),
+    source
+  })))
+  .slice(0, 8);
+const latestMetaResearch = [
+  ...((metaResearch.aiResearch?.items ?? []).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.source
+  }))),
+  ...((metaResearch.sources ?? []).flatMap((source) => source.items.slice(0, 8).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.categories?.slice(0, 2).join(' - ') || item.source,
+    source
+  }))))
+]
+  .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+  .slice(0, 8);
+const latestPublicationFeeds = (publicationFeeds.sources ?? [])
+  .flatMap((source) => source.items.slice(0, 5).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.source,
+    source
+  })))
+  .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+  .slice(0, 8);
+const latestXaiResearch = (xaiResearch.sources ?? [])
+  .flatMap((source) => source.items.slice(0, 5).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title, 96),
+    meta: item.source,
+    source
+  })))
+  .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+  .slice(0, 8);
+const twitterSources = (twitterFeeds.sources ?? []) as FeedSource[];
+const latestTwitterPosts = twitterSources
+  .flatMap((source) => source.items.slice(0, 3).map((item) => ({
+    ...item,
+    displayTitle: truncateTitle(item.title || item.summary || source.title, 96),
+    meta: source.title,
+    source
+  })))
+  .sort((a, b) => String(b.publishedAt ?? '').localeCompare(String(a.publishedAt ?? '')))
+  .slice(0, 10);
+
+const generatedAt = new Date(sourceIndex.generatedAt).toLocaleString('en-US', {
+  dateStyle: 'medium',
+  timeStyle: 'short'
+});
+---
+
+<BaseLayout title="Source Monitor | TK TechNews" description="Precompiled monitored AI sources across YouTube, RSS, research blogs, GitHub, and X profiles.">
+  <main class="site-shell">
+    <header class="masthead">
+      <a class="brand" href="/">TK TechNews</a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Today</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/articles/example-explainer/">Example</a>
+        <a href="https://github.com/" rel="noreferrer">Repository</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Source Monitor</h1>
+        <p>
+          The raw monitored source surface for RSS feeds, web pages, repositories,
+          X profiles, research posts, and video channels feeding the daily brief.
+        </p>
+      </div>
+      <aside class="process-panel" aria-label="Pipeline stages">
+        <span>01 Source intake</span>
+        <span>02 Summary ledger</span>
+        <span>03 Cited article draft</span>
+        <span>04 Static Astro publish</span>
+      </aside>
+    </section>
+
+    <section class="source-monitor" aria-labelledby="monitor-heading">
+      <div class="section-heading">
+        <div>
+          <h2 id="monitor-heading">Source Monitor</h2>
+          <p>Precompiled from YouTube channel feeds and Google News RSS topics.</p>
+        </div>
+        <p>{generatedAt}</p>
+      </div>
+
+      <div class="video-category-grid" aria-label="Latest videos by topic">
+        {videoCategories.map((group) => (
+          <section class="feed-column" aria-labelledby={`youtube-${group.category}-heading`}>
+            <h3 id={`youtube-${group.category}-heading`}>{group.label} Videos</h3>
+            <p class="feed-kicker">{group.channelCount} channels monitored</p>
+            <ol>
+              {group.items.map((item) => (
+                <li>
+                  <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                  <span>{item.source.title}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="google-heading">
+          <h3 id="google-heading">Latest Topic News</h3>
+          <ol>
+            {latestGoogleNews.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.source.topic}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="papers-heading">
+          <h3 id="papers-heading">Hugging Face Daily Papers</h3>
+          <p class="feed-kicker">
+            <a href={huggingFaceDailyPapers.source?.sourceUrl} rel="noreferrer">
+              {huggingFaceDailyPapers.source?.date}
+            </a>
+          </p>
+          <ol>
+            {latestAcademicPapers.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="google-research-heading">
+          <h3 id="google-research-heading">Google Research Blog</h3>
+          <p class="feed-kicker">
+            <a href={googleResearchBlog.source?.sourceUrl} rel="noreferrer">
+              {googleResearchBlog.source?.title}
+            </a>
+          </p>
+          <ol>
+            {latestGoogleResearch.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="anthropic-research-heading">
+          <h3 id="anthropic-research-heading">Anthropic Research</h3>
+          <p class="feed-kicker">
+            <a href={anthropicResearch.source?.sourceUrl} rel="noreferrer">
+              Publications
+            </a>
+          </p>
+          <ol>
+            {latestAnthropicResearch.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="anthropic-news-heading">
+          <h3 id="anthropic-news-heading">Anthropic News</h3>
+          <p class="feed-kicker">
+            <a href={anthropicNews.source?.sourceUrl} rel="noreferrer">
+              News
+            </a>
+          </p>
+          <ol>
+            {latestAnthropicNews.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="vercel-announcements-heading">
+          <h3 id="vercel-announcements-heading">Vercel Announcements</h3>
+          <p class="feed-kicker">
+            <a href="https://vercel.com/changelog" rel="noreferrer">
+              Changelog and Blog
+            </a>
+          </p>
+          <ol>
+            {latestVercelAnnouncements.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="vercel-labs-heading">
+          <h3 id="vercel-labs-heading">Vercel Labs GitHub</h3>
+          <p class="feed-kicker">
+            <a href="https://github.com/vercel-labs" rel="noreferrer">
+              Recently updated repositories
+            </a>
+          </p>
+          <ol>
+            {latestVercelLabsRepos.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="meta-research-heading">
+          <h3 id="meta-research-heading">Meta Research</h3>
+          <p class="feed-kicker">
+            <a href="https://research.facebook.com/" rel="noreferrer">
+              Facebook Research and AI at Meta
+            </a>
+          </p>
+          <ol>
+            {latestMetaResearch.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="publication-feeds-heading">
+          <h3 id="publication-feeds-heading">Publication Feeds</h3>
+          <p class="feed-kicker">
+            <a href="https://towardsdatascience.com/" rel="noreferrer">
+              Towards Data Science and MarkTechPost
+            </a>
+          </p>
+          <ol>
+            {latestPublicationFeeds.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="xai-research-heading">
+          <h3 id="xai-research-heading">xAI Research</h3>
+          <p class="feed-kicker">
+            <a href="https://x.ai/news" rel="noreferrer">
+              Labs, Grok, and research updates
+            </a>
+          </p>
+          <ol>
+            {latestXaiResearch.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      <div class="monitor-grid monitor-grid-single">
+        <section class="feed-column" aria-labelledby="twitter-feeds-heading">
+          <h3 id="twitter-feeds-heading">X Profiles</h3>
+          <p class="feed-kicker">
+            <a href="https://x.com/" rel="noreferrer">
+              Tracked profile posts via RSS bridge
+            </a>
+          </p>
+          <ol>
+            {latestTwitterPosts.map((item) => (
+              <li>
+                <a href={item.link} rel="noreferrer" title={item.title}>{item.displayTitle}</a>
+                <span>{item.meta}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

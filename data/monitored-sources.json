@@ -1,0 +1,205 @@
+{
+  "youtube": {
+    "news": [
+      "matthew_berman",
+      "WesRoth",
+      "intheworldofai",
+      "samwitteveenai",
+      "airevolutionx",
+      "engineerprompt",
+      "Fireship"
+    ],
+    "dev": [
+      "mattpocockuk",
+      "bmdavis419",
+      "LangChain",
+      "HuggingFace",
+      "OpenAI",
+      "AIOriented",
+      "BurkeHolland",
+      "GitHub",
+      "GoogleDevelopers",
+      "MicrosoftDeveloper",
+      "csharpfritz",
+      "dotnet",
+      "MicrosoftReactor",
+      "CopilotKit"
+    ],
+    "academics": [
+      "code4AI",
+      "TwoMinutePapers",
+      "bycloudAI",
+      "aipapersacademy",
+      "jbhuang0604",
+      "RealTuringPost",
+      "Protorikis",
+      "ndeainc",
+      "MicrosoftResearch",
+      "SebastianRaschka",
+      "neuro-dump",
+      "AndrejKarpathy",
+      "TowardsDataScience"
+    ]
+  },
+  "googleNewsTopics": [
+    "andrewyng",
+    "anthropic",
+    "claude",
+    "cloudflare",
+    "cursor",
+    "elevenlabs",
+    "engineering at meta",
+    "garry tan",
+    "github",
+    "google",
+    "google deepmind",
+    "google for developers",
+    "hugging face",
+    "langchain",
+    "langchain-ai",
+    "llamaindex",
+    "lovable",
+    "lovable_dev",
+    "marktechpost",
+    "microsoft",
+    "microsoft developer",
+    "microsoft research",
+    "nousresearch",
+    "ollama",
+    "openai",
+    "perplexity",
+    "peter steinberger",
+    "rohanpaul_ai",
+    "scott hanselman",
+    "towards data science",
+    "warp",
+    "xai"
+  ],
+  "huggingFaceDailyPapers": {
+    "date": "2026-05-20",
+    "limit": 20
+  },
+  "googleResearchBlog": {
+    "url": "https://research.google/blog/",
+    "rssUrl": "https://research.google/blog/rss/",
+    "limit": 10
+  },
+  "anthropicResearch": {
+    "url": "https://www.anthropic.com/research",
+    "limit": 10
+  },
+  "anthropicNews": {
+    "url": "https://www.anthropic.com/news",
+    "limit": 10
+  },
+  "vercelAnnouncements": {
+    "limit": 10,
+    "feeds": [
+      {
+        "id": "vercel-changelog",
+        "title": "Vercel Changelog",
+        "url": "https://vercel.com/changelog",
+        "rssUrl": "https://vercel.com/changelog/rss"
+      },
+      {
+        "id": "vercel-blog",
+        "title": "Vercel Blog",
+        "url": "https://vercel.com/blog",
+        "rssUrl": "https://vercel.com/blog/rss"
+      }
+    ]
+  },
+  "githubOrganizations": [
+    {
+      "id": "vercel-labs",
+      "organization": "vercel-labs",
+      "url": "https://github.com/vercel-labs",
+      "limit": 12
+    }
+  ],
+  "metaResearchFeeds": [
+    {
+      "id": "meta-research",
+      "title": "Meta Research",
+      "url": "https://research.facebook.com/",
+      "rssUrl": "https://research.facebook.com/feed/",
+      "limit": 10
+    }
+  ],
+  "metaAiResearch": {
+    "url": "https://ai.meta.com/research/",
+    "limit": 1
+  },
+  "publicationFeeds": [
+    {
+      "id": "towards-data-science",
+      "title": "Towards Data Science",
+      "url": "https://towardsdatascience.com/",
+      "rssUrl": "https://medium.com/feed/towards-data-science",
+      "limit": 10
+    },
+    {
+      "id": "marktechpost",
+      "title": "MarkTechPost",
+      "url": "https://www.marktechpost.com/",
+      "rssUrl": "https://www.marktechpost.com/feed/",
+      "limit": 10
+    }
+  ],
+  "xaiResearchFeeds": {
+    "limit": 10,
+    "queries": [
+      {
+        "id": "xai-official-news",
+        "title": "xAI Official News",
+        "url": "https://x.ai/news",
+        "query": "site:x.ai/news xAI Grok research labs"
+      },
+      {
+        "id": "xai-research-labs",
+        "title": "xAI Research and Labs",
+        "url": "https://x.ai/research",
+        "query": "xAI research labs Grok model"
+      }
+    ]
+  },
+  "twitterProfiles": {
+    "limit": 5,
+    "timeoutMs": 20000,
+    "provider": "rsshub",
+    "rssBaseUrl": "https://rsshub-boost.23751.net",
+    "handles": [
+      "omarsar0",
+      "GoogleAIStudio",
+      "karpathy",
+      "CidexReleases",
+      "vllm_project",
+      "dotnet",
+      "claudeai",
+      "openai",
+      "CloudflareDev",
+      "HappyPablo",
+      "ClaudeDevs",
+      "GitHubProjects",
+      "xai",
+      "GoogleAI",
+      "GitHub",
+      "NVIDIAAI",
+      "ycombinator",
+      "LangChain",
+      "Thariq",
+      "MSFTResearch",
+      "shanselman",
+      "dotnetfdn",
+      "llama_index",
+      "GoogleDeepMind",
+      "unclebobmartin",
+      "MicrosoftLearn",
+      "Azure",
+      "DeepLearningAI",
+      "martinfowler",
+      "googledevs",
+      "garrytan"
+    ]
+  }
+}

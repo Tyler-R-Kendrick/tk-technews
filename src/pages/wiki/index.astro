@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import wikiData from '../../data/wiki/generated-wiki.json';
+
+type WikiPage = {
+  slug: string;
+  title: string;
+  dek: string;
+  summary: string;
+  status?: 'generated' | 'stub';
+  relatedTopics: Array<{ slug: string; label: string; reason: string }>;
+  citations: Array<{ title: string; url: string; source: string }>;
+};
+
+const wiki = wikiData as {
+  generatedAt: string;
+  graphHash: string;
+  cache: { key: string; version: number; graphHash: string };
+  landing: {
+    title: string;
+    description: string;
+    overview: string;
+    featuredPageSlugs: string[];
+  };
+  pages: WikiPage[];
+};
+
+const listedPages = wiki.pages;
+const renderedAt = new Date(wiki.generatedAt).toLocaleString('en-US', {
+  dateStyle: 'medium',
+  timeStyle: 'short'
+});
+const cachePayload = {
+  path: '/wiki/',
+  cacheKey: wiki.cache.key,
+  generatedAt: wiki.generatedAt,
+  landing: wiki.landing,
+  pages: wiki.pages.map((page) => ({
+    slug: page.slug,
+    title: page.title,
+    dek: page.dek,
+    status: page.status
+  }))
+};
+---
+
+<BaseLayout title={`${wiki.landing.title} | TK TechNews`} description={wiki.landing.description}>
+  <main class="site-shell wiki-shell">
+    <header class="masthead">
+      <a class="brand" href="/">TK TechNews</a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Sources</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/articles/example-explainer/">Example</a>
+      </nav>
+    </header>
+
+    <section class="wiki-hero" aria-labelledby="wiki-heading">
+      <p class="article-date">Updated {renderedAt}</p>
+      <h1 id="wiki-heading">{wiki.landing.title}</h1>
+      <p>{wiki.landing.description}</p>
+    </section>
+
+    <section class="wiki-overview" aria-label="Topic index overview">
+      <div>
+        <h2>Topic Index</h2>
+        <p>{wiki.landing.overview}</p>
+      </div>
+      <dl>
+        <div>
+          <dt>Topics</dt>
+          <dd>{wiki.pages.length}</dd>
+        </div>
+        <div>
+          <dt>Cache</dt>
+          <dd>v{wiki.cache.version}</dd>
+        </div>
+      </dl>
+    </section>
+
+    {wiki.pages.length === 0 ? (
+      <section class="wiki-empty" aria-label="No generated wiki pages">
+        <h2>No Topic Briefs Yet</h2>
+        <p>{wiki.landing.overview}</p>
+      </section>
+    ) : (
+      <section class="wiki-grid" aria-label="Knowledge graph topics">
+        {listedPages.map((page) => (
+          <article class="wiki-card">
+            <p>{page.status === 'stub' ? 'Topic stub' : 'Topic brief'}</p>
+            <h2><a href={`/wiki/${page.slug}/`}>{page.title}</a></h2>
+            <span>{page.dek}</span>
+          </article>
+        ))}
+      </section>
+    )}
+
+    <script is:inline type="application/json" id="wiki-cache-payload" set:html={JSON.stringify(cachePayload)} />
+    <script is:inline>
+      (() => {
+        const payload = document.getElementById('wiki-cache-payload');
+        if (!payload || !window.localStorage) return;
+        try {
+          const parsed = JSON.parse(payload.textContent || '{}');
+          window.localStorage.setItem(parsed.cacheKey, JSON.stringify(parsed));
+          window.localStorage.setItem(`${parsed.cacheKey}:${parsed.path}`, document.documentElement.outerHTML);
+        } catch {
+          // Cache is an enhancement; rendering should never depend on it.
+        }
+      })();
+    </script>
+  </main>
+</BaseLayout>

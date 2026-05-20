@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "source": {
+    "id": "anthropic-news",
+    "category": "news",
+    "title": "Anthropic News",
+    "sourceUrl": "https://www.anthropic.com/news",
+    "limit": 10,
+    "status": "ok",
+    "fetchedAt": "2026-05-20T18:23:49.050Z",
+    "items": [
+      {
+        "title": "Widening the conversation on frontier AI",
+        "link": "https://www.anthropic.com/news/widening-conversation-ai",
+        "id": "https://www.anthropic.com/news/widening-conversation-ai",
+        "publishedAt": "2026-05-19T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
+        "link": "https://www.anthropic.com/news/anthropic-kpmg",
+        "id": "https://www.anthropic.com/news/anthropic-kpmg",
+        "publishedAt": "2026-05-19T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Anthropic acquires Stainless",
+        "link": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+        "id": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+        "publishedAt": "2026-05-18T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients",
+        "link": "https://www.anthropic.com/news/pwc-expanded-partnership",
+        "id": "https://www.anthropic.com/news/pwc-expanded-partnership",
+        "publishedAt": "2026-05-14T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Anthropic forms $200 million partnership with the Gates Foundation",
+        "link": "https://www.anthropic.com/news/gates-foundation-partnership",
+        "id": "https://www.anthropic.com/news/gates-foundation-partnership",
+        "publishedAt": "2026-05-14T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Introducing Claude for Small Business",
+        "link": "https://www.anthropic.com/news/claude-for-small-business",
+        "id": "https://www.anthropic.com/news/claude-for-small-business",
+        "publishedAt": "2026-05-13T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+        "link": "https://www.anthropic.com/news/higher-limits-spacex",
+        "id": "https://www.anthropic.com/news/higher-limits-spacex",
+        "publishedAt": "2026-05-06T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Agents for financial services",
+        "link": "https://www.anthropic.com/news/finance-agents",
+        "id": "https://www.anthropic.com/news/finance-agents",
+        "publishedAt": "2026-05-05T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
+        "link": "https://www.anthropic.com/news/enterprise-ai-services-company",
+        "id": "https://www.anthropic.com/news/enterprise-ai-services-company",
+        "publishedAt": "2026-05-04T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "Claude for Creative Work",
+        "link": "https://www.anthropic.com/news/claude-for-creative-work",
+        "id": "https://www.anthropic.com/news/claude-for-creative-work",
+        "publishedAt": "2026-04-28T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      }
+    ]
+  }
+}

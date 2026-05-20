@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.astro-dev.err.log
+.astro-dev.log
+.env
+.env.*
+!.env.example
+data/raw/
+data/summaries/
+data/knowledge/
+output/
+__pycache__/
+*.pyc

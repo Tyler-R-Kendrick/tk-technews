@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { dailyBrief } from '../../../lib/daily-feed.mjs';
+
+type DailyStub = {
+  slug: string;
+  href: string;
+  title: string;
+  dek: string;
+  status: string;
+  sourceCount: number;
+  latestPublishedAt?: string | null;
+  tags: string[];
+  bodySections: Array<{
+    heading: string;
+    intent?: string;
+    paragraphs: string[];
+    citations?: string[];
+  }>;
+  keyTakeaways: string[];
+  sources: Array<{
+    title: string;
+    url: string;
+    sourceName: string;
+    publishedAt?: string | null;
+    summary?: string;
+    transcript?: { status?: string; videoId?: string | null };
+  }>;
+};
+
+export function getStaticPaths() {
+  return dailyBrief.articleStubs.map((stub: DailyStub) => ({
+    params: { date: dailyBrief.date, slug: stub.slug },
+    props: { stub }
+  }));
+}
+
+const { stub } = Astro.props as { stub: DailyStub };
+const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateString('en-US', {
+  dateStyle: 'full'
+});
+---
+
+<BaseLayout title={`${stub.title} | TK TechNews`} description={stub.dek}>
+  <main class="site-shell article-shell">
+    <header class="masthead">
+      <a class="brand" href="/">TK TechNews</a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Today</a>
+        <a href="/sources/">Sources</a>
+        <a href="/wiki/">Wiki</a>
+      </nav>
+    </header>
+
+    <article class="article-page">
+      <header class="article-hero">
+        <p class="article-date">Daily brief - {displayDate}</p>
+        <h1>{stub.title}</h1>
+        <p>{stub.dek}</p>
+      </header>
+
+      <div class="article-grid">
+        <div class="prose">
+          {(stub.bodySections ?? []).map((section) => (
+            <section class="daily-article-section">
+              <h2>{section.heading}</h2>
+              {(section.paragraphs ?? []).map((paragraph) => <p>{paragraph}</p>)}
+            </section>
+          ))}
+
+          {(stub.keyTakeaways ?? []).length > 0 && (
+            <>
+              <h2>Key Takeaways</h2>
+              <ul class="wiki-development-list">
+                {stub.keyTakeaways.map((takeaway) => <li>{takeaway}</li>)}
+              </ul>
+            </>
+          )}
+
+          {stub.tags.length > 0 && (
+            <>
+              <h2>Tags</h2>
+              <ul class="tags" aria-label="Tags">
+                {stub.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </>
+          )}
+        </div>
+
+        <aside class="citation-rail" aria-label="Article citations">
+          <h2>Citations</h2>
+          <ol>
+            {stub.sources.map((source) => (
+              <li>
+                <a href={source.url} rel="noreferrer">{source.title}</a>
+                <span>{source.sourceName}</span>
+              </li>
+            ))}
+          </ol>
+        </aside>
+      </div>
+    </article>
+  </main>
+</BaseLayout>

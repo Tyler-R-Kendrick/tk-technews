@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "summary": {
+    "youtubeCategories": {
+      "news": 7,
+      "dev": 14,
+      "academics": 13
+    },
+    "youtubeTotal": 34,
+    "googleNewsTopics": 32,
+    "huggingFaceDailyPapers": true,
+    "googleResearchBlog": true,
+    "anthropicResearch": true,
+    "anthropicNews": true,
+    "vercelAnnouncementFeeds": 2,
+    "githubOrganizations": 1,
+    "metaResearchFeeds": 1,
+    "metaAiResearch": true,
+    "publicationFeeds": 2,
+    "xaiResearchFeeds": 2,
+    "twitterProfiles": 31,
+    "youtubeOk": 34,
+    "googleNewsOk": 32,
+    "huggingFacePapersOk": 1,
+    "googleResearchOk": 1,
+    "anthropicResearchOk": 1,
+    "anthropicNewsOk": 1,
+    "vercelAnnouncementsOk": 2,
+    "githubOrganizationsOk": 1,
+    "metaResearchOk": 1,
+    "metaAiResearchOk": 1,
+    "publicationFeedsOk": 2,
+    "xaiResearchFeedsOk": 2,
+    "twitterProfilesOk": 18
+  }
+}

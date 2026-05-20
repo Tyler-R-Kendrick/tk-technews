@@ -1,0 +1,34 @@
+{
+  "rss": [
+    {
+      "id": "verge-ai",
+      "name": "The Verge AI",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "topicTags": ["ai", "platforms"]
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News",
+      "url": "https://hnrss.org/frontpage",
+      "topicTags": ["developer-tools", "startups"]
+    }
+  ],
+  "web": [
+    {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/",
+      "scraper": "firecrawl",
+      "topicTags": ["ai", "models"]
+    }
+  ],
+  "youtube": [
+    {
+      "id": "example-video",
+      "name": "Example YouTube source",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "topicTags": ["demo"],
+      "disabled": true
+    }
+  ]
+}

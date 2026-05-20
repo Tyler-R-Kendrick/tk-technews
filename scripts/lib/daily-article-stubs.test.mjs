@@ -114,6 +114,58 @@ test('generates reader-facing article content from transcript-enriched YouTube s
   assert.doesNotMatch(rendered, /pipeline|knowledge graph|internal process/i);
 });
 
+test('dedupes repeated daily source content before generating summaries and citations', () => {
+  const result = buildDailyArticleStubs({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'tweet-1',
+          kind: 'twitterFeeds',
+          title: 'GitHub Copilot remote control is generally available',
+          summary: 'GitHub Copilot remote control is generally available for CLI and VS Code sessions.',
+          url: 'https://x.com/github/status/2057000000000000000',
+          sourceName: '@github',
+          publishedAt: '2026-05-20T12:00:00.000Z',
+          tags: ['github', 'copilot', 'agent']
+        },
+        {
+          id: 'tweet-2',
+          kind: 'twitterFeeds',
+          title: 'GitHub Copilot remote control is generally available',
+          summary: 'GitHub Copilot remote control is generally available for CLI and VS Code sessions.',
+          url: 'https://x.com/github/status/2057000000000000000?utm_campaign=social',
+          sourceName: '@github',
+          publishedAt: '2026-05-20T12:05:00.000Z',
+          tags: ['github', 'copilot', 'agent']
+        },
+        {
+          id: 'blog-1',
+          title: 'GitHub Copilot remote control reaches general availability',
+          summary: 'Remote control for GitHub Copilot CLI and VS Code sessions is now generally available for agent workflows.',
+          url: 'https://github.blog/changelog/copilot-remote-control',
+          sourceName: 'GitHub Blog',
+          publishedAt: '2026-05-20T12:10:00.000Z',
+          tags: ['github', 'copilot', 'agent']
+        }
+      ]
+    }
+  });
+
+  const page = result.articleStubs[0];
+  const renderedText = [
+    page.dek,
+    ...page.bodySections.flatMap((section) => section.paragraphs),
+    ...page.keyTakeaways
+  ].join('\n');
+
+  assert.equal(result.sourceItemCount, 2);
+  assert.equal(page.sources.length, 2);
+  assert.equal(page.sources.filter((source) => source.url.startsWith('https://x.com/github/status/2057000000000000000')).length, 1);
+  assert.ok((renderedText.match(/GitHub Copilot remote control is generally available/gi) ?? []).length <= 1);
+});
+
 test('daily article body is exclusively generated bodySections', () => {
   const routeSource = readFileSync(new URL('../../src/pages/daily/[date]/[slug].astro', import.meta.url), 'utf8');
 

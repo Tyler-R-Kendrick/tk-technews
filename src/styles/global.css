@@ -716,6 +716,12 @@ nav a:hover {
   margin: 0;
 }
 
+.citation-rail .rich-citation-list {
+  gap: 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
 .citation-rail li {
   color: var(--muted);
   font-size: 0.92rem;
@@ -732,6 +738,83 @@ nav a:hover {
 .citation-rail span {
   display: block;
   margin-top: 4px;
+}
+
+.rich-source-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px;
+  overflow: hidden;
+  color: var(--ink);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--panel) 88%, var(--paper));
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.rich-source-preview:hover,
+.rich-source-preview:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.rich-source-preview img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+.rich-source-copy {
+  min-width: 0;
+}
+
+.rich-source-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.rich-source-meta span {
+  margin: 0;
+}
+
+.rich-source-preview strong {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.25;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.rich-source-snippet {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.rich-source-host {
+  overflow: hidden;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (max-width: 1060px) {

@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { stableHash } from './ledger-store.mjs';
 import { stripHtml } from './text-utils.mjs';
 import { generateStructuredObject } from './inference.mjs';
+import { runGeneratedOutputLoop } from './generation-loop.mjs';
 
 const WIKI_CACHE_VERSION = 1;
 const MAX_WEB_ENRICHMENTS = 12;
@@ -212,6 +213,30 @@ export function buildTopicWikiFromResearchPackets({ generatedAt, graphHash, pack
   });
 }
 
+/**
+ * Build a reader-facing wiki from a knowledge graph and persist the resulting JSON to disk.
+ *
+ * This function reads the knowledge graph at the given project root, derives topic communities,
+ * converts them into research packets, optionally enriches sources via web fetching, and produces
+ * either deterministic or LLM-refined wiki pages. The final wiki JSON is augmented with cache
+ * metadata and written to the repository `src/data/wiki/` and `public/wiki/`.
+ *
+ * @param {Object} [options] - Configuration options.
+ * @param {string} [options.root=process.cwd()] - Project root used to locate graph and voice files.
+ * @param {string} [options.now=new Date().toISOString()] - ISO timestamp used as the wiki generation time.
+ * @param {Function} [options.inference=generateStructuredObject] - Inference function used by the generation loop.
+ * @param {Function} [options.fetchImpl=fetch] - Fetch implementation used for optional web enrichment.
+ * @param {number} [options.maxCommunities=24] - Maximum number of communities to derive from the graph.
+ * @param {number} [options.maxGeneratedTopics=8] - Maximum number of topics to send to the inference loop when using LLM generation.
+ * @param {boolean} [options.useInference=process.env.TK_TECHNEWS_WIKI_USE_LLM === 'true'] - When true, run the LLM-backed generation path; otherwise use the deterministic writer.
+ * @param {string} [options.voice='tk-technews-wiki'] - Voice profile name used to shape LLM-generated text.
+ * @param {Array|null} [options.evaluators=null] - Optional evaluators passed into the generation/evaluation loop.
+ * @param {string} [options.evalMode='live'] - Evaluation mode for the generation loop.
+ * @param {number} [options.maxEvalIterations=3] - Maximum evaluation iterations for LLM generation.
+ * @param {number} [options.minEvalScore=0.86] - Minimum evaluation score required for the generation loop to accept output.
+ * @param {string} [options.linkCheck='syntax'] - Link-check level used during generation/evaluation.
+ * @returns {Object} The persisted wiki object with cache metadata, evaluation fields (when applicable), and the locations written to disk.
+ */
 export async function generateWikiFromKnowledgeGraph({
   root = process.cwd(),
   now = new Date().toISOString(),
@@ -219,61 +244,166 @@ export async function generateWikiFromKnowledgeGraph({
   fetchImpl = fetch,
   maxCommunities = 24,
   maxGeneratedTopics = 8,
-  useInference = process.env.TK_TECHNEWS_WIKI_USE_LLM === 'true'
+  useInference = process.env.TK_TECHNEWS_WIKI_USE_LLM === 'true',
+  voice = 'tk-technews-wiki',
+  evaluators = null,
+  evalMode = 'live',
+  maxEvalIterations = 3,
+  minEvalScore = 0.86,
+  linkCheck = 'syntax'
 } = {}) {
   const graph = await readGraph(root);
   const graphHash = stableHash(stableStringify(graph), 32);
   const communities = buildGraphCommunities(graph, { maxCommunities: Math.max(maxCommunities, 24), seedTypes: ['Topic'] });
   const packets = await enrichTopicResearchPackets(buildTopicResearchPackets(communities), { fetchImpl });
   const baseWiki = buildTopicWikiFromResearchPackets({ generatedAt: now, graphHash, packets, mode: useInference ? 'stub' : 'generated' });
+  const voiceProfile = await readVoiceProfile(root, voice);
 
   const wiki = packets.length === 0
     ? emptyWiki({ generatedAt: now, graphHash })
     : useInference
-      ? await generateWikiWithInference({ packets: packets.slice(0, maxGeneratedTopics), graphHash, inference, now, baseWiki })
-      : { ...baseWiki, provider: 'deterministic-topic-writer', model: null };
+      ? await generateWikiWithInference({
+        packets: packets.slice(0, maxGeneratedTopics),
+        graphHash,
+        inference,
+        now,
+        baseWiki,
+        voiceProfile,
+        evaluators,
+        evalMode,
+        maxEvalIterations,
+        minEvalScore,
+        linkCheck,
+        fetchImpl
+      })
+      : {
+        ...baseWiki,
+        provider: 'deterministic-topic-writer',
+        model: null,
+        evalStatus: 'passed',
+        evalScore: 1,
+        evalAttempts: 0,
+        evalReport: {
+          score: 1,
+          verdict: 'pass',
+          assertions: [{ name: 'deterministic-topic-writer', text: 'Deterministic wiki writer used no live narrator refinement.', passed: true, score: 1 }],
+          feedback: [],
+          requiredFixes: [],
+          skipped: true
+        }
+      };
 
   const persisted = addCacheMetadata(wiki, { graphHash, provider: wiki.provider, model: wiki.model });
   await persistWiki(root, persisted);
   return persisted;
 }
 
-async function generateWikiWithInference({ packets, graphHash, inference, now, baseWiki }) {
+/**
+ * Generates a wiki using an iterative inference/evaluation loop, validates and grounds generated pages against source packets, and merges successful generations into base stub pages.
+ * @param {Object} params - Function options.
+ * @param {Array<Object>} params.packets - Research packets used as the authoritative evidence and allowed citations for generation.
+ * @param {string} params.graphHash - Stable hash of the source knowledge graph used as cache and provenance metadata.
+ * @param {Function} params.inference - Inference implementation invoked by the generation loop.
+ * @param {string} params.now - ISO timestamp used as the generation timestamp for outputs.
+ * @param {Object} params.baseWiki - Deterministic base wiki (stubs) that generated pages will be merged into.
+ * @param {Object} params.voiceProfile - Voice/profile metadata that constrains tone and stylistic output.
+ * @param {Array|Null} params.evaluators - Optional evaluators passed to the generation loop.
+ * @param {string} params.evalMode - Evaluation mode used by the generation loop (e.g., "live").
+ * @param {number} params.maxEvalIterations - Maximum evaluation iterations the loop will attempt.
+ * @param {number} params.minEvalScore - Minimum acceptable evaluation score for generated output.
+ * @param {string} params.linkCheck - Link-checking mode to apply during generation validation.
+ * @param {Function} params.fetchImpl - Fetch implementation used by the generation loop for any external requests.
+ * @returns {Object} The final wiki object augmented with generation metadata: `provider`, `model`, `evalReport`, `evalScore`, `evalAttempts`, and `evalStatus`. On failure, returns the provided `baseWiki` with an explicit best-effort `evalReport` and `evalStatus: "best_effort"`.
+ */
+async function generateWikiWithInference({
+  packets,
+  graphHash,
+  inference,
+  now,
+  baseWiki,
+  voiceProfile,
+  evaluators,
+  evalMode,
+  maxEvalIterations,
+  minEvalScore,
+  linkCheck,
+  fetchImpl
+}) {
   try {
-    const result = await inference({
+    const generationSchema = wikiSchema.extend({
+      generatedAt: z.string().min(1).optional().default(now),
+      graphHash: z.string().min(1).optional().default(graphHash)
+    });
+    const result = await runGeneratedOutputLoop({
       task: 'Generate reader-facing AI topic explainers from research packets.',
-      schema: wikiSchema,
+      outputKind: 'wiki',
+      schema: generationSchema,
       context: {
         generatedAt: now,
-        researchPackets: packets
+        researchPackets: packets,
+        allowedCitations: packets.flatMap((packet) => packet.citations ?? []),
+        relevanceText: packets.map((packet) => `${packet.topic} ${packet.evidence?.map((item) => item.excerpt).join(' ')}`).join(' ')
       },
-      prompt: topicExplainerPrompt({ generatedAt: now, packets })
+      voiceProfile,
+      prompt: topicExplainerPrompt({ generatedAt: now, packets, graphHash, voiceProfile }),
+      inference,
+      evaluators,
+      evalMode,
+      maxIterations: maxEvalIterations,
+      minScore: minEvalScore,
+      linkCheck,
+      fetchImpl,
+      normalizeOutput: (candidate) => {
+        const parsed = wikiSchema.parse({
+          ...candidate,
+          generatedAt: now,
+          graphHash
+        });
+        const grounded = enforceResearchGrounding(parsed, packets);
+        return mergeGeneratedPagesWithStubs(baseWiki, grounded);
+      }
     });
-    const parsed = wikiSchema.parse({
-      ...result.output,
-      generatedAt: now,
-      graphHash
-    });
-    const grounded = enforceResearchGrounding(parsed, packets);
-    const merged = mergeGeneratedPagesWithStubs(baseWiki, grounded);
     return {
-      ...merged,
+      ...result.output,
       provider: result.provider ?? null,
-      model: result.model ?? null
+      model: result.model ?? null,
+      evalReport: result.evalReport,
+      evalScore: result.evalScore,
+      evalAttempts: result.evalAttempts,
+      evalStatus: result.evalStatus
     };
   } catch {
     return {
       ...baseWiki,
       provider: null,
-      model: null
+      model: null,
+      evalStatus: 'best_effort',
+      evalScore: 0,
+      evalAttempts: 0,
+      evalReport: {
+        score: 0,
+        verdict: 'fail',
+        assertions: [{ name: 'wiki-inference-fallback', text: 'Wiki inference failed; persisted generated stubs.', passed: false, score: 0 }],
+        feedback: ['Wiki inference failed; persisted generated stubs.'],
+        requiredFixes: ['Review inference provider output and retry wiki generation.']
+      }
     };
   }
 }
 
-function topicExplainerPrompt({ generatedAt, packets }) {
+/**
+ * Builds the text prompt sent to the LLM for generating topic explainers from research packets.
+ * @param {Object} params - Prompt inputs.
+ * @param {string} params.generatedAt - ISO timestamp used in the prompt metadata.
+ * @param {Array<Object>} params.packets - Array of research packets that the generated wiki must be grounded to.
+ * @param {string} params.graphHash - Stable graph hash included in the generation metadata.
+ * @param {Object} params.voiceProfile - Voice profile object describing tone and stylistic constraints.
+ * @returns {string} The complete instruction prompt containing generation rules, required JSON schema, generation metadata, the voice profile, and serialized research packets.
+function topicExplainerPrompt({ generatedAt, packets, graphHash, voiceProfile }) {
   return [
     'Write concise, useful AI topic explainers from the supplied research packets.',
     'The audience is technical readers who want to understand what is happening, why it matters, and what to watch next.',
+    'Use the wiki narrator voice profile for neutral reference tone, concise level of detail, and source-grounded word choice.',
     'Use only the supplied source excerpts, evidence notes, and citations. Do not mention how the topics were selected.',
     'Do not use internal process language in reader-facing fields, including storage structures, source-selection mechanics, relationship maps, or identifier strings.',
     'Never include internal identifiers with colon prefixes.',
@@ -281,10 +411,13 @@ function topicExplainerPrompt({ generatedAt, packets }) {
     'Return JSON matching the schema only.',
     '',
     'Required JSON shape:',
-    '{"generatedAt":"ISO string","landing":{"title":"AI Topic Wiki","description":"string","overview":"string","featuredPageSlugs":["slug"]},"pages":[{"slug":"packet slug","title":"topic title","dek":"short reader-facing description","summary":"substantive overview","status":"generated","sections":[{"title":"section title","body":"prose","citationUrls":["source url"]}],"keyDevelopments":[{"text":"development","citationUrls":["source url"]}],"whyItMatters":"substantive explanation","openQuestions":[{"question":"question","context":"context","citationUrls":["source url"]}],"relatedTopics":[{"slug":"other packet slug","label":"other topic","reason":"reader-facing relationship"}],"citations":[{"title":"source title","url":"source url","source":"publisher"}]}]}',
+    '{"generatedAt":"ISO string","graphHash":"graph hash","landing":{"title":"AI Topic Wiki","description":"string","overview":"string","featuredPageSlugs":["slug"]},"pages":[{"slug":"packet slug","title":"topic title","dek":"short reader-facing description","summary":"substantive overview","status":"generated","sections":[{"title":"section title","body":"prose","citationUrls":["source url"]}],"keyDevelopments":[{"text":"development","citationUrls":["source url"]}],"whyItMatters":"substantive explanation","openQuestions":[{"question":"question","context":"context","citationUrls":["source url"]}],"relatedTopics":[{"slug":"other packet slug","label":"other topic","reason":"reader-facing relationship"}],"citations":[{"title":"source title","url":"source url","source":"publisher"}]}]}',
     '',
     'Generation metadata:',
-    JSON.stringify({ generatedAt }),
+    JSON.stringify({ generatedAt, graphHash }),
+    '',
+    'Voice profile:',
+    JSON.stringify(voiceProfile, null, 2),
     '',
     'Research packets:',
     JSON.stringify(packets, null, 2)
@@ -576,14 +709,26 @@ async function enrichSource(source, fetchImpl) {
   }
 }
 
+/**
+ * Produce a cleaned, reader-ready excerpt from raw text when enough content exists.
+ *
+ * @param {string} text - Raw text or HTML to summarize and clean for reader consumption.
+ * @returns {string} `''` if the cleaned input is empty or shorter than 120 characters; otherwise the cleaned excerpt trimmed to at most 800 characters.
+ */
 function summarizeExcerpt(text) {
   const normalized = cleanReaderText(text);
   if (!normalized || normalized.length < 120) return '';
   return trimText(normalized, 800);
 }
 
+/**
+ * Attach cache metadata to a wiki object using the provided graph hash.
+ * @param {object} wiki - The wiki object to augment; may include `provider`, `model`, and evaluation fields.
+ * @param {{graphHash: string}} options - Options containing the graph hash used to build the cache key.
+ * @returns {object} The wiki object merged with a `cache` property containing `version`, `key`, `graphHash`, `generatedBy` (`provider`, `model`) and evaluation metadata (`evalReport`, `evalScore`, `evalAttempts`, `evalStatus`).
+ */
 function addCacheMetadata(wiki, { graphHash }) {
-  const { provider, model, ...wikiBody } = wiki;
+  const { provider, model, evalReport, evalScore, evalAttempts, evalStatus, ...wikiBody } = wiki;
   return {
     ...wikiBody,
     cache: {
@@ -593,7 +738,11 @@ function addCacheMetadata(wiki, { graphHash }) {
       generatedBy: {
         provider: provider ?? null,
         model: model ?? null
-      }
+      },
+      evalReport: evalReport ?? null,
+      evalScore: evalScore ?? null,
+      evalAttempts: evalAttempts ?? null,
+      evalStatus: evalStatus ?? null
     }
   };
 }
@@ -608,6 +757,12 @@ async function persistWiki(root, wiki) {
   await fs.writeFile(publicPath, json);
 }
 
+/**
+ * Read the knowledge graph JSON-LD file from the project's data directory.
+ * @param {string} root - Filesystem path to the repository root (where `data/graph/kg.jsonld` is expected).
+ * @returns {Object} The parsed JSON-LD object; if the file is missing returns `{ "@context": {}, "@graph": [] }`.
+ * @throws {Error} Rethrows any filesystem or JSON parse error except when the file is not found (`ENOENT`).
+ */
 async function readGraph(root) {
   try {
     return JSON.parse(await fs.readFile(path.join(root, 'data', 'graph', 'kg.jsonld'), 'utf8'));
@@ -617,6 +772,65 @@ async function readGraph(root) {
   }
 }
 
+/**
+ * Load a voice profile JSON file from disk and return a fallback profile when the file is missing.
+ * @param {string} root - Project root directory containing the `data/voice` folder.
+ * @param {string} voice - Voice profile name (filename without `.json`).
+ * @returns {Object} The parsed voice profile object.
+ * @throws {Error} Rethrows any file system or JSON parsing errors except when the file is not found (`ENOENT`).
+ */
+async function readVoiceProfile(root, voice) {
+  try {
+    return JSON.parse(await fs.readFile(path.join(root, 'data', 'voice', `${voice}.json`), 'utf8'));
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw error;
+    return fallbackVoiceProfile(voice);
+  }
+}
+
+/**
+ * Produce a default voice profile for wiki generation when a named profile file is not found.
+ * @param {string} voice - The requested voice identifier.
+ * @returns {Object} A voice profile object containing guidance for tone, phrasing, and content rules; for `voice === 'tk-technews-wiki'` the profile is a concise, neutral reference-style specification, otherwise the profile is a general clear, cited technology-analysis specification.
+ */
+function fallbackVoiceProfile(voice) {
+  if (voice === 'tk-technews-wiki') {
+    return {
+      id: voice,
+      description: 'Neutral, compact, source-grounded wiki page narration.',
+      tone: 'reference',
+      detailLevel: 'concise',
+      wordChoice: {
+        prefer: ['definition', 'source', 'evidence', 'context', 'development'],
+        avoid: ['trial', 'verdict', 'phase transition', 'first-principles']
+      },
+      rules: ['Use neutral reference prose.', 'Keep sections concise and cited.'],
+      avoid: ['Uncited claims', 'Overly academic jargon', 'Long article-style narrative arcs']
+    };
+  }
+  return {
+    id: voice,
+    description: 'Clear, cited, practical technology analysis.',
+    rules: [
+      'Lead with the useful change, not hype.',
+      'Preserve citations for every sourced claim.',
+      'Separate observed facts from speculation.'
+    ],
+    avoid: [
+      'Uncited claims',
+      'Breathless superlatives',
+      'Treating speculation as fact'
+    ]
+  };
+}
+
+/**
+ * Produce an empty, schema-validated wiki object containing landing metadata and no pages.
+ * @param {Object} params
+ * @param {string} params.generatedAt - ISO timestamp to record when the wiki was generated.
+ * @param {string} params.graphHash - Stable hash of the source knowledge graph.
+ * @returns {Object} The validated wiki object with a landing block and an empty pages array.
+ */
 function emptyWiki({ generatedAt, graphHash }) {
   return wikiSchema.parse({
     generatedAt,

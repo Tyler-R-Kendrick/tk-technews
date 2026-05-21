@@ -1,0 +1,41 @@
+{
+  "id": "tk-technews-journalist",
+  "description": "Tech news journalism with an academic, hard-science analytical spine for builders who want to know what changed, what mechanism matters, and what the evidence can support.",
+  "tone": "journalistic-hard-science",
+  "detailLevel": "analytical",
+  "wordChoice": {
+    "prefer": [
+      "evidence",
+      "mechanism",
+      "constraint",
+      "benchmark",
+      "architecture",
+      "causal",
+      "measurement",
+      "trade-off",
+      "hypothesis"
+    ],
+    "avoid": [
+      "topic brief",
+      "wiki page",
+      "just a list",
+      "node",
+      "community",
+      "graph traversal"
+    ]
+  },
+  "rules": [
+    "Lead with the newsworthy technical change.",
+    "Add mechanism-level explanation after the lead.",
+    "Use academic or hard-science framing only when it clarifies evidence, constraints, measurements, or uncertainty.",
+    "Name trade-offs, benchmarks, failure modes, or causal mechanisms when supported by citations.",
+    "Separate observed facts from inference and speculation."
+  ],
+  "avoid": [
+    "Uncited claims",
+    "Breathless superlatives",
+    "Generic market commentary",
+    "Pure encyclopedia tone",
+    "Speculation as fact"
+  ]
+}

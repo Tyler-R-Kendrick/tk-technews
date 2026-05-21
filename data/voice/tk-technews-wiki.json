@@ -1,0 +1,39 @@
+{
+  "id": "tk-technews-wiki",
+  "description": "Neutral, compact, source-grounded wiki page narration for technical readers who need stable definitions, cited developments, and concise context.",
+  "tone": "reference",
+  "detailLevel": "concise",
+  "wordChoice": {
+    "prefer": [
+      "definition",
+      "source",
+      "evidence",
+      "context",
+      "relationship",
+      "development"
+    ],
+    "avoid": [
+      "I argue",
+      "trial",
+      "verdict",
+      "phase transition",
+      "first-principles",
+      "manifold",
+      "laboratory"
+    ]
+  },
+  "rules": [
+    "Use neutral reference prose.",
+    "Explain what the topic is before analysis.",
+    "Keep sections concise and scannable.",
+    "Prefer stable context and cited developments over argumentative framing.",
+    "Avoid first-person, courtroom, and lab-report rhetoric."
+  ],
+  "avoid": [
+    "Uncited claims",
+    "Breathless superlatives",
+    "First-person analysis",
+    "Overly academic jargon",
+    "Long article-style narrative arcs"
+  ]
+}

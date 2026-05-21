@@ -21,6 +21,7 @@ import {
   loadKnowledgeGraph
 } from './temporal-knowledge-graph.mjs';
 import { generateStructuredObject } from './inference.mjs';
+import { runGeneratedOutputLoop } from './generation-loop.mjs';
 
 export const SOURCE_STATES = new Set([
   'discovered',
@@ -298,22 +299,79 @@ export async function aggregateEnrichedDocsForDate({
   return aggregate;
 }
 
+/**
+ * Generate a published article from an existing aggregated brief and persist it to the ledger and filesystem.
+ *
+ * Uses the aggregate brief to produce a journalistic article in the requested voice, runs evaluation and link checks,
+ * normalizes citations and the "Applied Opportunities" section, writes the article markdown to src/content/articles,
+ * and appends an Article record to the ledger with evaluation metadata.
+ *
+ * @param {Object} options - Options object.
+ * @param {string} [options.root=process.cwd()] - Repository root used for ledger and file paths.
+ * @param {string} options.aggregateId - ID of the aggregate brief to generate an article from.
+ * @param {string} [options.voice='tk-technews-journalist'] - Voice profile name to use for generation.
+ * @param {Function} [options.inference=generateStructuredObject] - Inference function used by the generation loop.
+ * @param {string} [options.now=new Date().toISOString()] - ISO timestamp used as the operation time/observedAt.
+ * @param {Array|null} [options.evaluators=null] - Optional list of evaluator configurations for the generation loop.
+ * @param {string} [options.evalMode='live'] - Evaluation mode passed to the generation loop.
+ * @param {number} [options.maxEvalIterations=3] - Maximum evaluation iterations the generation loop may perform.
+ * @param {number} [options.minEvalScore=0.86] - Minimum evaluation score required to accept output.
+ * @param {('syntax'|'none'|'strict')} [options.linkCheck='syntax'] - Link checking level applied during generation.
+ * @param {Function} [options.fetchImpl=fetch] - Fetch implementation used by any network checks.
+ * @returns {Object} The persisted Article ledger record, including evaluation metadata, citation list, paths, and timestamps.
+ * @throws {StagePreconditionError} If the aggregate brief is missing or not in the 'aggregated' state.
+ */
 export async function generateArticleFromAggregate({
   root = process.cwd(),
   aggregateId,
-  voice = 'tk-technews',
+  voice = 'tk-technews-journalist',
   inference = generateStructuredObject,
-  now = new Date().toISOString()
+  now = new Date().toISOString(),
+  evaluators = null,
+  evalMode = 'live',
+  maxEvalIterations = 3,
+  minEvalScore = 0.86,
+  linkCheck = 'syntax',
+  fetchImpl = fetch
 }) {
   const aggregate = await latestRecordById(root, 'aggregate-briefs', aggregateId);
   requireState(aggregate, 'aggregated', `Cannot generate article; aggregate ${aggregateId} is missing or not aggregated.`);
   const voiceProfile = await readVoiceProfile(root, voice);
   const graph = await loadKnowledgeGraph(root);
-  const result = await inference({
+  const graphContext = findRelatedGraphContext(graph, { text: `${aggregate.title} ${aggregate.summary}`, observedAt: now });
+  const allowedCitations = citationsForAggregate(aggregate);
+  const result = await runGeneratedOutputLoop({
     task: 'article generation',
+    outputKind: 'article',
     schema: articleSchema,
-    prompt: articlePrompt(aggregate, voiceProfile, findRelatedGraphContext(graph, { text: `${aggregate.title} ${aggregate.summary}`, observedAt: now })),
-    context: { aggregate, voiceProfile }
+    prompt: articlePrompt(aggregate, voiceProfile, graphContext),
+    context: {
+      aggregate,
+      voiceProfile,
+      graphContext,
+      allowedCitations,
+      relevanceText: [
+        aggregate.title,
+        aggregate.summary,
+        ...(aggregate.themes ?? []).flatMap((theme) => [theme.title, theme.summary])
+      ].filter(Boolean).join(' ')
+    },
+    voiceProfile,
+    inference,
+    evaluators,
+    evalMode,
+    maxIterations: maxEvalIterations,
+    minScore: minEvalScore,
+    linkCheck,
+    fetchImpl,
+    normalizeOutput: (candidate) => {
+      const citations = dedupeCitations([...(candidate.citations ?? []), ...allowedCitations]);
+      return {
+        ...candidate,
+        citations,
+        markdownBody: ensureAppliedOpportunitiesSection(candidate.markdownBody, aggregate.appliedOpportunities ?? [], citations)
+      };
+    }
   });
 
   const output = result.output;
@@ -336,6 +394,8 @@ export async function generateArticleFromAggregate({
       enrichedDocIds: aggregate.enrichedDocIds ?? [],
       voice,
       model: result.model ?? result.provider,
+      evalStatus: result.evalStatus,
+      evalScore: result.evalScore,
       citations
     }),
     markdownBody.trim(),
@@ -352,6 +412,10 @@ export async function generateArticleFromAggregate({
     voice,
     provider: result.provider,
     model: result.model ?? null,
+    evalReport: result.evalReport,
+    evalScore: result.evalScore,
+    evalAttempts: result.evalAttempts,
+    evalStatus: result.evalStatus,
     title: output.title,
     description: output.description,
     slug,
@@ -690,10 +754,19 @@ function aggregatePrompt(date, selectedDocs, graph) {
   ].join('\n\n');
 }
 
+/**
+ * Build a single instruction prompt for generating a TK TechNews article from an aggregate brief.
+ *
+ * @param {Object} aggregate - The aggregate brief to be turned into an article (title, summary, themes, citations, applied opportunities).
+ * @param {Object} voiceProfile - The narrator voice profile (stylistic directives and metadata) to guide tone and phrasing.
+ * @param {Object} graphContext - Related knowledge-graph context used to provide background and factual anchors for the article.
+ * @returns {string} A complete prompt string including instructions and serialized context suitable for an LLM.
+ */
 function articlePrompt(aggregate, voiceProfile, graphContext) {
   return [
     'Write a TK TechNews article from this aggregate brief.',
-    'Use the voice profile. Preserve citations. Include a clearly headed "Applied Opportunities" section.',
+    'Use the article narrator voice profile. Preserve citations. Include a clearly headed "Applied Opportunities" section.',
+    'The article narrator should read like technology journalism with an academic, hard-science spin: lead with the news, then explain mechanisms, constraints, measurements, and uncertainty when supported.',
     'Speculation must be labeled and grounded in cited evidence.',
     JSON.stringify({ aggregate, voiceProfile, graphContext }, null, 2)
   ].join('\n\n');
@@ -777,11 +850,36 @@ function dedupeMarkdownListLines(block) {
     .join('\n');
 }
 
+/**
+ * Load and parse a voice profile JSON file from the repository data directory.
+ * @param {string} root - Path to the repository root containing the `data/voice` directory.
+ * @param {string} voice - Voice profile name (filename without the `.json` extension).
+ * @returns {Object} The parsed voice profile object.
+ */
 async function readVoiceProfile(root, voice) {
   const profilePath = path.join(root, 'data', 'voice', `${voice}.json`);
   return JSON.parse(await fs.readFile(profilePath, 'utf8'));
 }
 
+/**
+ * Collects and deduplicates all citations referenced by an aggregate brief.
+ * @param {Object} aggregate - Aggregate brief object that may contain `citations`, `themes`, and `appliedOpportunities`.
+ * @return {Array<Object>} An array of citation objects with duplicates removed (deduplication keyed by canonicalized URL).
+ */
+function citationsForAggregate(aggregate) {
+  return dedupeCitations([
+    ...(aggregate.citations ?? []),
+    ...(aggregate.themes ?? []).flatMap((theme) => theme.citations ?? []),
+    ...(aggregate.appliedOpportunities ?? []).flatMap((opportunity) => opportunity.citations ?? [])
+  ]);
+}
+
+/**
+ * Remove duplicate citations by canonicalized URL and omit citations without a canonical URL.
+ *
+ * @param {Array<Object>} citations - Array of citation objects that include a `url` property.
+ * @returns {Array<Object>} The input citations filtered to the first occurrence per canonical URL; entries with no canonical URL are excluded.
+ */
 function dedupeCitations(citations) {
   const seen = new Set();
   return citations.filter((citation) => {

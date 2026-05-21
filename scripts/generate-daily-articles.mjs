@@ -10,6 +10,8 @@ const args = parseArgs(process.argv.slice(2));
 const sourceIndex = readJson('src/data/precompiled/source-index.json');
 const date = args.date ?? sourceIndex.generatedAt.slice(0, 10);
 const maxStubs = Number(args.maxStubs ?? 18);
+const maxEvalIterations = parseIntegerFlag(args['max-eval-iterations'], '--max-eval-iterations', { defaultValue: 3, min: 1 });
+const minEvalScore = parseNumberFlag(args['min-eval-score'], '--min-eval-score', { defaultValue: 0.86, min: 0, max: 1 });
 
 const assets = {
   youtube: readJson('src/data/precompiled/youtube-latest.json'),
@@ -39,8 +41,8 @@ const dailyBrief = await buildDailyArticleStubsWithGenerationLoop({
   ledger,
   maxStubs,
   evalMode: args['eval-mode'] ?? 'live',
-  maxEvalIterations: Number(args['max-eval-iterations'] ?? 3),
-  minEvalScore: Number(args['min-eval-score'] ?? 0.86),
+  maxEvalIterations,
+  minEvalScore,
   linkCheck: args['link-check'] ?? 'syntax'
 });
 
@@ -79,6 +81,24 @@ function parseArgs(argv) {
     if (!key) continue;
     parsed[key] = argv[index + 1];
     index += 1;
+  }
+  return parsed;
+}
+
+function parseIntegerFlag(value, flagName, { defaultValue, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER } = {}) {
+  if (value === undefined) return defaultValue;
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < min || parsed > max) {
+    throw new Error(`${flagName} must be an integer between ${min} and ${max}; received "${value}".`);
+  }
+  return parsed;
+}
+
+function parseNumberFlag(value, flagName, { defaultValue, min = -Infinity, max = Infinity } = {}) {
+  if (value === undefined) return defaultValue;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < min || parsed > max) {
+    throw new Error(`${flagName} must be a number between ${min} and ${max}; received "${value}".`);
   }
   return parsed;
 }

@@ -31,7 +31,7 @@ export function extractSocialPostParts({ title = '', summary = '' } = {}) {
   const titleText = cleanText(title);
   const rawSummaryText = cleanText(summary || titleText);
   const summaryText = cleanTweetText(rawSummaryText);
-  const retweet = titleText.match(/^RT\s+([^:]+):\s*(.*)$/i) ?? summaryText.match(/^RT\s+([A-Za-z0-9_. -]{2,40})\s+(.+)$/i);
+  const retweet = titleText.match(/^RT\s+([^:]+):\s*(.*)$/i) ?? summaryText.match(/^RT\s+@?([A-Za-z0-9_.-]{2,40}):?\s+(.+)$/i);
   const originalAuthor = retweet ? cleanText(retweet[1]) : null;
   const withoutRetweet = retweet
     ? cleanTweetText(removeRetweetPrefix(rawSummaryText, originalAuthor))

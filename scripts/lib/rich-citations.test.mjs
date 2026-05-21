@@ -125,6 +125,17 @@ test('quote previews expose quoted link metadata separately from tweet text', ()
   assert.doesNotMatch(parts.text, /Read more here|https?:\/\//i);
 });
 
+test('summary retweet fallback captures only the author token', () => {
+  const parts = extractSocialPostParts({
+    title: '',
+    summary: 'RT elvis Very interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(parts.kind, 'retweet');
+  assert.equal(parts.originalAuthor, 'elvis');
+  assert.match(parts.text, /^Very interesting results/);
+});
+
 test('isTweetUrl returns false for x.com URLs without a /status/ path', () => {
   assert.equal(isTweetUrl('https://x.com/cloudflare'), false);
   assert.equal(isTweetUrl('https://x.com/'), false);

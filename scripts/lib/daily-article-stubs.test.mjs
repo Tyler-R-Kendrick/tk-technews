@@ -170,6 +170,39 @@ test('dedupes repeated daily source content before generating summaries and cita
   assert.equal((renderedText.match(/Remote control for GitHub Copilot CLI and VS Code sessions is now generally available/gi) ?? []).length, 1);
 });
 
+test('clusters related social and article URLs using canonical URL keys', () => {
+  const result = buildDailyArticleStubs({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'tweet-quote',
+          kind: 'twitterFeeds',
+          title: 'RT elvis: Can coding agents do research?',
+          summary: 'RT elvis Can coding agents do research? Read more: https://www.intology.ai/blog/nanogpt-bench?utm_source=x',
+          url: 'https://x.com/omarsar0/status/2057067617156800573?utm_campaign=social',
+          sourceName: '@omarsar0',
+          publishedAt: '2026-05-20T12:00:00.000Z',
+          tags: ['ai', 'agents', 'research']
+        },
+        {
+          id: 'article',
+          title: 'Can coding agents do research?',
+          summary: 'NanoGPT-Bench measures whether coding agents can recover AI research progress.',
+          url: 'https://www.intology.ai/blog/nanogpt-bench',
+          sourceName: 'Intology',
+          publishedAt: '2026-05-20T12:05:00.000Z',
+          tags: ['ai', 'agents', 'research']
+        }
+      ]
+    }
+  });
+
+  assert.equal(result.articleStubs.length, 1);
+  assert.equal(result.articleStubs[0].sources.length, 2);
+});
+
 test('daily article body is exclusively generated bodySections', () => {
   const routeSource = readFileSync(new URL('../../src/pages/daily/[date]/[slug].astro', import.meta.url), 'utf8');
 
@@ -182,8 +215,8 @@ test('daily article route renders generated inline markdown citations as html', 
   const routeSource = readFileSync(new URL('../../src/pages/daily/[date]/[slug].astro', import.meta.url), 'utf8');
 
   assert.match(routeSource, /renderInlineMarkdown/);
-  assert.match(routeSource, /set:html=\{renderInlineMarkdown\(paragraph\)\}/);
-  assert.match(routeSource, /set:html=\{renderInlineMarkdown\(takeaway\)\}/);
+  assert.match(routeSource, /set:html\s*=\s*\{\s*renderInlineMarkdown\(\s*paragraph\s*\)\s*\}/);
+  assert.match(routeSource, /set:html\s*=\s*\{\s*renderInlineMarkdown\(\s*takeaway\s*\)\s*\}/);
 });
 
 test('daily article citation rail renders rich quote and retweet metadata', () => {

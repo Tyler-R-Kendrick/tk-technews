@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { slugify, summarizeText } from './text-utils.mjs';
-import { citationPreview, dedupeCitationLikeItems, isTweetUrl } from './rich-citations.mjs';
+import { canonicalUrlKey, citationPreview, dedupeCitationLikeItems, isTweetUrl } from './rich-citations.mjs';
 import { runGeneratedOutputLoop } from './generation-loop.mjs';
 import { evaluateNarratorOutput } from './narrator-voice-evals.mjs';
 
@@ -165,8 +165,12 @@ function clusterItems(items) {
 }
 
 function shouldMerge(cluster, item) {
-  const clusterUrls = new Set(cluster.items.flatMap((source) => [source.url, ...(source.relatedUrls ?? [])]).filter(Boolean));
-  if ((item.relatedUrls ?? []).some((url) => clusterUrls.has(url)) || clusterUrls.has(item.url)) return true;
+  const clusterUrls = new Set(cluster.items
+    .flatMap((source) => [source.url, ...(source.relatedUrls ?? [])])
+    .map(canonicalUrlKey)
+    .filter(Boolean));
+  const itemUrls = [item.url, ...(item.relatedUrls ?? [])].map(canonicalUrlKey).filter(Boolean);
+  if (itemUrls.some((url) => clusterUrls.has(url))) return true;
   const sharedEntities = intersectionCount(cluster.entities, item.entities);
   const sharedKeywords = intersectionCount(cluster.keywords, item.keywords);
   if (sharedEntities > 0 && sharedKeywords > 0) return true;

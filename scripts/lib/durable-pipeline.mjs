@@ -732,6 +732,9 @@ function ensureAppliedOpportunitiesSection(markdownBody, opportunities, citation
   return `${markdownBody}\n\n## Applied Opportunities\n\n${lines.join('\n')}`;
 }
 
+/**
+ * Removes repeated generated Markdown blocks and duplicate list items without dropping headings.
+ */
 export function dedupeMarkdownBody(markdownBody) {
   const seen = new Set();
   return String(markdownBody ?? '')

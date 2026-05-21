@@ -15,7 +15,6 @@
           "heading": "Agentic Coding Is The Central Move",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "Agentic Coding: RT elvisVery interesting results from this NanoGPT-Bench eval.There is so much talk about self-improving agents.But can coding agents do real AI R&D?@IntologyAI reports that Codex, Claude Code, and Autoresearch recover only 9.3% of human progress.Coding agents spend more of their compute on hyperparameter tuning.In fact, coding agents rarely attempt algorithmic research at all.Claude Code and Autoresearch both reason more about algorithmic research, but still dodge implementation.Read more : https://www.intology.ai/blog/nanogpt-benchIntology: Can coding agents do research?We release NanoGPT-Bench, an internal eval we’ve used to test agents on an AI R&D problem with months of human progressCodex, Claude Code, Autoresearch recover only 9.3% of human progress, mostly tuning hyperparams & ignoring algorithmic research",
             "Agentic Coding: The post Google Introduces Gemini 3.5 Flash at I/O 2026: A Faster and Cheaper Model for AI Agents and Coding appeared first on MarkTechPost .",
             "Grok Build 0.1 is now available on .Vercel AI Gateway This is a beta coding model trained for agentic coding, currently in early access, and powers the Grok Build CLI app."
           ],
@@ -1132,17 +1131,6 @@
       "status": "stub",
       "bodySections": [
         {
-          "heading": "Cloud Course Builds AI Agents Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Google Cloud course builds AI agents for media blockchain.news"
-          ],
-          "citations": [
-            "https://news.google.com/rss/articles/CBMijgFBVV95cUxOekJtc1JqLXF1WHcxb3RSc2Q0QjRvZEoyeVdILVVjcmhCck5pd19wcFZNTkZnSEJWY1V0Zk50S2htWEJzRXU2eXp0akgyQzgyVWhfWFU5dzFOVlpLR2RTaTNLNlExcENLNThDTUUyVHZuWHhOUHhrVlR3a0pyc3ByX0FRZVptZGdWSW0za2hB0gGTAUFVX3lxTE45NDQ2anpvc01lU0NwMDRzX3UwZVFMWXlFaTB2cWM2NEpoNUVOU0lLMmN6ME5WQVFLVXNQaFprWXVfWnpCWXpiY0lMWjFUdl9DakQtRGV3enRBdXU0d2FNUXVIb1NVdExFV1owbDZfS3pHajdGNzdKeXFMcENiYmZ5VmJUbkx5NDlXSmZ3dkItRldXOA?oc=5",
-            "https://news.google.com/rss/articles/CBMigwFBVV95cUxNRThEQ3YtQ0FQbWIwVFJ2MkVfUzRRd2tDcHNhdnF0eWJuTmZuakJxaHcxRXFHYnhIbk5vNUhMVFlVUkxjRjJDX0RVVHZoSGtGZjlIcG9MbTJBUmxqdnBDWjhzSV91eW93Vnl2VHUyYWhxWHEtNXFJY1BhSnNJbkpJVlFzZw?oc=5"
-          ]
-        },
-        {
           "heading": "Openai Cheap Could Derail Google Changes The Practical Tradeoff",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
@@ -1210,17 +1198,6 @@
       "dek": "‼️ HAPPENING TODAY‼️.NET + AI at Build 2026 — what’s coming next.Our .NET + AI experts preview the AI agents, copilots, cloud‑native updates, and tooling we expect at Build.Join us at 10AM PT ➡️ https://buff.ly/fIzcTSB",
       "status": "stub",
       "bodySections": [
-        {
-          "heading": "Experts Preview The AI Agents Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "‼️ HAPPENING TODAY‼️.NET + AI at Build 2026 — what’s coming next.Our .NET + AI experts preview the AI agents, copilots, cloud‑native updates, and tooling we expect at Build.Join us at 10AM PT ➡️ https://buff.ly/fIzcTSB"
-          ],
-          "citations": [
-            "https://x.com/dotnet/status/2057144421171220688",
-            "https://x.com/dotnet/status/2057054044867182792"
-          ]
-        },
         {
           "heading": "Net Community Standup Net Build Changes The Practical Tradeoff",
           "intent": "Explain the source-backed development and its technical consequence.",
@@ -1293,7 +1270,6 @@
           "heading": "Pops Pops Fyi Lets Anyone Is The Central Move",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "Pops Pops Fyi Lets Anyone: Pops (@pops_fyi) lets anyone create and play AI games.Describe your idea, and Pops turns it into a fun mini game to remix, share, and play with friends.",
             "Pops Pops Fyi Lets Anyone: Short-form software.Congrats on the launch, @alonzuman!https://www.ycombinator.com/launches/QPl-pops-create-and-play-ai-games-with-friends"
           ],
           "citations": [
@@ -1339,18 +1315,7 @@
       "title": "Supercharge your AI coding workflow with Chrome DevTools for agents",
       "dek": "Usable Text Was Extracted Source: No usable text was extracted from this source.",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Usable Text Was Extracted Source Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Usable Text Was Extracted Source: No usable text was extracted from this source."
-          ],
-          "citations": [
-            "https://www.youtube.com/watch?v=PC9YBeURWk0"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T17:51:30.000Z",
@@ -1390,16 +1355,6 @@
       "dek": "Qomplementai Automates Manual Data Entry: .@qomplementai automates manual data-entry work.",
       "status": "stub",
       "bodySections": [
-        {
-          "heading": "Qomplementai Automates Manual Data Entry Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Qomplementai Automates Manual Data Entry: .@qomplementai automates manual data-entry work."
-          ],
-          "citations": [
-            "https://x.com/ycombinator/status/2057144326489063935"
-          ]
-        },
         {
           "heading": "Agents That Process Invoices Pos Changes The Practical Tradeoff",
           "intent": "Explain the source-backed development and its technical consequence.",
@@ -1451,16 +1406,6 @@
       "status": "stub",
       "bodySections": [
         {
-          "heading": "Re Training Foundation Models Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Congrats to @blankbio_ on their $7.2M seed and strategic collab with PacBio!They're training foundation models on bulk RNA-seq data to help pharma teams design better clinical trials."
-          ],
-          "citations": [
-            "https://x.com/ycombinator/status/2057136770593313170"
-          ]
-        },
-        {
           "heading": "Good Drugs Fail When Effect Changes The Practical Tradeoff",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
@@ -1509,18 +1454,7 @@
       "title": "Exa: We raised $250M in Series C funding at a $2.2B valuation, led by a16z. Exa is a sear...",
       "dek": "RT ExaWe raised $250M in Series C funding at a $2.2B valuation, led by a16z.Exa is a search lab organizing the web's data for agents.",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "S Data For Agents Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "RT ExaWe raised $250M in Series C funding at a $2.2B valuation, led by a16z.Exa is a search lab organizing the web's data for agents."
-          ],
-          "citations": [
-            "https://x.com/ycombinator/status/2057148825090027782"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T16:11:22.000Z",
@@ -1559,18 +1493,7 @@
       "title": "Aman: Unsiloed is now #1 on olmOCR-Bench. Unsiloed Parser v3.1 hit an 88.0 strict pass ra...",
       "dek": "Aman Unsiloed Now Olmocr Bench: RT AmanUnsiloed is now #1 on olmOCR-Bench.Unsiloed Parser v3.1 hit an 88.0 strict pass rate, beating 18 other OCR services and document-AI platforms across 1,403 PDFs and 8,413 unit tests, scored with the unmodified Allen AI scorer.",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Aman Unsiloed Now Olmocr Bench Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Aman Unsiloed Now Olmocr Bench: RT AmanUnsiloed is now #1 on olmOCR-Bench.Unsiloed Parser v3.1 hit an 88.0 strict pass rate, beating 18 other OCR services and document-AI platforms across 1,403 PDFs and 8,413 unit tests, scored with the unmodified Allen AI scorer."
-          ],
-          "citations": [
-            "https://x.com/ycombinator/status/2057164728108216498"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T16:01:38.000Z",
@@ -1609,18 +1532,7 @@
       "title": "ai studio is the best way to go from prompt to prototype to production and coming soon, y...",
       "dek": "Studio Best Way Prompt Prototype: ai studio is the best way to go from prompt to prototype to productionand coming soon, you’ll be able to build from anywherehttp://ai.studio/mobile",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Studio Best Way Prompt Prototype Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Studio Best Way Prompt Prototype: ai studio is the best way to go from prompt to prototype to productionand coming soon, you’ll be able to build from anywherehttp://ai.studio/mobile"
-          ],
-          "citations": [
-            "https://x.com/GoogleAIStudio/status/2057122673558434205"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T15:33:59.000Z",
@@ -1659,18 +1571,7 @@
       "title": "Designing Better Data Models with an AI Coding Agent",
       "dek": "Usable Text Was Extracted Source: No usable text was extracted from this source.",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Usable Text Was Extracted Source Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Usable Text Was Extracted Source: No usable text was extracted from this source."
-          ],
-          "citations": [
-            "https://www.youtube.com/watch?v=F2RKDp65WUw"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T14:54:48.000Z",
@@ -1714,7 +1615,6 @@
           "heading": "LangChain Sydney Runkle Agents Push Beyond The Prompt Window",
           "intent": "Explain why the source matters for extended agent work.",
           "paragraphs": [
-            "LangChain Sydney Runkle Agents: RT Sydney Runkleas agents run for longer and with more context, there's a lot of tricky things you have to consider for deployment!super excited to dive into deploying Deep Agents for this Boston tech week meetup!LangChain: .@SydneyRunkle from the @LangChain_OSS team is hosting an in-person meet-up in Boston on 5/27 with Blitzy.",
             "LangChain Sydney Runkle Agents: In this meetup, Sydney and Dillon Jones from Blitzy will walk through what it takes to deploy long-running agents and the runtime capabilities that make it possible Save"
           ],
           "citations": [
@@ -1760,18 +1660,7 @@
       "title": "Agentic Coding with Azure Cosmos DB: From Idea to Working App",
       "dek": "Usable Text Was Extracted Source: No usable text was extracted from this source.",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Usable Text Was Extracted Source Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Usable Text Was Extracted Source: No usable text was extracted from this source."
-          ],
-          "citations": [
-            "https://www.youtube.com/watch?v=ST8lvhD9d_M"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T14:39:10.000Z",
@@ -1810,18 +1699,7 @@
       "title": "〰️ TODAY at 2pm PT 〰️ .NET Foundation streams LIVE... Introduction to AI for Developers J...",
       "dek": "Today 2pm Net Foundation Streams: 〰️ TODAY at 2pm PT 〰️ .NET Foundation streams LIVE...Introduction to AI for DevelopersJoin us ➡️ https://buff.ly/CHLJ5zh",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Today 2pm Net Foundation Streams Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Today 2pm Net Foundation Streams: 〰️ TODAY at 2pm PT 〰️ .NET Foundation streams LIVE...Introduction to AI for DevelopersJoin us ➡️ https://buff.ly/CHLJ5zh"
-          ],
-          "citations": [
-            "https://x.com/dotnet/status/2057101554386116654"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T14:10:04.000Z",
@@ -1865,7 +1743,6 @@
           "heading": "Recurrent Memory Pushes Beyond The Prompt Window",
           "intent": "Explain how the source describes memory being organized or persisted.",
           "paragraphs": [
-            "The core idea is delayed memory consolidation for long-running LLM agents. Instead of asking the model to extract and rewrite memory after every interaction, recurrent memory waits for a pattern to show up repeatedly before treating it as durable enough to store.",
             "That changes the agent design problem from \"save everything\" to \"notice what keeps mattering.\" The transcript connects this to agents that run for hours or days, where a short context window or a plain append-only memory file can lose the history needed for coherent follow-through."
           ],
           "citations": [
@@ -1949,7 +1826,6 @@
           "heading": "A Language Model Is The Central Move",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "NVIDIA researchers have released Nemotron-Labs-Diffusion, a language model family that unifies three decoding modes in one architecture.",
             "A Language Model: The model supports autoregressive (AR) decoding, diffusion-based parallel decoding, and self-speculation decoding."
           ],
           "citations": [
@@ -2000,7 +1876,6 @@
           "heading": "Real-Time Multimodal Translation Model Is The Central Move",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "Alibaba's Qwen team has released Qwen3.5-LiveTranslate-Flash, a real-time multimodal translation model that processes audio and video simultaneously.",
             "Real-Time Multimodal Translation Model: The model covers 60 input languages and produces speech output in 29 languages at 2.8 seconds of latency."
           ],
           "citations": [
@@ -2046,18 +1921,7 @@
       "title": "KV cache shouldn't disappear every time vLLM restarts. With @novita_labs, we're sharing P...",
       "dek": "Cache Shouldn Disappear Every Time: With @novita_labs, we're sharing PegaFlow — a production-grade external KV cache service that plugs into vLLM through the external KV connector interface.PegaFlow runs as a standalone Rust daemon owning the host KV pool, SSD cache, and RDMA resources.",
       "status": "stub",
-      "bodySections": [
-        {
-          "heading": "Cache Shouldn Disappear Every Time Is The Central Move",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "Cache Shouldn Disappear Every Time: With @novita_labs, we're sharing PegaFlow — a production-grade external KV cache service that plugs into vLLM through the external KV connector interface.PegaFlow runs as a standalone Rust daemon owning the host KV pool, SSD cache, and RDMA resources."
-          ],
-          "citations": [
-            "https://x.com/vllm_project/status/2056942945736245274"
-          ]
-        }
-      ],
+      "bodySections": [],
       "keyTakeaways": [],
       "sourceCount": 1,
       "latestPublishedAt": "2026-05-20T03:39:49.000Z",

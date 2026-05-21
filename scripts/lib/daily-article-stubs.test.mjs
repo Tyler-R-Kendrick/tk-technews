@@ -163,7 +163,7 @@ test('dedupes repeated daily source content before generating summaries and cita
   assert.equal(result.sourceItemCount, 2);
   assert.equal(page.sources.length, 2);
   assert.equal(page.sources.filter((source) => source.url.startsWith('https://x.com/github/status/2057000000000000000')).length, 1);
-  assert.ok((renderedText.match(/GitHub Copilot remote control is generally available/gi) ?? []).length <= 1);
+  assert.equal((renderedText.match(/Remote control for GitHub Copilot CLI and VS Code sessions is now generally available/gi) ?? []).length, 1);
 });
 
 test('daily article body is exclusively generated bodySections', () => {

@@ -149,11 +149,12 @@ function toArticleStub(cluster, date) {
   const combinedSummary = summarizeText(combinedSourceText, 5);
   const bodySections = buildDynamicBodySections({ title, summary: combinedSummary, items: sortedItems });
   const dek = buildDek({ combinedSummary, bodySections });
+  const dedupedBodySections = dedupeBodySectionsAgainstText(bodySections, [dek]);
   const keyTakeaways = buildKeyTakeaways({
     title,
-    bodySections,
+    bodySections: dedupedBodySections,
     summary: combinedSummary,
-    excludeText: [dek, ...bodySections.flatMap((section) => section.paragraphs ?? [])]
+    excludeText: [dek, ...dedupedBodySections.flatMap((section) => section.paragraphs ?? [])]
   });
 
   return {
@@ -163,7 +164,7 @@ function toArticleStub(cluster, date) {
     title,
     dek,
     status: 'stub',
-    bodySections,
+    bodySections: dedupedBodySections,
     keyTakeaways,
     sourceCount: sortedItems.length,
     latestPublishedAt: lead.publishedAt ?? null,
@@ -178,6 +179,20 @@ function toArticleStub(cluster, date) {
       preview: citationPreview(item)
     }))
   };
+}
+
+function dedupeBodySectionsAgainstText(bodySections, excludeText) {
+  const seenValues = excludeText.flatMap(sentenceSplit);
+  return bodySections
+    .map((section) => ({
+      ...section,
+      paragraphs: (section.paragraphs ?? []).filter((paragraph) => {
+        if (isNearDuplicate(paragraph, seenValues)) return false;
+        seenValues.push(paragraph);
+        return true;
+      })
+    }))
+    .filter((section) => section.paragraphs.length > 0);
 }
 
 function buildDynamicBodySections({ title, summary, items }) {

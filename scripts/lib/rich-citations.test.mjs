@@ -277,8 +277,8 @@ test('dedupeCitationLikeItems keeps items with short text that cannot form a con
 
 test('dedupeCitationLikeItems uses link and href as fallbacks for URL deduplication', () => {
   const deduped = dedupeCitationLikeItems([
-    { title: 'A', link: 'https://example.com/page', summary: 'This is item A with enough words to be a content key.' },
-    { title: 'A', href: 'https://example.com/page', summary: 'This is item A with enough words to be a content key.' }
+    { title: 'A1', link: 'https://example.com/page', summary: 'First item has distinct wording so content-key dedupe will not trigger.' },
+    { title: 'A2', href: 'https://example.com/page', summary: 'Second item also has different wording and should dedupe only by URL fallback.' }
   ]);
   assert.equal(deduped.length, 1);
 });

@@ -1,6 +1,9 @@
 const VIDEO_HOSTS = new Set(['youtube.com', 'www.youtube.com', 'youtu.be', 'm.youtube.com']);
 const TWEET_HOSTS = new Set(['x.com', 'www.x.com', 'twitter.com', 'www.twitter.com']);
 
+/**
+ * Builds normalized preview metadata for rendering a citation as a rich link card.
+ */
 export function citationPreview(citation) {
   const href = citation?.url ?? citation?.href ?? '';
   const title = cleanText(citation?.title) || href;
@@ -21,6 +24,9 @@ export function citationPreview(citation) {
   };
 }
 
+/**
+ * Removes duplicate source-like records using canonical URLs first, then stable source text.
+ */
 export function dedupeCitationLikeItems(items) {
   const seenUrls = new Set();
   const seenText = new Set();
@@ -38,11 +44,17 @@ export function dedupeCitationLikeItems(items) {
   return deduped;
 }
 
+/**
+ * Returns true only for X/Twitter status URLs that can be treated as quoted posts.
+ */
 export function isTweetUrl(value) {
   const parsed = parseUrl(value);
   return Boolean(parsed && TWEET_HOSTS.has(parsed.hostname.toLowerCase()) && /\/status\/\d+/i.test(parsed.pathname));
 }
 
+/**
+ * Returns true for direct video files and concrete YouTube video, Shorts, or embed URLs.
+ */
 export function isVideoUrl(value) {
   const parsed = parseUrl(value);
   if (!parsed) return false;
@@ -52,6 +64,9 @@ export function isVideoUrl(value) {
   return Boolean(youtubeId(value));
 }
 
+/**
+ * Produces a stable URL key for deduplicating citations across tracking params and URL aliases.
+ */
 export function canonicalUrlKey(value) {
   const parsed = parseUrl(value);
   if (!parsed) return cleanText(value).toLowerCase();

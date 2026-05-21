@@ -213,6 +213,30 @@ export function buildTopicWikiFromResearchPackets({ generatedAt, graphHash, pack
   });
 }
 
+/**
+ * Build a reader-facing wiki from a knowledge graph and persist the resulting JSON to disk.
+ *
+ * This function reads the knowledge graph at the given project root, derives topic communities,
+ * converts them into research packets, optionally enriches sources via web fetching, and produces
+ * either deterministic or LLM-refined wiki pages. The final wiki JSON is augmented with cache
+ * metadata and written to the repository `src/data/wiki/` and `public/wiki/`.
+ *
+ * @param {Object} [options] - Configuration options.
+ * @param {string} [options.root=process.cwd()] - Project root used to locate graph and voice files.
+ * @param {string} [options.now=new Date().toISOString()] - ISO timestamp used as the wiki generation time.
+ * @param {Function} [options.inference=generateStructuredObject] - Inference function used by the generation loop.
+ * @param {Function} [options.fetchImpl=fetch] - Fetch implementation used for optional web enrichment.
+ * @param {number} [options.maxCommunities=24] - Maximum number of communities to derive from the graph.
+ * @param {number} [options.maxGeneratedTopics=8] - Maximum number of topics to send to the inference loop when using LLM generation.
+ * @param {boolean} [options.useInference=process.env.TK_TECHNEWS_WIKI_USE_LLM === 'true'] - When true, run the LLM-backed generation path; otherwise use the deterministic writer.
+ * @param {string} [options.voice='tk-technews-wiki'] - Voice profile name used to shape LLM-generated text.
+ * @param {Array|null} [options.evaluators=null] - Optional evaluators passed into the generation/evaluation loop.
+ * @param {string} [options.evalMode='live'] - Evaluation mode for the generation loop.
+ * @param {number} [options.maxEvalIterations=3] - Maximum evaluation iterations for LLM generation.
+ * @param {number} [options.minEvalScore=0.86] - Minimum evaluation score required for the generation loop to accept output.
+ * @param {string} [options.linkCheck='syntax'] - Link-check level used during generation/evaluation.
+ * @returns {Object} The persisted wiki object with cache metadata, evaluation fields (when applicable), and the locations written to disk.
+ */
 export async function generateWikiFromKnowledgeGraph({
   root = process.cwd(),
   now = new Date().toISOString(),
@@ -274,6 +298,23 @@ export async function generateWikiFromKnowledgeGraph({
   return persisted;
 }
 
+/**
+ * Generates a wiki using an iterative inference/evaluation loop, validates and grounds generated pages against source packets, and merges successful generations into base stub pages.
+ * @param {Object} params - Function options.
+ * @param {Array<Object>} params.packets - Research packets used as the authoritative evidence and allowed citations for generation.
+ * @param {string} params.graphHash - Stable hash of the source knowledge graph used as cache and provenance metadata.
+ * @param {Function} params.inference - Inference implementation invoked by the generation loop.
+ * @param {string} params.now - ISO timestamp used as the generation timestamp for outputs.
+ * @param {Object} params.baseWiki - Deterministic base wiki (stubs) that generated pages will be merged into.
+ * @param {Object} params.voiceProfile - Voice/profile metadata that constrains tone and stylistic output.
+ * @param {Array|Null} params.evaluators - Optional evaluators passed to the generation loop.
+ * @param {string} params.evalMode - Evaluation mode used by the generation loop (e.g., "live").
+ * @param {number} params.maxEvalIterations - Maximum evaluation iterations the loop will attempt.
+ * @param {number} params.minEvalScore - Minimum acceptable evaluation score for generated output.
+ * @param {string} params.linkCheck - Link-checking mode to apply during generation validation.
+ * @param {Function} params.fetchImpl - Fetch implementation used by the generation loop for any external requests.
+ * @returns {Object} The final wiki object augmented with generation metadata: `provider`, `model`, `evalReport`, `evalScore`, `evalAttempts`, and `evalStatus`. On failure, returns the provided `baseWiki` with an explicit best-effort `evalReport` and `evalStatus: "best_effort"`.
+ */
 async function generateWikiWithInference({
   packets,
   graphHash,
@@ -350,6 +391,14 @@ async function generateWikiWithInference({
   }
 }
 
+/**
+ * Builds the text prompt sent to the LLM for generating topic explainers from research packets.
+ * @param {Object} params - Prompt inputs.
+ * @param {string} params.generatedAt - ISO timestamp used in the prompt metadata.
+ * @param {Array<Object>} params.packets - Array of research packets that the generated wiki must be grounded to.
+ * @param {string} params.graphHash - Stable graph hash included in the generation metadata.
+ * @param {Object} params.voiceProfile - Voice profile object describing tone and stylistic constraints.
+ * @returns {string} The complete instruction prompt containing generation rules, required JSON schema, generation metadata, the voice profile, and serialized research packets.
 function topicExplainerPrompt({ generatedAt, packets, graphHash, voiceProfile }) {
   return [
     'Write concise, useful AI topic explainers from the supplied research packets.',
@@ -660,12 +709,24 @@ async function enrichSource(source, fetchImpl) {
   }
 }
 
+/**
+ * Produce a cleaned, reader-ready excerpt from raw text when enough content exists.
+ *
+ * @param {string} text - Raw text or HTML to summarize and clean for reader consumption.
+ * @returns {string} `''` if the cleaned input is empty or shorter than 120 characters; otherwise the cleaned excerpt trimmed to at most 800 characters.
+ */
 function summarizeExcerpt(text) {
   const normalized = cleanReaderText(text);
   if (!normalized || normalized.length < 120) return '';
   return trimText(normalized, 800);
 }
 
+/**
+ * Attach cache metadata to a wiki object using the provided graph hash.
+ * @param {object} wiki - The wiki object to augment; may include `provider`, `model`, and evaluation fields.
+ * @param {{graphHash: string}} options - Options containing the graph hash used to build the cache key.
+ * @returns {object} The wiki object merged with a `cache` property containing `version`, `key`, `graphHash`, `generatedBy` (`provider`, `model`) and evaluation metadata (`evalReport`, `evalScore`, `evalAttempts`, `evalStatus`).
+ */
 function addCacheMetadata(wiki, { graphHash }) {
   const { provider, model, evalReport, evalScore, evalAttempts, evalStatus, ...wikiBody } = wiki;
   return {
@@ -696,6 +757,12 @@ async function persistWiki(root, wiki) {
   await fs.writeFile(publicPath, json);
 }
 
+/**
+ * Read the knowledge graph JSON-LD file from the project's data directory.
+ * @param {string} root - Filesystem path to the repository root (where `data/graph/kg.jsonld` is expected).
+ * @returns {Object} The parsed JSON-LD object; if the file is missing returns `{ "@context": {}, "@graph": [] }`.
+ * @throws {Error} Rethrows any filesystem or JSON parse error except when the file is not found (`ENOENT`).
+ */
 async function readGraph(root) {
   try {
     return JSON.parse(await fs.readFile(path.join(root, 'data', 'graph', 'kg.jsonld'), 'utf8'));
@@ -705,6 +772,13 @@ async function readGraph(root) {
   }
 }
 
+/**
+ * Load a voice profile JSON file from disk and return a fallback profile when the file is missing.
+ * @param {string} root - Project root directory containing the `data/voice` folder.
+ * @param {string} voice - Voice profile name (filename without `.json`).
+ * @returns {Object} The parsed voice profile object.
+ * @throws {Error} Rethrows any file system or JSON parsing errors except when the file is not found (`ENOENT`).
+ */
 async function readVoiceProfile(root, voice) {
   try {
     return JSON.parse(await fs.readFile(path.join(root, 'data', 'voice', `${voice}.json`), 'utf8'));
@@ -714,6 +788,11 @@ async function readVoiceProfile(root, voice) {
   }
 }
 
+/**
+ * Produce a default voice profile for wiki generation when a named profile file is not found.
+ * @param {string} voice - The requested voice identifier.
+ * @returns {Object} A voice profile object containing guidance for tone, phrasing, and content rules; for `voice === 'tk-technews-wiki'` the profile is a concise, neutral reference-style specification, otherwise the profile is a general clear, cited technology-analysis specification.
+ */
 function fallbackVoiceProfile(voice) {
   if (voice === 'tk-technews-wiki') {
     return {
@@ -745,6 +824,13 @@ function fallbackVoiceProfile(voice) {
   };
 }
 
+/**
+ * Produce an empty, schema-validated wiki object containing landing metadata and no pages.
+ * @param {Object} params
+ * @param {string} params.generatedAt - ISO timestamp to record when the wiki was generated.
+ * @param {string} params.graphHash - Stable hash of the source knowledge graph.
+ * @returns {Object} The validated wiki object with a landing block and an empty pages array.
+ */
 function emptyWiki({ generatedAt, graphHash }) {
   return wikiSchema.parse({
     generatedAt,

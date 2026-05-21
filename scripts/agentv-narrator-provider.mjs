@@ -40,6 +40,12 @@ const wikiVoiceProfile = {
   avoid: ['Uncited claims', 'Overly academic jargon', 'Long article-style narrative arcs']
 };
 
+/**
+ * Dispatches to and runs a deterministic narrator fixture identified by `fixtureId`.
+ * @param {string} fixtureId - The fixture identifier. Accepted values: `article-pass`, `article-refine`, `article-hard-science`, `wiki-pass`, `wiki-reference`.
+ * @returns {Object} An object containing `outputKind`, the generated `output`, the original `context` and `voiceProfile`, and evaluation fields: `evalReport`, `evalStatus`, `evalScore`, and `evalAttempts`.
+ * @throws {Error} If `fixtureId` is not one of the accepted fixture identifiers.
+ */
 export async function runNarratorFixture(fixtureId) {
   if (fixtureId === 'article-pass') return runArticleFixture({ refine: false });
   if (fixtureId === 'article-refine') return runArticleFixture({ refine: true });
@@ -49,6 +55,21 @@ export async function runNarratorFixture(fixtureId) {
   throw new Error(`Unknown narrator fixture: ${fixtureId}`);
 }
 
+/**
+ * Generate and evaluate a deterministic TK TechNews article fixture using the article schema.
+ *
+ * @param {Object} params - Function options.
+ * @param {boolean} params.refine - If `true`, allow up to two generation iterations to refine the output; if `false`, run a single iteration.
+ * @returns {Object} An object with the generated article and evaluation metadata:
+ *  - {string} outputKind - The kind of output (`'article'`).
+ *  - {Object} output - The generated article object validated against `articleSchema`.
+ *  - {Object} context - The context used for generation (includes `allowedCitations` and `relevanceText`).
+ *  - {Object} voiceProfile - The voice profile applied during generation (`articleVoiceProfile`).
+ *  - {any} evalReport - The detailed evaluation report returned by the generation loop.
+ *  - {string} evalStatus - The evaluation status.
+ *  - {number} evalScore - The evaluation score.
+ *  - {number} evalAttempts - The number of evaluation attempts performed.
+ */
 async function runArticleFixture({ refine }) {
   const context = {
     allowedCitations: [citation],
@@ -83,6 +104,19 @@ async function runArticleFixture({ refine }) {
   };
 }
 
+/**
+ * Generate a deterministic wiki fixture validated against the wiki schema and return it with evaluation metadata.
+ *
+ * @returns {Object} An object containing the generated wiki output and its evaluation details.
+ * @returns {string} returns.outputKind - The kind of output, `'wiki'`.
+ * @returns {Object} returns.output - The generated wiki fixture (schema-validated).
+ * @returns {Object} returns.context - The context used to generate the fixture (includes allowedCitations and relevanceText).
+ * @returns {Object} returns.voiceProfile - The voice profile applied to the generation (wikiVoiceProfile).
+ * @returns {Object} returns.evalReport - Detailed evaluation report produced by the generation loop.
+ * @returns {string} returns.evalStatus - Overall evaluation status (e.g., pass/fail).
+ * @returns {number} returns.evalScore - Numeric evaluation score.
+ * @returns {number} returns.evalAttempts - Number of generation/evaluation attempts performed.
+ */
 async function runWikiFixture() {
   const context = {
     allowedCitations: [citation],
@@ -121,6 +155,12 @@ async function runWikiFixture() {
   };
 }
 
+/**
+ * Produce a deterministic article fixture about agent workflows, optionally including a labelled speculative applied opportunity line.
+ * @param {{labelled: boolean}} options - Options controlling output content.
+ * @param {boolean} options.labelled - If true, include a labelled speculative applied opportunity line with confidence and risks; if false, include a shorter unlabelled applied-opportunity sentence.
+ * @returns {{title: string, description: string, slug: string, tags: string[], markdownBody: string, citations: object[]}} The article fixture object containing `title`, `description`, `slug`, `tags`, a `markdownBody` string, and a `citations` array.
+ */
 function articleOutput({ labelled }) {
   const opportunityLine = labelled
     ? '- Speculative applied opportunity: automate review intake for routine agent workflow changes. Confidence: 70%. Risks: needs human review for risky changes. [Agents source](https://example.com/agents)'
@@ -149,6 +189,14 @@ function articleOutput({ labelled }) {
   };
 }
 
+/**
+ * Constructs a deterministic wiki fixture object containing landing metadata, pages, and citations for an AI topic wiki.
+ * @returns {Object} An object representing a wiki fixture with the following top-level fields:
+ * - `generatedAt`: ISO 8601 timestamp string.
+ * - `graphHash`: string identifier for the fixture graph.
+ * - `landing`: metadata for the wiki (title, description, overview, featuredPageSlugs).
+ * - `pages`: array of page objects; each page includes `slug`, `title`, `dek`, `summary`, `status`, `sections` (with `title`, `body`, `citationUrls`), `keyDevelopments` (text + citationUrls), `whyItMatters`, `openQuestions` (with `question`, `context`, `citationUrls`), `relatedTopics`, `citations`, and `metadata` (e.g., `sourceDocIds`).
+ */
 function wikiOutput() {
   return {
     generatedAt: '2026-05-20T18:00:00.000Z',
@@ -187,6 +235,11 @@ function wikiOutput() {
   };
 }
 
+/**
+ * Run the narrator fixture generator using CLI-style arguments and write the serialized result to a file.
+ *
+ * Reads command-line flags parsed by `parseArgs` from `process.argv`. If `--output-file` is not provided the function exits without producing output. If `--prompt-file` is provided it is read as UTF-8 and used (together with `--eval-id`) to determine the fixture id; otherwise the fixture id is inferred from `--eval-id`. The selected fixture is executed via `runNarratorFixture`, and the resulting object is written to `--output-file` as JSON with the shape `{ "text": "<stringified result>" }`.
+ */
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (!args['output-file']) return;
@@ -198,6 +251,17 @@ async function main() {
   }, null, 2));
 }
 
+/**
+ * Determine which fixture ID to use by inspecting an optional prompt and an evaluation identifier.
+ *
+ * If `prompt` contains `fixture: <id>` (case-insensitive) that captured id is returned. Otherwise,
+ * returns `'article-refine'` when `evalId` matches `/article-refinement-loop/i`, `'wiki-pass'` when
+ * `evalId` matches `/wiki-page-grounding/i`, and `'article-pass'` by default.
+ *
+ * @param {string} prompt - Optional prompt text that may embed a `fixture: <id>` directive.
+ * @param {string} [evalId=''] - Optional evaluation identifier used to infer a fixture when the prompt lacks one.
+ * @returns {string} The resolved fixture id (`'article-refine'`, `'wiki-pass'`, `'article-pass'`, or a captured id from the prompt).
+ */
 function fixtureIdFromPrompt(prompt, evalId = '') {
   const match = String(prompt).match(/fixture:\s*([a-z0-9-]+)/i);
   if (match) return match[1];
@@ -206,6 +270,16 @@ function fixtureIdFromPrompt(prompt, evalId = '') {
   return 'article-pass';
 }
 
+/**
+ * Parse a simple CLI-style argument array into a key→value map.
+ *
+ * Only entries that start with `--` are treated as keys; the leading `--` is removed
+ * and the following array element is assigned as that key's value. Keys without a
+ * following element yield `undefined`.
+ *
+ * @param {string[]} argv - Array of command-line arguments (e.g., `process.argv.slice(2)`).
+ * @returns {Record<string, string|undefined>} An object mapping keys (without `--`) to their corresponding string value or `undefined` if no value was provided.
+ */
 function parseArgs(argv) {
   const parsed = {};
   for (let index = 0; index < argv.length; index += 1) {

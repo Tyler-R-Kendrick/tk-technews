@@ -94,6 +94,13 @@ const STOP_WORDS = new Set([
   'with'
 ]);
 
+/**
+ * Build a rubric of evaluation items tailored to a specific output kind and voice profile.
+ * @param {Object} [opts] - Options for rubric generation.
+ * @param {'article'|'wiki'} [opts.outputKind] - The kind of output to evaluate, used to parameterize item criteria.
+ * @param {Object} [opts.voiceProfile={}] - Voice profile that influences tone, word-choice, and criteria wording (may include `id`, `tone`, `description`, and `wordChoice` fields).
+ * @returns {Array<Object>} An array of rubric items. Each item has `id`, `label`, `weight`, `required`, and `criteria` describing the evaluation requirement.
+ */
 export function generateNarratorRubric({ outputKind, voiceProfile = {} } = {}) {
   return [
     {
@@ -176,6 +183,26 @@ export function generateNarratorRubric({ outputKind, voiceProfile = {} } = {}) {
   ];
 }
 
+/**
+ * Evaluate an output against the narrator rubric and compute a weighted score, verdict, and per-item assertions.
+ *
+ * @param {Object} params
+ * @param {'article'|'wiki'} params.outputKind - The kind of output being evaluated; selects rubric and some check behavior.
+ * @param {Object} params.output - The content object to evaluate (may contain markdownBody, citations, pages, title, etc.).
+ * @param {Object} [params.context={}] - Context used for grounding and relevance (e.g., allowedCitations, aggregate, researchPackets).
+ * @param {Object} [params.voiceProfile={}] - Voice/profile preferences that influence tone, word choice, and detail-level checks.
+ * @param {Array} [params.rubric] - Optional rubric array to use; defaults to generateNarratorRubric({ outputKind, voiceProfile }).
+ * @param {'off'|'syntax'|'live'} [params.linkCheck='syntax'] - Level of URL checking to perform.
+ * @param {number} [params.minScore=DEFAULT_MIN_SCORE] - Minimum weighted score threshold required for a passing verdict.
+ *
+ * @returns {Object} Evaluation result containing computed metrics and diagnostic assertions.
+ * @returns {number} returns.score - Weighted score in [0,1], rounded to 4 decimals.
+ * @returns {'pass'|'fail'} returns.verdict - `'pass'` if score >= minScore and no required assertions failed, otherwise `'fail'`.
+ * @returns {Array<Object>} returns.assertions - Per-rubric-item assertion objects (include name/text/passed/score plus label, required, weight).
+ * @returns {Array<string>} returns.feedback - Text messages for all failed assertions.
+ * @returns {Array<string>} returns.requiredFixes - Text messages for failed assertions marked as required.
+ * @returns {Array} returns.rubric - The rubric used for this evaluation.
+ */
 export async function evaluateNarratorOutput({
   outputKind,
   output,
@@ -232,6 +259,13 @@ export async function evaluateNarratorOutput({
   };
 }
 
+/**
+ * Validate that the output includes citations and that those citations cover body links (for articles) or page sections/key developments (for wikis).
+ * @param {{outputKind: string, output: object}} params - Evaluation inputs.
+ * @param {'article'|'wiki'|string} params.outputKind - The kind of output to validate; affects structural checks.
+ * @param {object} params.output - The output payload containing `citations`, `markdownBody`, and/or `pages`.
+ * @returns {{name: string, text: string, passed: boolean, score: number}} An assertion object indicating pass or fail with an explanatory message.
+ */
 function evaluateCitationCoverage({ outputKind, output }) {
   const citations = collectOutputCitations(output);
   const citationUrls = new Set(citations.map((citation) => citation.url).filter(Boolean));
@@ -273,6 +307,11 @@ function evaluateCitationCoverage({ outputKind, output }) {
   return passAssertion('citation-coverage', 'Citation coverage passed.');
 }
 
+/**
+ * Checks that every collected citation includes a non-empty title, url, and source.
+ * @param {{}} output - The content object whose citations will be inspected.
+ * @returns {{name: string, text: string, passed: boolean, score: number}} An assertion object: `passed: true` when all citations have `title`, `url`, and `source`, otherwise `passed: false` with a failure message.
+ */
 function evaluateCitationRichness({ output }) {
   const weak = collectOutputCitations(output).find((citation) => {
     return !citation?.title?.trim() || !citation?.url?.trim() || !citation?.source?.trim();
@@ -283,6 +322,13 @@ function evaluateCitationRichness({ output }) {
   return passAssertion('citation-richness', 'Citation richness passed.');
 }
 
+/**
+ * Validates and (optionally) live-checks all URLs extracted from an output.
+ * @param {Object} params
+ * @param {Object} params.output - Output object to extract URLs from (citations, markdown links, wiki pages).
+ * @param {'off'|'syntax'|'live'} params.linkCheck - Level of checking: `'off'` skips checks, `'syntax'` validates URL syntax only, `'live'` performs HTTP probes.
+ * @param {Function} [params.fetchImpl] - Fetch implementation used for live HTTP requests; required when `linkCheck` is `'live'`.
+ * @returns {Object} Assertion object with `name`, `text`, `passed`, and `score`. On failure, `text` identifies the first invalid or unreachable URL or missing `fetchImpl`.
 async function evaluateLinkHealth({ output, linkCheck, fetchImpl }) {
   if (linkCheck === 'off') return passAssertion('link-health', 'Link checks are disabled.');
   const urls = collectOutputUrls(output);
@@ -300,6 +346,18 @@ async function evaluateLinkHealth({ output, linkCheck, fetchImpl }) {
   return passAssertion('link-health', 'Live link checks passed.');
 }
 
+/**
+ * Validates that all HTTP(S) URLs in the output are within the allowed citation set.
+ *
+ * Checks collected output URLs against the allowed URLs derived from `context`.
+ * If no allowed URLs are provided, the check passes. If any HTTP(S) URL from the
+ * output is not present in the allowed set, the function returns a failing assertion
+ * identifying the first offending URL.
+ *
+ * @param {object} params.output - The output object to inspect (may contain citations, markdownBody, pages, etc.).
+ * @param {object} params.context - Context used to build the allowed URL set (e.g., allowedCitations, aggregate, researchPackets).
+ * @returns {object} An assertion object: `passed: false` if an output HTTP(S) URL is outside the allowed set (includes the offending URL in the message), otherwise `passed: true`.
+ */
 function evaluateGrounding({ output, context }) {
   const allowed = collectAllowedUrls(context);
   if (allowed.size === 0) return passAssertion('grounding', 'No explicit grounding source set was supplied.');
@@ -310,6 +368,18 @@ function evaluateGrounding({ output, context }) {
   return passAssertion('grounding', 'Grounding passed.');
 }
 
+/**
+ * Evaluates whether the output stays topically relevant to the supplied context.
+ *
+ * Determines an expected relevance target from `context.relevanceText`, `context.aggregate.title` or `summary`, or from `context.researchPackets` (concatenated packet `topic` and evidence `excerpt` values). Extracts keyword sets from that target and from the reader-facing text of `output`, and compares overlap against a small dynamic threshold to decide relevance.
+ * @param {Object} params
+ * @param {Object} params.output - The generated output object to evaluate (may contain `markdownBody`, `title`, `description`, or `pages`).
+ * @param {Object} params.context - Context used to derive the relevance target.
+ * @param {string} [params.context.relevanceText] - Explicit text to use as the relevance target.
+ * @param {Object} [params.context.aggregate] - Aggregate metadata; `title` or `summary` may be used as fallback relevance text.
+ * @param {Array<Object>} [params.context.researchPackets] - Array of research packets; each packet's `topic` and `evidence[].excerpt` are concatenated if no other target is available.
+ * @returns {Object} An assertion object describing the relevance check result: `{ name, text, passed, score }` where `passed` is `true` if the overlap meets the required threshold and `false` otherwise.
+ */
 function evaluateRelevance({ output, context }) {
   const expectedText = context.relevanceText
     ?? context.aggregate?.title
@@ -328,6 +398,19 @@ function evaluateRelevance({ output, context }) {
   return passAssertion('relevance', 'Relevance passed.');
 }
 
+/**
+ * Evaluates whether reader-facing text applies appropriate speculation boundaries.
+ *
+ * Checks reader-facing content for speculative keywords; if none are present, it passes.
+ * For `article` outputs, enforces that sections titled "Applied Opportunities" are labeled
+ * as "Speculative applied opportunity". Fails if speculative claims are stated as guaranteed
+ * fact (e.g., "will definitely", "guaranteed to", "speculation as fact").
+ *
+ * @param {Object} params
+ * @param {'article'|'wiki'|string} params.outputKind - The kind of output being evaluated; affects labeling rules.
+ * @param {Object} params.output - The output object whose reader-facing text will be examined.
+ * @returns {Object} An assertion object with `name`, `text`, `passed`, and `score` describing the result.
+ */
 function evaluateSpeculationBoundary({ outputKind, output }) {
   const text = collectReaderFacingText(output);
   if (!/\b(applied opportunities?|speculative|could|might|may|opportunity)\b/i.test(text)) {
@@ -342,6 +425,13 @@ function evaluateSpeculationBoundary({ outputKind, output }) {
   return passAssertion('speculation-boundary', 'Speculation boundary passed.');
 }
 
+/**
+ * Validates that reader-facing text does not contain internal process or implementation language.
+ *
+ * @param {Object} params
+ * @param {*} params.output - The output object to inspect (e.g., article/wiki shape).
+ * @returns {Object} An assertion object named `reader-facing-language`: `passed: false` with a message identifying the matching internal-language pattern if a violation is found; otherwise `passed: true` with a passing message.
+ */
 function evaluateReaderFacingLanguage({ output }) {
   const text = collectReaderFacingText(output);
   for (const pattern of INTERNAL_LANGUAGE_PATTERNS) {
@@ -352,6 +442,19 @@ function evaluateReaderFacingLanguage({ output }) {
   return passAssertion('reader-facing-language', 'Reader-facing language passed.');
 }
 
+/**
+ * Validate that the output's tone matches the expected voice profile and output kind.
+ *
+ * For wiki voices or wiki outputs, fails if article-style hard-science rhetoric is detected.
+ * For hard-science journalist voices or article outputs, fails if wiki-like phrasing is present
+ * or if the text does not contain at least two distinct preferred hard-science terms.
+ *
+ * @param {Object} params
+ * @param {string} params.outputKind - The kind of output (e.g., "article" or "wiki").
+ * @param {Object} params.output - The output object whose reader-facing text will be evaluated.
+ * @param {Object} params.voiceProfile - Voice profile that adjusts tone expectations (may include id, tone, and word-choice preferences).
+ * @returns {Object} An assertion object describing the result: `{ name, text, passed, score }`.
+ */
 function evaluateToneMatch({ outputKind, output, voiceProfile }) {
   const text = collectReaderFacingText(output);
   if (isWikiVoice(voiceProfile) || outputKind === 'wiki') {
@@ -376,6 +479,18 @@ function evaluateToneMatch({ outputKind, output, voiceProfile }) {
   return passAssertion('tone-match', 'Tone match passed.');
 }
 
+/**
+ * Evaluates whether reader-facing text uses allowed and appropriate word choice for the given voice and output kind.
+ *
+ * Checks for presence of any avoided words from the voice profile and enforces required preferred-term counts:
+ * - For article/hard-science voices, requires at least two distinct hard-science/analysis terms.
+ * - For wiki/reference voices, requires at least one neutral reference term.
+ *
+ * @param {Object} params
+ * @param {'article'|'wiki'|string} params.outputKind - The kind of output being evaluated (e.g., "article" or "wiki").
+ * @param {Object} params.output - The output object whose reader-facing text will be evaluated.
+ * @param {Object} params.voiceProfile - Voice/profile configuration; may include `wordChoice.avoid` and `wordChoice.prefer` lists and top-level `avoid`.
+ * @returns {Object} An assertion object ({ name, text, passed, score }) describing pass/fail and explanatory text.
 function evaluateWordChoice({ outputKind, output, voiceProfile }) {
   const text = collectReaderFacingText(output);
   const avoidTerms = [
@@ -404,6 +519,17 @@ function evaluateWordChoice({ outputKind, output, voiceProfile }) {
   return passAssertion('word-choice', 'Word choice passed.');
 }
 
+/**
+ * Validates that the content's level of detail matches the requested voice or output kind.
+ *
+ * When the voice or output requires "analytical" detail (explicit `voiceProfile.detailLevel === "analytical"` or an article in a hard-science journalist voice), ensures the main reader-facing body has at least 90 words and at least two level-2 sections. When the voice or output requires "concise" detail (explicit `voiceProfile.detailLevel === "concise"` or a wiki voice/output), ensures each wiki page summary is no more than 45 words and no page section body exceeds 30 words. Returns a failing assertion with a human-readable failure message on the first violation, otherwise returns a passing assertion.
+ *
+ * @param {Object} params
+ * @param {'article'|'wiki'|string} params.outputKind - The kind of output being evaluated.
+ * @param {Object} params.output - The content object to evaluate (may contain markdownBody, title, pages, etc.).
+ * @param {Object} params.voiceProfile - Voice/profile metadata (may include `detailLevel` and tone identifiers).
+ * @returns {Object} An assertion object indicating pass or fail and containing a descriptive message.
+ */
 function evaluateDetailLevel({ outputKind, output, voiceProfile }) {
   const detailLevel = String(voiceProfile.detailLevel ?? '').toLowerCase();
   if (detailLevel === 'analytical' || (outputKind === 'article' && isHardScienceJournalistVoice(voiceProfile))) {
@@ -430,6 +556,11 @@ function evaluateDetailLevel({ outputKind, output, voiceProfile }) {
   return passAssertion('detail-level', 'Level of detail passed.');
 }
 
+/**
+ * Checks reader-facing text for hype phrases to enforce voice adherence.
+ * @param {Object} output - The output object whose reader-facing text will be scanned for disallowed hype patterns.
+ * @returns {Object} An assertion object: if a hype pattern is found, an object with `passed: false`, feedback text indicating the offending pattern, and `required: false`; otherwise an object with `passed: true` and a positive message.
+ */
 function evaluateVoiceAdherence({ output }) {
   const text = collectReaderFacingText(output);
   for (const pattern of HYPE_PATTERNS) {
@@ -440,32 +571,76 @@ function evaluateVoiceAdherence({ output }) {
   return passAssertion('voice-adherence', 'Voice adherence passed.');
 }
 
+/**
+ * Determines whether a voice profile should be treated as a hard-science journalist voice.
+ * @param {object} voiceProfile - Profile object; `id`, `tone`, and `description` (if present) are inspected for keywords.
+ * @returns {boolean} `true` if any of `id`, `tone`, or `description` contains "journalist", "hard-science", or "hard science" (case-insensitive), `false` otherwise.
+ */
 function isHardScienceJournalistVoice(voiceProfile = {}) {
   return /journalist|hard-science|hard science/i.test(`${voiceProfile.id ?? ''} ${voiceProfile.tone ?? ''} ${voiceProfile.description ?? ''}`);
 }
 
+/**
+ * Detects whether a voice profile should be treated as a wiki or reference voice.
+ * @param {Object} [voiceProfile={}] - Voice profile object; may include `id`, `tone`, and `description` fields.
+ * @returns {boolean} `true` if `voiceProfile.id`, `voiceProfile.tone`, or `voiceProfile.description` contains "wiki" or "reference" (case-insensitive), `false` otherwise.
+ */
 function isWikiVoice(voiceProfile = {}) {
   return /wiki|reference/i.test(`${voiceProfile.id ?? ''} ${voiceProfile.tone ?? ''} ${voiceProfile.description ?? ''}`);
 }
 
+/**
+ * Build a deduplicated list of preferred vocabulary for a voice profile, falling back to provided terms.
+ *
+ * @param {object} [voiceProfile={}] - Voice profile object which may include `wordChoice.prefer` as an array of preferred terms.
+ * @param {string[]} [fallback=[]] - Additional terms to include if the voice profile does not specify preferences.
+ * @returns {string[]} An array of unique preferred terms (lower/upper casing preserved) combining the voice profile's preferences and the fallback list.
+ */
 function preferredTermsForVoice(voiceProfile = {}, fallback = []) {
   return [...new Set([...(voiceProfile.wordChoice?.prefer ?? []), ...fallback].filter(Boolean))];
 }
 
+/**
+ * Find unique terms from a list that appear in the given text, returned in lowercase.
+ * @param {string} text - Text to search for term matches.
+ * @param {Array<string>} terms - Candidate terms to test for presence in the text.
+ * @returns {Array<string>} An array of matched terms (deduplicated), each converted to lowercase.
+ */
 function distinctTermHits(text, terms) {
   return [...new Set(terms.filter((term) => containsTerm(text, term)).map((term) => String(term).toLowerCase()))];
 }
 
+/**
+ * Checks whether a text contains a given term as a whole-word match, with flexible spacing/hyphen handling.
+ *
+ * The `term` is treated as a literal string with regex metacharacters escaped. Use the sequence `\ ` inside
+ * `term` to allow flexible matching of one or more whitespace characters or hyphens (e.g., `multi\ word` matches
+ * "multi word", "multi-word", or "multi   word"). Matching is case-insensitive and anchored to word boundaries.
+ *
+ * @param {string} text - The text to search.
+ * @param {string} term - The term to find; may include `\ ` placeholders for flexible spaces/hyphens.
+ * @returns {boolean} `true` if a whole-word, case-insensitive match of `term` exists in `text`, `false` otherwise.
+ */
 function containsTerm(text, term) {
   const escaped = String(term).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\ /g, '[\\s-]+');
   if (!escaped) return false;
   return new RegExp(`\\b${escaped}\\b`, 'i').test(String(text));
 }
 
+/**
+ * Count the words in the given text.
+ * @param {any} text - Input whose words will be counted; non-string values are coerced to a string.
+ * @returns {number} The number of whitespace-separated words (0 if the input is empty or only contains whitespace).
+ */
 function wordCount(text) {
   return String(text ?? '').trim().split(/\s+/).filter(Boolean).length;
 }
 
+/**
+ * Collects all citation objects present in an output structure and returns a URL-deduplicated list.
+ * @param {object} output - The output object which may contain top-level `citations` and a `pages` array.
+ * @return {Array<object>} An array of citation objects aggregated from `output.citations` and each `page.citations`, with duplicates removed by URL.
+ */
 function collectOutputCitations(output) {
   const citations = [];
   for (const citation of output?.citations ?? []) citations.push(citation);
@@ -475,6 +650,11 @@ function collectOutputCitations(output) {
   return dedupeByUrl(citations);
 }
 
+/**
+ * Collects all URLs referenced by an output (citations, markdown link targets, and wiki citation URLs).
+ * @param {object} output - Object that may include `citations` (array of citation objects with `url`), `markdownBody` (string), and wiki `pages` containing section/keyDevelopment/openQuestion citation URL lists.
+ * @returns {string[]} Array of URL strings found in the output (may include duplicates).
+ */
 function collectOutputUrls(output) {
   return [
     ...collectOutputCitations(output).map((citation) => citation.url).filter(Boolean),
@@ -483,6 +663,15 @@ function collectOutputUrls(output) {
   ];
 }
 
+/**
+ * Collects all citation URLs found in a wiki-style output's pages.
+ *
+ * Iterates each page and gathers citation URLs from page.sections[].citationUrls,
+ * page.keyDevelopments[].citationUrls, and page.openQuestions[].citationUrls.
+ *
+ * @param {Object} output - The output object potentially containing a `pages` array.
+ * @returns {string[]} An array of citation URLs found (in discovery order; may be empty and may contain duplicates).
+ */
 function collectWikiCitationUrls(output) {
   const urls = [];
   for (const page of output?.pages ?? []) {
@@ -493,6 +682,17 @@ function collectWikiCitationUrls(output) {
   return urls;
 }
 
+/**
+ * Collects citation URLs from the provided context and returns them as a unique set.
+ *
+ * @param {Object} context - Container of allowed citations and aggregated research.
+ * @param {Array<{url: string}>} [context.allowedCitations] - Explicitly allowed citation objects.
+ * @param {Object} [context.aggregate] - Aggregate object possibly containing `citations`.
+ * @param {Array<{url: string}>} [context.aggregate.citations] - Citations from the aggregate.
+ * @param {Array<Object>} [context.researchPackets] - Research packets each potentially containing `citations`.
+ * @param {Array<{url: string}>} [context.researchPackets[].citations] - Citations within each research packet.
+ * @returns {Set<string>} A Set of unique citation URL strings extracted from the context.
+ */
 function collectAllowedUrls(context = {}) {
   const citations = [
     ...(context.allowedCitations ?? []),
@@ -502,6 +702,12 @@ function collectAllowedUrls(context = {}) {
   return new Set(citations.map((citation) => citation.url).filter(Boolean));
 }
 
+/**
+ * Extracts the reader-facing text representation from an output object for analysis.
+ *
+ * @param {object} output - The output object produced by content generation. If `output.markdownBody` exists, `output.title`, `output.description`, and `output.markdownBody` are concatenated. If `output.pages` exists, a normalized projection of `landing` and each page's public-facing fields (title, dek, summary, sections, keyDevelopments, whyItMatters, openQuestions, relatedTopics) is returned as a JSON string. If `output` is falsy, an empty string is returned.
+ * @returns {string} A string containing the reader-facing text: concatenated markdown fields when present, or a JSON-stringified projection of pages/landing, or an empty string if no output.
+ */
 function collectReaderFacingText(output) {
   if (!output) return '';
   if (output.markdownBody) {
@@ -529,10 +735,20 @@ function collectReaderFacingText(output) {
   return JSON.stringify(output);
 }
 
+/**
+ * Extracts link targets from Markdown links.
+ * @param {string} markdown - Markdown text to scan for link targets.
+ * @returns {string[]} An array of trimmed link targets (the contents inside parentheses of `](...)`) in the order they appear.
+ */
 function extractMarkdownTargets(markdown) {
   return [...String(markdown).matchAll(/\]\(([^)]+)\)/g)].map((match) => match[1].trim());
 }
 
+/**
+ * Check whether a string is a syntactically valid HTTP or HTTPS URL.
+ * @param {string} url - The string to validate as a URL.
+ * @returns {boolean} `true` if the input is a valid `http` or `https` URL, `false` otherwise.
+ */
 function isHttpUrl(url) {
   try {
     const parsed = new URL(url);
@@ -542,6 +758,15 @@ function isHttpUrl(url) {
   }
 }
 
+/**
+ * Checks whether a URL is reachable by issuing an HTTP request and returning whether the response is OK.
+ *
+ * Attempts a `HEAD` request with a 10s timeout; if the response status is `405` or `403`, retries with `GET`
+ * (also with a 10s timeout). Any thrown error or non-OK response results in `false`.
+ * @param {string} url - The URL to check.
+ * @param {Function} fetchImpl - Fetch implementation to use (signature like `fetch`). Required for live requests.
+ * @returns {boolean} `true` if a request completes and `response.ok` is `true`, `false` otherwise.
+ */
 async function fetchUrlOk(url, fetchImpl) {
   try {
     let response = await fetchImpl(url, { method: 'HEAD', signal: AbortSignal.timeout(10000) });
@@ -554,6 +779,12 @@ async function fetchUrlOk(url, fetchImpl) {
   }
 }
 
+/**
+ * Extracts a set of normalized keywords from input text for relevance matching.
+ *
+ * @param {string} text - Source text from which to extract keywords.
+ * @returns {Set<string>} A set of unique, lowercase keywords (trimmed of surrounding hyphens), each at least 4 characters long and excluding common stop words and URLs.
+ */
 function keywordSet(text) {
   return new Set(String(text)
     .toLowerCase()
@@ -564,6 +795,11 @@ function keywordSet(text) {
     .filter((term) => term.length >= 4 && !STOP_WORDS.has(term)));
 }
 
+/**
+ * Remove duplicate citation entries, keeping the first occurrence for each unique citation URL.
+ * @param {Array<Object>} citations - Array of citation objects; items may include a `url` property.
+ * @returns {Array<Object>} The filtered citations array where duplicates (by `citation.url`, or by JSON serialization when `url` is absent) are removed, preserving original order.
+ */
 function dedupeByUrl(citations) {
   const seen = new Set();
   return citations.filter((citation) => {
@@ -574,10 +810,22 @@ function dedupeByUrl(citations) {
   });
 }
 
+/**
+ * Create a standardized passing assertion result.
+ * @param {string} name - Assertion identifier.
+ * @param {string} text - Human-readable assertion message.
+ * @returns {{name: string, text: string, passed: true, score: 1}} An assertion object with `passed: true` and `score: 1`.
+ */
 function passAssertion(name, text) {
   return { name, text, passed: true, score: 1 };
 }
 
+/**
+ * Create a failing assertion result for a rubric check.
+ * @param {string} name - Assertion identifier.
+ * @param {string} text - Human-readable failure message or explanation.
+ * @returns {{name: string, text: string, passed: boolean, score: number}} An assertion object marked as failed with `passed: false` and `score: 0`.
+ */
 function failAssertion(name, text) {
   return { name, text, passed: false, score: 0 };
 }

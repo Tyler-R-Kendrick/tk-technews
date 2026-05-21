@@ -22,6 +22,16 @@ console.log(JSON.stringify({
   evalAttempts: article.evalAttempts
 }, null, 2));
 
+/**
+ * Parse an argv-style array into an object of `--key value` pairs.
+ *
+ * For each element beginning with `--`, the token after the `--` is used as the key
+ * and the following array element is assigned as its value. Later occurrences of
+ * the same key override earlier ones.
+ *
+ * @param {string[]} argv - Command-line arguments (e.g., process.argv.slice(2)).
+ * @returns {Object<string, string|undefined>} An object mapping keys to their string values (or `undefined` if a value is missing).
+ */
 function parseArgs(argv) {
   const parsed = {};
   for (let index = 0; index < argv.length; index += 1) {
@@ -33,6 +43,12 @@ function parseArgs(argv) {
   return parsed;
 }
 
+/**
+ * Parse a value as a finite number, falling back to a default when parsing fails.
+ * @param {*} value - The value to convert to a number; may be a string, number, or other type.
+ * @param {number} fallback - The number to return if `value` is `undefined` or does not convert to a finite number.
+ * @returns {number} The parsed finite number, or `fallback` if parsing yields `NaN`, `Infinity`, `-Infinity`, or if `value` is `undefined`.
+ */
 function numberArg(value, fallback) {
   if (value === undefined) return fallback;
   const parsed = Number(value);

@@ -14,6 +14,12 @@ console.log(`Generated knowledge graph wiki: ${wiki.pages.length} page(s), graph
 console.log(`Narrator eval: ${wiki.cache?.evalStatus ?? 'unknown'} (${wiki.cache?.evalScore ?? 'n/a'}, ${wiki.cache?.evalAttempts ?? 0} attempt(s))`);
 console.log('Wrote src/data/wiki/generated-wiki.json and public/wiki/generated-wiki.json');
 
+/**
+ * Parse an array of CLI tokens into a map of `--key value` pairs.
+ *
+ * @param {string[]} argv - Array of command-line arguments (e.g., `process.argv.slice(2)`).
+ * @returns {Object<string, string|undefined>} An object whose keys are flag names (without the leading `--`) and whose values are the token immediately following each flag; flags without a following token map to `undefined`. Tokens not starting with `--` are ignored.
+ */
 function parseArgs(argv) {
   const parsed = {};
   for (let index = 0; index < argv.length; index += 1) {
@@ -25,6 +31,16 @@ function parseArgs(argv) {
   return parsed;
 }
 
+/**
+ * Parse a value into a finite number or return a fallback.
+ *
+ * Attempts to convert `value` to a number and returns it when finite.
+ * If `value` is `undefined`, cannot be parsed, is `NaN`, or is infinite, `fallback` is returned.
+ *
+ * @param {*} value - The input to parse (commonly a string or number).
+ * @param {number} fallback - The number to return when parsing fails or `value` is `undefined`.
+ * @returns {number} The parsed finite number, or `fallback` if parsing did not produce a finite number.
+ */
 function numberArg(value, fallback) {
   if (value === undefined) return fallback;
   const parsed = Number(value);

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { citationPreview } from '../../../scripts/lib/rich-citations.mjs';
 
 type ArticleModule = {
   frontmatter: {
@@ -26,6 +27,7 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const ArticleContent = article.default;
+const citationPreviews = (article.frontmatter.citations ?? []).map(citationPreview);
 ---
 
 <BaseLayout title={`${article.frontmatter.title} | TK TechNews`} description={article.frontmatter.description}>
@@ -53,11 +55,21 @@ const ArticleContent = article.default;
         {article.frontmatter.citations && (
           <aside class="citation-rail" aria-label="Citations">
             <h2>Citations</h2>
-            <ol>
-              {article.frontmatter.citations.map((citation) => (
+            <ol class="rich-citation-list">
+              {citationPreviews.map((citation) => (
                 <li>
-                  <a href={citation.url} rel="noreferrer">{citation.title}</a>
-                  <span>{citation.source}</span>
+                  <a class={`rich-source-preview rich-source-preview-${citation.kind}`} href={citation.href} rel="noreferrer">
+                    {citation.thumbnailUrl && <img src={citation.thumbnailUrl} alt="" loading="lazy" />}
+                    <span class="rich-source-copy">
+                      <span class="rich-source-meta">
+                        <span>{citation.label}</span>
+                        <span>{citation.source}</span>
+                      </span>
+                      <strong>{citation.title}</strong>
+                      {citation.snippet && <span class="rich-source-snippet">{citation.snippet}</span>}
+                      <span class="rich-source-host">{citation.host}</span>
+                    </span>
+                  </a>
                 </li>
               ))}
             </ol>

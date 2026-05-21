@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { dailyBrief } from '../../../lib/daily-feed.mjs';
+import { citationPreview } from '../../../../scripts/lib/rich-citations.mjs';
 
 type DailyStub = {
   slug: string;
@@ -25,6 +26,7 @@ type DailyStub = {
     publishedAt?: string | null;
     summary?: string;
     transcript?: { status?: string; videoId?: string | null };
+    preview?: ReturnType<typeof citationPreview>;
   }>;
 };
 
@@ -39,6 +41,7 @@ const { stub } = Astro.props as { stub: DailyStub };
 const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateString('en-US', {
   dateStyle: 'full'
 });
+const citationPreviews = stub.sources.map((source) => source.preview ?? citationPreview(source));
 ---
 
 <BaseLayout title={`${stub.title} | TK TechNews`} description={stub.dek}>
@@ -89,11 +92,21 @@ const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateStr
 
         <aside class="citation-rail" aria-label="Article citations">
           <h2>Citations</h2>
-          <ol>
-            {stub.sources.map((source) => (
+          <ol class="rich-citation-list">
+            {citationPreviews.map((source) => (
               <li>
-                <a href={source.url} rel="noreferrer">{source.title}</a>
-                <span>{source.sourceName}</span>
+                <a class={`rich-source-preview rich-source-preview-${source.kind}`} href={source.href} rel="noreferrer">
+                  {source.thumbnailUrl && <img src={source.thumbnailUrl} alt="" loading="lazy" />}
+                  <span class="rich-source-copy">
+                    <span class="rich-source-meta">
+                      <span>{source.label}</span>
+                      <span>{source.source}</span>
+                    </span>
+                    <strong>{source.title}</strong>
+                    {source.snippet && <span class="rich-source-snippet">{source.snippet}</span>}
+                    <span class="rich-source-host">{source.host}</span>
+                  </span>
+                </a>
               </li>
             ))}
           </ol>

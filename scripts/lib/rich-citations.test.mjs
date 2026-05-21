@@ -115,6 +115,8 @@ test('isVideoUrl returns true for direct video file URLs and false for non-video
   assert.equal(isVideoUrl('https://example.com/video.mp4'), true);
   assert.equal(isVideoUrl('https://example.com/clip.webm'), true);
   assert.equal(isVideoUrl('https://example.com/video.mov'), true);
+  assert.equal(isVideoUrl('https://www.youtube.com/@GoogleDevelopers'), false);
+  assert.equal(isVideoUrl('https://www.youtube.com/playlist?list=PL123'), false);
   assert.equal(isVideoUrl('https://example.com/article'), false);
   assert.equal(isVideoUrl('https://news.google.com/rss/articles/abc123'), false);
 });
@@ -231,6 +233,14 @@ test('canonicalUrlKey normalizes youtu.be short URLs to youtube.com/watch?v= for
   const longKey = canonicalUrlKey('https://www.youtube.com/watch?v=PC9YBeURWk0');
   assert.equal(shortKey, longKey);
   assert.equal(shortKey, 'youtube.com/watch?v=PC9YBeURWk0');
+});
+
+test('canonicalUrlKey normalizes YouTube Shorts URLs to youtube.com/watch?v= format', () => {
+  const shortsKey = canonicalUrlKey('https://www.youtube.com/shorts/PC9YBeURWk0/');
+  const youtuBeShortsKey = canonicalUrlKey('https://youtu.be/shorts/PC9YBeURWk0');
+  const watchKey = canonicalUrlKey('https://www.youtube.com/watch?v=PC9YBeURWk0');
+  assert.equal(shortsKey, watchKey);
+  assert.equal(youtuBeShortsKey, watchKey);
 });
 
 test('canonicalUrlKey preserves non-tracking query params while stripping oc= Google News param', () => {

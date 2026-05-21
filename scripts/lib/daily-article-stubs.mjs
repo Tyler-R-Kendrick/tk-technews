@@ -89,6 +89,9 @@ const RELEVANCE_TERMS = [
   'workflows'
 ];
 
+// 78% catches paraphrased repeats while avoiding false positives from shared AI-domain vocabulary.
+const NEAR_DUPLICATE_OVERLAP = 0.78;
+
 export function buildDailyArticleStubs({ date, ledger, maxStubs = 12 }) {
   const items = dedupeCitationLikeItems((ledger.items ?? [])
     .filter((item) => isPublishedOnDate(item.publishedAt, date))
@@ -592,7 +595,7 @@ function isNearDuplicate(value, seenValues) {
     if (seenWords.size < 5) continue;
     const shared = [...words].filter((word) => seenWords.has(word)).length;
     const overlap = shared / Math.min(words.size, seenWords.size);
-    if (overlap >= 0.78) return true;
+    if (overlap >= NEAR_DUPLICATE_OVERLAP) return true;
   }
   return false;
 }

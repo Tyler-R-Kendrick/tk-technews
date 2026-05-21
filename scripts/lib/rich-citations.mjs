@@ -47,7 +47,9 @@ export function isVideoUrl(value) {
   const parsed = parseUrl(value);
   if (!parsed) return false;
   const host = parsed.hostname.toLowerCase();
-  return VIDEO_HOSTS.has(host) || /\.(mp4|webm|mov)$/i.test(parsed.pathname);
+  if (/\.(mp4|webm|mov)$/i.test(parsed.pathname)) return true;
+  if (!VIDEO_HOSTS.has(host)) return false;
+  return Boolean(youtubeId(value));
 }
 
 export function canonicalUrlKey(value) {
@@ -60,11 +62,8 @@ export function canonicalUrlKey(value) {
     const match = path.match(/\/([^/]+)\/status\/(\d+)/i);
     return match ? `x.com/${match[1].toLowerCase()}/status/${match[2]}` : `${host}${path.toLowerCase()}`;
   }
-  if (host === 'youtu.be') {
-    return `youtube.com/watch?v=${path.replace(/^\//, '')}`;
-  }
-  if (host.endsWith('youtube.com')) {
-    const id = parsed.searchParams.get('v');
+  if (host === 'youtu.be' || host.endsWith('youtube.com')) {
+    const id = youtubeId(value);
     if (id) return `youtube.com/watch?v=${id}`;
   }
   return `${host}${path.toLowerCase()}${canonicalSearch(parsed)}`;
@@ -89,9 +88,14 @@ function youtubeId(value) {
   const parsed = parseUrl(value);
   if (!parsed) return null;
   const host = parsed.hostname.toLowerCase();
-  if (host === 'youtu.be') return parsed.pathname.replace(/^\//, '').split('/')[0] || null;
+  const pathSegments = parsed.pathname.split('/').filter(Boolean);
+  if (host === 'youtu.be') {
+    if (pathSegments[0] === 'shorts') return pathSegments[1] || null;
+    return pathSegments.length === 1 ? pathSegments[0] : null;
+  }
   if (host.endsWith('youtube.com')) {
-    if (parsed.pathname.startsWith('/shorts/')) return parsed.pathname.split('/')[2] || null;
+    if (pathSegments[0] === 'shorts') return pathSegments[1] || null;
+    if (pathSegments[0] === 'embed') return pathSegments[1] || null;
     return parsed.searchParams.get('v');
   }
   return null;

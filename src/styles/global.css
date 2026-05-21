@@ -748,7 +748,7 @@ nav a:hover {
   overflow: hidden;
   color: var(--ink);
   text-decoration: none;
-  background: color-mix(in srgb, var(--panel) 88%, var(--paper));
+  background: color-mix(in srgb, var(--panel) 88%, var(--panel-soft));
   border: 1px solid var(--line);
   border-radius: 6px;
 }

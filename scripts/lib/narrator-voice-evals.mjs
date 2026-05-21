@@ -329,6 +329,7 @@ function evaluateCitationRichness({ output }) {
  * @param {'off'|'syntax'|'live'} params.linkCheck - Level of checking: `'off'` skips checks, `'syntax'` validates URL syntax only, `'live'` performs HTTP probes.
  * @param {Function} [params.fetchImpl] - Fetch implementation used for live HTTP requests; required when `linkCheck` is `'live'`.
  * @returns {Object} Assertion object with `name`, `text`, `passed`, and `score`. On failure, `text` identifies the first invalid or unreachable URL or missing `fetchImpl`.
+ */
 async function evaluateLinkHealth({ output, linkCheck, fetchImpl }) {
   if (linkCheck === 'off') return passAssertion('link-health', 'Link checks are disabled.');
   const urls = collectOutputUrls(output);
@@ -491,6 +492,7 @@ function evaluateToneMatch({ outputKind, output, voiceProfile }) {
  * @param {Object} params.output - The output object whose reader-facing text will be evaluated.
  * @param {Object} params.voiceProfile - Voice/profile configuration; may include `wordChoice.avoid` and `wordChoice.prefer` lists and top-level `avoid`.
  * @returns {Object} An assertion object ({ name, text, passed, score }) describing pass/fail and explanatory text.
+ */
 function evaluateWordChoice({ outputKind, output, voiceProfile }) {
   const text = collectReaderFacingText(output);
   const avoidTerms = [

@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildDailyArticleStubs } from './lib/daily-article-stubs.mjs';
+import { buildDailyArticleStubsWithGenerationLoop } from './lib/daily-article-stubs.mjs';
 import { buildWeeklyLedgerFromPrecompiled } from './lib/precompiled-weekly-ledger.mjs';
 
 const repoRoot = dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
@@ -10,6 +10,8 @@ const args = parseArgs(process.argv.slice(2));
 const sourceIndex = readJson('src/data/precompiled/source-index.json');
 const date = args.date ?? sourceIndex.generatedAt.slice(0, 10);
 const maxStubs = Number(args.maxStubs ?? 18);
+const maxEvalIterations = parseIntegerFlag(args['max-eval-iterations'], '--max-eval-iterations', { defaultValue: 3, min: 1 });
+const minEvalScore = parseNumberFlag(args['min-eval-score'], '--min-eval-score', { defaultValue: 0.86, min: 0, max: 1 });
 
 const assets = {
   youtube: readJson('src/data/precompiled/youtube-latest.json'),
@@ -34,15 +36,19 @@ const ledger = buildWeeklyLedgerFromPrecompiled({
   assets
 });
 
-const dailyBrief = buildDailyArticleStubs({
+const dailyBrief = await buildDailyArticleStubsWithGenerationLoop({
   date,
   ledger,
-  maxStubs
+  maxStubs,
+  evalMode: args['eval-mode'] ?? 'live',
+  maxEvalIterations,
+  minEvalScore,
+  linkCheck: args['link-check'] ?? 'syntax'
 });
 
 const payload = {
   ...dailyBrief,
-  voice: args.voice ?? 'tk-technews'
+  voice: args.voice ?? 'tk-technews-journalist'
 };
 
 writeJson('src/data/daily/generated-daily-articles.json', payload);
@@ -73,8 +79,30 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const key = argv[index]?.startsWith('--') ? argv[index].slice(2) : null;
     if (!key) continue;
-    parsed[key] = argv[index + 1];
+    const value = argv[index + 1];
+    if (value === undefined || value.startsWith('--')) {
+      throw new Error(`Missing value for --${key}.`);
+    }
+    parsed[key] = value;
     index += 1;
+  }
+  return parsed;
+}
+
+function parseIntegerFlag(value, flagName, { defaultValue, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER } = {}) {
+  if (value === undefined) return defaultValue;
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < min || parsed > max) {
+    throw new Error(`${flagName} must be an integer between ${min} and ${max}; received "${value}".`);
+  }
+  return parsed;
+}
+
+function parseNumberFlag(value, flagName, { defaultValue, min = -Infinity, max = Infinity } = {}) {
+  if (value === undefined) return defaultValue;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < min || parsed > max) {
+    throw new Error(`${flagName} must be a number between ${min} and ${max}; received "${value}".`);
   }
   return parsed;
 }

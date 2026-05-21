@@ -4,6 +4,7 @@ import {
   citationPreview,
   canonicalUrlKey,
   dedupeCitationLikeItems,
+  extractSocialPostParts,
   isTweetUrl,
   isVideoUrl
 } from './rich-citations.mjs';
@@ -90,6 +91,81 @@ test('builds a tweet preview for a twitter.com URL as well as x.com', () => {
   assert.equal(preview.kind, 'tweet');
   assert.equal(preview.label, 'X post');
   assert.equal(isTweetUrl(preview.href), true);
+});
+
+test('retweet previews preserve original author and clean text without RT glue', () => {
+  const preview = citationPreview({
+    title: 'RT elvis: Very interesting results from this NanoGPT-Bench eval. There is so much talk about self-improving agents.',
+    summary: 'RT elvisVery interesting results from this NanoGPT-Bench eval.There is so much talk about self-improving agents.Read more here: https://www.intology.ai/blog/nanogpt-benchIntology: Can coding agents do research?',
+    url: 'https://x.com/omarsar0/status/2057067617156800573',
+    sourceName: '@omarsar0'
+  });
+
+  assert.equal(preview.kind, 'tweet');
+  assert.equal(preview.label, 'Retweet');
+  assert.equal(preview.social.kind, 'retweet');
+  assert.equal(preview.social.originalAuthor, 'elvis');
+  assert.match(preview.title, /^elvis: Very interesting results/);
+  assert.doesNotMatch(preview.title, /^RT\b/i);
+  assert.match(preview.social.text, /^Very interesting results/);
+  assert.doesNotMatch(preview.snippet, /^RT\b/i);
+  assert.doesNotMatch(preview.snippet, /elvisVery/);
+});
+
+test('quote previews expose quoted link metadata separately from tweet text', () => {
+  const parts = extractSocialPostParts({
+    title: 'RT elvis: Very interesting results from this NanoGPT-Bench eval.',
+    summary: 'RT elvisVery interesting results from this NanoGPT-Bench eval.Read more here: https://www.intology.ai/blog/nanogpt-benchIntology: Can coding agents do research?We release NanoGPT-Bench, an internal eval we’ve used to test agents on an AI R&D problem.'
+  });
+
+  assert.equal(parts.kind, 'retweet');
+  assert.equal(parts.originalAuthor, 'elvis');
+  assert.equal(parts.quotedUrl, 'https://www.intology.ai/blog/nanogpt-bench');
+  assert.match(parts.quotedTitle, /Intology: Can coding agents do research/);
+  assert.doesNotMatch(parts.text, /Read more here|https?:\/\//i);
+});
+
+test('summary retweet fallback captures only the author token', () => {
+  const parts = extractSocialPostParts({
+    title: '',
+    summary: 'RT elvis Very interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(parts.kind, 'retweet');
+  assert.equal(parts.originalAuthor, 'elvis');
+  assert.match(parts.text, /^Very interesting results/);
+
+  const atParts = extractSocialPostParts({
+    title: '',
+    summary: 'RT `@elvis` Very interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(atParts.kind, 'retweet');
+  assert.equal(atParts.originalAuthor, 'elvis');
+  assert.match(atParts.text, /^Very interesting results/);
+  assert.doesNotMatch(atParts.text, /^RT\b/i);
+
+  const tightColonParts = extractSocialPostParts({
+    title: '',
+    summary: 'RT `@elvis`:Very interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(tightColonParts.kind, 'retweet');
+  assert.equal(tightColonParts.originalAuthor, 'elvis');
+  assert.match(tightColonParts.text, /^Very interesting results/);
+  assert.doesNotMatch(tightColonParts.text, /^RT\b/i);
+});
+
+test('summary retweet fallback splits glued body text at camel-case boundary', () => {
+  const parts = extractSocialPostParts({
+    title: '',
+    summary: 'RT elvisVery interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(parts.kind, 'retweet');
+  assert.equal(parts.originalAuthor, 'elvis');
+  assert.match(parts.text, /^Very interesting/);
+  assert.doesNotMatch(parts.text, /^RT\b/i);
 });
 
 test('isTweetUrl returns false for x.com URLs without a /status/ path', () => {

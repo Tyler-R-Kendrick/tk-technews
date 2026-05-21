@@ -30,6 +30,9 @@
     "eval:narrator:validate": "node scripts/agentv-eval-runner.mjs validate",
     "eval:narrator": "node scripts/agentv-eval-runner.mjs run",
     "eval:narrator:fixtures": "node --test scripts/agentv-narrator-provider.test.mjs scripts/lib/narrator-voice-evals.test.mjs scripts/lib/generation-loop.test.mjs",
+    "eval:daily-social:validate": "node scripts/agentv-daily-social-eval-runner.mjs validate",
+    "eval:daily-social": "node scripts/agentv-daily-social-eval-runner.mjs run",
+    "eval:daily-social:fixtures": "node --test scripts/agentv-daily-social-provider.test.mjs scripts/lib/rich-citations.test.mjs scripts/lib/daily-article-stubs.test.mjs",
     "test": "node --test"
   },
   "dependencies": {

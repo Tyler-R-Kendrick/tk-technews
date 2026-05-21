@@ -79,7 +79,11 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const key = argv[index]?.startsWith('--') ? argv[index].slice(2) : null;
     if (!key) continue;
-    parsed[key] = argv[index + 1];
+    const value = argv[index + 1];
+    if (value === undefined || value.startsWith('--')) {
+      throw new Error(`Missing value for --${key}.`);
+    }
+    parsed[key] = value;
     index += 1;
   }
   return parsed;

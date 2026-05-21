@@ -134,6 +134,16 @@ test('summary retweet fallback captures only the author token', () => {
   assert.equal(parts.kind, 'retweet');
   assert.equal(parts.originalAuthor, 'elvis');
   assert.match(parts.text, /^Very interesting results/);
+
+  const atParts = extractSocialPostParts({
+    title: '',
+    summary: 'RT `@elvis` Very interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(atParts.kind, 'retweet');
+  assert.equal(atParts.originalAuthor, 'elvis');
+  assert.match(atParts.text, /^Very interesting results/);
+  assert.doesNotMatch(atParts.text, /^RT\b/i);
 });
 
 test('isTweetUrl returns false for x.com URLs without a /status/ path', () => {

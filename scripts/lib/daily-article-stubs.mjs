@@ -497,7 +497,11 @@ function normalizeItem(item) {
     summary: stripNoise(item.summary ?? item.transcriptSummary ?? title),
     transcriptSummary: stripNoise(item.transcriptSummary ?? ''),
     sourceText: isSocial ? '' : stripNoise(transcriptText || item.transcriptSummary || item.summary || title),
-    relatedUrls: [preview.social?.quotedUrl].filter(Boolean),
+    relatedUrls: [
+      preview.social?.originalUrl,
+      preview.social?.repostUrl,
+      preview.social?.quotedUrl
+    ].filter(Boolean),
     preview,
     transcript: item.transcript,
     entities,
@@ -790,7 +794,9 @@ function extractEvidenceSentences(items, summary) {
 }
 
 function evidenceTextForItem(item) {
-  if (isTweetUrl(item.url)) return '';
+  if (isTweetUrl(item.url)) {
+    return item.preview?.snippet || item.sourceText || item.transcriptSummary || item.summary || item.title;
+  }
   return item.sourceText || item.transcriptSummary || item.summary || item.title;
 }
 

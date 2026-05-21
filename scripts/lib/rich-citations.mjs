@@ -31,8 +31,8 @@ export function extractSocialPostParts({ title = '', summary = '' } = {}) {
   const titleText = cleanText(title);
   const rawSummaryText = cleanText(summary || titleText);
   const summaryText = cleanTweetText(rawSummaryText);
-  const retweet = titleText.match(/^RT\s+([^:]+):\s*(.*)$/i) ?? summaryText.match(/^RT\s+@?([A-Za-z0-9_.-]{2,40}):?\s+(.+)$/i);
-  const originalAuthor = retweet ? cleanText(retweet[1]) : null;
+  const retweet = titleText.match(/^RT\s+([^:]+):\s*(.*)$/i) ?? summaryText.match(/^RT\s+`?(@?[A-Za-z0-9_.-]{2,40})`?:?\s+(.+)$/i);
+  const originalAuthor = retweet ? cleanRetweetAuthor(retweet[1]) : null;
   const withoutRetweet = retweet
     ? cleanTweetText(removeRetweetPrefix(rawSummaryText, originalAuthor))
     : summaryText;
@@ -231,7 +231,11 @@ function removeRetweetPrefix(value, originalAuthor) {
     .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
     .join('\\s*');
   if (!authorPattern) return value;
-  return String(value ?? '').replace(new RegExp(`^RT\\s+${authorPattern}:?\\s*`, 'i'), '');
+  return String(value ?? '').replace(new RegExp(`^RT\\s+\`?@?${authorPattern}\`?:?\\s*`, 'i'), '');
+}
+
+function cleanRetweetAuthor(value) {
+  return cleanText(value).replace(/^`|`$/g, '').replace(/^@/, '');
 }
 
 function trimText(value, maxLength) {

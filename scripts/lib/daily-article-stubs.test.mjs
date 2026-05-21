@@ -201,6 +201,8 @@ test('clusters related social and article URLs using canonical URL keys', () => 
 
   assert.equal(result.articleStubs.length, 1);
   assert.equal(result.articleStubs[0].sources.length, 2);
+  assert.ok(result.articleStubs[0].sources.some((source) => source.url.includes('x.com/omarsar0/status/2057067617156800573')));
+  assert.ok(result.articleStubs[0].sources.some((source) => source.url === 'https://www.intology.ai/blog/nanogpt-bench'));
 });
 
 test('daily article body is exclusively generated bodySections', () => {

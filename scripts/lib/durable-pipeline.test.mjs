@@ -295,6 +295,13 @@ test('generated articles include relation frontmatter, citations, and applied op
     root,
     aggregateId: 'aggregate-brief:1',
     voice: 'tk-technews',
+    evaluators: [async () => ({
+      score: 1,
+      verdict: 'pass',
+      assertions: [{ name: 'fixture', text: 'Fixture passed.', passed: true, score: 1 }],
+      feedback: [],
+      requiredFixes: []
+    })],
     inference: async () => ({
       output: {
         title: 'Agent Workflows Are Becoming Operational Infrastructure',
@@ -315,6 +322,71 @@ test('generated articles include relation frontmatter, citations, and applied op
   assert.match(markdown, /voice: "tk-technews"/);
   assert.match(markdown, /## Applied Opportunities/);
   assert.match(markdown, /url: "https:\/\/example.com\/source"/);
+
+  const articleRecord = await latestRecordById(root, 'articles', article.id);
+  assert.equal(articleRecord.evalStatus, 'passed');
+  assert.equal(articleRecord.evalScore, 1);
+  assert.equal(articleRecord.evalAttempts, 1);
+  assert.equal(articleRecord.evalReport.verdict, 'pass');
+});
+
+test('article generation defaults to the hard-science journalist narrator voice', async () => {
+  const root = await tempRoot();
+  await fs.mkdir(path.join(root, 'data', 'voice'), { recursive: true });
+  await fs.writeFile(path.join(root, 'data', 'voice', 'tk-technews-journalist.json'), JSON.stringify({
+    id: 'tk-technews-journalist',
+    description: 'Tech news journalism with an academic, hard-science analytical spine.',
+    tone: 'journalistic-hard-science',
+    detailLevel: 'analytical',
+    wordChoice: {
+      prefer: ['evidence', 'mechanism', 'constraint', 'benchmark'],
+      avoid: ['topic brief', 'wiki page']
+    },
+    rules: ['Lead with the newsworthy technical change.', 'Explain the mechanism and constraints.']
+  }, null, 2));
+  await appendLedgerRecord(root, 'aggregate-briefs', {
+    id: 'aggregate-brief:journalist-default',
+    status: 'aggregated',
+    title: 'Agent workflow benchmark update',
+    summary: 'OpenAI released agent workflows with measurable developer automation constraints.',
+    enrichedDocIds: ['enriched-doc:1'],
+    citations: [{ title: 'Agents source', url: 'https://example.com/agents', source: 'Example' }],
+    appliedOpportunities: []
+  });
+
+  let observedVoiceId = null;
+  const article = await generateArticleFromAggregate({
+    root,
+    aggregateId: 'aggregate-brief:journalist-default',
+    evaluators: [async () => ({
+      score: 1,
+      verdict: 'pass',
+      assertions: [{ name: 'fixture', text: 'Fixture passed.', passed: true, score: 1 }],
+      feedback: [],
+      requiredFixes: []
+    })],
+    inference: async ({ context, prompt }) => {
+      observedVoiceId = context.voiceProfile.id;
+      assert.match(prompt, /journalistic-hard-science/);
+      return {
+        output: {
+          title: 'Agent Workflows Get a Measurable Engineering Frame',
+          description: 'A cited update on agent workflow mechanisms and constraints.',
+          slug: 'agent-workflows-engineering-frame',
+          tags: ['agents'],
+          markdownBody: '## What changed\n\nOpenAI released agent workflows, and the useful signal is the mechanism: repeatable automation with explicit review constraints and measurement points. [Agents source](https://example.com/agents)',
+          citations: [{ title: 'Agents source', url: 'https://example.com/agents', source: 'Example' }]
+        },
+        provider: 'test',
+        model: 'test'
+      };
+    },
+    now: '2026-05-20T18:00:00.000Z'
+  });
+
+  const markdown = await fs.readFile(article.markdownPath, 'utf8');
+  assert.equal(observedVoiceId, 'tk-technews-journalist');
+  assert.match(markdown, /voice: "tk-technews-journalist"/);
 });
 
 test('briefing refuses source docs that are not parsed', async () => {

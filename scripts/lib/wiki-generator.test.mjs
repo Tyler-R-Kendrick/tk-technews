@@ -48,15 +48,35 @@ test('builds content-oriented topic stubs without internal process language', ()
 
 test('generated topic prompt receives research packets, not graph/community objects', async () => {
   const root = await writeGraph(topicGraph());
+  await writeVoiceProfile(root, 'tk-technews-wiki', {
+    id: 'tk-technews-wiki',
+    description: 'Neutral, compact, source-grounded wiki page narration for technical readers.',
+    tone: 'reference',
+    detailLevel: 'concise',
+    wordChoice: {
+      prefer: ['definition', 'source', 'evidence', 'context', 'development'],
+      avoid: ['trial', 'verdict', 'phase transition']
+    },
+    rules: ['Use neutral reference prose.', 'Keep sections concise and scannable.']
+  });
 
   const wiki = await generateWikiFromKnowledgeGraph({
     root,
     now: '2026-05-20T18:00:00.000Z',
     useInference: true,
+    evaluators: [async () => ({
+      score: 1,
+      verdict: 'pass',
+      assertions: [{ name: 'fixture', text: 'Fixture passed.', passed: true, score: 1 }],
+      feedback: [],
+      requiredFixes: []
+    })],
     inference: async ({ schema, context, prompt }) => {
       assert.equal(context.researchPackets.length, 1);
+      assert.equal(context.voiceProfile.id, 'tk-technews-wiki');
       assert.equal(Object.hasOwn(context, 'graphHash'), false);
       assert.match(prompt, /Research packets:/);
+      assert.match(prompt, /tk-technews-wiki/);
       assert.match(prompt, /OpenAI released agent workflows/);
       assert.doesNotMatch(prompt, /claim:/);
       assert.doesNotMatch(prompt, /topic:/);
@@ -109,6 +129,9 @@ test('generated topic prompt receives research packets, not graph/community obje
 
   assert.equal(wiki.pages[0].slug, 'agent-workflows');
   assert.equal(wiki.cache.key, wikiCacheKey(wiki.graphHash));
+  assert.equal(wiki.cache.evalStatus, 'passed');
+  assert.equal(wiki.cache.evalScore, 1);
+  assert.equal(wiki.cache.evalAttempts, 1);
   assertNoInternalLanguage(wiki.pages[0]);
 });
 
@@ -199,6 +222,11 @@ async function writeGraph(graph) {
   await fs.mkdir(path.join(root, 'data', 'graph'), { recursive: true });
   await fs.writeFile(path.join(root, 'data', 'graph', 'kg.jsonld'), JSON.stringify(graph, null, 2));
   return root;
+}
+
+async function writeVoiceProfile(root, voice, profile) {
+  await fs.mkdir(path.join(root, 'data', 'voice'), { recursive: true });
+  await fs.writeFile(path.join(root, 'data', 'voice', `${voice}.json`), JSON.stringify(profile, null, 2));
 }
 
 function topicGraph() {

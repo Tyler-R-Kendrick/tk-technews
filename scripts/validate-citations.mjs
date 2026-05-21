@@ -9,8 +9,8 @@ const failures = [];
 for (const file of articleFiles) {
   const fullPath = path.join(articlesDir, file);
   const text = await fs.readFile(fullPath, 'utf8');
-  const frontmatter = text.match(/^---\n([\s\S]*?)\n---/);
-  const body = text.replace(/^---\n[\s\S]*?\n---\n?/, '');
+  const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  const body = text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '');
   const frontmatterUrls = [...(frontmatter?.[1] ?? '').matchAll(/url:\s+"([^"]+)"/g)].map((match) => match[1]);
   const bodyUrls = [...body.matchAll(/\]\((https?:\/\/[^)]+)\)/g)].map((match) => match[1]);
 

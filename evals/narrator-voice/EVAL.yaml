@@ -1,0 +1,139 @@
+name: narrator-voice
+description: TK TechNews narrator voice quality gates for article and wiki/page generation.
+tags:
+  - narrator
+  - agentv
+  - agentevals
+target: tk-technews-narrator-fixtures
+tests:
+  - id: article-rich-citations
+    criteria: Article output preserves rich citations, source grounding, relevance, speculation boundaries, and TK TechNews voice.
+    input: |
+      fixture: article-pass
+      output_kind: article
+    assert:
+      - name: narrator-composite
+        type: composite
+        required: true
+        min_score: 0.86
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-narrator-checks: 0.7
+            rubric-voice-judge: 0.3
+        assert:
+          - name: deterministic-narrator-checks
+            type: code_judge
+            script: graders/narrator-deterministic.mjs
+            required: true
+          - name: rubric-voice-judge
+            type: llm_judge
+            target: narrator-mock-grader
+            prompt: file://prompts/narrator-rubric.md
+            required: false
+
+  - id: article-refinement-loop
+    criteria: Article generation uses live evaluator feedback to improve a weak first pass before returning the final output.
+    input: |
+      fixture: article-refine
+      output_kind: article
+    assert:
+      - name: narrator-composite
+        type: composite
+        required: true
+        min_score: 0.86
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-narrator-checks: 0.7
+            rubric-voice-judge: 0.3
+        assert:
+          - name: deterministic-narrator-checks
+            type: code_judge
+            script: graders/narrator-deterministic.mjs
+            required: true
+          - name: rubric-voice-judge
+            type: llm_judge
+            target: narrator-mock-grader
+            prompt: file://prompts/narrator-rubric.md
+            required: false
+
+  - id: article-hard-science-journalist-voice
+    criteria: Article output uses the TK TechNews journalist narrator, with hard-science tone, mechanism-level word choice, and enough analytical detail without becoming hype or unsupported speculation.
+    input: |
+      fixture: article-hard-science
+      output_kind: article
+      narrator: tk-technews-journalist
+    assert:
+      - name: narrator-composite
+        type: composite
+        required: true
+        min_score: 0.86
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-narrator-checks: 0.7
+            rubric-voice-judge: 0.3
+        assert:
+          - name: deterministic-narrator-checks
+            type: code_judge
+            script: graders/narrator-deterministic.mjs
+            required: true
+          - name: rubric-voice-judge
+            type: llm_judge
+            target: narrator-mock-grader
+            prompt: file://prompts/narrator-rubric.md
+            required: false
+
+  - id: wiki-page-grounding
+    criteria: Wiki/page output preserves page citations, grounding, relevance, and reader-facing language.
+    input: |
+      fixture: wiki-pass
+      output_kind: wiki
+    assert:
+      - name: narrator-composite
+        type: composite
+        required: true
+        min_score: 0.86
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-narrator-checks: 0.7
+            rubric-voice-judge: 0.3
+        assert:
+          - name: deterministic-narrator-checks
+            type: code_judge
+            script: graders/narrator-deterministic.mjs
+            required: true
+          - name: rubric-voice-judge
+            type: llm_judge
+            target: narrator-mock-grader
+            prompt: file://prompts/narrator-rubric.md
+            required: false
+
+  - id: wiki-reference-narrator-voice
+    criteria: Wiki/page output uses the TK TechNews wiki narrator, with neutral reference tone, concise level of detail, source-grounded word choice, and no article-style hard-science rhetoric.
+    input: |
+      fixture: wiki-reference
+      output_kind: wiki
+      narrator: tk-technews-wiki
+    assert:
+      - name: narrator-composite
+        type: composite
+        required: true
+        min_score: 0.86
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-narrator-checks: 0.7
+            rubric-voice-judge: 0.3
+        assert:
+          - name: deterministic-narrator-checks
+            type: code_judge
+            script: graders/narrator-deterministic.mjs
+            required: true
+          - name: rubric-voice-judge
+            type: llm_judge
+            target: narrator-mock-grader
+            prompt: file://prompts/narrator-rubric.md
+            required: false

@@ -1,0 +1,61 @@
+import { readFile } from 'node:fs/promises';
+import { evaluateNarratorOutput } from '../../../scripts/lib/narrator-voice-evals.mjs';
+
+const payload = JSON.parse(await readStdin());
+const candidate = await parseCandidate(payload);
+const report = await evaluateNarratorOutput({
+  outputKind: candidate.outputKind,
+  output: candidate.output,
+  context: candidate.context ?? {},
+  voiceProfile: candidate.voiceProfile ?? {},
+  linkCheck: candidate.linkCheck ?? 'syntax'
+});
+
+console.log(JSON.stringify({
+  score: report.score,
+  assertions: report.assertions.map((assertion) => ({
+    text: assertion.text,
+    passed: assertion.passed,
+    evidence: assertion.name
+  })),
+  details: {
+    verdict: report.verdict,
+    requiredFixes: report.requiredFixes,
+    feedback: report.feedback,
+    loopEvalStatus: candidate.evalStatus ?? null,
+    loopEvalScore: candidate.evalScore ?? null,
+    loopEvalAttempts: candidate.evalAttempts ?? null
+  }
+}, null, 2));
+
+async function parseCandidate(payload) {
+  const content = await contentFromOutput(payload.output, payload.output_path);
+  const parsed = JSON.parse(content);
+  if (!parsed.outputKind || !parsed.output) {
+    throw new Error('Narrator candidate must include outputKind and output.');
+  }
+  return parsed;
+}
+
+async function contentFromOutput(output, outputPath) {
+  const messages = Array.isArray(output) ? output : [];
+  const content = messages
+    .map((message) => typeof message?.content === 'string' ? message.content : '')
+    .filter(Boolean)
+    .join('\n');
+  if (content) return content;
+  if (outputPath) return readFile(outputPath, 'utf8');
+  throw new Error('AgentV grader payload did not include candidate output.');
+}
+
+function readStdin() {
+  return new Promise((resolve, reject) => {
+    let data = '';
+    process.stdin.setEncoding('utf8');
+    process.stdin.on('data', (chunk) => {
+      data += chunk;
+    });
+    process.stdin.on('end', () => resolve(data));
+    process.stdin.on('error', reject);
+  });
+}

@@ -1,0 +1,11 @@
+targets:
+  - name: tk-technews-narrator-fixtures
+    provider: cli
+    provider_batching: false
+    cwd: .
+    timeout_seconds: 60
+    command: node ../../scripts/agentv-narrator-provider.mjs --prompt-file {PROMPT_FILE} --output-file {OUTPUT_FILE} --eval-id {EVAL_ID} --attempt {ATTEMPT}
+
+  - name: narrator-mock-grader
+    provider: mock
+    response: '{"score":1,"assertions":[{"text":"Mock rubric judge passed for deterministic local eval.","passed":true}],"checks":[],"overall_reasoning":"Local narrator eval run uses deterministic fixtures; live LLM rubric text remains versioned in evals/narrator-voice/prompts/."}'

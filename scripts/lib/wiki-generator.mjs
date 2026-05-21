@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { stableHash } from './ledger-store.mjs';
 import { stripHtml } from './text-utils.mjs';
 import { generateStructuredObject } from './inference.mjs';
+import { runGeneratedOutputLoop } from './generation-loop.mjs';
 
 const WIKI_CACHE_VERSION = 1;
 const MAX_WEB_ENRICHMENTS = 12;
@@ -219,61 +220,141 @@ export async function generateWikiFromKnowledgeGraph({
   fetchImpl = fetch,
   maxCommunities = 24,
   maxGeneratedTopics = 8,
-  useInference = process.env.TK_TECHNEWS_WIKI_USE_LLM === 'true'
+  useInference = process.env.TK_TECHNEWS_WIKI_USE_LLM === 'true',
+  voice = 'tk-technews-wiki',
+  evaluators = null,
+  evalMode = 'live',
+  maxEvalIterations = 3,
+  minEvalScore = 0.86,
+  linkCheck = 'syntax'
 } = {}) {
   const graph = await readGraph(root);
   const graphHash = stableHash(stableStringify(graph), 32);
   const communities = buildGraphCommunities(graph, { maxCommunities: Math.max(maxCommunities, 24), seedTypes: ['Topic'] });
   const packets = await enrichTopicResearchPackets(buildTopicResearchPackets(communities), { fetchImpl });
   const baseWiki = buildTopicWikiFromResearchPackets({ generatedAt: now, graphHash, packets, mode: useInference ? 'stub' : 'generated' });
+  const voiceProfile = await readVoiceProfile(root, voice);
 
   const wiki = packets.length === 0
     ? emptyWiki({ generatedAt: now, graphHash })
     : useInference
-      ? await generateWikiWithInference({ packets: packets.slice(0, maxGeneratedTopics), graphHash, inference, now, baseWiki })
-      : { ...baseWiki, provider: 'deterministic-topic-writer', model: null };
+      ? await generateWikiWithInference({
+        packets: packets.slice(0, maxGeneratedTopics),
+        graphHash,
+        inference,
+        now,
+        baseWiki,
+        voiceProfile,
+        evaluators,
+        evalMode,
+        maxEvalIterations,
+        minEvalScore,
+        linkCheck,
+        fetchImpl
+      })
+      : {
+        ...baseWiki,
+        provider: 'deterministic-topic-writer',
+        model: null,
+        evalStatus: 'passed',
+        evalScore: 1,
+        evalAttempts: 0,
+        evalReport: {
+          score: 1,
+          verdict: 'pass',
+          assertions: [{ name: 'deterministic-topic-writer', text: 'Deterministic wiki writer used no live narrator refinement.', passed: true, score: 1 }],
+          feedback: [],
+          requiredFixes: [],
+          skipped: true
+        }
+      };
 
   const persisted = addCacheMetadata(wiki, { graphHash, provider: wiki.provider, model: wiki.model });
   await persistWiki(root, persisted);
   return persisted;
 }
 
-async function generateWikiWithInference({ packets, graphHash, inference, now, baseWiki }) {
+async function generateWikiWithInference({
+  packets,
+  graphHash,
+  inference,
+  now,
+  baseWiki,
+  voiceProfile,
+  evaluators,
+  evalMode,
+  maxEvalIterations,
+  minEvalScore,
+  linkCheck,
+  fetchImpl
+}) {
   try {
-    const result = await inference({
+    const generationSchema = wikiSchema.extend({
+      generatedAt: z.string().min(1).optional().default(now),
+      graphHash: z.string().min(1).optional().default(graphHash)
+    });
+    const result = await runGeneratedOutputLoop({
       task: 'Generate reader-facing AI topic explainers from research packets.',
-      schema: wikiSchema,
+      outputKind: 'wiki',
+      schema: generationSchema,
       context: {
         generatedAt: now,
-        researchPackets: packets
+        researchPackets: packets,
+        allowedCitations: packets.flatMap((packet) => packet.citations ?? []),
+        relevanceText: packets.map((packet) => `${packet.topic} ${packet.evidence?.map((item) => item.excerpt).join(' ')}`).join(' ')
       },
-      prompt: topicExplainerPrompt({ generatedAt: now, packets })
+      voiceProfile,
+      prompt: topicExplainerPrompt({ generatedAt: now, packets, graphHash, voiceProfile }),
+      inference,
+      evaluators,
+      evalMode,
+      maxIterations: maxEvalIterations,
+      minScore: minEvalScore,
+      linkCheck,
+      fetchImpl,
+      normalizeOutput: (candidate) => {
+        const parsed = wikiSchema.parse({
+          ...candidate,
+          generatedAt: now,
+          graphHash
+        });
+        const grounded = enforceResearchGrounding(parsed, packets);
+        return mergeGeneratedPagesWithStubs(baseWiki, grounded);
+      }
     });
-    const parsed = wikiSchema.parse({
-      ...result.output,
-      generatedAt: now,
-      graphHash
-    });
-    const grounded = enforceResearchGrounding(parsed, packets);
-    const merged = mergeGeneratedPagesWithStubs(baseWiki, grounded);
     return {
-      ...merged,
+      ...result.output,
       provider: result.provider ?? null,
-      model: result.model ?? null
+      model: result.model ?? null,
+      evalReport: result.evalReport,
+      evalScore: result.evalScore,
+      evalAttempts: result.evalAttempts,
+      evalStatus: result.evalStatus
     };
   } catch {
     return {
       ...baseWiki,
       provider: null,
-      model: null
+      model: null,
+      evalStatus: 'best_effort',
+      evalScore: 0,
+      evalAttempts: 0,
+      evalReport: {
+        score: 0,
+        verdict: 'fail',
+        assertions: [{ name: 'wiki-inference-fallback', text: 'Wiki inference failed; persisted generated stubs.', passed: false, score: 0 }],
+        feedback: ['Wiki inference failed; persisted generated stubs.'],
+        requiredFixes: ['Review inference provider output and retry wiki generation.']
+      }
     };
   }
 }
 
-function topicExplainerPrompt({ generatedAt, packets }) {
+function topicExplainerPrompt({ generatedAt, packets, graphHash, voiceProfile }) {
   return [
     'Write concise, useful AI topic explainers from the supplied research packets.',
     'The audience is technical readers who want to understand what is happening, why it matters, and what to watch next.',
+    'Use the wiki narrator voice profile for neutral reference tone, concise level of detail, and source-grounded word choice.',
     'Use only the supplied source excerpts, evidence notes, and citations. Do not mention how the topics were selected.',
     'Do not use internal process language in reader-facing fields, including storage structures, source-selection mechanics, relationship maps, or identifier strings.',
     'Never include internal identifiers with colon prefixes.',
@@ -281,10 +362,13 @@ function topicExplainerPrompt({ generatedAt, packets }) {
     'Return JSON matching the schema only.',
     '',
     'Required JSON shape:',
-    '{"generatedAt":"ISO string","landing":{"title":"AI Topic Wiki","description":"string","overview":"string","featuredPageSlugs":["slug"]},"pages":[{"slug":"packet slug","title":"topic title","dek":"short reader-facing description","summary":"substantive overview","status":"generated","sections":[{"title":"section title","body":"prose","citationUrls":["source url"]}],"keyDevelopments":[{"text":"development","citationUrls":["source url"]}],"whyItMatters":"substantive explanation","openQuestions":[{"question":"question","context":"context","citationUrls":["source url"]}],"relatedTopics":[{"slug":"other packet slug","label":"other topic","reason":"reader-facing relationship"}],"citations":[{"title":"source title","url":"source url","source":"publisher"}]}]}',
+    '{"generatedAt":"ISO string","graphHash":"graph hash","landing":{"title":"AI Topic Wiki","description":"string","overview":"string","featuredPageSlugs":["slug"]},"pages":[{"slug":"packet slug","title":"topic title","dek":"short reader-facing description","summary":"substantive overview","status":"generated","sections":[{"title":"section title","body":"prose","citationUrls":["source url"]}],"keyDevelopments":[{"text":"development","citationUrls":["source url"]}],"whyItMatters":"substantive explanation","openQuestions":[{"question":"question","context":"context","citationUrls":["source url"]}],"relatedTopics":[{"slug":"other packet slug","label":"other topic","reason":"reader-facing relationship"}],"citations":[{"title":"source title","url":"source url","source":"publisher"}]}]}',
     '',
     'Generation metadata:',
-    JSON.stringify({ generatedAt }),
+    JSON.stringify({ generatedAt, graphHash }),
+    '',
+    'Voice profile:',
+    JSON.stringify(voiceProfile, null, 2),
     '',
     'Research packets:',
     JSON.stringify(packets, null, 2)
@@ -583,7 +667,7 @@ function summarizeExcerpt(text) {
 }
 
 function addCacheMetadata(wiki, { graphHash }) {
-  const { provider, model, ...wikiBody } = wiki;
+  const { provider, model, evalReport, evalScore, evalAttempts, evalStatus, ...wikiBody } = wiki;
   return {
     ...wikiBody,
     cache: {
@@ -593,7 +677,11 @@ function addCacheMetadata(wiki, { graphHash }) {
       generatedBy: {
         provider: provider ?? null,
         model: model ?? null
-      }
+      },
+      evalReport: evalReport ?? null,
+      evalScore: evalScore ?? null,
+      evalAttempts: evalAttempts ?? null,
+      evalStatus: evalStatus ?? null
     }
   };
 }
@@ -615,6 +703,46 @@ async function readGraph(root) {
     if (error?.code === 'ENOENT') return { '@context': {}, '@graph': [] };
     throw error;
   }
+}
+
+async function readVoiceProfile(root, voice) {
+  try {
+    return JSON.parse(await fs.readFile(path.join(root, 'data', 'voice', `${voice}.json`), 'utf8'));
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw error;
+    return fallbackVoiceProfile(voice);
+  }
+}
+
+function fallbackVoiceProfile(voice) {
+  if (voice === 'tk-technews-wiki') {
+    return {
+      id: voice,
+      description: 'Neutral, compact, source-grounded wiki page narration.',
+      tone: 'reference',
+      detailLevel: 'concise',
+      wordChoice: {
+        prefer: ['definition', 'source', 'evidence', 'context', 'development'],
+        avoid: ['trial', 'verdict', 'phase transition', 'first-principles']
+      },
+      rules: ['Use neutral reference prose.', 'Keep sections concise and cited.'],
+      avoid: ['Uncited claims', 'Overly academic jargon', 'Long article-style narrative arcs']
+    };
+  }
+  return {
+    id: voice,
+    description: 'Clear, cited, practical technology analysis.',
+    rules: [
+      'Lead with the useful change, not hype.',
+      'Preserve citations for every sourced claim.',
+      'Separate observed facts from speculation.'
+    ],
+    avoid: [
+      'Uncited claims',
+      'Breathless superlatives',
+      'Treating speculation as fact'
+    ]
+  };
 }
 
 function emptyWiki({ generatedAt, graphHash }) {

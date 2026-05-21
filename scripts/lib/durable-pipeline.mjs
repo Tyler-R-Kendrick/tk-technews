@@ -20,6 +20,7 @@ import {
   loadKnowledgeGraph
 } from './temporal-knowledge-graph.mjs';
 import { generateStructuredObject } from './inference.mjs';
+import { runGeneratedOutputLoop } from './generation-loop.mjs';
 
 export const SOURCE_STATES = new Set([
   'discovered',
@@ -300,26 +301,61 @@ export async function aggregateEnrichedDocsForDate({
 export async function generateArticleFromAggregate({
   root = process.cwd(),
   aggregateId,
-  voice = 'tk-technews',
+  voice = 'tk-technews-journalist',
   inference = generateStructuredObject,
-  now = new Date().toISOString()
+  now = new Date().toISOString(),
+  evaluators = null,
+  evalMode = 'live',
+  maxEvalIterations = 3,
+  minEvalScore = 0.86,
+  linkCheck = 'syntax',
+  fetchImpl = fetch
 }) {
   const aggregate = await latestRecordById(root, 'aggregate-briefs', aggregateId);
   requireState(aggregate, 'aggregated', `Cannot generate article; aggregate ${aggregateId} is missing or not aggregated.`);
   const voiceProfile = await readVoiceProfile(root, voice);
   const graph = await loadKnowledgeGraph(root);
-  const result = await inference({
+  const graphContext = findRelatedGraphContext(graph, { text: `${aggregate.title} ${aggregate.summary}`, observedAt: now });
+  const allowedCitations = citationsForAggregate(aggregate);
+  const result = await runGeneratedOutputLoop({
     task: 'article generation',
+    outputKind: 'article',
     schema: articleSchema,
-    prompt: articlePrompt(aggregate, voiceProfile, findRelatedGraphContext(graph, { text: `${aggregate.title} ${aggregate.summary}`, observedAt: now })),
-    context: { aggregate, voiceProfile }
+    prompt: articlePrompt(aggregate, voiceProfile, graphContext),
+    context: {
+      aggregate,
+      voiceProfile,
+      graphContext,
+      allowedCitations,
+      relevanceText: [
+        aggregate.title,
+        aggregate.summary,
+        ...(aggregate.themes ?? []).flatMap((theme) => [theme.title, theme.summary])
+      ].filter(Boolean).join(' ')
+    },
+    voiceProfile,
+    inference,
+    evaluators,
+    evalMode,
+    maxIterations: maxEvalIterations,
+    minScore: minEvalScore,
+    linkCheck,
+    fetchImpl,
+    normalizeOutput: (candidate) => {
+      const citations = dedupeCitations([...(candidate.citations ?? []), ...allowedCitations]);
+      return {
+        ...candidate,
+        citations,
+        markdownBody: ensureAppliedOpportunitiesSection(candidate.markdownBody, aggregate.appliedOpportunities ?? [], citations)
+      };
+    }
   });
 
   const output = result.output;
   const slug = slugify(output.slug || output.title);
   const articleId = `article:${stableHash(`${aggregate.id}:${slug}`)}`;
-  const citations = dedupeCitations([...(output.citations ?? []), ...(aggregate.citations ?? [])]);
-  const markdownBody = ensureAppliedOpportunitiesSection(output.markdownBody, aggregate.appliedOpportunities ?? [], citations);
+  const citations = output.citations ?? [];
+  const markdownBody = output.markdownBody;
   const articlesDir = path.join(root, 'src', 'content', 'articles');
   await fs.mkdir(articlesDir, { recursive: true });
   const markdownPath = path.join(articlesDir, `${slug}.md`);
@@ -335,6 +371,8 @@ export async function generateArticleFromAggregate({
       enrichedDocIds: aggregate.enrichedDocIds ?? [],
       voice,
       model: result.model ?? result.provider,
+      evalStatus: result.evalStatus,
+      evalScore: result.evalScore,
       citations
     }),
     markdownBody.trim(),
@@ -351,6 +389,10 @@ export async function generateArticleFromAggregate({
     voice,
     provider: result.provider,
     model: result.model ?? null,
+    evalReport: result.evalReport,
+    evalScore: result.evalScore,
+    evalAttempts: result.evalAttempts,
+    evalStatus: result.evalStatus,
     title: output.title,
     description: output.description,
     slug,
@@ -692,7 +734,8 @@ function aggregatePrompt(date, selectedDocs, graph) {
 function articlePrompt(aggregate, voiceProfile, graphContext) {
   return [
     'Write a TK TechNews article from this aggregate brief.',
-    'Use the voice profile. Preserve citations. Include a clearly headed "Applied Opportunities" section.',
+    'Use the article narrator voice profile. Preserve citations. Include a clearly headed "Applied Opportunities" section.',
+    'The article narrator should read like technology journalism with an academic, hard-science spin: lead with the news, then explain mechanisms, constraints, measurements, and uncertainty when supported.',
     'Speculation must be labeled and grounded in cited evidence.',
     JSON.stringify({ aggregate, voiceProfile, graphContext }, null, 2)
   ].join('\n\n');
@@ -734,6 +777,14 @@ function ensureAppliedOpportunitiesSection(markdownBody, opportunities, citation
 async function readVoiceProfile(root, voice) {
   const profilePath = path.join(root, 'data', 'voice', `${voice}.json`);
   return JSON.parse(await fs.readFile(profilePath, 'utf8'));
+}
+
+function citationsForAggregate(aggregate) {
+  return dedupeCitations([
+    ...(aggregate.citations ?? []),
+    ...(aggregate.themes ?? []).flatMap((theme) => theme.citations ?? []),
+    ...(aggregate.appliedOpportunities ?? []).flatMap((opportunity) => opportunity.citations ?? [])
+  ]);
 }
 
 function dedupeCitations(citations) {

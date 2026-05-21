@@ -10,5 +10,9 @@ data/raw/
 data/summaries/
 data/knowledge/
 output/
+.agentv/results/
+.agentv/cache.json
+evals/**/.agentv.generated.yaml
+evals/**/*.agentv.eval.yaml
 __pycache__/
 *.pyc

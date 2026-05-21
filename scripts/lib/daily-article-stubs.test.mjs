@@ -1,7 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildDailyArticleStubs } from './daily-article-stubs.mjs';
+import {
+  buildDailyArticleStubs,
+  buildDailyArticleStubsWithGenerationLoop,
+  evaluateDailyArticleContent
+} from './daily-article-stubs.mjs';
 
 test('builds deduped daily article stubs from monitored source items', () => {
   const result = buildDailyArticleStubs({
@@ -174,6 +178,123 @@ test('daily article body is exclusively generated bodySections', () => {
   assert.doesNotMatch(routeSource, /Cited Source Notes/);
 });
 
+test('daily article route renders generated inline markdown citations as html', () => {
+  const routeSource = readFileSync(new URL('../../src/pages/daily/[date]/[slug].astro', import.meta.url), 'utf8');
+
+  assert.match(routeSource, /renderInlineMarkdown/);
+  assert.match(routeSource, /set:html=\{renderInlineMarkdown\(paragraph\)\}/);
+  assert.match(routeSource, /set:html=\{renderInlineMarkdown\(takeaway\)\}/);
+});
+
+test('daily article citation rail renders rich quote and retweet metadata', () => {
+  const routeSource = readFileSync(new URL('../../src/pages/daily/[date]/[slug].astro', import.meta.url), 'utf8');
+
+  assert.match(routeSource, /rich-social-context/);
+  assert.match(routeSource, /Reposted from/);
+  assert.match(routeSource, /rich-quoted-source/);
+  assert.match(routeSource, /Quoted source/);
+});
+
+test('daily generation loop rejects title-echo pages without actual article content', async () => {
+  const stub = {
+    title: 'OpenAI Cheap Could Derail Update',
+    slug: '2026-05-20-openai-cheap-could-derail-update',
+    dek: 'Google Cloud course builds AI agents for media blockchain.news',
+    tags: ['OpenAI', 'Anthropic', 'Google'],
+    sources: [
+      {
+        title: "Cheap AI could derail OpenAI and Anthropic's IPOs - CNBC",
+        url: 'https://news.google.com/rss/articles/openai-cheap',
+        sourceName: '"anthropic" - Google News',
+        summary: "Cheap AI could derail OpenAI and Anthropic's IPOs CNBC",
+        preview: {
+          title: "Cheap AI could derail OpenAI and Anthropic's IPOs - CNBC",
+          snippet: "Cheap AI could derail OpenAI and Anthropic's IPOs CNBC"
+        }
+      },
+      {
+        title: 'Google Cloud course builds AI agents for media - blockchain.news',
+        url: 'https://news.google.com/rss/articles/google-cloud-course',
+        sourceName: '"andrewyng" - Google News',
+        summary: 'Google Cloud course builds AI agents for media blockchain.news',
+        preview: {
+          title: 'Google Cloud course builds AI agents for media - blockchain.news',
+          snippet: 'Google Cloud course builds AI agents for media blockchain.news'
+        }
+      }
+    ]
+  };
+
+  const report = await evaluateDailyArticleContent({
+    output: {
+      dek: 'Google Cloud course builds AI agents for media blockchain.news',
+      bodySections: [{
+        heading: 'Openai Cheap Could Derail Google Changes The Practical Tradeoff',
+        paragraphs: ["Openai Cheap Could Derail Google: Cheap AI could derail OpenAI and Anthropic's IPOs CNBC"],
+        citations: ['https://news.google.com/rss/articles/openai-cheap']
+      }],
+      keyTakeaways: ['Cheap AI could derail OpenAI and Anthropic IPOs CNBC']
+    },
+    context: {
+      stub,
+      allowedCitations: stub.sources.map((source) => ({ title: source.title, url: source.url, source: source.sourceName })),
+      relevanceText: stub.sources.map((source) => `${source.title} ${source.summary}`).join(' ')
+    }
+  });
+
+  assert.equal(report.verdict, 'fail');
+  assert.ok(report.requiredFixes.some((fix) => /real body content|at least 120/i.test(fix)));
+  assert.ok(report.requiredFixes.some((fix) => /repeats headline|source metadata/i.test(fix)));
+  assert.ok(report.requiredFixes.some((fix) => /generated metadata|template/i.test(fix)));
+});
+
+test('daily generation loop produces substantive journalist content and eval metadata for every page', async () => {
+  const result = await buildDailyArticleStubsWithGenerationLoop({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'openai-cheap',
+          title: "Cheap AI could derail OpenAI and Anthropic's IPOs - CNBC",
+          summary: "Cheap AI could derail OpenAI and Anthropic's IPOs CNBC",
+          url: 'https://news.google.com/rss/articles/openai-cheap',
+          sourceName: '"anthropic" - Google News',
+          publishedAt: '2026-05-20T12:00:00.000Z',
+          tags: ['openai', 'anthropic', 'google', 'agent']
+        },
+        {
+          id: 'google-course',
+          title: 'Google Cloud course builds AI agents for media - blockchain.news',
+          summary: 'Google Cloud course builds AI agents for media blockchain.news',
+          url: 'https://news.google.com/rss/articles/google-cloud-course',
+          sourceName: '"andrewyng" - Google News',
+          publishedAt: '2026-05-20T12:05:00.000Z',
+          tags: ['google', 'agent', 'workflow']
+        }
+      ]
+    },
+    maxStubs: 1
+  });
+
+  const stub = result.articleStubs[0];
+  const bodyText = [
+    stub.dek,
+    ...stub.bodySections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ...stub.keyTakeaways
+  ].join('\n');
+
+  assert.equal(stub.evalStatus, 'passed');
+  assert.equal(stub.provider, 'deterministic-daily-journalist');
+  assert.ok(stub.evalScore >= 0.86);
+  assert.ok(stub.bodySections.length >= 2);
+  assert.ok(bodyText.split(/\s+/).length >= 150);
+  assert.doesNotMatch(bodyText, /Changes The Practical Tradeoff/);
+  assert.doesNotMatch(bodyText, /^Openai Cheap Could Derail Google:/m);
+  assert.doesNotMatch(bodyText, /Google Cloud course builds AI agents for media blockchain\.news/);
+  assert.match(bodyText, /evidence|mechanism|constraint|measurement|trade-off|architecture/i);
+});
+
 test('each source in article stubs includes a rich citation preview object', () => {
   const result = buildDailyArticleStubs({
     date: '2026-05-20',
@@ -286,4 +407,53 @@ test('preview.href matches the source url in article stubs', () => {
   assert.ok(stub);
   const source = stub.sources[0];
   assert.equal(source.preview.href, source.url);
+});
+
+test('retweets and quoted posts stay out of generated prose and remain rich source previews', () => {
+  const result = buildDailyArticleStubs({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'nanogpt-retweet',
+          kind: 'twitterFeeds',
+          title: 'RT elvis: Very interesting results from this NanoGPT-Bench eval. There is so much talk about self-improving agents.',
+          summary: 'RT elvisVery interesting results from this NanoGPT-Bench eval.There is so much talk about self-improving agents.But can coding agents do real AI R&D?@IntologyAI reports that Codex, Claude Code, and Autoresearch recover only 9.3% of human progress.Read more here: https://www.intology.ai/blog/nanogpt-benchIntology: Can coding agents do research?We release NanoGPT-Bench, an internal eval we’ve used to test agents on an AI R&D problem.',
+          url: 'https://x.com/omarsar0/status/2057067617156800573',
+          sourceName: '@omarsar0',
+          publishedAt: '2026-05-20T12:00:00.000Z',
+          tags: ['ai', 'agents', 'research']
+        },
+        {
+          id: 'nanogpt-article',
+          title: 'Can coding agents do research?',
+          summary: 'Intology released NanoGPT-Bench to measure whether coding agents can recover human AI research progress on a controlled R&D task.',
+          url: 'https://www.intology.ai/blog/nanogpt-bench',
+          sourceName: 'Intology',
+          publishedAt: '2026-05-20T12:05:00.000Z',
+          tags: ['ai', 'agents', 'research']
+        }
+      ]
+    }
+  });
+
+  const stub = result.articleStubs[0];
+  assert.ok(stub);
+  const generatedText = [
+    stub.dek,
+    ...stub.bodySections.flatMap((section) => section.paragraphs),
+    ...stub.keyTakeaways
+  ].join('\n');
+  const tweetSource = stub.sources.find((source) => source.url.includes('x.com/omarsar0/status'));
+
+  assert.ok(tweetSource, 'expected retweet source');
+  assert.equal(tweetSource.preview.kind, 'tweet');
+  assert.equal(tweetSource.preview.label, 'Retweet');
+  assert.equal(tweetSource.preview.social.kind, 'retweet');
+  assert.equal(tweetSource.preview.social.originalAuthor, 'elvis');
+  assert.equal(tweetSource.preview.social.quotedUrl, 'https://www.intology.ai/blog/nanogpt-bench');
+  assert.doesNotMatch(generatedText, /\bRT\b/);
+  assert.doesNotMatch(generatedText, /elvisVery/);
+  assert.doesNotMatch(generatedText, /Read more here:\s*https?:\/\//i);
 });

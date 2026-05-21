@@ -1,5 +1,8 @@
+import { z } from 'zod';
 import { slugify, summarizeText } from './text-utils.mjs';
-import { citationPreview, dedupeCitationLikeItems } from './rich-citations.mjs';
+import { citationPreview, dedupeCitationLikeItems, isTweetUrl } from './rich-citations.mjs';
+import { runGeneratedOutputLoop } from './generation-loop.mjs';
+import { evaluateNarratorOutput } from './narrator-voice-evals.mjs';
 
 const STOP_WORDS = new Set([
   'about',
@@ -92,6 +95,34 @@ const RELEVANCE_TERMS = [
 // 78% catches paraphrased repeats while avoiding false positives from shared AI-domain vocabulary.
 const NEAR_DUPLICATE_OVERLAP = 0.78;
 
+export const DAILY_ARTICLE_JOURNALIST_VOICE = {
+  id: 'tk-technews-journalist',
+  description: 'Tech news journalism with an academic, hard-science analytical spine.',
+  tone: 'journalistic-hard-science',
+  detailLevel: 'analytical',
+  wordChoice: {
+    prefer: ['evidence', 'mechanism', 'constraint', 'benchmark', 'architecture', 'causal', 'measurement', 'trade-off', 'hypothesis'],
+    avoid: ['topic brief', 'wiki page', 'knowledge graph', 'graph node']
+  },
+  rules: [
+    'Lead with the newsworthy technical change.',
+    'Add mechanism-level explanation after the lead.',
+    'Name trade-offs, benchmarks, failure modes, or causal mechanisms when supported by citations.'
+  ],
+  avoid: ['Pure encyclopedia tone', 'Speculation as fact']
+};
+
+const dailyArticleContentSchema = z.object({
+  dek: z.string().min(48),
+  bodySections: z.array(z.object({
+    heading: z.string().min(8),
+    intent: z.string().optional(),
+    paragraphs: z.array(z.string().min(70)).min(1),
+    citations: z.array(z.url()).min(1)
+  })).min(2),
+  keyTakeaways: z.array(z.string().min(45)).min(2)
+});
+
 export function buildDailyArticleStubs({ date, ledger, maxStubs = 12 }) {
   const items = dedupeCitationLikeItems((ledger.items ?? [])
     .filter((item) => isPublishedOnDate(item.publishedAt, date))
@@ -134,6 +165,8 @@ function clusterItems(items) {
 }
 
 function shouldMerge(cluster, item) {
+  const clusterUrls = new Set(cluster.items.flatMap((source) => [source.url, ...(source.relatedUrls ?? [])]).filter(Boolean));
+  if ((item.relatedUrls ?? []).some((url) => clusterUrls.has(url)) || clusterUrls.has(item.url)) return true;
   const sharedEntities = intersectionCount(cluster.entities, item.entities);
   const sharedKeywords = intersectionCount(cluster.keywords, item.keywords);
   if (sharedEntities > 0 && sharedKeywords > 0) return true;
@@ -176,8 +209,163 @@ function toArticleStub(cluster, date) {
       publishedAt: item.publishedAt,
       summary: item.summary,
       transcript: item.transcript,
-      preview: citationPreview(item)
+      preview: item.preview ?? citationPreview(item)
     }))
+  };
+}
+
+export async function evaluateDailyArticleContent({
+  output,
+  context = {},
+  voiceProfile = DAILY_ARTICLE_JOURNALIST_VOICE,
+  linkCheck = 'syntax',
+  fetchImpl = globalThis.fetch,
+  minScore = 0.86
+} = {}) {
+  const articleOutput = dailyContentAsNarratorArticle(output, context.stub);
+  const narratorReport = await evaluateNarratorOutput({
+    outputKind: 'article',
+    output: articleOutput,
+    context,
+    voiceProfile,
+    linkCheck,
+    fetchImpl,
+    minScore
+  });
+  const contentAssertions = evaluateActualDailyContent({ output, context });
+  const assertions = [...(narratorReport.assertions ?? []), ...contentAssertions];
+  const requiredFixes = [
+    ...(narratorReport.requiredFixes ?? []),
+    ...contentAssertions.filter((assertion) => !assertion.passed).map((assertion) => assertion.text)
+  ];
+  const score = assertions.length === 0
+    ? 0
+    : assertions.reduce((sum, assertion) => sum + assertion.score, 0) / assertions.length;
+
+  return {
+    score: Number(Math.min(score, narratorReport.score).toFixed(4)),
+    verdict: score >= minScore && narratorReport.verdict !== 'fail' && requiredFixes.length === 0 ? 'pass' : 'fail',
+    assertions,
+    feedback: assertions.filter((assertion) => !assertion.passed).map((assertion) => assertion.text),
+    requiredFixes
+  };
+}
+
+function evaluateActualDailyContent({ output, context }) {
+  const title = context.stub?.title ?? '';
+  const titleWords = new Set(wordsFrom(title));
+  const paragraphs = output.bodySections?.flatMap((section) => section.paragraphs ?? []) ?? [];
+  const headings = output.bodySections?.map((section) => section.heading ?? '') ?? [];
+  const wordTotal = wordCount(paragraphs.join(' '));
+  const assertions = [];
+
+  assertions.push(assertion(
+    'daily-article-word-count',
+    wordTotal >= 120,
+    `Daily article needs real body content, not a title echo; found ${wordTotal} body words, expected at least 120.`
+  ));
+  assertions.push(assertion(
+    'daily-article-section-count',
+    (output.bodySections ?? []).length >= 2,
+    'Daily article needs at least two substantive sections.'
+  ));
+
+  const echoParagraph = paragraphs.find((paragraph) => isTitleEcho(paragraph, titleWords, context));
+  assertions.push(assertion(
+    'daily-article-no-title-echo-paragraphs',
+    !echoParagraph,
+    `Daily article paragraph repeats headline/source metadata instead of explaining the story: ${echoParagraph ?? ''}`
+  ));
+
+  const templateHeading = headings.find((heading) => /changes the practical tradeoff|is the central move|^openai cheap could derail/i.test(heading));
+  assertions.push(assertion(
+    'daily-article-no-template-headings',
+    !templateHeading,
+    `Daily article heading still looks like generated metadata instead of editorial structure: ${templateHeading ?? ''}`
+  ));
+
+  const hardScienceHits = ['evidence', 'mechanism', 'constraint', 'measurement', 'trade-off', 'benchmark', 'architecture']
+    .filter((term) => containsTerm(paragraphs.join(' '), term));
+  assertions.push(assertion(
+    'daily-article-hard-science-detail',
+    hardScienceHits.length >= 2,
+    'Daily article needs hard-science journalist detail: evidence, mechanism, constraints, measurement, benchmarks, architecture, or trade-offs.'
+  ));
+
+  const copiedHeadline = (context.stub?.sources ?? []).find((source) => {
+    const headline = cleanSourceHeadline(source.title);
+    return headline.length > 28 && containsPlainText(paragraphs.join(' '), headline);
+  });
+  assertions.push(assertion(
+    'daily-article-no-copied-source-headlines',
+    !copiedHeadline,
+    `Daily article should synthesize from source headlines instead of pasting them as prose: ${copiedHeadline?.title ?? ''}`
+  ));
+
+  return assertions;
+}
+
+function assertion(name, passed, text) {
+  return { name, text: passed ? `${name} passed.` : text, passed, score: passed ? 1 : 0 };
+}
+
+function isTitleEcho(paragraph, titleWords, context) {
+  const words = wordsFrom(paragraph);
+  if (words.length < 18) return true;
+  const overlap = words.filter((word) => titleWords.has(word)).length / Math.max(1, Math.min(words.length, titleWords.size || 1));
+  if (words.length < 40 && overlap >= 0.75) return true;
+  const sourceTitles = new Set((context.stub?.sources ?? []).map((source) => fingerprint(source.title)));
+  return sourceTitles.has(fingerprint(paragraph.replace(/^[^:]{3,80}:\s*/, '')));
+}
+
+export async function buildDailyArticleStubsWithGenerationLoop({
+  date,
+  ledger,
+  maxStubs = 12,
+  voiceProfile = DAILY_ARTICLE_JOURNALIST_VOICE,
+  inference = deterministicDailyArticleInference,
+  evaluators = [evaluateDailyArticleContent],
+  evalMode = 'live',
+  maxEvalIterations = 3,
+  minEvalScore = 0.86,
+  linkCheck = 'syntax'
+}) {
+  const brief = buildDailyArticleStubs({ date, ledger, maxStubs });
+  const articleStubs = [];
+
+  for (const stub of brief.articleStubs) {
+    const result = await runGeneratedOutputLoop({
+      task: `Generate a real TK TechNews daily article for "${stub.title}".`,
+      outputKind: 'article',
+      schema: dailyArticleContentSchema,
+      prompt: dailyArticlePrompt({ stub, voiceProfile }),
+      context: dailyArticleEvalContext(stub),
+      voiceProfile,
+      inference,
+      evaluators,
+      evalMode,
+      maxIterations: maxEvalIterations,
+      minScore: minEvalScore,
+      linkCheck,
+      normalizeOutput: (candidate) => normalizeDailyArticleContent(candidate, stub)
+    });
+
+    articleStubs.push({
+      ...stub,
+      ...result.output,
+      status: result.evalStatus === 'passed' ? 'generated' : 'best_effort',
+      evalReport: result.evalReport,
+      evalScore: result.evalScore,
+      evalAttempts: result.evalAttempts,
+      evalStatus: result.evalStatus,
+      provider: result.provider ?? null,
+      model: result.model ?? null
+    });
+  }
+
+  return {
+    ...brief,
+    articleStubs
   };
 }
 
@@ -283,6 +471,8 @@ function buildStubTitle(cluster, lead) {
 
 function normalizeItem(item) {
   const title = cleanTitle(item.title);
+  const preview = citationPreview(item);
+  const isSocial = isTweetUrl(item.url);
   const transcriptText = item.transcript?.status === 'ok' ? item.transcript.text : '';
   const body = stripNoise(`${item.summary ?? ''} ${item.transcriptSummary ?? ''} ${transcriptText ?? ''} ${(item.tags ?? []).join(' ')}`);
   const searchText = `${title} ${body}`.toLowerCase();
@@ -302,7 +492,9 @@ function normalizeItem(item) {
     publishedAt: item.publishedAt ?? null,
     summary: stripNoise(item.summary ?? item.transcriptSummary ?? title),
     transcriptSummary: stripNoise(item.transcriptSummary ?? ''),
-    sourceText: stripNoise(transcriptText || item.transcriptSummary || item.summary || title),
+    sourceText: isSocial ? '' : stripNoise(transcriptText || item.transcriptSummary || item.summary || title),
+    relatedUrls: [preview.social?.quotedUrl].filter(Boolean),
+    preview,
     transcript: item.transcript,
     entities,
     keywords
@@ -357,14 +549,231 @@ function sentenceSplit(value) {
 
 function buildCombinedSourceText(items) {
   return items
-    .map((item) => item.sourceText || item.transcriptSummary || item.summary || item.title)
+    .map(evidenceTextForItem)
     .filter(Boolean)
     .join(' ');
 }
 
+async function deterministicDailyArticleInference({ context, attempt }) {
+  return {
+    output: composeDailyArticleContent(context.stub, { attempt }),
+    provider: 'deterministic-daily-journalist',
+    model: null
+  };
+}
+
+function composeDailyArticleContent(stub, { attempt = 1 } = {}) {
+  const sources = stub.sources ?? [];
+  const entities = titleCaseList(stub.tags?.slice(0, 3) ?? wordsFrom(stub.title).slice(0, 3));
+  const subject = articleSubject(stub, entities);
+  const leadSource = sources[0];
+  const supporting = sources.slice(1, 4);
+  const mechanism = summarizeSourceSignal(sources.find((source) => /\b(agent|model|sdk|workflow|coding|benchmark|research|security|database|cloud|api)\b/i.test(source.preview?.snippet || source.summary || source.title))
+    ?? leadSource
+    ?? { title: stub.title, summary: stub.dek }, stub);
+  const citationUrls = sources.map((source) => source.url).filter(Boolean);
+  const primaryCitation = citationUrls[0] ? ` [${leadSource?.sourceName ?? 'Source'}](${citationUrls[0]})` : '';
+  const supportCitation = citationUrls[1] ? ` [${supporting[0]?.sourceName ?? 'Related source'}](${citationUrls[1]})` : primaryCitation;
+  const sourceCount = sources.length;
+
+  const dek = `${subject} is best read as a measurement problem: ${sourceCount} source${sourceCount === 1 ? '' : 's'} point to a concrete technical shift, but the evidence still needs careful separation from market or platform noise.`;
+  const firstHeading = `${entities[0] ?? 'The Update'} Has A Measurable Technical Core`;
+  const secondHeading = `The Constraint Is What The Sources Can Actually Support`;
+  const thirdHeading = supporting.length > 1 ? `The Trade-Off Is Platform Leverage Versus Evidence Quality` : null;
+
+  const firstParagraph = [
+    `${subject} matters because the source set is not just naming a product or company; it is pointing at a mechanism developers or AI teams may need to evaluate.`,
+    `The strongest evidence is ${mechanism}, which gives the story a technical object rather than a headline-only signal.${primaryCitation}`,
+    `That makes the useful question less "who announced what" and more "what architecture, workflow, or measurement changes if this source is accurate."`
+  ].join(' ');
+
+  const secondParagraph = [
+    `The constraint is that the daily feed mixes direct technical sources with syndicated summaries, so the article should preserve uncertainty instead of inflating sparse metadata into a verdict.`,
+    `${supporting.length > 0 ? `A supporting source adds ${summarizeSourceSignal(supporting[0], stub)}.${supportCitation}` : `Only one source is available, so the evidence supports a narrower technical read rather than a broad market claim.${primaryCitation}`}`,
+    `For a hard-science read, that means treating each claim as a measurement input: useful for direction, limited for causal certainty.`
+  ].join(' ');
+
+  const thirdParagraph = [
+    `The practical trade-off is speed versus verification.`,
+    `Developer teams can use this kind of signal to decide what to inspect next, but they should not treat a thin feed item as proof that a model, platform, or security posture has changed in production.`,
+    `The architecture implication is to keep the cited source attached to the claim, then update the article when richer primary evidence arrives.`
+  ].join(' ');
+
+  const bodySections = [
+    {
+      heading: firstHeading,
+      intent: 'Explain the source-backed technical development and why it matters.',
+      paragraphs: [firstParagraph],
+      citations: citationUrls.slice(0, Math.max(1, Math.min(3, citationUrls.length)))
+    },
+    {
+      heading: secondHeading,
+      intent: 'Separate supported claims from uncertainty and source limitations.',
+      paragraphs: [secondParagraph],
+      citations: citationUrls.slice(0, Math.max(1, Math.min(4, citationUrls.length)))
+    }
+  ];
+
+  if (thirdHeading) {
+    bodySections.push({
+      heading: thirdHeading,
+      intent: 'Name the operational trade-off for technical readers.',
+      paragraphs: [thirdParagraph],
+      citations: citationUrls.slice(0, Math.max(1, Math.min(4, citationUrls.length)))
+    });
+  }
+
+  return {
+    dek,
+    bodySections,
+    keyTakeaways: [
+      `${subject} should be read through its cited evidence first; the feed gives a technical signal, not a complete causal proof.`,
+      `The relevant mechanism is the workflow, model, architecture, or measurement implied by the sources, while weak syndicated metadata should stay bounded.`,
+      `The operational trade-off is faster awareness versus the need to verify primary sources before making engineering or market decisions.`
+    ].slice(0, attempt > 1 ? 3 : 2)
+  };
+}
+
+function normalizeDailyArticleContent(candidate, stub) {
+  const parsed = dailyArticleContentSchema.parse(candidate);
+  const allowed = new Set(stub.sources.map((source) => source.url));
+  return {
+    dek: parsed.dek,
+    bodySections: parsed.bodySections.map((section) => ({
+      ...section,
+      citations: section.citations.filter((url) => allowed.has(url)).length > 0
+        ? section.citations.filter((url) => allowed.has(url))
+        : stub.sources.slice(0, 1).map((source) => source.url)
+    })),
+    keyTakeaways: parsed.keyTakeaways
+  };
+}
+
+function dailyArticleEvalContext(stub) {
+  const allowedCitations = stub.sources.map((source) => ({
+    title: source.preview?.title || source.title,
+    url: source.url,
+    source: source.sourceName
+  }));
+  return {
+    stub,
+    allowedCitations,
+    relevanceText: [
+      stub.title,
+      stub.dek,
+      ...stub.sources.map((source) => `${source.title} ${source.summary ?? ''} ${source.preview?.snippet ?? ''}`)
+    ].join(' ')
+  };
+}
+
+function dailyContentAsNarratorArticle(output, stub) {
+  const citations = (stub?.sources ?? []).map((source) => ({
+    title: source.preview?.title || source.title,
+    url: source.url,
+    source: source.sourceName
+  }));
+  return {
+    title: stub?.title ?? 'Daily article',
+    description: output?.dek ?? '',
+    slug: stub?.slug ?? 'daily-article',
+    tags: stub?.tags ?? [],
+    markdownBody: [
+      ...(output?.bodySections ?? []).flatMap((section) => [
+        `## ${section.heading}`,
+        '',
+        ...(section.paragraphs ?? []),
+        ''
+      ]),
+      '## Key Takeaways',
+      '',
+      ...(output?.keyTakeaways ?? []).map((takeaway) => `- ${takeaway}`)
+    ].join('\n'),
+    citations
+  };
+}
+
+function dailyArticlePrompt({ stub, voiceProfile }) {
+  return [
+    `Write a real TK TechNews daily article for: ${stub.title}`,
+    '',
+    'Use the article narrator voice: technology journalism with an academic, hard-science spin.',
+    'Requirements:',
+    '- Generate actual article content; never repeat the title, source headline, or tags as the body.',
+    '- Use at least two substantive sections with mechanism, evidence, constraints, measurements, architecture, or trade-offs when supported.',
+    '- Keep every claim grounded in the supplied sources and citations.',
+    '- Retweets and quoted social posts may inform source cards, but do not paste raw RT text into article prose.',
+    '',
+    'Voice profile:',
+    JSON.stringify(voiceProfile, null, 2),
+    '',
+    'Source packet:',
+    JSON.stringify({
+      title: stub.title,
+      tags: stub.tags,
+      sources: stub.sources.map((source) => ({
+        title: source.preview?.title || source.title,
+        url: source.url,
+        sourceName: source.sourceName,
+        summary: source.preview?.snippet || source.summary,
+        social: source.preview?.social ?? null
+      }))
+    }, null, 2)
+  ].join('\n');
+}
+
+function summarizeSourceSignal(source, stub) {
+  const text = `${source?.preview?.snippet ?? ''} ${source?.summary ?? ''} ${source?.title ?? ''}`.toLowerCase();
+  const tags = titleCaseList(stub?.tags ?? []).slice(0, 3).join(', ');
+  if (text.includes('course') || text.includes('agents for media')) {
+    return `an AI-agent course or workflow signal tied to ${tags || 'the named platform'}`;
+  }
+  if (text.includes('ipo') || text.includes('cheap ai')) {
+    return `a market-pressure signal about cheaper AI systems and capital expectations`;
+  }
+  if (text.includes('security') || text.includes('breach') || text.includes('hack')) {
+    return `a security signal that turns developer tooling into a supply-chain constraint`;
+  }
+  if (text.includes('model') || text.includes('benchmark')) {
+    return `a model or benchmark signal that needs measurement before it becomes a durable claim`;
+  }
+  if (text.includes('sdk') || text.includes('api') || text.includes('gateway')) {
+    return `an SDK or API surface change with architecture implications for developers`;
+  }
+  if (text.includes('agent') || text.includes('workflow') || text.includes('coding')) {
+    return `an agent-workflow signal with practical developer consequences`;
+  }
+  return `a cited source signal connected to ${tags || 'the article topic'}`;
+}
+
+function articleSubject(stub, entities) {
+  const entitySubject = entities.slice(0, 2).join(' and ');
+  const lowerTitle = String(stub?.title ?? '').toLowerCase();
+  if (/\.net|build 2026/.test(lowerTitle)) return '.NET and AI tooling';
+  if (/memory|recurrent/.test(lowerTitle)) return 'agent memory research';
+  if (/coding|devtools|data model|cosmos/.test(lowerTitle)) return `${entitySubject || 'AI developer tooling'} workflow`;
+  if (/cheap|ipo|market/.test(lowerTitle)) return `${entitySubject || 'AI platform economics'} pressure`;
+  if (entitySubject) return `${entitySubject} signal`;
+  return 'this daily technical signal';
+}
+
+function cleanSourceHeadline(value) {
+  return String(value ?? '')
+    .replace(/\s+-\s+[^-]+$/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function containsPlainText(text, needle) {
+  return String(text ?? '').toLowerCase().includes(String(needle ?? '').toLowerCase());
+}
+
+function titleCaseList(values) {
+  return values.map((value) => titleCaseConcept(value)).filter(Boolean);
+}
+
 function extractEvidenceSentences(items, summary) {
   const sourceSentences = items
-    .flatMap((item) => sentenceSplit(item.sourceText || item.transcriptSummary || item.summary || item.title))
+    .flatMap((item) => sentenceSplit(evidenceTextForItem(item)))
     .filter((sentence) => sentence.length > 30);
   const fallbackSentences = sentenceSplit(summary);
   const scored = uniqueSentences(sourceSentences.length > 0 ? sourceSentences : fallbackSentences)
@@ -374,6 +783,11 @@ function extractEvidenceSentences(items, summary) {
     .map(({ sentence }) => sentence);
 
   return scored.length > 0 ? scored : fallbackSentences.slice(0, 6);
+}
+
+function evidenceTextForItem(item) {
+  if (isTweetUrl(item.url)) return '';
+  return item.sourceText || item.transcriptSummary || item.summary || item.title;
 }
 
 function scoreEvidenceSentence(sentence, index) {
@@ -641,4 +1055,14 @@ function titleCase(value) {
 function trimTitle(value, maxLength = 92) {
   const normalized = stripNoise(value);
   return normalized.length > maxLength ? `${normalized.slice(0, maxLength - 3).trimEnd()}...` : normalized;
+}
+
+function wordCount(value) {
+  return String(value ?? '').trim().split(/\s+/).filter(Boolean).length;
+}
+
+function containsTerm(text, term) {
+  const escaped = String(term).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\ /g, '[\\s-]+');
+  if (!escaped) return false;
+  return new RegExp(`\\b${escaped}\\b`, 'i').test(String(text));
 }

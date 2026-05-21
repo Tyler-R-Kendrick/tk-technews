@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { dailyBrief } from '../../../lib/daily-feed.mjs';
+import { renderInlineMarkdown } from '../../../lib/inline-markdown.mjs';
 import { citationPreview } from '../../../../scripts/lib/rich-citations.mjs';
 
 type DailyStub = {
@@ -26,7 +27,15 @@ type DailyStub = {
     publishedAt?: string | null;
     summary?: string;
     transcript?: { status?: string; videoId?: string | null };
-    preview?: ReturnType<typeof citationPreview>;
+    preview?: ReturnType<typeof citationPreview> & {
+      social?: {
+        kind?: string;
+        originalAuthor?: string | null;
+        text?: string;
+        quotedUrl?: string | null;
+        quotedTitle?: string | null;
+      } | null;
+    };
   }>;
 };
 
@@ -67,7 +76,7 @@ const citationPreviews = stub.sources.map((source) => source.preview ?? citation
           {(stub.bodySections ?? []).map((section) => (
             <section class="daily-article-section">
               <h2>{section.heading}</h2>
-              {(section.paragraphs ?? []).map((paragraph) => <p>{paragraph}</p>)}
+              {(section.paragraphs ?? []).map((paragraph) => <p set:html={renderInlineMarkdown(paragraph)} />)}
             </section>
           ))}
 
@@ -75,7 +84,7 @@ const citationPreviews = stub.sources.map((source) => source.preview ?? citation
             <>
               <h2>Key Takeaways</h2>
               <ul class="wiki-development-list">
-                {stub.keyTakeaways.map((takeaway) => <li>{takeaway}</li>)}
+                {stub.keyTakeaways.map((takeaway) => <li set:html={renderInlineMarkdown(takeaway)} />)}
               </ul>
             </>
           )}
@@ -104,6 +113,15 @@ const citationPreviews = stub.sources.map((source) => source.preview ?? citation
                     </span>
                     <strong>{source.title}</strong>
                     {source.snippet && <span class="rich-source-snippet">{source.snippet}</span>}
+                    {source.social?.kind === 'retweet' && source.social.originalAuthor && (
+                      <span class="rich-social-context">Reposted from {source.social.originalAuthor}</span>
+                    )}
+                    {source.social?.quotedUrl && (
+                      <span class="rich-quoted-source">
+                        <span class="rich-quoted-label">Quoted source</span>
+                        <span class="rich-quoted-title">{source.social.quotedTitle ?? source.social.quotedUrl}</span>
+                      </span>
+                    )}
                     <span class="rich-source-host">{source.host}</span>
                   </span>
                 </a>

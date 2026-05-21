@@ -10,17 +10,46 @@ export function citationPreview(citation) {
   const source = cleanText(citation?.sourceName ?? citation?.source) || hostLabel(href);
   const summary = cleanText(citation?.summary ?? citation?.snippet ?? citation?.description);
   const kind = isTweetUrl(href) ? 'tweet' : isVideoUrl(href) ? 'video' : 'source';
-  const snippet = trimText(summary || (kind === 'tweet' ? title : ''), 220);
+  const social = kind === 'tweet' ? extractSocialPostParts({ title, summary }) : null;
+  const snippet = trimText(social?.text || summary || (kind === 'tweet' ? title : ''), 220);
+  const previewTitle = socialTitle(title, social);
 
   return {
     kind,
-    label: kind === 'tweet' ? 'X post' : kind === 'video' ? 'Video' : 'Source',
+    label: kind === 'tweet' ? socialLabel(social) : kind === 'video' ? 'Video' : 'Source',
     href,
-    title: trimText(title, 140),
+    title: trimText(previewTitle, 140),
     source,
     snippet,
     host: hostLabel(href),
-    thumbnailUrl: youtubeThumbnailUrl(href)
+    thumbnailUrl: youtubeThumbnailUrl(href),
+    social
+  };
+}
+
+export function extractSocialPostParts({ title = '', summary = '' } = {}) {
+  const titleText = cleanText(title);
+  const rawSummaryText = cleanText(summary || titleText);
+  const summaryText = cleanTweetText(rawSummaryText);
+  const retweet = titleText.match(/^RT\s+([^:]+):\s*(.*)$/i) ?? summaryText.match(/^RT\s+([A-Za-z0-9_. -]{2,40})\s+(.+)$/i);
+  const originalAuthor = retweet ? cleanText(retweet[1]) : null;
+  const withoutRetweet = retweet
+    ? cleanTweetText(removeRetweetPrefix(rawSummaryText, originalAuthor))
+    : summaryText;
+  const quotedUrlMatch = firstUrlMatch(withoutRetweet);
+  const quotedUrl = quotedUrlMatch?.url ?? null;
+  const [mainText, quotedTail = ''] = quotedUrl
+    ? withoutRetweet.split(quotedUrlMatch.splitToken, 2)
+    : [withoutRetweet, ''];
+  const postText = cleanTweetText(mainText || withoutRetweet).replace(/\bRead more(?: here)?\s*:?\s*$/i, '').trim();
+  const quotedTitle = cleanQuotedTitle(quotedTail);
+
+  return {
+    kind: originalAuthor ? 'retweet' : quotedUrl ? 'quote' : 'post',
+    originalAuthor,
+    text: trimText(postText, 280),
+    quotedUrl: quotedUrl ?? null,
+    quotedTitle: quotedTitle ? trimText(quotedTitle, 180) : null
   };
 }
 
@@ -125,6 +154,19 @@ function hostLabel(value) {
   return parsed ? parsed.hostname.replace(/^www\./, '') : 'Source';
 }
 
+function socialLabel(social) {
+  if (social?.kind === 'retweet') return 'Retweet';
+  if (social?.kind === 'quote') return 'Quote';
+  return 'X post';
+}
+
+function socialTitle(title, social) {
+  if (social?.kind === 'retweet' && social.originalAuthor) {
+    return `${social.originalAuthor}: ${social.text || cleanTweetText(title).replace(/^RT\s+/i, '')}`;
+  }
+  return title;
+}
+
 function contentKey(value) {
   const words = cleanText(value)
     .toLowerCase()
@@ -147,6 +189,49 @@ function parseUrl(value) {
 
 function cleanText(value) {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
+}
+
+function cleanTweetText(value) {
+  return cleanText(value)
+    .replace(/([!?])(\.)/g, '$1 $2')
+    .replace(/([a-z0-9)]\.)([A-Z@#])/g, '$1 $2')
+    .replace(/([!?])([A-Za-z@#])/g, '$1 $2')
+    .replace(/([a-z0-9)])(@|#)/g, '$1 $2')
+    .replace(/\s+([.!?,:;])/g, '$1')
+    .trim();
+}
+
+function firstUrlMatch(value) {
+  const match = String(value ?? '').match(/https?:\/\/\S+/i);
+  if (!match) return null;
+  const candidate = match[0].replace(/[),.;]+$/g, '');
+  const sourceLabelBoundary = candidate.match(/^(https?:\/\/.*?)(?=[A-Z][A-Za-z0-9 ._-]{1,80}:)/);
+  const splitToken = sourceLabelBoundary?.[1] ?? candidate;
+  const url = cleanQuotedUrl(splitToken);
+  return { url, splitToken };
+}
+
+function cleanQuotedUrl(value) {
+  const parsed = parseUrl(value);
+  if (parsed && isTweetUrl(parsed.href)) {
+    return `${parsed.origin}${parsed.pathname}`;
+  }
+  return value.replace(/[?&]$/g, '');
+}
+
+function cleanQuotedTitle(value) {
+  const title = value ? cleanTweetText(value).replace(/^[:\s-]+/, '') : '';
+  return /^[?&]?[A-Za-z0-9_]+=/.test(title) ? '' : title;
+}
+
+function removeRetweetPrefix(value, originalAuthor) {
+  const authorPattern = String(originalAuthor ?? '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('\\s*');
+  if (!authorPattern) return value;
+  return String(value ?? '').replace(new RegExp(`^RT\\s+${authorPattern}:?\\s*`, 'i'), '');
 }
 
 function trimText(value, maxLength) {

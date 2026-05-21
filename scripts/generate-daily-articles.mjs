@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildDailyArticleStubs } from './lib/daily-article-stubs.mjs';
+import { buildDailyArticleStubsWithGenerationLoop } from './lib/daily-article-stubs.mjs';
 import { buildWeeklyLedgerFromPrecompiled } from './lib/precompiled-weekly-ledger.mjs';
 
 const repoRoot = dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
@@ -34,15 +34,19 @@ const ledger = buildWeeklyLedgerFromPrecompiled({
   assets
 });
 
-const dailyBrief = buildDailyArticleStubs({
+const dailyBrief = await buildDailyArticleStubsWithGenerationLoop({
   date,
   ledger,
-  maxStubs
+  maxStubs,
+  evalMode: args['eval-mode'] ?? 'live',
+  maxEvalIterations: Number(args['max-eval-iterations'] ?? 3),
+  minEvalScore: Number(args['min-eval-score'] ?? 0.86),
+  linkCheck: args['link-check'] ?? 'syntax'
 });
 
 const payload = {
   ...dailyBrief,
-  voice: args.voice ?? 'tk-technews'
+  voice: args.voice ?? 'tk-technews-journalist'
 };
 
 writeJson('src/data/daily/generated-daily-articles.json', payload);

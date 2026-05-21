@@ -399,6 +399,7 @@ async function generateWikiWithInference({
  * @param {string} params.graphHash - Stable graph hash included in the generation metadata.
  * @param {Object} params.voiceProfile - Voice profile object describing tone and stylistic constraints.
  * @returns {string} The complete instruction prompt containing generation rules, required JSON schema, generation metadata, the voice profile, and serialized research packets.
+ */
 function topicExplainerPrompt({ generatedAt, packets, graphHash, voiceProfile }) {
   return [
     'Write concise, useful AI topic explainers from the supplied research packets.',

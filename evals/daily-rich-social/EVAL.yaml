@@ -1,0 +1,47 @@
+name: daily-rich-social
+description: Daily generated stubs must preserve rich tweet, quote, and retweet previews without leaking raw RT formatting into generated prose.
+tags:
+  - daily
+  - social
+  - agentv
+  - agentevals
+target: tk-technews-daily-social-fixtures
+tests:
+  - id: retweet-quote-preview-contract
+    criteria: Daily stubs use the daily journalist generation loop, keep retweets and quoted posts as rich structured source previews, and produce substantive article body content while generated dek/body/takeaways avoid raw RT glue and flattened quoted-link text.
+    input: |
+      fixture: retweet-quote
+      output_kind: daily_stub
+    assert:
+      - name: daily-social-composite
+        type: composite
+        required: true
+        min_score: 1
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-daily-social-checks: 1
+        assert:
+          - name: deterministic-daily-social-checks
+            type: code_judge
+            script: graders/daily-social-deterministic.mjs
+            required: true
+  - id: title-echo-quality-contract
+    criteria: Every daily generated article must use the journalist generation loop and produce real explanatory content, not headline echoes, source-title repeats, or old template headings.
+    input: |
+      fixture: title-echo-quality
+      output_kind: daily_stub
+    assert:
+      - name: daily-quality-composite
+        type: composite
+        required: true
+        min_score: 1
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-daily-social-checks: 1
+        assert:
+          - name: deterministic-daily-social-checks
+            type: code_judge
+            script: graders/daily-social-deterministic.mjs
+            required: true

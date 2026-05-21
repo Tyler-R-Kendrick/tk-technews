@@ -24,6 +24,7 @@ import {
 } from './inference.mjs';
 import {
   aggregateEnrichedDocsForDate,
+  dedupeMarkdownBody,
   generateArticleFromAggregate,
   ingestSourceUri,
   revisitPendingRecord,
@@ -53,6 +54,28 @@ test('append-only ledger returns latest record by id', async () => {
     status: 'parsed',
     revision: 2
   });
+});
+
+test('dedupes repeated generated article paragraphs while preserving headings and lists', () => {
+  const markdown = [
+    '## What Changed',
+    '',
+    'GitHub Copilot remote control is generally available for CLI and VS Code sessions.',
+    '',
+    'GitHub Copilot remote control is generally available for CLI and VS Code sessions.',
+    '',
+    '## Applied Opportunities',
+    '',
+    '- Speculative applied opportunity: Build a remote workflow. Confidence: 80%. Risks: Needs validation.',
+    '- Speculative applied opportunity: Build a remote workflow. Confidence: 80%. Risks: Needs validation.'
+  ].join('\n');
+
+  const deduped = dedupeMarkdownBody(markdown);
+
+  assert.equal((deduped.match(/GitHub Copilot remote control is generally available/gi) ?? []).length, 1);
+  assert.equal((deduped.match(/Speculative applied opportunity: Build a remote workflow/gi) ?? []).length, 1);
+  assert.match(deduped, /^## What Changed/m);
+  assert.match(deduped, /^## Applied Opportunities/m);
 });
 
 test('graph stores temporal multimodal nodes and JSON-LD edges', () => {

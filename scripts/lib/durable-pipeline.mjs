@@ -14,6 +14,7 @@ import {
   stableHash
 } from './ledger-store.mjs';
 import { frontmatterString, slugify, stripHtml } from './text-utils.mjs';
+import { canonicalUrlKey } from './rich-citations.mjs';
 import {
   addArtifactAndPersist,
   findRelatedGraphContext,
@@ -354,8 +355,8 @@ export async function generateArticleFromAggregate({
   const output = result.output;
   const slug = slugify(output.slug || output.title);
   const articleId = `article:${stableHash(`${aggregate.id}:${slug}`)}`;
-  const citations = output.citations ?? [];
-  const markdownBody = output.markdownBody;
+  const citations = dedupeCitations([...(output.citations ?? []), ...(aggregate.citations ?? [])]);
+  const markdownBody = dedupeMarkdownBody(ensureAppliedOpportunitiesSection(output.markdownBody, aggregate.appliedOpportunities ?? [], citations));
   const articlesDir = path.join(root, 'src', 'content', 'articles');
   await fs.mkdir(articlesDir, { recursive: true });
   const markdownPath = path.join(articlesDir, `${slug}.md`);
@@ -774,6 +775,51 @@ function ensureAppliedOpportunitiesSection(markdownBody, opportunities, citation
   return `${markdownBody}\n\n## Applied Opportunities\n\n${lines.join('\n')}`;
 }
 
+/**
+ * Removes repeated generated Markdown blocks and duplicate list items without dropping headings.
+ */
+export function dedupeMarkdownBody(markdownBody) {
+  const seen = new Set();
+  return String(markdownBody ?? '')
+    .split(/\n{2,}/)
+    .filter((block) => {
+      const trimmed = block.trim();
+      if (!trimmed) return false;
+      if (/^#{1,6}\s+/m.test(trimmed)) return true;
+      const key = markdownBlockKey(trimmed);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .map(dedupeMarkdownListLines)
+    .join('\n\n');
+}
+
+function markdownBlockKey(value) {
+  return String(value ?? '')
+    .toLowerCase()
+    .replace(/\]\((https?:\/\/[^)]+)\)/g, ']')
+    .replace(/https?:\/\/\S+/g, ' ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .slice(0, 240);
+}
+
+function dedupeMarkdownListLines(block) {
+  if (!/^\s*[-*]\s+/m.test(block)) return block;
+  const seen = new Set();
+  return block
+    .split('\n')
+    .filter((line) => {
+      if (!/^\s*[-*]\s+/.test(line)) return true;
+      const key = markdownBlockKey(line);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .join('\n');
+}
+
 async function readVoiceProfile(root, voice) {
   const profilePath = path.join(root, 'data', 'voice', `${voice}.json`);
   return JSON.parse(await fs.readFile(profilePath, 'utf8'));
@@ -790,8 +836,9 @@ function citationsForAggregate(aggregate) {
 function dedupeCitations(citations) {
   const seen = new Set();
   return citations.filter((citation) => {
-    if (!citation?.url || seen.has(citation.url)) return false;
-    seen.add(citation.url);
+    const key = canonicalUrlKey(citation?.url);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
     return true;
   });
 }

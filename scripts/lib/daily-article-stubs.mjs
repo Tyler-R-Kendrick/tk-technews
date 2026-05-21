@@ -1,4 +1,5 @@
 import { slugify, summarizeText } from './text-utils.mjs';
+import { citationPreview, dedupeCitationLikeItems } from './rich-citations.mjs';
 
 const STOP_WORDS = new Set([
   'about',
@@ -88,11 +89,14 @@ const RELEVANCE_TERMS = [
   'workflows'
 ];
 
+// 78% catches paraphrased repeats while avoiding false positives from shared AI-domain vocabulary.
+const NEAR_DUPLICATE_OVERLAP = 0.78;
+
 export function buildDailyArticleStubs({ date, ledger, maxStubs = 12 }) {
-  const items = (ledger.items ?? [])
+  const items = dedupeCitationLikeItems((ledger.items ?? [])
     .filter((item) => isPublishedOnDate(item.publishedAt, date))
     .map(normalizeItem)
-    .filter((item) => item.url && item.title && isRelevantItem(item));
+    .filter((item) => item.url && item.title && isRelevantItem(item)));
 
   const clusters = clusterItems(items);
   const articleStubs = clusters
@@ -145,6 +149,13 @@ function toArticleStub(cluster, date) {
   const combinedSummary = summarizeText(combinedSourceText, 5);
   const bodySections = buildDynamicBodySections({ title, summary: combinedSummary, items: sortedItems });
   const dek = buildDek({ combinedSummary, bodySections });
+  const dedupedBodySections = dedupeBodySectionsAgainstText(bodySections, [dek]);
+  const keyTakeaways = buildKeyTakeaways({
+    title,
+    bodySections: dedupedBodySections,
+    summary: combinedSummary,
+    excludeText: [dek, ...dedupedBodySections.flatMap((section) => section.paragraphs ?? [])]
+  });
 
   return {
     id: slug,
@@ -153,8 +164,8 @@ function toArticleStub(cluster, date) {
     title,
     dek,
     status: 'stub',
-    bodySections,
-    keyTakeaways: buildKeyTakeaways({ title, bodySections, summary: combinedSummary }),
+    bodySections: dedupedBodySections,
+    keyTakeaways,
     sourceCount: sortedItems.length,
     latestPublishedAt: lead.publishedAt ?? null,
     tags: mergeKeywords(cluster.entities, cluster.keywords).slice(0, 6),
@@ -164,9 +175,24 @@ function toArticleStub(cluster, date) {
       sourceName: item.sourceName,
       publishedAt: item.publishedAt,
       summary: item.summary,
-      transcript: item.transcript
+      transcript: item.transcript,
+      preview: citationPreview(item)
     }))
   };
+}
+
+function dedupeBodySectionsAgainstText(bodySections, excludeText) {
+  const seenValues = excludeText.flatMap(sentenceSplit);
+  return bodySections
+    .map((section) => ({
+      ...section,
+      paragraphs: (section.paragraphs ?? []).filter((paragraph) => {
+        if (isNearDuplicate(paragraph, seenValues)) return false;
+        seenValues.push(paragraph);
+        return true;
+      })
+    }))
+    .filter((section) => section.paragraphs.length > 0);
 }
 
 function buildDynamicBodySections({ title, summary, items }) {
@@ -174,6 +200,7 @@ function buildDynamicBodySections({ title, summary, items }) {
   const concepts = extractConcepts(`${title}. ${evidence.join(' ')}`);
   const grouped = groupEvidenceByConcept(evidence, concepts);
   const seenParagraphs = new Set();
+  const seenParagraphValues = [];
   const seenHeadings = new Set();
   const sections = [];
   for (const [index, { concept, sentences }] of grouped.entries()) {
@@ -181,8 +208,9 @@ function buildDynamicBodySections({ title, summary, items }) {
     const paragraphs = buildParagraphs({ concept, sentences, items })
       .filter((paragraph) => {
         const key = fingerprint(paragraph);
-        if (!key || seenParagraphs.has(key)) return false;
+        if (!key || seenParagraphs.has(key) || isNearDuplicate(paragraph, seenParagraphValues)) return false;
         seenParagraphs.add(key);
+        seenParagraphValues.push(paragraph);
         return true;
       });
     if (seenHeadings.has(fingerprint(heading)) || paragraphs.length === 0) continue;
@@ -203,8 +231,10 @@ function buildDynamicBodySections({ title, summary, items }) {
   }];
 }
 
-function buildKeyTakeaways({ title, bodySections, summary }) {
+function buildKeyTakeaways({ title, bodySections, summary, excludeText = [] }) {
   const titleWords = new Set(wordsFrom(title));
+  const seen = new Set(excludeText.flatMap(sentenceSplit).map(fingerprint));
+  const seenValues = excludeText.flatMap(sentenceSplit);
   const candidates = uniqueSentences(bodySections
     .flatMap((section) => section.paragraphs)
     .flatMap(sentenceSplit)
@@ -213,9 +243,23 @@ function buildKeyTakeaways({ title, bodySections, summary }) {
       const overlap = words.filter((word) => titleWords.has(word)).length;
       return words.length > 7 && overlap < Math.max(5, Math.floor(words.length * 0.6));
     }))
+    .filter((sentence) => {
+      const key = fingerprint(sentence);
+      if (!key || seen.has(key) || isNearDuplicate(sentence, seenValues)) return false;
+      seen.add(key);
+      seenValues.push(sentence);
+      return true;
+    })
     .slice(0, 4);
 
-  return candidates.length > 0 ? candidates : sentenceSplit(summary).slice(0, 3);
+  if (candidates.length > 0) return candidates;
+  return sentenceSplit(summary).filter((sentence) => {
+    const key = fingerprint(sentence);
+    if (!key || seen.has(key) || isNearDuplicate(sentence, seenValues)) return false;
+    seen.add(key);
+    seenValues.push(sentence);
+    return true;
+  }).slice(0, 3);
 }
 
 function buildDek({ combinedSummary, bodySections }) {
@@ -556,6 +600,19 @@ function titleCaseConcept(value) {
 
 function fingerprint(value) {
   return String(value ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().slice(0, 180);
+}
+
+function isNearDuplicate(value, seenValues) {
+  const words = new Set(wordsFrom(value));
+  if (words.size < 5) return false;
+  for (const seenValue of seenValues) {
+    const seenWords = new Set(wordsFrom(seenValue));
+    if (seenWords.size < 5) continue;
+    const shared = [...words].filter((word) => seenWords.has(word)).length;
+    const overlap = shared / Math.min(words.size, seenWords.size);
+    if (overlap >= NEAR_DUPLICATE_OVERLAP) return true;
+  }
+  return false;
 }
 
 function pluralConcept(value) {

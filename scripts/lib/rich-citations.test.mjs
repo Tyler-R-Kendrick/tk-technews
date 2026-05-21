@@ -243,6 +243,16 @@ test('canonicalUrlKey normalizes YouTube Shorts URLs to youtube.com/watch?v= for
   assert.equal(youtuBeShortsKey, watchKey);
 });
 
+test('YouTube handling requires a real host boundary', () => {
+  const fakeShortsUrl = 'https://notyoutube.com/shorts/PC9YBeURWk0';
+  assert.equal(canonicalUrlKey(fakeShortsUrl), 'notyoutube.com/shorts/pc9ybeurwk0');
+  assert.equal(isVideoUrl(fakeShortsUrl), false);
+
+  const preview = citationPreview({ url: fakeShortsUrl, title: 'Fake shorts page' });
+  assert.equal(preview.kind, 'source');
+  assert.equal(preview.thumbnailUrl, null);
+});
+
 test('canonicalUrlKey preserves non-tracking query params while stripping oc= Google News param', () => {
   const withOc = canonicalUrlKey('https://news.google.com/rss/articles/abc123?oc=5');
   const withoutOc = canonicalUrlKey('https://news.google.com/rss/articles/abc123');

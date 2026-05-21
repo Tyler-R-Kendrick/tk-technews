@@ -77,7 +77,7 @@ export function canonicalUrlKey(value) {
     const match = path.match(/\/([^/]+)\/status\/(\d+)/i);
     return match ? `x.com/${match[1].toLowerCase()}/status/${match[2]}` : `${host}${path.toLowerCase()}`;
   }
-  if (host === 'youtu.be' || host.endsWith('youtube.com')) {
+  if (host === 'youtu.be' || isYoutubeHost(host)) {
     const id = youtubeId(value);
     if (id) return `youtube.com/watch?v=${id}`;
   }
@@ -108,12 +108,16 @@ function youtubeId(value) {
     if (pathSegments[0] === 'shorts') return pathSegments[1] || null;
     return pathSegments.length === 1 ? pathSegments[0] : null;
   }
-  if (host.endsWith('youtube.com')) {
+  if (isYoutubeHost(host)) {
     if (pathSegments[0] === 'shorts') return pathSegments[1] || null;
     if (pathSegments[0] === 'embed') return pathSegments[1] || null;
     return parsed.searchParams.get('v');
   }
   return null;
+}
+
+function isYoutubeHost(host) {
+  return host === 'youtube.com' || host.endsWith('.youtube.com');
 }
 
 function hostLabel(value) {

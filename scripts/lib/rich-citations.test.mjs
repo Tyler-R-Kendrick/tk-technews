@@ -156,6 +156,18 @@ test('summary retweet fallback captures only the author token', () => {
   assert.doesNotMatch(tightColonParts.text, /^RT\b/i);
 });
 
+test('summary retweet fallback splits glued body text at camel-case boundary', () => {
+  const parts = extractSocialPostParts({
+    title: '',
+    summary: 'RT elvisVery interesting results from this NanoGPT-Bench eval.'
+  });
+
+  assert.equal(parts.kind, 'retweet');
+  assert.equal(parts.originalAuthor, 'elvis');
+  assert.match(parts.text, /^Very interesting/);
+  assert.doesNotMatch(parts.text, /^RT\b/i);
+});
+
 test('isTweetUrl returns false for x.com URLs without a /status/ path', () => {
   assert.equal(isTweetUrl('https://x.com/cloudflare'), false);
   assert.equal(isTweetUrl('https://x.com/'), false);

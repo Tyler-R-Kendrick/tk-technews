@@ -14,6 +14,9 @@ and editorial handoff work ahead of publishing.
    `data/monitored-sources.json`.
 3. Run `npm run precompile:sources` to pull monitored YouTube channel feeds and
    Google News RSS topics into `src/data/precompiled/`.
+   `npm run daily:generate` runs this precompile step before writing the daily
+   homepage/article-stub artifacts, so the public daily brief does not reuse a
+   stale `source-index.json`.
 4. Run `npm run ingest` to collect RSS entries, web page text, and YouTube
    transcripts where available.
 5. Store raw source payloads in `data/raw/` and normalized summaries in

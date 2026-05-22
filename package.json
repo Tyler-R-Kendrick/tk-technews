@@ -23,7 +23,7 @@
     "article:generate": "node scripts/article-generate.mjs",
     "pipeline:source": "node scripts/pipeline-source.mjs",
     "pipeline:daily": "node scripts/pipeline-daily.mjs",
-    "daily:generate": "node scripts/generate-daily-articles.mjs",
+    "daily:generate": "npm run precompile:sources && node scripts/generate-daily-articles.mjs",
     "wiki:generate": "node scripts/generate-wiki.mjs",
     "pipeline": "npm run precompile:sources && npm run ingest && npm run extract:knowledge && npm run draft",
     "validate:citations": "node scripts/validate-citations.mjs",

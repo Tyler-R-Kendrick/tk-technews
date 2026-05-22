@@ -212,7 +212,6 @@ function toArticleStub(cluster, date) {
       sourceName: item.sourceName,
       publishedAt: item.publishedAt,
       summary: item.summary,
-      transcript: item.transcript,
       preview: item.preview ?? citationPreview(item)
     }))
   };
@@ -478,7 +477,15 @@ function normalizeItem(item) {
   const preview = citationPreview(item);
   const isSocial = isTweetUrl(item.url);
   const transcriptText = item.transcript?.status === 'ok' ? item.transcript.text : '';
-  const body = stripNoise(`${item.summary ?? ''} ${item.transcriptSummary ?? ''} ${transcriptText ?? ''} ${(item.tags ?? []).join(' ')}`);
+  const transcriptSummary = stripNoise(item.transcriptSummary ?? '');
+  const summarizedTranscript = transcriptText ? summarizeText(stripNoise(transcriptText), 5) : '';
+  const sourceText = stripNoise([
+    item.summary,
+    transcriptSummary,
+    transcriptSummary ? '' : summarizedTranscript,
+    title
+  ].filter(Boolean).join(' '));
+  const body = stripNoise(`${sourceText} ${(item.tags ?? []).join(' ')}`);
   const searchText = `${title} ${body}`.toLowerCase();
   const entities = KNOWN_ENTITIES
     .filter(([needle]) => searchText.includes(needle))
@@ -494,9 +501,9 @@ function normalizeItem(item) {
     url: item.url,
     sourceName: item.sourceName ?? 'Source',
     publishedAt: item.publishedAt ?? null,
-    summary: stripNoise(item.summary ?? item.transcriptSummary ?? title),
-    transcriptSummary: stripNoise(item.transcriptSummary ?? ''),
-    sourceText: isSocial ? '' : stripNoise(transcriptText || item.transcriptSummary || item.summary || title),
+    summary: stripNoise(item.summary ?? transcriptSummary ?? title),
+    transcriptSummary,
+    sourceText: isSocial ? '' : sourceText,
     relatedUrls: [
       preview.social?.originalUrl,
       preview.social?.repostUrl,

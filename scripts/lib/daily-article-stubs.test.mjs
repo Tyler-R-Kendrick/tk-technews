@@ -419,6 +419,41 @@ test('YouTube sources in article stubs get preview.kind === video with thumbnail
   assert.equal(source.preview.thumbnailUrl, 'https://i.ytimg.com/vi/Zl4tyHVQLkc/hqdefault.jpg');
 });
 
+test('article stub sources omit raw transcript payloads from generated artifacts', () => {
+  const result = buildDailyArticleStubs({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'youtube-memory',
+          kind: 'youtube',
+          title: 'Phase Transitions in Agent Memory: Recurrent Memory',
+          summary: 'The video analyzes recurrent memory for long-running LLM agents and describes phase-transition style consolidation thresholds.',
+          transcriptSummary: 'Recurrent memory stores incoming interactions in lightweight embedding space, then invokes heavier consolidation only when related interactions reach a density threshold.',
+          transcript: {
+            isGenerated: true,
+            status: 'ok',
+            text: 'raw transcript '.repeat(300)
+          },
+          url: 'https://www.youtube.com/watch?v=ViMRzszqpWM',
+          sourceName: 'AI Explained',
+          publishedAt: '2026-05-20T05:09:46.000Z',
+          tags: ['agents', 'memory', 'research']
+        }
+      ]
+    }
+  });
+
+  const source = result.articleStubs[0]?.sources[0];
+
+  assert.ok(source, 'expected a generated source card');
+  assert.equal(source.preview.kind, 'video');
+  assert.equal(source.preview.thumbnailUrl, 'https://i.ytimg.com/vi/ViMRzszqpWM/hqdefault.jpg');
+  assert.equal(Object.hasOwn(source, 'transcript'), false);
+  assert.doesNotMatch(JSON.stringify(result), /raw transcript raw transcript/);
+});
+
 test('preview.href matches the source url in article stubs', () => {
   const result = buildDailyArticleStubs({
     date: '2026-05-20',

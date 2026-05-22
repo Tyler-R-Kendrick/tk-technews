@@ -9,3 +9,10 @@ test('daily generation refreshes monitored sources before writing article stubs'
   assert.match(script, /generate-daily-articles\.mjs/);
   assert.ok(script.indexOf('precompile:sources') < script.indexOf('generate-daily-articles.mjs'));
 });
+
+test('agentic daily source workflow uses guarded runner script', () => {
+  assert.equal(
+    packageJson.scripts['daily:agentic'],
+    'node scripts/run-daily-source-generation.mjs'
+  );
+});

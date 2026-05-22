@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T18:23:49.050Z",
+  "generatedAt": "2026-05-22T16:35:28.962Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-20T18:23:49.050Z",
+    "fetchedAt": "2026-05-22T16:35:28.962Z",
     "items": [
       {
         "title": "2028: Two scenarios for global AI leadership",

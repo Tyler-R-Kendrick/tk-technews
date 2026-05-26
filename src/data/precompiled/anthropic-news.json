@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T16:35:28.962Z",
+  "generatedAt": "2026-05-26T17:09:33.223Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-22T16:35:28.962Z",
+    "fetchedAt": "2026-05-26T17:09:33.223Z",
     "items": [
+      {
+        "title": "Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical \"Magnifica humanitas\"",
+        "link": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+        "id": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+        "publishedAt": "2026-05-25T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
       {
         "title": "Widening the conversation on frontier AI",
         "link": "https://www.anthropic.com/news/widening-conversation-ai",
@@ -82,22 +91,13 @@
         "category": "Announcements"
       },
       {
-        "title": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
-        "link": "https://www.anthropic.com/news/enterprise-ai-services-company",
-        "id": "https://www.anthropic.com/news/enterprise-ai-services-company",
-        "publishedAt": "2026-05-04T05:00:00.000Z",
+        "title": "Introducing Claude Design by Anthropic Labs",
+        "link": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+        "id": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+        "publishedAt": "2026-04-17T05:00:00.000Z",
         "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Claude for Creative Work",
-        "link": "https://www.anthropic.com/news/claude-for-creative-work",
-        "id": "https://www.anthropic.com/news/claude-for-creative-work",
-        "publishedAt": "2026-04-28T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
+        "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
+        "category": "Product"
       }
     ]
   }

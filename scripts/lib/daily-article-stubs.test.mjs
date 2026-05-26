@@ -283,6 +283,92 @@ test('daily generation loop rejects title-echo pages without actual article cont
   assert.ok(report.requiredFixes.some((fix) => /generated metadata|template/i.test(fix)));
 });
 
+test('daily article evaluator rejects source-instruction explainer prose without usable source grounding', async () => {
+  const stub = {
+    title: 'Self Evolving AI Skills w/ GPT-5.5 (SkillOpt)',
+    dek: 'No usable text was extracted from this source.',
+    tags: ['self', 'evolving', 'skills'],
+    sources: [
+      {
+        title: 'Self Evolving AI Skills w/ GPT-5.5 (SkillOpt)',
+        url: 'https://www.youtube.com/watch?v=self-evolving-skills',
+        sourceName: 'Discover AI',
+        summary: 'No usable text was extracted from this source.',
+        preview: {
+          title: 'Self Evolving AI Skills w/ GPT-5.5 (SkillOpt)',
+          source: 'Discover AI',
+          snippet: 'No usable text was extracted from this source.'
+        }
+      }
+    ]
+  };
+
+  const report = await evaluateDailyArticleContent({
+    output: {
+      dek: 'Self and Evolving signal is best read as a measurement problem: 1 source point to a concrete technical shift, but the evidence still needs careful separation from market or platform noise.',
+      bodySections: [
+        {
+          heading: 'Self Has A Measurable Technical Core',
+          paragraphs: [
+            'Self and Evolving signal matters because the source set is not just naming a product or company; it is pointing at a mechanism developers or AI teams may need to evaluate. The strongest evidence is a cited source signal connected to Self, Evolving, Skills, which gives the story a technical object rather than a headline-only signal. That makes the useful question less "who announced what" and more "what architecture, workflow, or measurement changes if this source is accurate."'
+          ],
+          citations: ['https://www.youtube.com/watch?v=self-evolving-skills']
+        },
+        {
+          heading: 'The Constraint Is What The Sources Can Actually Support',
+          paragraphs: [
+            'The constraint is that the daily feed mixes direct technical sources with syndicated summaries, so the article should preserve uncertainty instead of inflating sparse metadata into a verdict. Only one source is available, so the evidence supports a narrower technical read rather than a broad market claim. For a hard-science read, that means treating each claim as a measurement input: useful for direction, limited for causal certainty.'
+          ],
+          citations: ['https://www.youtube.com/watch?v=self-evolving-skills']
+        }
+      ],
+      keyTakeaways: [
+        'Self and Evolving signal should be read through its cited evidence first; the feed gives a technical signal, not a complete causal proof.',
+        'The relevant mechanism is the workflow, model, architecture, or measurement implied by the sources, while weak syndicated metadata should stay bounded.'
+      ]
+    },
+    context: {
+      stub,
+      allowedCitations: stub.sources.map((source) => ({ title: source.title, url: source.url, source: source.sourceName })),
+      relevanceText: stub.sources.map((source) => `${source.title} ${source.summary}`).join(' ')
+    }
+  });
+
+  assert.equal(report.verdict, 'fail');
+  assert.ok(report.requiredFixes.some((fix) => /instruction|source metadata|usable source|grounded/i.test(fix)));
+});
+
+test('daily generation loop does not pass generic articles when cited sources have no extracted text', async () => {
+  const result = await buildDailyArticleStubsWithGenerationLoop({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'self-evolving-skills',
+          title: 'Self Evolving AI Skills w/ GPT-5.5 (SkillOpt)',
+          summary: 'No usable text was extracted from this source.',
+          url: 'https://www.youtube.com/watch?v=self-evolving-skills',
+          sourceName: 'Discover AI',
+          publishedAt: '2026-05-20T13:15:14.000Z',
+          tags: ['youtube', 'self evolving', 'skillopt']
+        }
+      ]
+    },
+    maxStubs: 1
+  });
+  const stub = result.articleStubs[0];
+  const generatedText = [
+    stub.dek,
+    ...stub.bodySections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ...stub.keyTakeaways
+  ].join('\n');
+
+  assert.equal(stub.evalStatus, 'best_effort');
+  assert.equal(stub.status, 'best_effort');
+  assert.doesNotMatch(generatedText, /measurement problem|source set|daily feed|cited source signal|if this source is accurate/i);
+});
+
 test('daily generation loop produces substantive journalist content and eval metadata for every page', async () => {
   const result = await buildDailyArticleStubsWithGenerationLoop({
     date: '2026-05-20',
@@ -292,7 +378,7 @@ test('daily generation loop produces substantive journalist content and eval met
         {
           id: 'openai-cheap',
           title: "Cheap AI could derail OpenAI and Anthropic's IPOs - CNBC",
-          summary: "Cheap AI could derail OpenAI and Anthropic's IPOs CNBC",
+          summary: 'CNBC reported that cheaper inference and open-source models could pressure the high revenue multiples assumed for OpenAI and Anthropic IPOs, because enterprise buyers may route more workloads to lower-cost systems.',
           url: 'https://news.google.com/rss/articles/openai-cheap',
           sourceName: '"anthropic" - Google News',
           publishedAt: '2026-05-20T12:00:00.000Z',
@@ -301,7 +387,7 @@ test('daily generation loop produces substantive journalist content and eval met
         {
           id: 'google-course',
           title: 'Google Cloud course builds AI agents for media - blockchain.news',
-          summary: 'Google Cloud course builds AI agents for media blockchain.news',
+          summary: 'Google Cloud introduced a course showing media teams how to build AI agents that ingest assets, orchestrate editorial workflows, and automate production tasks with Gemini and cloud services.',
           url: 'https://news.google.com/rss/articles/google-cloud-course',
           sourceName: '"andrewyng" - Google News',
           publishedAt: '2026-05-20T12:05:00.000Z',

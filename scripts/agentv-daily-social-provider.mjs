@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import { buildDailyArticleStubsWithGenerationLoop } from './lib/daily-article-stubs.mjs';
 
 export async function runDailySocialFixture(fixtureId) {
-  if (!['retweet-quote', 'title-echo-quality'].includes(fixtureId)) throw new Error(`Unknown daily social fixture: ${fixtureId}`);
+  if (!['retweet-quote', 'title-echo-quality', 'source-grounding-regression'].includes(fixtureId)) throw new Error(`Unknown daily social fixture: ${fixtureId}`);
   const result = await buildDailyArticleStubsWithGenerationLoop({
     date: '2026-05-20',
     ledger: {
@@ -20,12 +20,25 @@ export async function runDailySocialFixture(fixtureId) {
 }
 
 function fixtureItems(fixtureId) {
+  if (fixtureId === 'source-grounding-regression') {
+    return [
+      {
+        id: 'self-evolving-skills',
+        title: 'Self Evolving AI Skills w/ GPT-5.5 (SkillOpt)',
+        summary: 'No usable text was extracted from this source.',
+        url: 'https://www.youtube.com/watch?v=self-evolving-skills',
+        sourceName: 'Discover AI',
+        publishedAt: '2026-05-20T13:15:14.000Z',
+        tags: ['youtube', 'self evolving', 'skillopt']
+      }
+    ];
+  }
   if (fixtureId === 'title-echo-quality') {
     return [
       {
         id: 'openai-cheap',
         title: "Cheap AI could derail OpenAI and Anthropic's IPOs - CNBC",
-        summary: "Cheap AI could derail OpenAI and Anthropic's IPOs CNBC",
+        summary: 'CNBC reported that cheaper inference and open-source models could pressure the high revenue multiples assumed for OpenAI and Anthropic IPOs, because enterprise buyers may route more workloads to lower-cost systems.',
         url: 'https://news.google.com/rss/articles/openai-cheap',
         sourceName: '"anthropic" - Google News',
         publishedAt: '2026-05-20T12:00:00.000Z',
@@ -34,7 +47,7 @@ function fixtureItems(fixtureId) {
       {
         id: 'google-course',
         title: 'Google Cloud course builds AI agents for media - blockchain.news',
-        summary: 'Google Cloud course builds AI agents for media blockchain.news',
+        summary: 'Google Cloud introduced a course showing media teams how to build AI agents that ingest assets, orchestrate editorial workflows, and automate production tasks with Gemini and cloud services.',
         url: 'https://news.google.com/rss/articles/google-cloud-course',
         sourceName: '"andrewyng" - Google News',
         publishedAt: '2026-05-20T12:05:00.000Z',

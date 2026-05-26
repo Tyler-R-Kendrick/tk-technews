@@ -45,3 +45,22 @@ tests:
             type: code_judge
             script: graders/daily-social-deterministic.mjs
             required: true
+  - id: source-grounding-regression-contract
+    criteria: Daily generation must fail closed when a cited source has no usable extracted text, and generated prose must not describe feed mechanics, source metadata, or generation instructions as if they were the article.
+    input: |
+      fixture: source-grounding-regression
+      output_kind: daily_stub
+    assert:
+      - name: daily-source-grounding-composite
+        type: composite
+        required: true
+        min_score: 1
+        aggregator:
+          type: weighted_average
+          weights:
+            deterministic-daily-social-checks: 1
+        assert:
+          - name: deterministic-daily-social-checks
+            type: code_judge
+            script: graders/daily-social-deterministic.mjs
+            required: true

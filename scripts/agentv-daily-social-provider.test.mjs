@@ -35,3 +35,18 @@ test('AgentV daily quality fixture uses generation loop for substantive article 
   assert.ok(generatedText.split(/\s+/).length >= 150);
   assert.doesNotMatch(generatedText, /Changes The Practical Tradeoff|^Openai Cheap Could Derail Google:/m);
 });
+
+test('AgentV source grounding fixture fails closed when source text extraction is empty', async () => {
+  const result = await runDailySocialFixture('source-grounding-regression');
+  const stub = result.stub;
+  const generatedText = [
+    stub.dek,
+    ...stub.bodySections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ...stub.keyTakeaways
+  ].join('\n');
+
+  assert.equal(stub.evalStatus, 'best_effort');
+  assert.equal(stub.status, 'best_effort');
+  assert.doesNotMatch(generatedText, /measurement problem|source set|daily feed|cited source signal|if this source is accurate/i);
+  assert.ok(stub.evalReport.requiredFixes.some((fix) => /usable extracted source text|usable source|grounded|instruction|source metadata/i.test(fix)));
+});

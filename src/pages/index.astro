@@ -11,16 +11,20 @@ const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateStr
 });
 const leadStub = dailyBrief.articleStubs[0];
 const remainingStubs = dailyBrief.articleStubs.slice(1);
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
 ---
 
 <BaseLayout title="TK TechNews" description="Daily AI technology briefings deduplicated from monitored sources.">
   <main class="site-shell">
     <header class="masthead">
-      <a class="brand" href="/">TK TechNews</a>
+      <a class="brand" href={withBase('/')}>TK TechNews</a>
       <nav aria-label="Primary navigation">
-        <a href="/sources/">Sources</a>
-        <a href="/wiki/">Wiki</a>
-        <a href="/articles/last-week-in-ai-2026-05-20/">Weekly</a>
+        <a href={withBase('/sources/')}>Sources</a>
+        <a href={withBase('/wiki/')}>Wiki</a>
+        <a href={withBase('/articles/last-week-in-ai-2026-05-20/')}>Weekly</a>
       </nav>
     </header>
 
@@ -45,7 +49,7 @@ const remainingStubs = dailyBrief.articleStubs.slice(1);
     {leadStub ? (
       <section class="daily-lead" aria-labelledby="lead-heading">
         <p class="article-date">Top consolidated stub</p>
-        <h2 id="lead-heading"><a href={leadStub.href}>{leadStub.title}</a></h2>
+        <h2 id="lead-heading"><a href={withBase(leadStub.href)}>{leadStub.title}</a></h2>
         <p>{leadStub.dek}</p>
         <div class="daily-stub-meta">
           <span>{leadStub.sourceCount} sources</span>
@@ -73,7 +77,7 @@ const remainingStubs = dailyBrief.articleStubs.slice(1);
               <time datetime={stub.latestPublishedAt}>{stub.latestPublishedAt?.slice(0, 10)}</time>
               <span>{stub.sourceCount} sources</span>
             </div>
-            <h3><a href={stub.href}>{stub.title}</a></h3>
+            <h3><a href={withBase(stub.href)}>{stub.title}</a></h3>
             <p>{stub.dek}</p>
             <ul class="tags" aria-label="Tags">
               {stub.tags.map((tag) => <li>{tag}</li>)}

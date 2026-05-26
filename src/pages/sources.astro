@@ -148,16 +148,20 @@ const generatedAt = new Date(sourceIndex.generatedAt).toLocaleString('en-US', {
   dateStyle: 'medium',
   timeStyle: 'short'
 });
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
 ---
 
 <BaseLayout title="Source Monitor | TK TechNews" description="Precompiled monitored AI sources across YouTube, RSS, research blogs, GitHub, and X profiles.">
   <main class="site-shell">
     <header class="masthead">
-      <a class="brand" href="/">TK TechNews</a>
+      <a class="brand" href={withBase('/')}>TK TechNews</a>
       <nav aria-label="Primary navigation">
-        <a href="/">Today</a>
-        <a href="/wiki/">Wiki</a>
-        <a href="/articles/example-explainer/">Example</a>
+        <a href={withBase('/')}>Today</a>
+        <a href={withBase('/wiki/')}>Wiki</a>
+        <a href={withBase('/articles/example-explainer/')}>Example</a>
         <a href="https://github.com/" rel="noreferrer">Repository</a>
       </nav>
     </header>

@@ -2,6 +2,8 @@
   "name": "tk-technews",
   "version": "0.1.0",
   "private": true,
+  "description": "Static Astro AI tech news site with source monitoring, generated briefs, and GitHub Pages deployment.",
+  "homepage": "https://tyler-r-kendrick.github.io/tk-technews/",
   "type": "module",
   "scripts": {
     "dev": "astro dev",

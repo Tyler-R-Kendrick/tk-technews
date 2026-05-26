@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T16:35:28.962Z",
+  "generatedAt": "2026-05-26T17:09:33.223Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,8 +9,17 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-22T16:35:28.962Z",
+      "fetchedAt": "2026-05-26T17:09:33.223Z",
       "items": [
+        {
+          "title": "Microfrontends routing now applies to vc alias and branch domains",
+          "link": "https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains",
+          "id": "https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains",
+          "publishedAt": "2026-05-26T00:00:00.000Z",
+          "author": "Kit Foster",
+          "summary": "This week we are gradually rolling out an update to  routing for aliases and branch-assigned domains.Vercel Microfrontends\nAliasing a Microfrontends URL with  now preserves the full  routing config from the source deployment. Previously, the new alias only inherited the . Update to the latest  to pick up the change.Aliases inherit Microfrontends routing\nvc aliasVercel CLImicrofrontendsdeploymentId\nA  now routes to that branch in every project in the Microfrontend that shares the branch name. Previously, the domain only routed to that branch within the project that owned the domain.Branch domains route across all projects\nproject domain assigned to a git branch\nSee the  for details on routing, aliases, and domain assignment.Microfrontends documentation\nRead more",
+          "source": "Vercel Changelog"
+        },
         {
           "title": "Pull anomaly alert details using the Vercel CLI",
           "link": "https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli",
@@ -27,6 +36,15 @@
           "publishedAt": "2026-05-21T07:00:00.000Z",
           "author": "Walter Korman",
           "summary": "Qwen 3.7 Max from Alibaba is now available on . The model is designed as an agent foundation, with capabilities spanning coding, office workflow automation, and long-horizon autonomous execution.Vercel AI Gateway\nQwen 3.7 Max shows improvements in frontend prototyping and complex multi-file engineering. The model supports office and productivity tasks through multi-agent orchestration and sustains coherent reasoning across long-horizon tool-calling sessions.\nTo use Qwen 3.7 Max, set model to  in the .alibaba/qwen-3.7-maxAI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Configure weighted traffic splits for Vercel Flags from the Vercel CLI",
+          "link": "https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli",
+          "id": "https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli",
+          "publishedAt": "2026-05-21T00:00:00.000Z",
+          "author": "Chris Widmaier",
+          "summary": "You can now configure weighted traffic splits for  with the new  command in the Vercel CLI. This allows you to send a percentage of traffic to one variant and the rest to another.Vercel Flagsvercel flags split\nRun the command interactively, or pass the environment, bucketing attribute, and variant weights as flags:\nUpdate to the latest version of the  and read the  to get started.Vercel CLIdocumentation\nRead more",
           "source": "Vercel Changelog"
         },
         {
@@ -81,24 +99,6 @@
           "publishedAt": "2026-05-19T14:00:00.000Z",
           "author": "Hugo Richard",
           "summary": "The  now supports . Your agent tools can return interactive HTML responses that MCP clients like Claude and ChatGPT render inline, rather than plain-text responses.Nuxt MCP ToolkitMCP apps\nDeclare a tool with the  macro, then read pre-hydrated data, trigger follow-up prompts, or call other tools from inside the UI with the  composable. The toolkit bundles each Vue SFC into a self-contained HTML file at build time and serves it from your MCP endpoint.defineMcpAppuseMcpApp\nRead the  to get started.Nuxt MCP Toolkit documentation\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Gemini 3.5 Flash on AI Gateway",
-          "link": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
-          "id": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
-          "publishedAt": "2026-05-19T07:00:00.000Z",
-          "author": "Walter Korman",
-          "summary": "Gemini 3.5 Flash is now available on .Vercel AI Gateway\nThis model has improved coding proficiency and parallel agentic execution loops versus previous Flash versions. It also brings improvements to core reasoning, instruction following, and multi-turn coherence, with stronger performance on complex tasks and higher-quality reasoning traces in thinking mode.\n3.5 Flash defaults to the  thinking level, balancing response quality with faster, more cost-efficient generation.medium\nTo use Gemini 3.5 Flash, set model to  in the .google/gemini-3.5-flashAI SDK\nNote that , , , and  are not supported by this model.temperaturetopPtopKthinking_budget\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Flat Rate CDN in Limited Beta",
-          "link": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
-          "id": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
-          "publishedAt": "2026-05-19T00:00:00.000Z",
-          "author": "Jas Garcha",
-          "summary": "Flat Rate CDN is now available in Limited Beta for Pro teams. It replaces usage-based CDN pricing with a fixed monthly fee.\nViral posts, unfiltered bots, or misconfigured routes can turn a normal month into a surprise bill. Flat Rate CDN makes your cost predictable.\nFlat Rate CDN is a good fit for teams with unpredictable CDN bills, individual builders who don't want a usage spike to break the bank, and growing businesses that need to know their CDN costs before the month starts.\nPro teams can join  for early access and to help shape the GA release.the waitlist\nRead more\n\n:Pay a fixed amount for Vercel CDN each month, regardless of traffic and usage.Fixed monthly price \n\n:Edge Requests, Fast Data Transfer, and other products are no longer metered.Covers spikes across Vercel CDN \n\n:Your bill will never increase because of temporary usage spikes.No overages",
           "source": "Vercel Changelog"
         }
       ]
@@ -111,8 +111,17 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-22T16:35:28.962Z",
+      "fetchedAt": "2026-05-26T17:09:33.223Z",
       "items": [
+        {
+          "title": "Microfrontends routing now applies to vc alias and branch domains",
+          "link": "https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains",
+          "id": "https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains",
+          "publishedAt": "2026-05-26T00:00:00.000Z",
+          "author": "Kit Foster",
+          "summary": "This week we are gradually rolling out an update to  routing for aliases and branch-assigned domains.Vercel Microfrontends\nAliasing a Microfrontends URL with  now preserves the full  routing config from the source deployment. Previously, the new alias only inherited the . Update to the latest  to pick up the change.Aliases inherit Microfrontends routing\nvc aliasVercel CLImicrofrontendsdeploymentId\nA  now routes to that branch in every project in the Microfrontend that shares the branch name. Previously, the domain only routed to that branch within the project that owned the domain.Branch domains route across all projects\nproject domain assigned to a git branch\nSee the  for details on routing, aliases, and domain assignment.Microfrontends documentation\nRead more",
+          "source": "Vercel Blog"
+        },
         {
           "title": "Pull anomaly alert details using the Vercel CLI",
           "link": "https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli",
@@ -129,6 +138,15 @@
           "publishedAt": "2026-05-21T07:00:00.000Z",
           "author": "Walter Korman",
           "summary": "Qwen 3.7 Max from Alibaba is now available on . The model is designed as an agent foundation, with capabilities spanning coding, office workflow automation, and long-horizon autonomous execution.Vercel AI Gateway\nQwen 3.7 Max shows improvements in frontend prototyping and complex multi-file engineering. The model supports office and productivity tasks through multi-agent orchestration and sustains coherent reasoning across long-horizon tool-calling sessions.\nTo use Qwen 3.7 Max, set model to  in the .alibaba/qwen-3.7-maxAI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Configure weighted traffic splits for Vercel Flags from the Vercel CLI",
+          "link": "https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli",
+          "id": "https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli",
+          "publishedAt": "2026-05-21T00:00:00.000Z",
+          "author": "Chris Widmaier",
+          "summary": "You can now configure weighted traffic splits for  with the new  command in the Vercel CLI. This allows you to send a percentage of traffic to one variant and the rest to another.Vercel Flagsvercel flags split\nRun the command interactively, or pass the environment, bucketing attribute, and variant weights as flags:\nUpdate to the latest version of the  and read the  to get started.Vercel CLIdocumentation\nRead more",
           "source": "Vercel Blog"
         },
         {
@@ -183,24 +201,6 @@
           "publishedAt": "2026-05-19T14:00:00.000Z",
           "author": "Hugo Richard",
           "summary": "The  now supports . Your agent tools can return interactive HTML responses that MCP clients like Claude and ChatGPT render inline, rather than plain-text responses.Nuxt MCP ToolkitMCP apps\nDeclare a tool with the  macro, then read pre-hydrated data, trigger follow-up prompts, or call other tools from inside the UI with the  composable. The toolkit bundles each Vue SFC into a self-contained HTML file at build time and serves it from your MCP endpoint.defineMcpAppuseMcpApp\nRead the  to get started.Nuxt MCP Toolkit documentation\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Gemini 3.5 Flash on AI Gateway",
-          "link": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
-          "id": "https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway",
-          "publishedAt": "2026-05-19T07:00:00.000Z",
-          "author": "Walter Korman",
-          "summary": "Gemini 3.5 Flash is now available on .Vercel AI Gateway\nThis model has improved coding proficiency and parallel agentic execution loops versus previous Flash versions. It also brings improvements to core reasoning, instruction following, and multi-turn coherence, with stronger performance on complex tasks and higher-quality reasoning traces in thinking mode.\n3.5 Flash defaults to the  thinking level, balancing response quality with faster, more cost-efficient generation.medium\nTo use Gemini 3.5 Flash, set model to  in the .google/gemini-3.5-flashAI SDK\nNote that , , , and  are not supported by this model.temperaturetopPtopKthinking_budget\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , ,  support, and intelligent provider routing with automatic retries.custom reportingobservabilityBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Flat Rate CDN in Limited Beta",
-          "link": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
-          "id": "https://vercel.com/changelog/flat-rate-cdn-in-limited-beta",
-          "publishedAt": "2026-05-19T00:00:00.000Z",
-          "author": "Jas Garcha",
-          "summary": "Flat Rate CDN is now available in Limited Beta for Pro teams. It replaces usage-based CDN pricing with a fixed monthly fee.\nViral posts, unfiltered bots, or misconfigured routes can turn a normal month into a surprise bill. Flat Rate CDN makes your cost predictable.\nFlat Rate CDN is a good fit for teams with unpredictable CDN bills, individual builders who don't want a usage spike to break the bank, and growing businesses that need to know their CDN costs before the month starts.\nPro teams can join  for early access and to help shape the GA release.the waitlist\nRead more\n\n:Pay a fixed amount for Vercel CDN each month, regardless of traffic and usage.Fixed monthly price \n\n:Edge Requests, Fast Data Transfer, and other products are no longer metered.Covers spikes across Vercel CDN \n\n:Your bill will never increase because of temporary usage spikes.No overages",
           "source": "Vercel Blog"
         }
       ]

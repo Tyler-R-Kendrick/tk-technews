@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T16:35:28.962Z",
+  "generatedAt": "2026-05-26T17:09:33.223Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-05-22T16:35:28.962Z",
+    "fetchedAt": "2026-05-26T17:09:33.223Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -28,7 +28,7 @@
           "Xing Yu"
         ],
         "summary": "Anti-Self-Distillation reverses the direction of knowledge transfer in self-distillation to improve math reasoning efficiency and accuracy.",
-        "upvotes": 186,
+        "upvotes": 191,
         "comments": 4,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.11609.png",
         "projectPage": null,
@@ -87,7 +87,7 @@
           "Huaxiu Yao"
         ],
         "summary": "AutoResearchClaw is a multi-agent autonomous research system that improves scientific discovery through structured debate, self-healing execution, verifiable reporting, human collaboration, and evolutionary learning, outperforming previous systems on a benchmark while maintaining human oversight.",
-        "upvotes": 112,
+        "upvotes": 182,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20025.png",
         "projectPage": "https://github.com/aiming-lab/AutoResearchClaw",
@@ -123,7 +123,7 @@
           "Peng Qi"
         ],
         "summary": "Video-capable multimodal large language models exhibit apparent audio understanding driven by visual cues rather than actual audio processing, necessitating intervention-based frameworks for diagnosing and improving audio-visual alignment.",
-        "upvotes": 95,
+        "upvotes": 147,
         "comments": 2,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.16403.png",
         "projectPage": "https://rakanwen.github.io/when-vision-speaks-for-sound/",
@@ -157,7 +157,7 @@
           "Luciano del Corro"
         ],
         "summary": "Pairwise ranking prompting is reformulated as active learning from noisy comparisons, with improved rankers that enhance ranking quality under call constraints and address position bias through a randomized oracle.",
-        "upvotes": 93,
+        "upvotes": 96,
         "comments": 4,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.14236.png",
         "projectPage": null,
@@ -190,7 +190,7 @@
           "Arman Cohan"
         ],
         "summary": "OpenComputer presents a framework for creating verifiable software environments for computer-use agents through integrated state verification, self-improving layers, task synthesis, and evaluation systems across multiple desktop applications.",
-        "upvotes": 56,
+        "upvotes": 57,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19769.png",
         "projectPage": "https://echo0715.github.io/OpenComputer/",
@@ -231,7 +231,7 @@
           "Han Li"
         ],
         "summary": "GoLongRL presents an open-source approach for long-context reinforcement learning with diverse reward optimization through capability-oriented data construction and TMN-Reweight methodology.",
-        "upvotes": 55,
+        "upvotes": 56,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19577.png",
         "projectPage": "https://huggingface.co/collections/Kwai-Klear/golongrl",
@@ -266,7 +266,7 @@
           "Jiaxin Huang"
         ],
         "summary": "BetaPRM introduces a distributional approach to process reward models that predicts both success probabilities and prediction reliability, enabling adaptive computation allocation that reduces token usage while maintaining accuracy.",
-        "upvotes": 51,
+        "upvotes": 52,
         "comments": 2,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.15529.png",
         "projectPage": null,
@@ -309,7 +309,7 @@
           "Zhijiang Guo"
         ],
         "summary": "EnvFactory automates the creation of executable tool environments and natural multi-turn trajectories for training LLMs with agentic reinforcement learning, achieving superior performance with fewer resources.",
-        "upvotes": 46,
+        "upvotes": 48,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18703.png",
         "projectPage": null,
@@ -329,6 +329,41 @@
           "MCP-Atlas",
           "τ²-Bench",
           "VitaBench"
+        ]
+      },
+      {
+        "title": "CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition",
+        "link": "https://huggingface.co/papers/2605.19995",
+        "id": "2605.19995",
+        "publishedAt": "2026-05-19T00:00:00.000Z",
+        "submittedAt": "2026-05-20T00:00:00.000Z",
+        "author": "Hongji Yang, Songlian Li, Yucheng Zhou",
+        "authors": [
+          "Hongji Yang",
+          "Songlian Li",
+          "Yucheng Zhou",
+          "Xiaotong Zhao",
+          "Alan Zhao",
+          "Chengzhong Xu",
+          "Jianbing Shen"
+        ],
+        "summary": "Diffusion models applied in compressed image space generate high-quality images with lower computational cost and support flexible inputs like text or boxes.",
+        "upvotes": 34,
+        "comments": 1,
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19995.png",
+        "projectPage": "https://um-lab.github.io/CogOmniControl/",
+        "githubRepo": null,
+        "keywords": [
+          "diffusion models",
+          "video generation",
+          "creative intent cognition",
+          "CogVLM",
+          "in-context generation",
+          "reinforcement learning",
+          "Best-of-N selection",
+          "closed-loop architecture",
+          "CogReasonBench",
+          "CogControlBench"
         ]
       },
       {
@@ -366,41 +401,6 @@
         ]
       },
       {
-        "title": "CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition",
-        "link": "https://huggingface.co/papers/2605.19995",
-        "id": "2605.19995",
-        "publishedAt": "2026-05-19T00:00:00.000Z",
-        "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Hongji Yang, Songlian Li, Yucheng Zhou",
-        "authors": [
-          "Hongji Yang",
-          "Songlian Li",
-          "Yucheng Zhou",
-          "Xiaotong Zhao",
-          "Alan Zhao",
-          "Chengzhong Xu",
-          "Jianbing Shen"
-        ],
-        "summary": "Diffusion models applied in compressed image space generate high-quality images with lower computational cost and support flexible inputs like text or boxes.",
-        "upvotes": 33,
-        "comments": 1,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19995.png",
-        "projectPage": "https://um-lab.github.io/CogOmniControl/",
-        "githubRepo": null,
-        "keywords": [
-          "diffusion models",
-          "video generation",
-          "creative intent cognition",
-          "CogVLM",
-          "in-context generation",
-          "reinforcement learning",
-          "Best-of-N selection",
-          "closed-loop architecture",
-          "CogReasonBench",
-          "CogControlBench"
-        ]
-      },
-      {
         "title": "Aurora: Unified Video Editing with a Tool-Using Agent",
         "link": "https://huggingface.co/papers/2605.18748",
         "id": "2605.18748",
@@ -417,7 +417,7 @@
           "Jiebo Luo"
         ],
         "summary": "Aurora is an agentic video editing framework that combines a vision-language model agent with a diffusion transformer to handle textual and visual underspecification in video editing requests.",
-        "upvotes": 27,
+        "upvotes": 29,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18748.png",
         "projectPage": "https://www.yongshengyu.com/Aurora-Page/",
@@ -482,6 +482,43 @@
         ]
       },
       {
+        "title": "ThoughtTrace: Understanding User Thoughts in Real-World LLM Interactions",
+        "link": "https://huggingface.co/papers/2605.20087",
+        "id": "2605.20087",
+        "publishedAt": "2026-05-19T00:00:00.000Z",
+        "submittedAt": "2026-05-20T00:00:00.000Z",
+        "author": "Chuanyang Jin, Binze Li, Haopeng Xie",
+        "authors": [
+          "Chuanyang Jin",
+          "Binze Li",
+          "Haopeng Xie",
+          "Cathy Mengying Fang",
+          "Tianjian Li",
+          "Shayne Longpre",
+          "Hongxiang Gu",
+          "Maximillian Chen",
+          "Tianmin Shu"
+        ],
+        "summary": "ThoughtTrace presents a large-scale dataset pairing human-AI conversations with self-reported thoughts, enabling improved user behavior prediction and personalized assistant training through thought-guided rewrites.",
+        "upvotes": 16,
+        "comments": 1,
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20087.png",
+        "projectPage": "https://thoughttrace-project.github.io/",
+        "githubRepo": "https://github.com/thoughttrace-project/thoughttrace",
+        "keywords": [
+          "conversational AI",
+          "multi-turn conversations",
+          "large-scale dataset",
+          "user-behavior prediction",
+          "thought-guided rewrites",
+          "personalized assistants",
+          "cognitive dynamics",
+          "latent goals",
+          "preferences",
+          "needs"
+        ]
+      },
+      {
         "title": "OmniGUI: Benchmarking GUI Agents in Omni-Modal Smartphone Environments",
         "link": "https://huggingface.co/papers/2605.18758",
         "id": "2605.18758",
@@ -498,7 +535,7 @@
           "Shiyu Huang"
         ],
         "summary": "OmniGUI presents a novel multimodal benchmark for GUI agents that incorporates simultaneous audio, video, and image inputs to better simulate real smartphone interactions.",
-        "upvotes": 15,
+        "upvotes": 16,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18758.png",
         "projectPage": "https://omni-gui.github.io/",
@@ -509,6 +546,56 @@
           "smartphone environments",
           "action prediction",
           "cross-modal interference"
+        ]
+      },
+      {
+        "title": "MSAVBench: Towards Comprehensive and Reliable Evaluation of Multi-Shot Audio-Video Generation",
+        "link": "https://huggingface.co/papers/2605.20183",
+        "id": "2605.20183",
+        "publishedAt": "2026-05-19T00:00:00.000Z",
+        "submittedAt": "2026-05-20T00:00:00.000Z",
+        "author": "Yujie Wei, Yujin Han, Zhekai Chen",
+        "authors": [
+          "Yujie Wei",
+          "Yujin Han",
+          "Zhekai Chen",
+          "Yongming Li",
+          "Kaixun Jiang",
+          "Zhihang Liu",
+          "Quanhao Li",
+          "Zhiwu Qing",
+          "Xiang Wang",
+          "Zhen Xing",
+          "Ruihang Chu",
+          "Lingyi Hong",
+          "Yefei He",
+          "Junjie Zhou",
+          "Junqiu Yu",
+          "Yang Shi",
+          "Difan Zou",
+          "Kai Zhu",
+          "Shiwei Zhang",
+          "Yingya Zhang",
+          "Yu Liu",
+          "Xihui Liu",
+          "Hongming Shan"
+        ],
+        "summary": "MSAVBench presents the first comprehensive benchmark and adaptive evaluation framework for multi-shot audio-video generation, addressing limitations in existing benchmarks through diverse task settings and advanced evaluation mechanisms.",
+        "upvotes": 14,
+        "comments": 1,
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20183.png",
+        "projectPage": null,
+        "githubRepo": null,
+        "keywords": [
+          "multi-shot audio-video generation",
+          "benchmark",
+          "adaptive hybrid evaluation framework",
+          "shot segmentation",
+          "subjective metrics",
+          "tool-grounded evidence extraction",
+          "Spearman rank correlation",
+          "modular generation pipelines",
+          "agentic generation pipelines"
         ]
       },
       {
@@ -545,56 +632,6 @@
         ]
       },
       {
-        "title": "MSAVBench: Towards Comprehensive and Reliable Evaluation of Multi-Shot Audio-Video Generation",
-        "link": "https://huggingface.co/papers/2605.20183",
-        "id": "2605.20183",
-        "publishedAt": "2026-05-19T00:00:00.000Z",
-        "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Yujie Wei, Yujin Han, Zhekai Chen",
-        "authors": [
-          "Yujie Wei",
-          "Yujin Han",
-          "Zhekai Chen",
-          "Yongming Li",
-          "Kaixun Jiang",
-          "Zhihang Liu",
-          "Quanhao Li",
-          "Zhiwu Qing",
-          "Xiang Wang",
-          "Zhen Xing",
-          "Ruihang Chu",
-          "Lingyi Hong",
-          "Yefei He",
-          "Junjie Zhou",
-          "Junqiu Yu",
-          "Yang Shi",
-          "Difan Zou",
-          "Kai Zhu",
-          "Shiwei Zhang",
-          "Yingya Zhang",
-          "Yu Liu",
-          "Xihui Liu",
-          "Hongming Shan"
-        ],
-        "summary": "MSAVBench presents the first comprehensive benchmark and adaptive evaluation framework for multi-shot audio-video generation, addressing limitations in existing benchmarks through diverse task settings and advanced evaluation mechanisms.",
-        "upvotes": 13,
-        "comments": 1,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20183.png",
-        "projectPage": null,
-        "githubRepo": null,
-        "keywords": [
-          "multi-shot audio-video generation",
-          "benchmark",
-          "adaptive hybrid evaluation framework",
-          "shot segmentation",
-          "subjective metrics",
-          "tool-grounded evidence extraction",
-          "Spearman rank correlation",
-          "modular generation pipelines",
-          "agentic generation pipelines"
-        ]
-      },
-      {
         "title": "Interactive Evaluation Requires a Design Science",
         "link": "https://huggingface.co/papers/2605.17829",
         "id": "2605.17829",
@@ -617,7 +654,7 @@
           "Jiaxin Pei"
         ],
         "summary": "Interactive evaluation represents a principled paradigm shift requiring new frameworks for assessing system behavior through dynamic trajectories rather than static responses.",
-        "upvotes": 13,
+        "upvotes": 14,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.17829.png",
         "projectPage": null,
@@ -638,40 +675,38 @@
         ]
       },
       {
-        "title": "ThoughtTrace: Understanding User Thoughts in Real-World LLM Interactions",
-        "link": "https://huggingface.co/papers/2605.20087",
-        "id": "2605.20087",
-        "publishedAt": "2026-05-19T00:00:00.000Z",
+        "title": "SENSE: Satellite-based ENergy Synthesis for Sustainable Environment",
+        "link": "https://huggingface.co/papers/2605.18101",
+        "id": "2605.18101",
+        "publishedAt": "2026-05-18T00:00:00.000Z",
         "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Chuanyang Jin, Binze Li, Haopeng Xie",
+        "author": "Kailai Sun, Mingyi He, Heye Huang",
         "authors": [
-          "Chuanyang Jin",
-          "Binze Li",
-          "Haopeng Xie",
-          "Cathy Mengying Fang",
-          "Tianjian Li",
-          "Shayne Longpre",
-          "Hongxiang Gu",
-          "Maximillian Chen",
-          "Tianmin Shu"
+          "Kailai Sun",
+          "Mingyi He",
+          "Heye Huang",
+          "Can Rong",
+          "Alok Prakash",
+          "Baoshen Guo",
+          "Shenhao Wang",
+          "Jinhua Zhao"
         ],
-        "summary": "ThoughtTrace presents a large-scale dataset pairing human-AI conversations with self-reported thoughts, enabling improved user behavior prediction and personalized assistant training through thought-guided rewrites.",
-        "upvotes": 12,
+        "summary": "SENSE is a generative urban building energy modeling framework that synthesizes satellite imagery and energy data using diffusion models, achieving high-fidelity results with reduced labeled data requirements.",
+        "upvotes": 13,
         "comments": 1,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20087.png",
-        "projectPage": "https://thoughttrace-project.github.io/",
-        "githubRepo": "https://github.com/thoughttrace-project/thoughttrace",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18101.png",
+        "projectPage": "https://arxiv.org/abs/2605.18101",
+        "githubRepo": "https://github.com/kailaisun/GenAI4Urban-Energy",
         "keywords": [
-          "conversational AI",
-          "multi-turn conversations",
-          "large-scale dataset",
-          "user-behavior prediction",
-          "thought-guided rewrites",
-          "personalized assistants",
-          "cognitive dynamics",
-          "latent goals",
-          "preferences",
-          "needs"
+          "generative AI",
+          "diffusion models",
+          "urban building energy modeling",
+          "satellite imagery",
+          "controllable diffusion model",
+          "latent space",
+          "ASHRAE standard",
+          "NMBE",
+          "CVRMSE"
         ]
       },
       {
@@ -703,41 +738,6 @@
           "2D object tracking",
           "4D tracking",
           "camera estimation"
-        ]
-      },
-      {
-        "title": "SENSE: Satellite-based ENergy Synthesis for Sustainable Environment",
-        "link": "https://huggingface.co/papers/2605.18101",
-        "id": "2605.18101",
-        "publishedAt": "2026-05-18T00:00:00.000Z",
-        "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Kailai Sun, Mingyi He, Heye Huang",
-        "authors": [
-          "Kailai Sun",
-          "Mingyi He",
-          "Heye Huang",
-          "Can Rong",
-          "Alok Prakash",
-          "Baoshen Guo",
-          "Shenhao Wang",
-          "Jinhua Zhao"
-        ],
-        "summary": "SENSE is a generative urban building energy modeling framework that synthesizes satellite imagery and energy data using diffusion models, achieving high-fidelity results with reduced labeled data requirements.",
-        "upvotes": 10,
-        "comments": 1,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18101.png",
-        "projectPage": "https://arxiv.org/abs/2605.18101",
-        "githubRepo": "https://github.com/kailaisun/GenAI4Urban-Energy",
-        "keywords": [
-          "generative AI",
-          "diffusion models",
-          "urban building energy modeling",
-          "satellite imagery",
-          "controllable diffusion model",
-          "latent space",
-          "ASHRAE standard",
-          "NMBE",
-          "CVRMSE"
         ]
       },
       {

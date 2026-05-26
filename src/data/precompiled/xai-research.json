@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T16:35:28.962Z",
+  "generatedAt": "2026-05-26T17:09:33.223Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,17 +10,8 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-22T16:35:28.962Z",
+      "fetchedAt": "2026-05-26T17:09:33.223Z",
       "items": [
-        {
-          "title": "Grok Imagine Quality Mode API - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBEX0tNa0QtSm9zVHctM2xaSnJzQ0EwQmE0aFNFTDc1YkF3QnJGTGg0bjNWc2hXVzdDZjZlU2dTRzhKSG4yNEVNT2NNVkRpUHlvRkF4dHhB?oc=5",
-          "id": "CBMiVkFVX3lxTFBEX0tNa0QtSm9zVHctM2xaSnJzQ0EwQmE0aFNFTDc1YkF3QnJGTGg0bjNWc2hXVzdDZjZlU2dTRzhKSG4yNEVNT2NNVkRpUHlvRkF4dHhB",
-          "publishedAt": "2026-05-06T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Grok Imagine Quality Mode API  xAI",
-          "source": "xAI Official News"
-        },
         {
           "title": "Skills in web, iOS, and Android - xAI",
           "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0?oc=5",
@@ -31,12 +22,12 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Creators of Grok, the AI Chatbot - xAI",
+          "title": "Grok-2 Beta Release - xAI",
           "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE1oei1wY0ZrX0dKRDdTYWJaQ0p3MGVORFFTZHhDbVhPbDJoQ05ycHZjdkl4X2hzLVBYYnF5eA?oc=5",
           "id": "CBMiPEFVX3lxTE1oei1wY0ZrX0dKRDdTYWJaQ0p3MGVORFFTZHhDbVhPbDJoQ05ycHZjdkl4X2hzLVBYYnF5eA",
           "publishedAt": "2024-08-13T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Creators of Grok, the AI Chatbot  xAI",
+          "summary": "Grok-2 Beta Release  xAI",
           "source": "xAI Official News"
         },
         {
@@ -49,6 +40,15 @@
           "source": "xAI Official News"
         },
         {
+          "title": "Grok Imagine Quality Mode API - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBEX0tNa0QtSm9zVHctM2xaSnJzQ0EwQmE0aFNFTDc1YkF3QnJGTGg0bjNWc2hXVzdDZjZlU2dTRzhKSG4yNEVNT2NNVkRpUHlvRkF4dHhB?oc=5",
+          "id": "CBMiVkFVX3lxTFBEX0tNa0QtSm9zVHctM2xaSnJzQ0EwQmE0aFNFTDc1YkF3QnJGTGg0bjNWc2hXVzdDZjZlU2dTRzhKSG4yNEVNT2NNVkRpUHlvRkF4dHhB",
+          "publishedAt": "2026-05-06T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Grok Imagine Quality Mode API  xAI",
+          "source": "xAI Official News"
+        },
+        {
           "title": "Grok Imagine API - xAI",
           "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn?oc=5",
           "id": "CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn",
@@ -58,12 +58,12 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Grok Voice Think Fast 1.0 - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1HakU4ZHBrYk9DOWpZUUs1MTAtcUtUckJMMVhOTzNPRXBrbUZhTHlXOGNSTjZTdWNjWGIxakJGc3kyTFpJbGYzLURRcVRPU3dQeDFr?oc=5",
-          "id": "CBMiU0FVX3lxTE1HakU4ZHBrYk9DOWpZUUs1MTAtcUtUckJMMVhOTzNPRXBrbUZhTHlXOGNSTjZTdWNjWGIxakJGc3kyTFpJbGYzLURRcVRPU3dQeDFr",
-          "publishedAt": "2026-04-23T07:00:00.000Z",
+          "title": "Expanding xAI for Government with GSA OneGov - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw?oc=5",
+          "id": "CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw",
+          "publishedAt": "2025-09-25T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Grok Voice Think Fast 1.0  xAI",
+          "summary": "Expanding xAI for Government with GSA OneGov  xAI",
           "source": "xAI Official News"
         },
         {
@@ -76,12 +76,12 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Expanding xAI for Government with GSA OneGov - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw?oc=5",
-          "id": "CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw",
-          "publishedAt": "2025-09-25T07:00:00.000Z",
+          "title": "Grok Voice Think Fast 1.0 - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1HakU4ZHBrYk9DOWpZUUs1MTAtcUtUckJMMVhOTzNPRXBrbUZhTHlXOGNSTjZTdWNjWGIxakJGc3kyTFpJbGYzLURRcVRPU3dQeDFr?oc=5",
+          "id": "CBMiU0FVX3lxTE1HakU4ZHBrYk9DOWpZUUs1MTAtcUtUckJMMVhOTzNPRXBrbUZhTHlXOGNSTjZTdWNjWGIxakJGc3kyTFpJbGYzLURRcVRPU3dQeDFr",
+          "publishedAt": "2026-04-23T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Expanding xAI for Government with GSA OneGov  xAI",
+          "summary": "Grok Voice Think Fast 1.0  xAI",
           "source": "xAI Official News"
         }
       ]
@@ -95,33 +95,15 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-22T16:35:28.962Z",
+      "fetchedAt": "2026-05-26T17:09:33.223Z",
       "items": [
-        {
-          "title": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles - Time Magazine",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3?oc=5",
-          "id": "CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3",
-          "publishedAt": "2026-05-19T22:17:17.000Z",
-          "author": "xAI",
-          "summary": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles  Time Magazine",
-          "source": "xAI Research and Labs"
-        },
         {
           "title": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff - The Information",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ29FMEpVTjdINlc1b0VkZFBwaXYzYjBLVXotbm1BQ3FmMlE4bldNYTNRNEpKSy1LUDFBQ29zS19jZ2VRTXJTVEFyUUsxVERmdk55Q0EyWTRMT19WVWRqazIzX3dsUnN4OTBWbUxpTGNDTGFZbTBaZDhueFloWGpHTHhGTXhYWnJzN0V1RUp0SlRheWg1T0VvTks2UjRrZkdIai1lTThyczI?oc=5",
           "id": "CBMiqAFBVV95cUxOQ29FMEpVTjdINlc1b0VkZFBwaXYzYjBLVXotbm1BQ3FmMlE4bldNYTNRNEpKSy1LUDFBQ29zS19jZ2VRTXJTVEFyUUsxVERmdk55Q0EyWTRMT19WVWRqazIzX3dsUnN4OTBWbUxpTGNDTGFZbTBaZDhueFloWGpHTHhGTXhYWnJzN0V1RUp0SlRheWg1T0VvTks2UjRrZkdIai1lTThyczI",
-          "publishedAt": "2026-05-14T18:06:00.000Z",
+          "publishedAt": "2026-05-14T07:00:00.000Z",
           "author": "xAI",
           "summary": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff  The Information",
-          "source": "xAI Research and Labs"
-        },
-        {
-          "title": "xAI launches Grok 4.3 at an aggressively low price and a new, fast, powerful voice cloning suite - VentureBeat",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcjFtc3NHSEpDTmdJcUY3MVRzbzNkMWQ4Rk5tVGZPODRfbktQWWlqTUstdUowVmhBNEMzYTVJMDB4eXhwVE5VclVJVVlkVVBKeWZKdnFsVHVCVTNITFE5Ul9HSXFSNWVSLXoxelhXWXBKeWZIM25pbXpMUTNrYnlMam9CN2lJZXNYNWVkN3R4RXpvbjM4R3JtdFJaUjFmX2ZhZGt5NXhyY2FtUE1MOE9RcklNR21KMWpLQko3NjVCcDA1ZjFTMVpRQQ?oc=5",
-          "id": "CBMiyAFBVV95cUxNcjFtc3NHSEpDTmdJcUY3MVRzbzNkMWQ4Rk5tVGZPODRfbktQWWlqTUstdUowVmhBNEMzYTVJMDB4eXhwVE5VclVJVVlkVVBKeWZKdnFsVHVCVTNITFE5Ul9HSXFSNWVSLXoxelhXWXBKeWZIM25pbXpMUTNrYnlMam9CN2lJZXNYNWVkN3R4RXpvbjM4R3JtdFJaUjFmX2ZhZGt5NXhyY2FtUE1MOE9RcklNR21KMWpLQko3NjVCcDA1ZjFTMVpRQQ",
-          "publishedAt": "2026-05-01T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "xAI launches Grok 4.3 at an aggressively low price and a new, fast, powerful voice cloning suite  VentureBeat",
           "source": "xAI Research and Labs"
         },
         {
@@ -134,12 +116,21 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "Elon Musk testifies that xAI trained Grok on OpenAI models - TechCrunch",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA?oc=5",
-          "id": "CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA",
-          "publishedAt": "2026-04-30T07:00:00.000Z",
+          "title": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles - Time Magazine",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3?oc=5",
+          "id": "CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3",
+          "publishedAt": "2026-05-19T22:17:17.000Z",
           "author": "xAI",
-          "summary": "Elon Musk testifies that xAI trained Grok on OpenAI models  TechCrunch",
+          "summary": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles  Time Magazine",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "xAI launches Grok 4.3 at an aggressively low price and a new, fast, powerful voice cloning suite - VentureBeat",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcjFtc3NHSEpDTmdJcUY3MVRzbzNkMWQ4Rk5tVGZPODRfbktQWWlqTUstdUowVmhBNEMzYTVJMDB4eXhwVE5VclVJVVlkVVBKeWZKdnFsVHVCVTNITFE5Ul9HSXFSNWVSLXoxelhXWXBKeWZIM25pbXpMUTNrYnlMam9CN2lJZXNYNWVkN3R4RXpvbjM4R3JtdFJaUjFmX2ZhZGt5NXhyY2FtUE1MOE9RcklNR21KMWpLQko3NjVCcDA1ZjFTMVpRQQ?oc=5",
+          "id": "CBMiyAFBVV95cUxNcjFtc3NHSEpDTmdJcUY3MVRzbzNkMWQ4Rk5tVGZPODRfbktQWWlqTUstdUowVmhBNEMzYTVJMDB4eXhwVE5VclVJVVlkVVBKeWZKdnFsVHVCVTNITFE5Ul9HSXFSNWVSLXoxelhXWXBKeWZIM25pbXpMUTNrYnlMam9CN2lJZXNYNWVkN3R4RXpvbjM4R3JtdFJaUjFmX2ZhZGt5NXhyY2FtUE1MOE9RcklNR21KMWpLQko3NjVCcDA1ZjFTMVpRQQ",
+          "publishedAt": "2026-05-01T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "xAI launches Grok 4.3 at an aggressively low price and a new, fast, powerful voice cloning suite  VentureBeat",
           "source": "xAI Research and Labs"
         },
         {
@@ -152,6 +143,15 @@
           "source": "xAI Research and Labs"
         },
         {
+          "title": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026] - tech-insider.org",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw?oc=5",
+          "id": "CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw",
+          "publishedAt": "2026-04-01T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026]  tech-insider.org",
+          "source": "xAI Research and Labs"
+        },
+        {
           "title": "The xAI Grok 4 model is now available on OCI - Oracle Blogs",
           "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBRRHJZcWV5U01YUEhkZGxTX2s2VjNYTFVMQkpsdGFwYzkzcVVNODJZeXQweFQxSXQ0NlFaMXdWRkpXX3VIbFFqLW4zeGVfV0xaQ3ZGelV1R0FkdnRyUDRqcFRneEI5NTY2MGFSUGc2UnBfWm1nM2x6eWtB?oc=5",
           "id": "CBMiekFVX3lxTFBRRHJZcWV5U01YUEhkZGxTX2s2VjNYTFVMQkpsdGFwYzkzcVVNODJZeXQweFQxSXQ0NlFaMXdWRkpXX3VIbFFqLW4zeGVfV0xaQ3ZGelV1R0FkdnRyUDRqcFRneEI5NTY2MGFSUGc2UnBfWm1nM2x6eWtB",
@@ -161,12 +161,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026] - tech-insider.org",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw?oc=5",
-          "id": "CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw",
-          "publishedAt": "2026-04-01T07:00:00.000Z",
+          "title": "xAI Launches Standalone Grok Speech-to-Text and Text-to-Speech APIs, Targeting Enterprise Voice Developers - MarkTechPost",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY09RY0dONHF6YllnWlNMekExaFNSVVZpblRLVC1teGhPOFl1RFRkUmprVWtmcGo3Ml9ybzE0MDFfZ0VPaWhFN1BjdEpsYlhoQlpiLVJET2Q1LUVCU0xEWWhDU2xIM3JTM0N5VUNhc0dPUG5RUEsxZ0Vjc21kTHAyVHdFYnFLa1FpTWRWOWFrY3JVOHFJYVhYdXNJWnVDYzF5ODlPWFJiRUdLbGVtQ1hNOFptdzJfMUV6RlhEcWdOUWVQRGowakF2RkVwaTFkNnZudk9JbjlYQlZKV2dqXzVj?oc=5",
+          "id": "CBMi3wFBVV95cUxOY09RY0dONHF6YllnWlNMekExaFNSVVZpblRLVC1teGhPOFl1RFRkUmprVWtmcGo3Ml9ybzE0MDFfZ0VPaWhFN1BjdEpsYlhoQlpiLVJET2Q1LUVCU0xEWWhDU2xIM3JTM0N5VUNhc0dPUG5RUEsxZ0Vjc21kTHAyVHdFYnFLa1FpTWRWOWFrY3JVOHFJYVhYdXNJWnVDYzF5ODlPWFJiRUdLbGVtQ1hNOFptdzJfMUV6RlhEcWdOUWVQRGowakF2RkVwaTFkNnZudk9JbjlYQlZKV2dqXzVj",
+          "publishedAt": "2026-04-18T07:00:00.000Z",
           "author": "xAI",
-          "summary": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026]  tech-insider.org",
+          "summary": "xAI Launches Standalone Grok Speech-to-Text and Text-to-Speech APIs, Targeting Enterprise Voice Developers  MarkTechPost",
           "source": "xAI Research and Labs"
         },
         {
@@ -179,12 +179,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "xAI Launches Standalone Grok Speech-to-Text and Text-to-Speech APIs, Targeting Enterprise Voice Developers - MarkTechPost",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY09RY0dONHF6YllnWlNMekExaFNSVVZpblRLVC1teGhPOFl1RFRkUmprVWtmcGo3Ml9ybzE0MDFfZ0VPaWhFN1BjdEpsYlhoQlpiLVJET2Q1LUVCU0xEWWhDU2xIM3JTM0N5VUNhc0dPUG5RUEsxZ0Vjc21kTHAyVHdFYnFLa1FpTWRWOWFrY3JVOHFJYVhYdXNJWnVDYzF5ODlPWFJiRUdLbGVtQ1hNOFptdzJfMUV6RlhEcWdOUWVQRGowakF2RkVwaTFkNnZudk9JbjlYQlZKV2dqXzVj?oc=5",
-          "id": "CBMi3wFBVV95cUxOY09RY0dONHF6YllnWlNMekExaFNSVVZpblRLVC1teGhPOFl1RFRkUmprVWtmcGo3Ml9ybzE0MDFfZ0VPaWhFN1BjdEpsYlhoQlpiLVJET2Q1LUVCU0xEWWhDU2xIM3JTM0N5VUNhc0dPUG5RUEsxZ0Vjc21kTHAyVHdFYnFLa1FpTWRWOWFrY3JVOHFJYVhYdXNJWnVDYzF5ODlPWFJiRUdLbGVtQ1hNOFptdzJfMUV6RlhEcWdOUWVQRGowakF2RkVwaTFkNnZudk9JbjlYQlZKV2dqXzVj",
-          "publishedAt": "2026-04-18T07:00:00.000Z",
+          "title": "xAI's Grok 4: The tension of frontier performance with a side of Elon favoritism - Interconnects AI",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qbHNRd2N5WjhPYW44VnBmaVQ2eEFaT1NmbEdNbEdRUWJGQXpfR2FsdEk2T29ldEE1SXVKWUJ6N2JtczlmcUtDREtXTlNGTGpjSnNZVVBTeUFLQlprbkVIeGczT21pZEJwejhWa2FnV0dwUQ?oc=5",
+          "id": "CBMickFVX3lxTE5qbHNRd2N5WjhPYW44VnBmaVQ2eEFaT1NmbEdNbEdRUWJGQXpfR2FsdEk2T29ldEE1SXVKWUJ6N2JtczlmcUtDREtXTlNGTGpjSnNZVVBTeUFLQlprbkVIeGczT21pZEJwejhWa2FnV0dwUQ",
+          "publishedAt": "2025-07-12T07:00:00.000Z",
           "author": "xAI",
-          "summary": "xAI Launches Standalone Grok Speech-to-Text and Text-to-Speech APIs, Targeting Enterprise Voice Developers  MarkTechPost",
+          "summary": "xAI's Grok 4: The tension of frontier performance with a side of Elon favoritism  Interconnects AI",
           "source": "xAI Research and Labs"
         }
       ]

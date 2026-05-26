@@ -369,6 +369,166 @@ test('daily generation loop does not pass generic articles when cited sources ha
   assert.doesNotMatch(generatedText, /measurement problem|source set|daily feed|cited source signal|if this source is accurate/i);
 });
 
+test('daily article evaluator treats headline-only snippets as unusable source evidence', async () => {
+  const stub = {
+    title: 'OpenAI Who Will Win Update',
+    dek: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI?',
+    tags: ['openai', 'anthropic'],
+    sources: [
+      {
+        title: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI? - The Week',
+        url: 'https://news.google.com/rss/articles/openai-ipo-race',
+        sourceName: '"anthropic" - Google News',
+        summary: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI?',
+        preview: {
+          title: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI? - The Week',
+          source: '"anthropic" - Google News',
+          snippet: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI? The Week'
+        }
+      }
+    ]
+  };
+
+  const report = await evaluateDailyArticleContent({
+    output: {
+      dek: 'OpenAI and Anthropic IPO speculation is a technical market signal that needs careful evidence.',
+      bodySections: [
+        {
+          heading: 'The Market Claim Needs Evidence',
+          paragraphs: [
+            'OpenAI and Anthropic are presented as part of a possible AI IPO race, but the supplied citation only repeats the headline. That is not enough evidence to explain revenue mechanics, model economics, infrastructure constraints, or investor demand with a grounded technical analysis.'
+          ],
+          citations: ['https://news.google.com/rss/articles/openai-ipo-race']
+        },
+        {
+          heading: 'The Engineering Consequence Is Unclear',
+          paragraphs: [
+            'Without extracted article text, the article cannot connect the IPO claim to concrete architecture, benchmark, cost, or deployment trade-offs. A grounded explainer needs details from the cited source before it can separate market narrative from measurable technical constraints.'
+          ],
+          citations: ['https://news.google.com/rss/articles/openai-ipo-race']
+        }
+      ],
+      keyTakeaways: [
+        'Headline-only Google News snippets are not enough evidence for a grounded daily explainer.',
+        'The generator should wait for source text before drawing technical conclusions from an IPO headline.'
+      ]
+    },
+    context: {
+      stub,
+      allowedCitations: stub.sources.map((source) => ({ title: source.title, url: source.url, source: source.sourceName })),
+      relevanceText: stub.sources.map((source) => `${source.title} ${source.summary}`).join(' ')
+    }
+  });
+
+  assert.equal(report.verdict, 'fail');
+  assert.ok(report.requiredFixes.some((fix) => /usable extracted source text|usable source|grounded/i.test(fix)));
+});
+
+test('daily article evaluator rejects generic scaffold prose in generated articles', async () => {
+  const stub = {
+    title: 'Running Local AI on AMD',
+    tags: ['local ai', 'amd'],
+    sources: [
+      {
+        title: 'Running Local AI on AMD',
+        url: 'https://www.youtube.com/watch?v=amd-local',
+        sourceName: 'Sam Witteveen',
+        summary: 'Open weight models are closing the gap with frontier systems while agentic workloads increase token costs, making local AI hardware attractive for privacy, control, and predictable inference budgets.',
+        preview: {
+          title: 'Running Local AI on AMD',
+          source: 'Sam Witteveen',
+          snippet: 'Open weight models are closing the gap with frontier systems while agentic workloads increase token costs, making local AI hardware attractive for privacy, control, and predictable inference budgets.'
+        }
+      }
+    ]
+  };
+
+  const report = await evaluateDailyArticleContent({
+    output: {
+      dek: 'Local AI on AMD is a useful source because it changes what builders measure.',
+      bodySections: [
+        {
+          heading: 'Local AI Explains The Technical Change',
+          paragraphs: [
+            'Open weight models are closing the gap with frontier systems while agentic workloads increase token costs. The mechanism to watch is concrete: Local AI changes what builders measure, where workflow constraints appear, and which operational trade-offs need evidence before teams act on the claim. That gives the article a checkable claim instead of a title-level summary.'
+          ],
+          citations: ['https://www.youtube.com/watch?v=amd-local']
+        },
+        {
+          heading: 'Token Costs Define The Tradeoff',
+          paragraphs: [
+            'The source ties local hardware to privacy, control, and predictable inference budgets. The Local AI angle is the technical lens for interpreting that detail, and readers can use it to decide whether this is more than a headline.'
+          ],
+          citations: ['https://www.youtube.com/watch?v=amd-local']
+        }
+      ],
+      keyTakeaways: [
+        'The article must explain the source rather than reuse generic generator scaffold.',
+        'Grounded prose should name the AMD/local-AI trade-off directly.'
+      ]
+    },
+    context: {
+      stub,
+      allowedCitations: stub.sources.map((source) => ({ title: source.title, url: source.url, source: source.sourceName })),
+      relevanceText: stub.sources.map((source) => `${source.title} ${source.summary}`).join(' ')
+    }
+  });
+
+  assert.equal(report.verdict, 'fail');
+  assert.ok(report.requiredFixes.some((fix) => /instructions|source metadata|uncertainty policy|generation|cited sources/i.test(fix)));
+});
+
+test('publish-only daily generation drops failed title-only articles while keeping grounded articles', async () => {
+  const result = await buildDailyArticleStubsWithGenerationLoop({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'openai-ipo-1',
+          title: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI? - The Week',
+          summary: 'Who will win the AI IPO race between SpaceX, Anthropic and OpenAI? The Week',
+          url: 'https://news.google.com/rss/articles/openai-ipo-race',
+          sourceName: '"anthropic" - Google News',
+          publishedAt: '2026-05-20T17:00:00.000Z',
+          tags: ['openai', 'anthropic', 'ai']
+        },
+        {
+          id: 'openai-ipo-2',
+          title: "OpenAI's Altman says AI unlikely to lead to 'jobs apocalypse' - Reuters",
+          summary: "OpenAI's Altman says AI unlikely to lead to 'jobs apocalypse' Reuters",
+          url: 'https://news.google.com/rss/articles/openai-jobs',
+          sourceName: '"openai" - Google News',
+          publishedAt: '2026-05-20T17:01:00.000Z',
+          tags: ['openai', 'ai']
+        },
+        {
+          id: 'cursor-model',
+          title: 'Cursor just beat EVERYONE.',
+          summary: 'Cursor released Composer 2.5, a coding model focused on lower cost per task and higher CursorBench performance. The video compares it with frontier models and argues that workhorse coding models can become the default for everyday agentic programming.',
+          url: 'https://www.youtube.com/watch?v=cursor-model',
+          sourceName: 'Matthew Berman',
+          publishedAt: '2026-05-20T16:40:27.000Z',
+          tags: ['youtube', 'cursor', 'coding'],
+          transcript: {
+            status: 'ok',
+            videoId: 'cursor-model',
+            text: 'Cursor released Composer 2.5, the next iteration of its homegrown coding model. The presenter says the important part is price-to-performance on CursorBench: Composer 2.5 is framed as a workhorse coding model for everyday agentic programming, not a general frontier model. The video says lower cost per task matters because coding agents burn tokens during long-running tool calls and sustained work.'
+          }
+        }
+      ]
+    },
+    maxStubs: 2,
+    publishOnlyPassed: true,
+    requireUsableSourceEvidence: true
+  });
+
+  assert.equal(result.articleStubs.length, 1);
+  assert.equal(result.articleStubs[0].status, 'generated');
+  assert.match(result.articleStubs[0].title, /Cursor/i);
+  assert.doesNotMatch(JSON.stringify(result.articleStubs), /Who will win the AI IPO race/i);
+});
+
 test('daily generation loop produces substantive journalist content and eval metadata for every page', async () => {
   const result = await buildDailyArticleStubsWithGenerationLoop({
     date: '2026-05-20',

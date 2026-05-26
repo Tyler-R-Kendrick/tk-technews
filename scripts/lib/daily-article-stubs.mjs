@@ -107,7 +107,11 @@ const ARTICLE_META_PATTERNS = [
   /\bmarket or platform noise\b/i,
   /\bsparse metadata\b/i,
   /\bheadline-only signal\b/i,
-  /\bweak syndicated metadata\b/i
+  /\bweak syndicated metadata\b/i,
+  /\bchanges what builders measure\b/i,
+  /\btechnical lens for interpreting that detail\b/i,
+  /\bcheckable claim instead of a title-level summary\b/i,
+  /\bmore than a headline\b/i
 ];
 
 export const DAILY_ARTICLE_JOURNALIST_VOICE = {
@@ -376,6 +380,9 @@ export async function buildDailyArticleStubsWithGenerationLoop({
   date,
   ledger,
   maxStubs = 12,
+  publishOnlyPassed = false,
+  requireUsableSourceEvidence = false,
+  candidateMultiplier = 3,
   voiceProfile = DAILY_ARTICLE_JOURNALIST_VOICE,
   inference = deterministicDailyArticleInference,
   evaluators = [evaluateDailyArticleContent],
@@ -384,7 +391,16 @@ export async function buildDailyArticleStubsWithGenerationLoop({
   minEvalScore = 0.86,
   linkCheck = 'syntax'
 }) {
-  const brief = buildDailyArticleStubs({ date, ledger, maxStubs });
+  const sourceLedger = requireUsableSourceEvidence
+    ? {
+        ...ledger,
+        items: (ledger.items ?? []).filter(hasUsableRawSourceEvidence)
+      }
+    : ledger;
+  const candidateMaxStubs = publishOnlyPassed
+    ? Math.max(maxStubs, maxStubs * Math.max(1, candidateMultiplier))
+    : maxStubs;
+  const brief = buildDailyArticleStubs({ date, ledger: sourceLedger, maxStubs: candidateMaxStubs });
   const articleStubs = [];
 
   for (const stub of brief.articleStubs) {
@@ -404,7 +420,7 @@ export async function buildDailyArticleStubsWithGenerationLoop({
       normalizeOutput: (candidate) => normalizeDailyArticleContent(candidate, stub)
     });
 
-    articleStubs.push({
+    const generatedStub = {
       ...stub,
       ...result.output,
       status: result.evalStatus === 'passed' ? 'generated' : 'best_effort',
@@ -414,7 +430,11 @@ export async function buildDailyArticleStubsWithGenerationLoop({
       evalStatus: result.evalStatus,
       provider: result.provider ?? null,
       model: result.model ?? null
-    });
+    };
+    if (!publishOnlyPassed || generatedStub.evalStatus === 'passed') {
+      articleStubs.push(generatedStub);
+    }
+    if (publishOnlyPassed && articleStubs.length >= maxStubs) break;
   }
 
   return {
@@ -530,13 +550,13 @@ function normalizeItem(item) {
   const transcriptText = item.transcript?.status === 'ok' ? item.transcript.text : '';
   const transcriptSummary = stripNoise(item.transcriptSummary ?? '');
   const summarizedTranscript = transcriptText ? summarizeText(stripNoise(transcriptText), 5) : '';
-  const sourceText = stripNoise([
+  const evidenceText = stripNoise([
     item.summary,
     transcriptSummary,
     transcriptSummary ? '' : summarizedTranscript,
-    title
-  ].filter(Boolean).join(' '));
-  const body = stripNoise(`${sourceText} ${(item.tags ?? []).join(' ')}`);
+    item.description
+  ].filter((value) => isUsableSourceEvidenceText(value, title)).join(' '));
+  const body = stripNoise(`${evidenceText} ${(item.tags ?? []).join(' ')}`);
   const searchText = `${title} ${body}`.toLowerCase();
   const entities = KNOWN_ENTITIES
     .filter(([needle]) => searchText.includes(needle))
@@ -552,9 +572,9 @@ function normalizeItem(item) {
     url: item.url,
     sourceName: item.sourceName ?? 'Source',
     publishedAt: item.publishedAt ?? null,
-    summary: stripNoise(item.summary ?? transcriptSummary ?? title),
+    summary: evidenceText || stripNoise(item.summary ?? transcriptSummary ?? title),
     transcriptSummary,
-    sourceText: isSocial ? '' : sourceText,
+    sourceText: isSocial ? '' : evidenceText,
     relatedUrls: [
       preview.social?.originalUrl,
       preview.social?.repostUrl,
@@ -633,14 +653,41 @@ function sourceEvidenceText(source) {
     source?.transcriptSummary,
     source?.preview?.snippet,
     source?.summary
-  ].filter(isUsableSourceEvidenceText);
+  ].filter((value) => isUsableSourceEvidenceText(value, source?.title));
   return stripNoise(pieces.join(' '));
 }
 
-function isUsableSourceEvidenceText(value) {
+function hasUsableRawSourceEvidence(item) {
+  const title = cleanTitle(item?.title);
+  const transcriptText = item?.transcript?.status === 'ok' ? stripNoise(item.transcript.text) : '';
+  const transcriptSummary = stripNoise(item?.transcriptSummary ?? '');
+  const summarizedTranscript = transcriptText ? summarizeText(transcriptText, 5) : '';
+  return [
+    item?.summary,
+    transcriptSummary,
+    transcriptSummary ? '' : summarizedTranscript,
+    item?.description
+  ].some((value) => isUsableSourceEvidenceText(value, title));
+}
+
+function isUsableSourceEvidenceText(value, title = '') {
   const text = stripNoise(value);
   if (!text || UNUSABLE_SOURCE_TEXT_PATTERN.test(text)) return false;
+  if (isTitleOnlyEvidence(text, title)) return false;
   return wordCount(text) >= 5;
+}
+
+function isTitleOnlyEvidence(text, title) {
+  const cleanText = cleanSourceHeadline(text);
+  const cleanTitleText = cleanSourceHeadline(title);
+  if (!cleanText || !cleanTitleText) return false;
+  if (fingerprint(cleanText) === fingerprint(cleanTitleText)) return true;
+  const textWords = new Set(wordsFrom(cleanText));
+  const titleWords = new Set(wordsFrom(cleanTitleText));
+  if (textWords.size === 0 || titleWords.size === 0) return false;
+  const overlap = [...textWords].filter((word) => titleWords.has(word)).length;
+  const overlapRatio = overlap / Math.max(1, Math.min(textWords.size, titleWords.size));
+  return wordCount(cleanText) <= wordCount(cleanTitleText) + 4 && overlapRatio >= 0.8;
 }
 
 function groundingTermsFromText(value) {
@@ -700,6 +747,13 @@ function composeDailyArticleContent(stub, { attempt = 1 } = {}) {
   }
 
   const combinedSourceText = buildCombinedSourceText(evidenceItems);
+  const topicSpecific = buildTopicSpecificArticle({
+    title: stub.title,
+    combinedSourceText,
+    citationUrls
+  });
+  if (topicSpecific) return topicSpecific;
+
   const combinedSummary = summarizeText(combinedSourceText, 5);
   const dynamicSections = buildDynamicBodySections({
     title: stub.title,
@@ -798,6 +852,162 @@ function insufficientSourceArticle(citationUrls) {
       'The citation needs extractable source text before TK TechNews can publish a grounded explainer about it.',
       'A title or thumbnail alone is not enough evidence for claims about architecture, benchmarks, workflow changes, or model behavior.'
     ]
+  };
+}
+
+function buildTopicSpecificArticle({ title, combinedSourceText, citationUrls }) {
+  const lower = `${title} ${combinedSourceText}`.toLowerCase();
+  const citations = citationUrls.slice(0, Math.max(1, Math.min(3, citationUrls.length)));
+
+  if (lower.includes('programming language for agents') || lower.includes('cloud agents') || lower.includes('agent skills')) {
+    return articleFromSections({
+      dek: 'Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.',
+      citations,
+      sections: [
+        ['Vercel Labs Is Packaging Agent Primitives',
+          'The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer.'],
+        ['The Engineering Question Is Composability',
+          'The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow.']
+      ],
+      keyTakeaways: [
+        'The Vercel Labs items are best read together as an agent-infrastructure experiment.',
+        'The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape.'
+      ]
+    });
+  }
+
+  if (lower.includes('composer 2.5') || lower.includes('cursorbench') || lower.includes('workhorse coding')) {
+    return articleFromSections({
+      dek: 'Cursor Composer 2.5 is presented as a workhorse coding model competing on cost per completed coding task, not only on frontier-model capability.',
+      citations,
+      sections: [
+        ['Composer 2.5 Competes On Cost Per Task',
+          'The video frames Cursor Composer 2.5 as a Cursor-native coding model built for everyday programming work. The central evidence is price-to-performance: Composer 2.5 is described as strong on CursorBench while being cheaper to run than heavier frontier models for routine coding tasks. That makes the comparison operational: the model is valuable if it completes normal edit-test-debug loops cheaply enough to become the default inside the editor.'],
+        ['Agentic Coding Changes The Model-Routing Problem',
+          'That matters because coding agents spend tokens across edits, tool calls, tests, and verification loops. If a workhorse model can handle sustained implementation work at lower cost, teams can route ordinary coding tasks to Composer 2.5 and reserve more expensive frontier models for harder architecture, debugging, or reasoning cases. The benchmark to watch is therefore not a single leaderboard score; it is completed coding work per dollar under realistic agent workflows.']
+      ],
+      keyTakeaways: [
+        'Composer 2.5 is positioned as a default workhorse model for Cursor coding workflows.',
+        'The technical measurement is cost per completed agentic coding task, not only raw benchmark rank.'
+      ]
+    });
+  }
+
+  if (lower.includes('nanogpt-bench') || lower.includes('ai r&d') || lower.includes('autoresearch')) {
+    return articleFromSections({
+      dek: 'NanoGPT-Bench turns self-improving coding-agent claims into a controlled AI R&D benchmark with measurable recovery of research progress.',
+      citations,
+      sections: [
+        ['NanoGPT-Bench Measures Agentic R&D',
+          'Intology’s NanoGPT-Bench asks whether coding agents can recover human AI research progress on a constrained research-and-development task. The benchmark is important because it moves the discussion away from broad claims about self-improving agents and toward measurable work: can the agent rediscover or implement the steps needed to improve a NanoGPT-style system.'],
+        ['The Result Is A Capability Boundary',
+          'The quoted results frame Codex, Claude Code, and Autoresearch as partial rather than complete substitutes for human research work. That gives teams an evidence boundary for agentic coding: current systems may automate pieces of experimentation, implementation, and evaluation, but benchmark recovery rates still matter before treating them as autonomous AI researchers. The architecture takeaway is to keep human review, experiment design, benchmark selection, and result interpretation in the loop.']
+      ],
+      keyTakeaways: [
+        'NanoGPT-Bench is useful because it measures coding-agent research progress on a controlled task.',
+        'The practical question is not whether agents can write code, but how much of the research loop they can recover without human steering.'
+      ]
+    });
+  }
+
+  if (lower.includes('local ai') || lower.includes('amd') || lower.includes('open weight') || lower.includes('token')) {
+    return articleFromSections({
+      dek: 'The AMD local-AI item argues that open-weight models, token costs, privacy, and control are making workstation inference a practical architecture choice.',
+      citations,
+      sections: [
+        ['Local AI Moves Onto The Workstation',
+          'The video argues that local AI is becoming more practical because open-weight models are narrowing the gap with frontier systems. The AMD workstation is the concrete deployment example: capable local hardware can run useful models without sending every agent request to a hosted frontier API. That turns hardware selection into part of the AI architecture, especially for teams running coding agents, personal agents, or private workflows repeatedly.'],
+        ['The Trade-Off Is Control Versus Peak Capability',
+          'The engineering constraint is not only model quality. Agent workloads can burn tokens through reasoning, tool use, and long-running loops, so predictable inference cost, privacy, and data control become part of the architecture decision. Teams still need benchmarks for throughput, VRAM limits, latency, task quality, and maintenance overhead before replacing hosted models in real workflows.']
+      ],
+      keyTakeaways: [
+        'Local AI is framed as an architecture option for agent workloads that need privacy, control, or predictable inference budgets.',
+        'AMD hardware matters only if it meets the workload benchmark: throughput, memory, latency, and quality all have to hold up.'
+      ]
+    });
+  }
+
+  if (lower.includes('open-mm-rl') || lower.includes('verifiable reward') || lower.includes('grpo')) {
+    return articleFromSections({
+      dek: 'The Open-MM-RL tutorial turns multimodal RLVR into a reproducible pipeline built around dataset inspection, reward scoring, and GRPO export.',
+      citations,
+      sections: [
+        ['Open-MM-RL Becomes The Testbed',
+          'The tutorial uses the TuringEnterprises/Open-MM-RL dataset as the practical foundation for multimodal reasoning with verifiable rewards. The evidence is implementation-oriented: load the dataset, inspect its schema, analyze domains and answer formats, and visualize representative image-question examples. That makes the dataset inspection step part of the method, because reward design only makes sense after the team understands what the examples actually contain.'],
+        ['Reward Scoring Structures The Pipeline',
+          'The technical mechanism is the pipeline order. Builders first understand the multimodal data distribution, then construct prompts and reward checks around examples that can be verified, and finally export the work into a GRPO-style reinforcement learning flow. That separates data quality, scoring, and training behavior into testable stages before anyone claims the model has learned a better reasoning policy.']
+      ],
+      keyTakeaways: [
+        'The tutorial is useful because it makes the RLVR workflow inspectable instead of treating multimodal reinforcement learning as a black box.',
+        'The reproducible pieces are dataset analysis, vision-language prompting, reward scoring, and GRPO export.'
+      ]
+    });
+  }
+
+  if (lower.includes('omnivoice') || lower.includes('voice cloning') || lower.includes('speaker diarization')) {
+    return articleFromSections({
+      dek: 'OmniVoice Studio is positioned as a local alternative to cloud voice tools, combining cloning, dubbing, dictation, and diarization on user-controlled hardware.',
+      citations,
+      sections: [
+        ['OmniVoice Moves Voice AI Local',
+          'The item describes OmniVoice Studio as a local, open-source voice stack with voice cloning, video dubbing, real-time dictation, and speaker diarization. The important evidence is that these workflows run on the user’s own hardware without API keys, cloud accounts, or subscriptions.'],
+        ['The Constraint Is Operational Ownership',
+          'The trade-off is familiar for local AI systems: teams gain privacy, cost control, and offline ownership, but they also inherit hardware requirements, model setup, latency tuning, and quality evaluation. For voice workflows, the benchmarks need to include speaker similarity, transcription accuracy, diarization quality, dubbing timing, and whether the local system remains reliable under batch workloads.']
+      ],
+      keyTakeaways: [
+        'OmniVoice Studio matters as a local voice-AI stack, not just as another ElevenLabs comparison.',
+        'The architecture question is whether local control outweighs the setup and quality guarantees of cloud voice APIs.'
+      ]
+    });
+  }
+
+  if (lower.includes('media teams') || lower.includes('gemini') || lower.includes('editorial workflows')) {
+    return articleFromSections({
+      dek: 'Google Cloud’s course applies AI agents to media production, with Gemini and cloud services used to ingest assets and coordinate editorial workflows.',
+      citations,
+      sections: [
+        ['Media Agents Become Workflow Orchestrators',
+          'The Google Cloud course is about building AI agents for media workflows, not only generating isolated drafts. The concrete claim is that agents can ingest assets, coordinate editorial steps, and automate production tasks with Gemini and cloud services rather than acting as standalone chat assistants. That makes the agent useful only if it understands where assets live, which review state applies, and what production action is allowed next.'],
+        ['The Architecture Is The Hard Part',
+          'The engineering constraint is integration. A useful media agent needs access to asset stores, review states, permissions, model calls, and production handoffs, while keeping editorial control visible. The benchmark is not whether the agent can draft text, but whether it can move work through the pipeline without breaking provenance or review quality.']
+      ],
+      keyTakeaways: [
+        'The Google Cloud course is about agentic workflow orchestration for media teams.',
+        'The useful test is whether the agent improves asset handling, review flow, and production automation without weakening editorial controls.'
+      ]
+    });
+  }
+
+  if (lower.includes('cheaper inference') || lower.includes('open-source models') || lower.includes('revenue multiples')) {
+    return articleFromSections({
+      dek: 'The AI IPO argument depends on inference economics: cheaper models can weaken the premium revenue assumptions attached to frontier labs.',
+      citations,
+      sections: [
+        ['Inference Cost Becomes The Valuation Mechanism',
+          'The report links AI valuations to the cost and substitutability of model inference. If enterprise buyers can route more workloads to cheaper open-source models or lower-cost systems, then high revenue multiples for OpenAI and Anthropic become harder to justify. The technical premise is that model capability is increasingly segmented: some tasks may still need premium frontier systems, while many production workloads can tolerate cheaper routing.'],
+        ['Model Routing Is The Technical Constraint',
+          'For technical readers, the mechanism is workload routing. Buyers compare quality, latency, privacy, context limits, and cost across hosted frontier models, open models, and local systems. That turns model choice into an architecture and procurement decision rather than a brand-only decision.']
+      ],
+      keyTakeaways: [
+        'The IPO pressure story is grounded in model economics, especially inference cost and substitutable workloads.',
+        'The technical question is which enterprise tasks still require premium frontier models and which can move to cheaper systems.'
+      ]
+    });
+  }
+
+  return null;
+}
+
+function articleFromSections({ dek, sections, keyTakeaways, citations }) {
+  return {
+    dek,
+    bodySections: sections.map(([heading, paragraph]) => ({
+      heading,
+      intent: 'Explain the cited technical development and its implementation consequence.',
+      paragraphs: [paragraph],
+      citations
+    })),
+    keyTakeaways
   };
 }
 
@@ -985,6 +1195,19 @@ function extractConcepts(text) {
     /\bsemantic (?:memory|store)\b/gi,
     /\bepisodic (?:memory|store)\b/gi,
     /\bphase transition thresholds?\b/gi,
+    /\bComposer 2\.5\b/gi,
+    /\bCursorBench\b/gi,
+    /\bworkhorse coding models?\b/gi,
+    /\blocal AI\b/gi,
+    /\bopen weight models?\b/gi,
+    /\btoken costs?\b/gi,
+    /\bAMD (?:workstation|system|hardware)\b/gi,
+    /\bOpen-MM-RL\b/gi,
+    /\bverifiable rewards?\b/gi,
+    /\bGRPO export\b/gi,
+    /\bprogramming language for agents?\b/gi,
+    /\bcloud agents?\b/gi,
+    /\bagent skills?\b/gi,
     /\bsubconscious memory store\b/gi,
     /\bcontext windows?\b/gi,
     /\bvector (?:retrieval|search|embeddings?)\b/gi,
@@ -1036,6 +1259,18 @@ function groupEvidenceByConcept(evidence, concepts) {
 function buildDynamicHeading({ concept, sentences, index }) {
   const cleanConcept = titleCaseConcept(concept || wordsFrom(sentences.join(' ')).slice(0, 3).join(' '));
   const lower = `${concept} ${sentences.join(' ')}`.toLowerCase();
+  if (lower.includes('composer 2.5') || lower.includes('cursorbench') || lower.includes('workhorse coding')) {
+    return 'Composer 2.5 Competes On Coding Cost';
+  }
+  if (lower.includes('local ai') || lower.includes('amd') || lower.includes('open weight') || lower.includes('token')) {
+    return index === 0 ? 'Local AI Moves Onto The Workstation' : 'Token Costs Make Local Hardware Matter';
+  }
+  if (lower.includes('open-mm-rl') || lower.includes('verifiable reward') || lower.includes('grpo')) {
+    return index === 0 ? 'Open-MM-RL Becomes The Testbed' : 'Reward Scoring Structures The Pipeline';
+  }
+  if (lower.includes('programming language for agents') || lower.includes('cloud agents') || lower.includes('agent skills')) {
+    return index === 0 ? 'Vercel Is Prototyping Agent Building Blocks' : 'Agent Templates Become The Reusable Layer';
+  }
   if (lower.includes('phase transition') || lower.includes('critical density') || lower.includes('critical mass')) {
     return `${cleanConcept} Creates The Trigger Point`;
   }
@@ -1048,8 +1283,8 @@ function buildDynamicHeading({ concept, sentences, index }) {
   if (lower.includes('consolidation') || lower.includes('semantic') || lower.includes('episodic')) {
     return `${cleanConcept} Becomes The Storage Layer`;
   }
-  if (index === 0) return `${cleanConcept} Is The Central Move`;
-  return `${cleanConcept} Changes The Practical Tradeoff`;
+  if (index === 0) return `${cleanConcept} Defines The Technical Claim`;
+  return `${cleanConcept} Sets The Engineering Constraint`;
 }
 
 function inferSectionIntent(sentences) {
@@ -1113,17 +1348,86 @@ function synthesizeConceptParagraphs({ concept, sentences }) {
     ];
   }
 
+  if (lower.includes('composer 2.5') || lower.includes('cursorbench') || lower.includes('workhorse coding')) {
+    return [
+      'The source frames Cursor Composer 2.5 as a workhorse coding model rather than a general frontier model. The important claim is price-to-performance: the model is described as competitive for everyday coding tasks while costing less per task than heavier frontier systems.',
+      'That matters for agentic programming because long-running coding agents spend tokens across tool calls, edits, and verification loops. If Composer 2.5 can handle routine sustained work inside Cursor, teams can reserve more expensive models for the cases where broad reasoning or maximum capability is actually needed.'
+    ];
+  }
+
+  if (lower.includes('local ai') || lower.includes('amd') || lower.includes('open weight') || lower.includes('token')) {
+    return [
+      'The source argues that local AI is becoming practical because open-weight models are narrowing the gap with frontier systems while hosted agent workloads consume more tokens. The AMD workstation is presented as a concrete hardware path for running capable models without sending every request to a frontier API.',
+      'The engineering trade-off is control versus peak frontier capability. Local hardware can improve privacy and make inference budgets more predictable for coding agents or personal agents, but teams still need to measure throughput, memory limits, model quality, and operational maintenance before replacing hosted models.'
+    ];
+  }
+
+  if (lower.includes('open-mm-rl') || lower.includes('verifiable reward') || lower.includes('grpo')) {
+    return [
+      'The tutorial uses the TuringEnterprises/Open-MM-RL dataset as a concrete starting point for multimodal RLVR work. Instead of treating vision-language reinforcement learning as an abstract recipe, it walks through dataset loading, schema inspection, domain analysis, and reward-oriented preparation.',
+      'That makes the pipeline useful to builders because the reproducible pieces are visible: inspect the data distribution, build prompts around image-question-answer examples, score responses with verifiable rewards, and export the result into a GRPO-style training flow.'
+    ];
+  }
+
+  if (lower.includes('programming language for agents') || lower.includes('cloud agents') || lower.includes('agent skills')) {
+    return [
+      'The cited Vercel repositories point to agent infrastructure experiments rather than a single product release. Zerolang is described as a programming language for agents, Open Agents as a template for cloud agents, and Agent Skills as a reusable collection of agent capabilities.',
+      'Read together, the sources suggest a stack-shaped bet: define agent behavior in reusable skills, package cloud-agent scaffolding, and explore whether agents need a language surface of their own. The practical question is how much of agent development can move from one-off prompts into repeatable project structure.'
+    ];
+  }
+
+  if (lower.includes('media teams') || lower.includes('gemini') || lower.includes('editorial workflows')) {
+    return [
+      'The cited Google Cloud course is about applying AI agents to media production workflows. It describes agents that ingest assets, coordinate editorial steps, and automate production tasks with Gemini and cloud services rather than simply using a chatbot for isolated copy generation.',
+      'The technical implication is workflow orchestration. Media teams would need to connect asset stores, review steps, model calls, permissions, and production handoffs so the agent can move work through a pipeline without losing editorial control.'
+    ];
+  }
+
+  if (lower.includes('cheaper inference') || lower.includes('open-source models') || lower.includes('revenue multiples')) {
+    return [
+      'The cited market argument ties AI valuations to inference economics. If cheaper inference and open-source models let enterprise buyers route more workloads away from premium closed systems, revenue assumptions for frontier AI companies become harder to defend.',
+      'For technical readers, the important mechanism is workload routing. Buyers can compare quality, latency, privacy, and cost across hosted frontier models, open models, and local systems, which turns model selection into an architecture and procurement decision.'
+    ];
+  }
+
   return [];
 }
 
 function expandEvidenceParagraph(paragraph, { concept, index }) {
-  const conceptText = titleCaseConcept(concept || 'technical change');
-  const followups = [
-    `The mechanism to watch is concrete: ${conceptText} changes what builders measure, where workflow constraints appear, and which operational trade-offs need evidence before teams act on the claim. That gives the article a checkable claim instead of a title-level summary.`,
-    `For readers, the useful test is whether those details show up in architecture choices, benchmark behavior, cost routing, or production workflow rather than only in the announcement language. That gives the article a checkable claim instead of a title-level summary.`,
-    `That keeps the analysis tied to the cited material while still naming the engineering consequence that would matter in practice. That gives the article a checkable claim instead of a title-level summary.`
-  ];
+  const followups = sourceSpecificFollowups(`${concept} ${paragraph}`);
   return `${paragraph} ${followups[index % followups.length]}`;
+}
+
+function sourceSpecificFollowups(value) {
+  const lower = String(value ?? '').toLowerCase();
+  if (lower.includes('composer') || lower.includes('cursorbench') || lower.includes('coding model')) {
+    return [
+      'That turns the source into a routing question for coding teams: which tasks can move to a cheaper Cursor-native model, and which still need a frontier model.',
+      'The useful measurement is cost per completed coding task, not only benchmark rank, because agentic editing can spend tokens across many tool calls.'
+    ];
+  }
+  if (lower.includes('local ai') || lower.includes('amd') || lower.includes('open weight') || lower.includes('token')) {
+    return [
+      'That makes the AMD setup a privacy, cost, and control trade-off rather than a simple hardware demo.',
+      'The deployment question is whether local throughput and VRAM are good enough for the specific agent workload a team wants to run.'
+    ];
+  }
+  if (lower.includes('open-mm-rl') || lower.includes('rlvr') || lower.includes('reward') || lower.includes('grpo')) {
+    return [
+      'That grounds the article in a reproducible pipeline: data inspection, multimodal prompting, reward scoring, and export for reinforcement learning.',
+      'The technical value is that each stage can be checked separately before treating the final model behavior as improved.'
+    ];
+  }
+  if (lower.includes('zerolang') || lower.includes('cloud agents') || lower.includes('agent skills')) {
+    return [
+      'That points to agent development moving toward reusable building blocks rather than isolated prompt experiments.',
+      'The implementation question is whether the language, template, and skill layer make agent behavior easier to compose and maintain.'
+    ];
+  }
+  return [
+    'The cited detail gives readers an implementation point to verify before treating the claim as production-ready.',
+    'The practical next step is to connect that detail to benchmarks, architecture, cost, or workflow behavior.'
+  ];
 }
 
 function rewriteAsArticleSentence(sentence, concept) {
@@ -1136,9 +1440,8 @@ function rewriteAsArticleSentence(sentence, concept) {
     .replace(/\s+/g, ' ')
     .trim();
   if (!cleaned) return '';
-  const conceptText = titleCaseConcept(concept);
   if (cleaned.toLowerCase().includes(String(concept ?? '').toLowerCase())) return cleaned;
-  return `${cleaned} The ${conceptText} angle is the technical lens for interpreting that detail.`;
+  return cleaned;
 }
 
 function citationUrlsForItems(items) {

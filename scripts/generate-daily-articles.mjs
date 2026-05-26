@@ -40,6 +40,8 @@ const dailyBrief = await buildDailyArticleStubsWithGenerationLoop({
   date,
   ledger,
   maxStubs,
+  publishOnlyPassed: true,
+  requireUsableSourceEvidence: true,
   evalMode: args['eval-mode'] ?? 'live',
   maxEvalIterations,
   minEvalScore,

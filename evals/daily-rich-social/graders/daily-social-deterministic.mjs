@@ -109,7 +109,11 @@ function containsInstructionMeta(value) {
     /\bmarket or platform noise\b/i,
     /\bsparse metadata\b/i,
     /\bheadline-only signal\b/i,
-    /\bweak syndicated metadata\b/i
+    /\bweak syndicated metadata\b/i,
+    /\bchanges what builders measure\b/i,
+    /\btechnical lens for interpreting that detail\b/i,
+    /\bcheckable claim instead of a title-level summary\b/i,
+    /\bmore than a headline\b/i
   ].some((pattern) => pattern.test(String(value ?? '')));
 }
 

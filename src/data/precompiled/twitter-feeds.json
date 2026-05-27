@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T17:09:33.223Z",
+  "generatedAt": "2026-05-27T15:23:34.530Z",
   "sources": [
     {
       "id": "twitter-omarsar0",
@@ -12,10 +12,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/omarsar0",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Language models need \"sleep\"",
+          "link": "https://x.com/omarsar0/status/2059366168318632426",
+          "id": "https://twitter.com/omarsar0/status/2059366168318632426",
+          "publishedAt": "2026-05-26T20:08:50.000Z",
+          "author": "@omarsar0",
+          "summary": "Language models need \"sleep\"DAIR.AI: // Language Models Need Sleep //Let your agents \"sleep\", folks.On a serious note, this is a fascinating paper on getting the most from long-horizon agents.Here is the problem with agents today: Attention scales badly with context length, so long-horizon agents keep paying a",
+          "source": "@omarsar0"
+        },
+        {
+          "title": "RT elvis: Just built an insane new agent skill. It can perfectly extract slides from YT videos, then write notes, images, transcripts, and slides into...",
+          "link": "https://x.com/omarsar0/status/2059345423106486655",
+          "id": "https://twitter.com/omarsar0/status/2059345423106486655",
+          "publishedAt": "2026-05-26T14:33:06.000Z",
+          "author": "@omarsar0",
+          "summary": "RT elvisJust built an insane new agent skill.It can perfectly extract slides from YT videos, then write notes, images, transcripts, and slides into Obsidian vaults.An HTML artifact allows me to navigate and add more notes as I listen.Should I release the skill?",
+          "source": "@omarsar0"
+        },
+        {
+          "title": "New research from Microsoft Research I see a lot of AI engineers handwriting agent skill docs and hope they generalize. Probably not optimal. This wor...",
+          "link": "https://x.com/omarsar0/status/2058936160291004483",
+          "id": "https://twitter.com/omarsar0/status/2058936160291004483",
+          "publishedAt": "2026-05-25T15:40:08.000Z",
+          "author": "@omarsar0",
+          "summary": "New research from Microsoft ResearchI see a lot of AI engineers handwriting agent skill docs and hope they generalize.Probably not optimal. This works show why.It treats the skill doc as a trainable external state of a frozen agent instead.It introduces SkillOpt, where an optimizer model makes validation-gated edits to the skill file. It adds, deletes, or replaces instructions, with a textual learning rate that controls how aggressively each round rewrites the doc. The agent itself never changes.SkillOpt is best or tied on all 52 (model, benchmark, harness) cells.On GPT-5.5 it adds 23.5 points in direct chat, 24.8 with Codex, and 19.1 with Claude Code over no skill. It beats human-written skills, TextGrad, GEPA, and EvoSkill, carries zero extra inference-time cost, and the learned skills transfer across models and harnesses.Paper: https://arxiv.org/abs/2605.23904Learn to build effective AI agents in our academy: https://academy.dair.ai/",
+          "source": "@omarsar0"
+        },
+        {
+          "title": "RT elvis: We are going to need so many engineers and researchers where things are headed. Don't listen to the noise, go learn the fundamentals and bui...",
+          "link": "https://x.com/omarsar0/status/2058849653399965914",
+          "id": "https://twitter.com/omarsar0/status/2058849653399965914",
+          "publishedAt": "2026-05-24T16:29:46.000Z",
+          "author": "@omarsar0",
+          "summary": "RT elvisWe are going to need so many engineers and researchers where things are headed.Don't listen to the noise, go learn the fundamentals and build/collaborate with AI as much as you can.",
+          "source": "@omarsar0"
+        },
+        {
+          "title": "RT DAIR.AI: The Top AI Papers of the Week (May 18 - 24): - AIRA - MetaCogAgent - Memory as a Model - Code as Agent Harness - Weak-Model Critic-Compara...",
+          "link": "https://x.com/omarsar0/status/2058538679895757177",
+          "id": "https://twitter.com/omarsar0/status/2058538679895757177",
+          "publishedAt": "2026-05-24T13:18:14.000Z",
+          "author": "@omarsar0",
+          "summary": "RT DAIR.AIThe Top AI Papers of the Week (May 18 - 24):- AIRA- MetaCogAgent- Memory as a Model- Code as Agent Harness- Weak-Model Critic-Comparator- OpenAI Disproves the Unit Distance Conjecture- Production Agent Architecture MethodologyRead on for more:DAIR.AI: http://x.com/i/article/2058260237858066433",
+          "source": "@omarsar0"
+        }
+      ]
     },
     {
       "id": "twitter-googleaistudio",
@@ -29,7 +74,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -44,10 +89,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/karpathy",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the...",
+          "link": "https://x.com/karpathy/status/2056753169888334312",
+          "id": "https://twitter.com/karpathy/status/2056753169888334312",
+          "publishedAt": "2026-05-19T15:05:42.000Z",
+          "author": "@karpathy",
+          "summary": "Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&D. I remain deeply passionate about education and plan to resume my work on it in time.",
+          "source": "@karpathy"
+        },
+        {
+          "title": "This works really well btw, at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser. ...",
+          "link": "https://x.com/karpathy/status/2053872850101285137",
+          "id": "https://twitter.com/karpathy/status/2053872850101285137",
+          "publishedAt": "2026-05-11T16:20:21.000Z",
+          "author": "@karpathy",
+          "summary": "This works really well btw, at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser. I've also had some success asking the LLM to present its output as slideshows, etc.More generally, imo audio is the human-preferred input to AIs but vision (images/animations/video) is the preferred output from them. Around a ~third of our brains are a massively parallel processor dedicated to vision, it is the 10-lane superhighway of information into brain. As AI improves, I think we'll see a progression that takes advantage:1) raw text (hard/effortful to read)2) markdown (bold, italic, headings, tables, a bit easier on the eyes) <-- current default3) HTML (still procedural with underlying code, but a lot more flexibility on the graphics, layout, even interactivity) <-- early but forming new good default...4,5,6,...n) interactive neural videos/simulationsImo the extrapolation (though the technology doesn't exist just yet) ends in some kind of interactive videos generated directly by a diffusion neural net. Many open questions as to how exact/procedural \"Software 1.0\" artifacts (e.g. interactive simulations) may be woven together with neural artifacts (diffusion grids), but generally something in the direction of the recently viral https://x.com/zan2434/status/2046982383430496444There are also improvements necessary and pending at the input. Audio nor text nor video alone are not enough, e.g. I feel a need to point/gesture to things on the screen, similar to all the things you would do with a person physically next to you and your computer screen.TLDR The input/output mind meld between humans and AIs is ongoing and there is a lot of work to do and significant progress to be made, way before jumping all the way into neuralink-esque BCIs and all that. For what's worth exploring at the current stage, hot tip try ask for HTML.Thariq: http://x.com/i/article/2052796100608974848",
+          "source": "@karpathy"
+        },
+        {
+          "title": "This is the the quote I've been citing a lot recently.",
+          "link": "https://x.com/karpathy/status/2049907410303865030",
+          "id": "https://twitter.com/karpathy/status/2049907410303865030",
+          "publishedAt": "2026-04-30T17:43:06.000Z",
+          "author": "@karpathy",
+          "summary": "This is the the quote I've been citing a lot recently.kache: you can outsource your thinkingbut you cannot outsource your understanding",
+          "source": "@karpathy"
+        },
+        {
+          "title": "Fireside chat at Sequoia Ascent 2026 from a ~week ago. Some highlights: The first theme I tried to push on is that LLMs are about a lot more than just...",
+          "link": "https://x.com/karpathy/status/2049903821095354523",
+          "id": "https://twitter.com/karpathy/status/2049903821095354523",
+          "publishedAt": "2026-04-30T17:28:50.000Z",
+          "author": "@karpathy",
+          "summary": "Fireside chat at Sequoia Ascent 2026 from a ~week ago. Some highlights:The first theme I tried to push on is that LLMs are about a lot more than just speeding up what existed before (e.g. coding). Three examples of new horizons:1. menugen: an app that can be fully engulfed by LLMs, with no classical code needed: input an image, output an image and an LLM can natively do the thing.2. install .md skills instead of install .sh scripts. Why create a complex Software 1.0 bash script for e.g. installing a piece of software if you can write the installation out in words and say \"just show this to your LLM\". The LLM is an advanced interpreter of English and can intelligently target installation to your setup, debug everything inline, etc.3. LLM knowledge bases as an example of something that was *impossible* with classical code because it's computation over unstructured data (knowledge) from arbitrary sources and in arbitrary formats, including simply text articles etc.I pushed on these because in every new paradigm change, the obvious things are always in the realm of speeding up or somehow improving what existed, but here we have examples of functionality that either suddenly perhaps shouldn't even exist (1,2), or was fundamentally not possible before (3).The second (ongoing) theme is trying to explain the pattern of jaggedness in LLMs. How it can be true that a single artifact will simultaneously 1) coherently refactor a 100,000-line code base *and* 2) tell you to walk to the car wash to wash your car. I previously wrote about the source of this as having to do with verifiability of a domain, here I expand on this as having to also do with economics because revenue/TAM dictates what the frontier labs choose to package into training data distributions during RL. You're either in the data distribution (on the rails of the RL circuits) and flying or you're off-roading in the jungle with a machete, in relative terms. Still not 100% satisfied with this, but it's an ongoing struggle to build an accurate model of LLM capabilities if you wish to practically take advantage of their power while avoiding their pitfalls, which brings me to...Last theme is the agent-native economy. The decomposition of products and services into sensors, actuators and logic (split up across all of 1.0/2.0/3.0 computing paradigms), how we can make information maximally legible to LLMs, some words on the quickly emerging agentic engineering and its skill set, related hiring practices, etc., possibly even hints/dreams of fully neural computing handling the vast majority of computation with some help from (classical) CPU coprocessors.Stephanie Zhan: @karpathy and I are back! At @sequoia AI Ascent 2026. And a lot has changed. Last year, he coined “vibe coding”. This year, he’s never felt more behind as a programmer.The big shift: vibe coding raised the floor. Agentic engineering raises the ceiling.We talk about what it",
+          "source": "@karpathy"
+        },
+        {
+          "title": "RT Nick Levine: New work with @AlecRad and @DavidDuvenaud: Have you ever dreamed of talking to someone from the past? Introducing talkie, a 13B model ...",
+          "link": "https://x.com/karpathy/status/2049180863036813717",
+          "id": "https://twitter.com/karpathy/status/2049180863036813717",
+          "publishedAt": "2026-04-27T21:34:34.000Z",
+          "author": "@karpathy",
+          "summary": "RT Nick LevineNew work with @AlecRad and @DavidDuvenaud:Have you ever dreamed of talking to someone from the past? Introducing talkie, a 13B model trained only on pre-1931 text. Vintage models should help us to understand how LMs generalize (e.g., can we teach talkie to code?). Thread:",
+          "source": "@karpathy"
+        }
+      ]
     },
     {
       "id": "twitter-cidexreleases",
@@ -61,8 +151,8 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "error": "HTTP 503 fetching https://rsshub-boost.23751.net/twitter/user/CidexReleases",
       "items": []
     },
     {
@@ -76,10 +166,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/vllm_project",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "RT Eagle: Today, EAGLE powers some of the industry’s most formative AI infrastructure companies and teams. With EAGLE 3.1, we’re taking another majo...",
+          "link": "https://x.com/vllm_project/status/2059488077379502477",
+          "id": "https://twitter.com/vllm_project/status/2059488077379502477",
+          "publishedAt": "2026-05-27T04:02:51.000Z",
+          "author": "@vllm_project",
+          "summary": "RT EagleToday, EAGLE powers some of the industry’s most formative AI infrastructure companies and teams.With EAGLE 3.1, we’re taking another major step toward delivering a core piece of the fastest possible inference stack that exists, open to all.By improving hidden-state feedback stability and mitigating attention drift across deeper decoding steps, EAGLE 3.1 significantly improves long-context acceptance length and serving robustness in real-world inference environments.We are thrilled to collaborate with vLLM @vllm_project and TorchSpec @lightseekorg on advancing the next generation of inference acceleration infrastructure.vLLM: 🎉Thrilled to announce EAGLE 3.1 - the next evolution of speculative decoding from @EagleCorp, developed by @hongyangzh, @dogacel0, and the EAGLE team in collaboration with vLLM @vllm_project and TorchSpec @lightseekorg!💡EAGLE 3.1 introduces a new FC normalization +",
+          "source": "@vllm_project"
+        },
+        {
+          "title": "🎉Thrilled to announce EAGLE 3.1 - the next evolution of speculative decoding from @EagleCorp, developed by @hongyangzh, @dogacel0, and the EAGLE te...",
+          "link": "https://x.com/vllm_project/status/2059420705834619104",
+          "id": "https://twitter.com/vllm_project/status/2059420705834619104",
+          "publishedAt": "2026-05-26T23:45:33.000Z",
+          "author": "@vllm_project",
+          "summary": "🎉Thrilled to announce EAGLE 3.1 - the next evolution of speculative decoding from @EagleCorp, developed by @hongyangzh, @dogacel0, and the EAGLE team in collaboration with vLLM @vllm_project and TorchSpec @lightseekorg!💡EAGLE 3.1 introduces a new FC normalization + post-normalization hidden-state feedback architecture that significantly improves long-context robustness, acceptance length, and serving stability across real-world inference environments.Shoutout to @NVIDIA who has been instrumental in the large-scale training, benchmarking, and inference validation of EAGLE 3.1 to help bring this next step in inference acceleration to production environments.For EAGLE 3.1, the EAGLE team identified attention drift as a key bottleneck behind deeper-step acceptance-length degradation in speculative decoding.✨What's new:• Up to 2× longer acceptance length in long-context• Stronger long-context + chat-template robustness• More stable serving across diverse prompts or environments• Native vLLM support• TorchSpec training support• Open-source Kimi K2.6 EAGLE 3.1 draft model🔗 Blog: http://vllm.ai/blog/2026-05-26-eagle-3-1",
+          "source": "@vllm_project"
+        },
+        {
+          "title": "🦀 The Rust frontend is officially merged into vLLM! As GPUs get faster, the frontend has become a real share of CPU time. The new Rust frontend is ...",
+          "link": "https://x.com/vllm_project/status/2059344804295942513",
+          "id": "https://twitter.com/vllm_project/status/2059344804295942513",
+          "publishedAt": "2026-05-26T18:43:56.000Z",
+          "author": "@vllm_project",
+          "summary": "🦀 The Rust frontend is officially merged into vLLM!As GPUs get faster, the frontend has become a real share of CPU time. The new Rust frontend is a drop-in alternative to the Python API server — same engine, same ZMQ boundary. Opt in with VLLM_USE_RUST_FRONTEND=1.Early numbers: on a preprocess-heavy workload, ~837 req/s vs ~162 req/s for default Python — ~5x in a single process.A few design choices we're excited about:• Layered crates with clear boundaries• Stream-native pipeline — non-streaming for free• Builds on stable RustHuge thanks to @BugenZhao from @inferact for introducing the work at @PyTorch Meetup Singapore.https://github.com/vllm-project/vllm/pull/40848",
+          "source": "@vllm_project"
+        },
+        {
+          "title": "Thanks to the community report, we recently identified a PR https://github.com/vllm-project/vllm/pull/42143 that attempted to solve a non-existent iss...",
+          "link": "https://x.com/vllm_project/status/2058358072020779391",
+          "id": "https://twitter.com/vllm_project/status/2058358072020779391",
+          "publishedAt": "2026-05-24T01:23:01.000Z",
+          "author": "@vllm_project",
+          "summary": "Thanks to the community report, we recently identified a PR https://github.com/vllm-project/vllm/pull/42143 that attempted to solve a non-existent issue and was submitted as part of a “PR training” workflow for resume building.The contributor involved has been banned from the vLLM community.This kind of low-signal contribution increases maintainer review overhead and creates unnecessary operational costs for open-source projects.As AI coding agents make generating large volumes of small PRs increasingly cheap, open-source communities will need to explore new ways to preserve contribution quality and reviewer trust.While we are investigating how to deal with AI slop, we continue to highly value contributions from real users solving real production problems.If you have an important contribution that has not yet received maintainer attention, please email us at:pr-review-request@vllm.aiUsing a verifiable company or university email, include:- your production or research use case- the problem you encountered- how your contribution addresses itThis helps us better prioritize impactful contributions while keeping the vLLM community open and collaborative.As AI makes virtual contributors look increasingly real, authentic human collaboration matters more than ever.vLLM’s mission remains unchanged: to make LLM inference easy, fast, and cheap for everyone — and we will continue working toward that goal.",
+          "source": "@vllm_project"
+        },
+        {
+          "title": "A vLLM MoE deployment's DP/EP topology used to be locked in at launch — scaling or swapping config meant a full restart, in-flight traffic dropped. E...",
+          "link": "https://x.com/vllm_project/status/2057602243860574463",
+          "id": "https://twitter.com/vllm_project/status/2057602243860574463",
+          "publishedAt": "2026-05-21T23:19:37.000Z",
+          "author": "@vllm_project",
+          "summary": "A vLLM MoE deployment's DP/EP topology used to be locked in at launch — scaling or swapping config meant a full restart, in-flight traffic dropped. Elastic Expert Parallelism changes that. One API call resizes a live deployment:curl -X POST localhost:8000/scale_elastic_ep \\ -d '{\"new_data_parallel_size\": 16}'Under the hood: standby comm groups span the target topology, EPLB redistributes experts across the new EP group, and weights are transferred directly between GPUs over NVIDIA NVLink/RDMA. The same runtime reconfiguration path is what fault-tolerant serving needs: evict failed ranks, redistribute their experts, bring replacements back, no restart.Thanks to @NVIDIAAI, Sky Computing, @anyscalecompute, @RedHat_AI, and the community. 📖 http://vllm.ai/blog/2026-05-14-elastic-expert-parallelism",
+          "source": "@vllm_project"
+        }
+      ]
     },
     {
       "id": "twitter-dotnet",
@@ -92,10 +227,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/dotnet",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "🧪 .NET AI Architect Lab (Phase 1) Provider‑agnostic “Brain” in .NET 10: clean adapters, strict JSON schemas, DI‑switchable AI engines, and secu...",
+          "link": "https://x.com/dotnet/status/2059621049155621347",
+          "id": "https://twitter.com/dotnet/status/2059621049155621347",
+          "publishedAt": "2026-05-27T13:01:38.000Z",
+          "author": "@dotnet",
+          "summary": "🧪 .NET AI Architect Lab (Phase 1)Provider‑agnostic “Brain” in .NET 10: clean adapters, strict JSON schemas, DI‑switchable AI engines, and secure Vertex AI via ADC 🔐A hands‑on journey through breaking SDKs + schema drift ⚙️👉 https://buff.ly/woPRAqW",
+          "source": "@dotnet"
+        },
+        {
+          "title": "Capgemini + Copilot = modernization with main‑character energy ⚡🦾 Copilot helps map huge .NET estates, guide refactors and turn legacy chaos into...",
+          "link": "https://x.com/dotnet/status/2059392893366784425",
+          "id": "https://twitter.com/dotnet/status/2059392893366784425",
+          "publishedAt": "2026-05-26T21:55:02.000Z",
+          "author": "@dotnet",
+          "summary": "Capgemini + Copilot = modernization with main‑character energy ⚡🦾Copilot helps map huge .NET estates, guide refactors and turn legacy chaos into predictable modernization flows.Fast, smart, enterprise‑ready.👉 https://buff.ly/18pUYfx",
+          "source": "@dotnet"
+        },
+        {
+          "title": "Merge Conflict 515 = the monitor tech deep dive you didn’t know you needed 🖥️✨ Mini‑LED vs OLED, HDR headaches, refresh‑rate math, ports, VESA...",
+          "link": "https://x.com/dotnet/status/2059317395907371400",
+          "id": "https://twitter.com/dotnet/status/2059317395907371400",
+          "publishedAt": "2026-05-26T16:55:02.000Z",
+          "author": "@dotnet",
+          "summary": "Merge Conflict 515 = the monitor tech deep dive you didn’t know you needed 🖥️✨Mini‑LED vs OLED, HDR headaches, refresh‑rate math, ports, VESA mounts — plus a thrift‑store win & a cursed Wii audio saga .Perfect for .NET devs upgrading their setup.👉 https://buff.ly/fWhocCk",
+          "source": "@dotnet"
+        },
+        {
+          "title": "AI is changing software engineering — for real. At #MSBuild, we’ll break down how agents help, where they fail, and what’s shifting for the profess...",
+          "link": "https://x.com/dotnet/status/2059241900918317487",
+          "id": "https://twitter.com/dotnet/status/2059241900918317487",
+          "publishedAt": "2026-05-26T11:55:02.000Z",
+          "author": "@dotnet",
+          "summary": "AI is changing software engineering — for real.At #MSBuild, we’ll break down how agents help, where they fail, and what’s shifting for the profession.Real lessons, real failure modes, real guidance. No hype.👉 Register: https://buff.ly/Uc1dAJ2",
+          "source": "@dotnet"
+        },
+        {
+          "title": "🚀 Build the future of AI Agents Join #AgentsLeague @AISkillsFest 🧠 Creative | ⚡ Reasoning | 🏢 Enterprise 📅 May 19 → June 14 💰 $55K pr...",
+          "link": "https://x.com/dotnet/status/2059073291914973301",
+          "id": "https://twitter.com/dotnet/status/2059073291914973301",
+          "publishedAt": "2026-05-26T00:45:03.000Z",
+          "author": "@dotnet",
+          "summary": "🚀 Build the future of AI AgentsJoin #AgentsLeague @AISkillsFest🧠 Creative | ⚡ Reasoning | 🏢 Enterprise📅 May 19 → June 14💰 $55K prizesReady to ship something amazing? 👇http://aka.ms/agentsleague/hack#AIHackathon #BuildWithAI",
+          "source": "@dotnet"
+        }
+      ]
     },
     {
       "id": "twitter-claudeai",
@@ -108,9 +288,8 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/claudeai",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "items": []
     },
     {
@@ -124,10 +303,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/openai",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Introducing OpenAI Guaranteed Capacity: a new offering that enables customers to guarantee long-term access to OpenAI compute. We’ve made long-term i...",
+          "link": "https://x.com/OpenAI/status/2056823271774101907",
+          "id": "https://twitter.com/OpenAI/status/2056823271774101907",
+          "publishedAt": "2026-05-19T19:44:16.000Z",
+          "author": "@openai",
+          "summary": "Introducing OpenAI Guaranteed Capacity: a new offering that enables customers to guarantee long-term access to OpenAI compute.We’ve made long-term investments in infrastructure, partnerships, and capacity planning to help customers scale reliably. Now, Guaranteed Capacity helps customers plan ahead for critical workloads in a compute-constrained world.http://openai.com/guaranteed-capacity",
+          "source": "@openai"
+        },
+        {
+          "title": "RT Sam Altman: if this tweet gets 1 like, tibo will reset codex rate limits",
+          "link": "https://x.com/OpenAI/status/2056805428261183789",
+          "id": "https://twitter.com/OpenAI/status/2056805428261183789",
+          "publishedAt": "2026-05-19T18:31:16.000Z",
+          "author": "@openai",
+          "summary": "RT Sam Altmanif this tweet gets 1 like, tibo will reset codex rate limits",
+          "source": "@openai"
+        },
+        {
+          "title": "We’re adding new ways for people to identify AI-generated images and understand where they came from. In addition to C2PA Content Credentials, images...",
+          "link": "https://x.com/OpenAI/status/2056793648571011232",
+          "id": "https://twitter.com/OpenAI/status/2056793648571011232",
+          "publishedAt": "2026-05-19T17:46:33.000Z",
+          "author": "@openai",
+          "summary": "We’re adding new ways for people to identify AI-generated images and understand where they came from. In addition to C2PA Content Credentials, images now also contain a SynthID watermark, and can be identified using a public verification tool to check whether an image was made by OpenAI products.https://openai.com/index/advancing-content-provenance/",
+          "source": "@openai"
+        },
+        {
+          "title": "RT OpenAI Developers:",
+          "link": "https://x.com/OpenAI/status/2055008352955220162",
+          "id": "https://twitter.com/OpenAI/status/2055008352955220162",
+          "publishedAt": "2026-05-14T17:13:41.000Z",
+          "author": "@openai",
+          "summary": "RT OpenAI Developers",
+          "source": "@openai"
+        },
+        {
+          "title": "Another reason to switch to Codex.",
+          "link": "https://x.com/OpenAI/status/2054620621255192719",
+          "id": "https://twitter.com/OpenAI/status/2054620621255192719",
+          "publishedAt": "2026-05-13T17:51:43.000Z",
+          "author": "@openai",
+          "summary": "Another reason to switch to Codex.OpenAI Developers: Want to (officially) use Codex at work?Send this post to your CTO to bring your team to Codex. Eligible enterprise customers who switch in the next 30 days get 2 free months of Codex usage for new users.",
+          "source": "@openai"
+        }
+      ]
     },
     {
       "id": "twitter-cloudflaredev",
@@ -140,10 +364,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/CloudflareDev",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "RT michelle: the agent cloud",
+          "link": "https://x.com/CloudflareDev/status/2059642226062356493",
+          "id": "https://twitter.com/CloudflareDev/status/2059642226062356493",
+          "publishedAt": "2026-05-27T14:07:27.000Z",
+          "author": "@CloudflareDev",
+          "summary": "RT michellethe agent cloudBrandon Carl: Out of every company I've seen, @Cloudflare has cracked the agent-platform of the future best. It's currently not close. It addresses shortage issues organically.Most analysts are saying \"each agent needs its own computer\" (which is spiking forecasts).Cloudflare instead has",
+          "source": "@CloudflareDev"
+        },
+        {
+          "title": "RT Adewale Oshineye: Tomorrow in Amsterdam I'll be hanging out with startup founders, @allnoteson and @curiosityvc to talk about where fine tuning sti...",
+          "link": "https://x.com/CloudflareDev/status/2059317378878488790",
+          "id": "https://twitter.com/CloudflareDev/status/2059317378878488790",
+          "publishedAt": "2026-05-26T16:53:55.000Z",
+          "author": "@CloudflareDev",
+          "summary": "RT Adewale OshineyeTomorrow in Amsterdam I'll be hanging out with startup founders, @allnoteson and @curiosityvc to talk about where fine tuning still wins, where it doesn't and what that means for startups: https://luma.com/k1ib9qk1",
+          "source": "@CloudflareDev"
+        },
+        {
+          "title": "RT Jilles Soeters: When you're about to watch a movie, but your manager reaches out for a quick bug fix... Luckily my applications are deployed to Clo...",
+          "link": "https://x.com/CloudflareDev/status/2059276870911144031",
+          "id": "https://twitter.com/CloudflareDev/status/2059276870911144031",
+          "publishedAt": "2026-05-26T14:05:05.000Z",
+          "author": "@CloudflareDev",
+          "summary": "RT Jilles SoetersWhen you're about to watch a movie, but your manager reaches out for a quick bug fix... Luckily my applications are deployed to Cloudflare.",
+          "source": "@CloudflareDev"
+        },
+        {
+          "title": "RT Matt 'TK' Taylor: Does your Cloudflare Worker interact with the wider internet? msw.js has a new release which makes it easier than ever to mock HT...",
+          "link": "https://x.com/CloudflareDev/status/2059271254192926872",
+          "id": "https://twitter.com/CloudflareDev/status/2059271254192926872",
+          "publishedAt": "2026-05-26T12:41:22.000Z",
+          "author": "@CloudflareDev",
+          "summary": "RT Matt 'TK' TaylorDoes your Cloudflare Worker interact with the wider internet? msw.js has a new release which makes it easier than ever to mock HTTP, GraphQL and Websocket calls.We'd love your feedback.Give it a try and tell me what you think https://github.com/mswjs/cloudflare",
+          "source": "@CloudflareDev"
+        },
+        {
+          "title": "RT Fayaz Ahmed: You'll surprised how easy it is to make voice agents with the new @cloudflare/voice sdk https://youtu.be/j0smTqG-zzA",
+          "link": "https://x.com/CloudflareDev/status/2059276942616969637",
+          "id": "https://twitter.com/CloudflareDev/status/2059276942616969637",
+          "publishedAt": "2026-05-26T10:07:25.000Z",
+          "author": "@CloudflareDev",
+          "summary": "RT Fayaz AhmedYou'll surprised how easy it is to make voice agents with the new @cloudflare/voice sdkhttps://youtu.be/j0smTqG-zzA",
+          "source": "@CloudflareDev"
+        }
+      ]
     },
     {
       "id": "twitter-happypablo",
@@ -156,10 +425,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/HappyPablo",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "love u bye honey",
+          "link": "https://x.com/happypablo/status/4301269857",
+          "id": "https://twitter.com/happypablo/status/4301269857",
+          "publishedAt": "2009-09-22T23:23:29.000Z",
+          "author": "@HappyPablo",
+          "summary": "love u bye honey",
+          "source": "@HappyPablo"
+        },
+        {
+          "title": "ha iim so bord ;]",
+          "link": "https://x.com/happypablo/status/4301227279",
+          "id": "https://twitter.com/happypablo/status/4301227279",
+          "publishedAt": "2009-09-22T23:21:31.000Z",
+          "author": "@HappyPablo",
+          "summary": "ha iim so bord ;]",
+          "source": "@HappyPablo"
+        },
+        {
+          "title": "so wat u doin .lol ;}",
+          "link": "https://x.com/happypablo/status/4301134932",
+          "id": "https://twitter.com/happypablo/status/4301134932",
+          "publishedAt": "2009-09-22T23:17:18.000Z",
+          "author": "@HappyPablo",
+          "summary": "so wat u doin .lol ;}",
+          "source": "@HappyPablo"
+        },
+        {
+          "title": "ii know ha .lol love ya",
+          "link": "https://x.com/happypablo/status/4301103716",
+          "id": "https://twitter.com/happypablo/status/4301103716",
+          "publishedAt": "2009-09-22T23:15:52.000Z",
+          "author": "@HappyPablo",
+          "summary": "ii know ha .lol love ya",
+          "source": "@HappyPablo"
+        },
+        {
+          "title": "well ii did .lol",
+          "link": "https://x.com/happypablo/status/4301075816",
+          "id": "https://twitter.com/happypablo/status/4301075816",
+          "publishedAt": "2009-09-22T23:14:39.000Z",
+          "author": "@HappyPablo",
+          "summary": "well ii did .lol",
+          "source": "@HappyPablo"
+        }
+      ]
     },
     {
       "id": "twitter-claudedevs",
@@ -172,10 +486,46 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/ClaudeDevs",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "RT Tom Brown: We’re expanding our partnership with @SpaceX, and will be scaling up on GB200 capacity in Colossus 2 throughout June. Appreciate @elonm...",
+          "link": "https://x.com/ClaudeDevs/status/2057199398573220092",
+          "id": "https://twitter.com/ClaudeDevs/status/2057199398573220092",
+          "publishedAt": "2026-05-20T20:20:42.000Z",
+          "author": "@ClaudeDevs",
+          "summary": "RT Tom BrownWe’re expanding our partnership with @SpaceX, and will be scaling up on GB200 capacity in Colossus 2 throughout June. Appreciate @elonmusk and the team helping us find good homes for the Claudes.Tom Brown: In the next few days we'll be ramping up Claude inference on Colossus. Grateful to be partnering with SpaceX here. We are going to need to move a lot of atoms in order to keep up with AI demand, and there's nobody better at quickly moving atoms (on or off planet Earth)",
+          "source": "@ClaudeDevs"
+        },
+        {
+          "title": "Computer use turns Claude into an agent that can operate real UIs. New blog post on making it reliable in production: getting click accuracy right, ch...",
+          "link": "https://x.com/ClaudeDevs/status/2056835339193561170",
+          "id": "https://twitter.com/ClaudeDevs/status/2056835339193561170",
+          "publishedAt": "2026-05-19T20:32:13.000Z",
+          "author": "@ClaudeDevs",
+          "summary": "Computer use turns Claude into an agent that can operate real UIs. New blog post on making it reliable in production: getting click accuracy right, choosing thinking effort levels, keeping long sessions within context, and recording demonstrations Claude can replay:https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude",
+          "source": "@ClaudeDevs"
+        },
+        {
+          "title": "Welcome to the team, Andrej!",
+          "link": "https://x.com/ClaudeDevs/status/2056753265346564259",
+          "id": "https://twitter.com/ClaudeDevs/status/2056753265346564259",
+          "publishedAt": "2026-05-19T15:06:05.000Z",
+          "author": "@ClaudeDevs",
+          "summary": "Welcome to the team, Andrej!Andrej Karpathy: Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&D. I remain deeply passionate about education and plan to resume my work on it in time.",
+          "source": "@ClaudeDevs"
+        },
+        {
+          "title": "So good to see you, London!🇬🇧",
+          "link": "https://x.com/ClaudeDevs/status/2056711020920385751",
+          "id": "https://twitter.com/ClaudeDevs/status/2056711020920385751",
+          "publishedAt": "2026-05-19T12:18:13.000Z",
+          "author": "@ClaudeDevs",
+          "summary": "So good to see you, London!🇬🇧Boris Cherny: Hello from Code with Claude London!",
+          "source": "@ClaudeDevs"
+        }
+      ]
     },
     {
       "id": "twitter-githubprojects",
@@ -189,7 +539,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -204,10 +554,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/xai",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Thank you so much for all the feedback on the Grok Build Beta. Some of you reported hitting limits quickly. Our team found areas to improve caching, s...",
+          "link": "https://x.com/xai/status/2059375342683636066",
+          "id": "https://twitter.com/xai/status/2059375342683636066",
+          "publishedAt": "2026-05-26T20:45:17.000Z",
+          "author": "@xai",
+          "summary": "Thank you so much for all the feedback on the Grok Build Beta.Some of you reported hitting limits quickly. Our team found areas to improve caching, so we've reset Grok Build usage limits for all accounts.Please keep sharing feedback - the team is here to help.",
+          "source": "@xai"
+        },
+        {
+          "title": "Grok Build is now available in Beta for all SuperGrok and X Premium+ users. Use Plan Mode, create images and videos with Imagine, and build automation...",
+          "link": "https://x.com/xai/status/2058973760708091907",
+          "id": "https://twitter.com/xai/status/2058973760708091907",
+          "publishedAt": "2026-05-25T18:09:33.000Z",
+          "author": "@xai",
+          "summary": "Grok Build is now available in Beta for all SuperGrok and X Premium+ users.Use Plan Mode, create images and videos with Imagine, and build automations or orchestrators with the CLI.Visit http://x.ai/cli to get started.",
+          "source": "@xai"
+        },
+        {
+          "title": "You can now use your @grok or X Premium subscription in @opencode. Use the model powering Grok Build for high speed and codebase intelligence. https:/...",
+          "link": "https://x.com/xai/status/2057522050923929948",
+          "id": "https://twitter.com/xai/status/2057522050923929948",
+          "publishedAt": "2026-05-21T18:00:58.000Z",
+          "author": "@xai",
+          "summary": "You can now use your @grok or X Premium subscription in @opencode.Use the model powering Grok Build for high speed and codebase intelligence.https://x.ai/news/grok-opencode",
+          "source": "@xai"
+        },
+        {
+          "title": "Starting today, use your Grok or X Premium subscription in @openclaw. Chat with your agent, generate images and videos, or search for X posts. http://...",
+          "link": "https://x.com/xai/status/2056826183745253663",
+          "id": "https://twitter.com/xai/status/2056826183745253663",
+          "publishedAt": "2026-05-19T19:55:50.000Z",
+          "author": "@xai",
+          "summary": "Starting today, use your Grok or X Premium subscription in @openclaw. Chat with your agent, generate images and videos, or search for X posts.http://x.ai/news/grok-openclaw",
+          "source": "@xai"
+        },
+        {
+          "title": "RT NVIDIA: Thanks @SpaceX and @elonmusk, excited for you to try out the NVIDIA Vera CPU 🎉",
+          "link": "https://x.com/xai/status/2056537247655055859",
+          "id": "https://twitter.com/xai/status/2056537247655055859",
+          "publishedAt": "2026-05-18T23:51:34.000Z",
+          "author": "@xai",
+          "summary": "RT NVIDIAThanks @SpaceX and @elonmusk, excited for you to try out the NVIDIA Vera CPU 🎉NVIDIA AI Infrastructure: 🎉 Excited for our partner @SpaceX to try out the NVIDIA Vera CPU.This is just the beginning for Vera, our CPU purpose-built for agentic AI.Thank you to @elonmusk and the SpaceX team 🚀",
+          "source": "@xai"
+        }
+      ]
     },
     {
       "id": "twitter-googleai",
@@ -220,10 +615,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/GoogleAI",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "http://x.com/i/article/2057866361636888576",
+          "link": "https://x.com/GoogleAI/status/2057871583843135978",
+          "id": "https://twitter.com/GoogleAI/status/2057871583843135978",
+          "publishedAt": "2026-05-22T17:09:53.000Z",
+          "author": "@GoogleAI",
+          "summary": "http://x.com/i/article/2057866361636888576",
+          "source": "@GoogleAI"
+        },
+        {
+          "title": "We partnered with artists, designers, and builders to create new AI tools that solve real problems in their creative workflows. Here’s what’s new: ...",
+          "link": "https://x.com/GoogleAI/status/2057128296538861943",
+          "id": "https://twitter.com/GoogleAI/status/2057128296538861943",
+          "publishedAt": "2026-05-20T15:56:20.000Z",
+          "author": "@GoogleAI",
+          "summary": "We partnered with artists, designers, and builders to create new AI tools that solve real problems in their creative workflows.Here’s what’s new:— Introducing Google Pics in @GoogleWorkspace: A brand-new image creation & editing tool. Move and resize objects, add text, and translate just by hovering and clicking— Big updates to @GoogleFlow: 1) You can now create with Gemini Omni Flash in Google Flow 2) Google Flow Agent is a multi-step creative partner that reasons and plans complex tasks with you. 3) Google Flow tools are custom tools you can “vibe code” for animations, video effects, text layering & more— Design live with @StitchbyGoogle: Now, you can use text or voice prompts to edit layouts in real time then export those designs straight to code— More creative control in @GoogleFlowMusic: Edit songs section by section, remix the style of full songs, and create music videos with our new Gemini Omni Flash model",
+          "source": "@GoogleAI"
+        },
+        {
+          "title": "New upgrades to the @GeminiApp are you helping you get more done: ✨Gemini Spark is your 24/7 personal AI agent that can take action on your behalf, u...",
+          "link": "https://x.com/GoogleAI/status/2056859455833473091",
+          "id": "https://twitter.com/GoogleAI/status/2056859455833473091",
+          "publishedAt": "2026-05-19T22:08:03.000Z",
+          "author": "@GoogleAI",
+          "summary": "New upgrades to the @GeminiApp are you helping you get more done:✨Gemini Spark is your 24/7 personal AI agent that can take action on your behalf, under your direction. It seamlessly integrates with @Gmail, @GoogleDocs, and Slides to automate your workflows and, best of all, it can keep working even when your laptop is closed.☀ ️Daily Brief is our newest out-of-the-box agent that gives you a personalized digest based on your goals, and suggests next steps.Daily Brief is rolling out starting today to all Google AI subscribers (18+) in the Gemini app, starting in the US. Gemini Spark is starting to roll out next week.",
+          "source": "@GoogleAI"
+        },
+        {
+          "title": "Today, we launched a brand-new intelligent Search box. Here's what that means: An upgrade to the Search experience with our most advanced Gemini 3.5 m...",
+          "link": "https://x.com/GoogleAI/status/2056845506601718271",
+          "id": "https://twitter.com/GoogleAI/status/2056845506601718271",
+          "publishedAt": "2026-05-19T21:12:37.000Z",
+          "author": "@GoogleAI",
+          "summary": "Today, we launched a brand-new intelligent Search box.Here's what that means:An upgrade to the Search experience with our most advanced Gemini 3.5 models, bringing with them our latest agentic capabilitiesYou can ask across modalities (text, images, files, and videos) and Search can reason across them allWe're combining AI Overviews and AI Mode into one, seamless AI Search experience. So you can ask follow-up questions, build context, and received even more tailored and personalized responsesThis new AI Search experience is live today across desktop and mobile, worldwide.",
+          "source": "@GoogleAI"
+        },
+        {
+          "title": "A few weeks ago, we asked our community to use @GoogleAIStudio or Canvas in @GeminiApp to help us create the Google I/O countdown. Thanks SO much to e...",
+          "link": "https://x.com/GoogleAI/status/2056839429478903812",
+          "id": "https://twitter.com/GoogleAI/status/2056839429478903812",
+          "publishedAt": "2026-05-19T20:48:28.000Z",
+          "author": "@GoogleAI",
+          "summary": "A few weeks ago, we asked our community to use @GoogleAIStudio or Canvas in @GeminiApp to help us create the Google I/O countdown.Thanks SO much to everyone who submitted, and special shoutout to the creators whose submissions helped us set the right ~vibes~ on the stage today:@thgie_8_eight@r_mevo@EdinsonNM@gunny_5@xabila@GuyMosheTamam@mikkelhundborg@rajatxrShahab UddinCharles Zuo",
+          "source": "@GoogleAI"
+        }
+      ]
     },
     {
       "id": "twitter-github",
@@ -236,10 +676,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/GitHub",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "📣 Join us for a special Maintainer AMA in our GitHub Community tomorrow, May 27, from 8 a.m. to 1 p.m. PT. Ask your favorite projects like OpenClaw...",
+          "link": "https://x.com/github/status/2059413023735869624",
+          "id": "https://twitter.com/github/status/2059413023735869624",
+          "publishedAt": "2026-05-26T23:15:01.000Z",
+          "author": "@GitHub",
+          "summary": "📣 Join us for a special Maintainer AMA in our GitHub Community tomorrow, May 27, from 8 a.m. to 1 p.m. PT. Ask your favorite projects like OpenClaw, Kubernetes, and more for advice on contributing and their experiences in open source. Or just share your appreciation. ❤️Meet us in GitHub Community. 👇https://gh.io/maintainer-month-ama-2026",
+          "source": "@GitHub"
+        },
+        {
+          "title": "The great thing about open source is that it's for everyone. Make sure your project is accessible with these newly published best practices. https://o...",
+          "link": "https://x.com/github/status/2059080832363425950",
+          "id": "https://twitter.com/github/status/2059080832363425950",
+          "publishedAt": "2026-05-26T01:15:00.000Z",
+          "author": "@GitHub",
+          "summary": "The great thing about open source is that it's for everyone. Make sure your project is accessible with these newly published best practices.https://opensource.guide/accessibility-best-practices-for-your-project/",
+          "source": "@GitHub"
+        },
+        {
+          "title": "There's more to making a game than the engine. 🎮 Check out 10 open-source projects helping developers with art, audio, animation, level design, and...",
+          "link": "https://x.com/github/status/2058655530395042254",
+          "id": "https://twitter.com/github/status/2058655530395042254",
+          "publishedAt": "2026-05-24T21:05:01.000Z",
+          "author": "@GitHub",
+          "summary": "There's more to making a game than the engine. 🎮 Check out 10 open-source projects helping developers with art, audio, animation, level design, and more.https://github.blog/open-source/gaming/beyond-the-engine-10-open-source-projects-shaping-how-games-actually-get-made/",
+          "source": "@GitHub"
+        },
+        {
+          "title": "New project idea but left the laptop at home? 😬 Create a repo right from your phone. Name it, set visibility, and adjust the details in the GitHub ...",
+          "link": "https://x.com/github/status/2058253004797522424",
+          "id": "https://twitter.com/github/status/2058253004797522424",
+          "publishedAt": "2026-05-23T18:25:31.000Z",
+          "author": "@GitHub",
+          "summary": "New project idea but left the laptop at home? 😬Create a repo right from your phone. Name it, set visibility, and adjust the details in the GitHub Mobile app. 📱https://github.blog/changelog/2026-05-11-create-repositories-on-the-go-with-github-mobile/",
+          "source": "@GitHub"
+        },
+        {
+          "title": "RT Camilla Moraes: drowning in low-quality PRs? we're giving maintainers the power to set contribution limits, starting with a PR cap for outside cont...",
+          "link": "https://x.com/github/status/2058187148080374143",
+          "id": "https://twitter.com/github/status/2058187148080374143",
+          "publishedAt": "2026-05-22T16:41:58.000Z",
+          "author": "@GitHub",
+          "summary": "RT Camilla Moraesdrowning in low-quality PRs?we're giving maintainers the power to set contribution limits, starting with a PR cap for outside contributors and an allowlist for your trusted ones.sneak peek below 👇",
+          "source": "@GitHub"
+        }
+      ]
     },
     {
       "id": "twitter-nvidiaai",
@@ -252,10 +737,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/NVIDIAAI",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "From the Lab: Text Diffusion and Elastic Reasoning | Nemotron Labs https://x.com/i/broadcasts/1dxYllaRLMLJX",
+          "link": "https://x.com/NVIDIAAI/status/2059333762685538614",
+          "id": "https://twitter.com/NVIDIAAI/status/2059333762685538614",
+          "publishedAt": "2026-05-26T18:00:04.000Z",
+          "author": "@NVIDIAAI",
+          "summary": "From the Lab: Text Diffusion and Elastic Reasoning | Nemotron Labs https://x.com/i/broadcasts/1dxYllaRLMLJX",
+          "source": "@NVIDIAAI"
+        },
+        {
+          "title": "RT Xuanchi Ren: The latent-vs-pixel debate misses the point. GPT Image 2 shows what users notice: pixel-level fidelity. Latent models show what scales...",
+          "link": "https://x.com/NVIDIAAI/status/2059414114620047689",
+          "id": "https://twitter.com/NVIDIAAI/status/2059414114620047689",
+          "publishedAt": "2026-05-26T15:41:41.000Z",
+          "author": "@NVIDIAAI",
+          "summary": "RT Xuanchi RenThe latent-vs-pixel debate misses the point.GPT Image 2 shows what users notice: pixel-level fidelity.Latent models show what scales: compact semantic structure.We connect them by replacing VAE/RAE decoders with a Pixel Diffusion Decoder.Code and Model available: https://research.nvidia.com/labs/sil/projects/pid/🧵(1/N)",
+          "source": "@NVIDIAAI"
+        },
+        {
+          "title": "Good explainer on world models - well done @juliarturc",
+          "link": "https://x.com/NVIDIAAI/status/2059273634083213521",
+          "id": "https://twitter.com/NVIDIAAI/status/2059273634083213521",
+          "publishedAt": "2026-05-26T14:01:08.000Z",
+          "author": "@NVIDIAAI",
+          "summary": "Good explainer on world models - well done @juliarturcJulia Turc: \"World models\" is one of the buzziest yet ambiguous terms in AI right now. I started this video with many questions:- How are they different from video generation?- Can they do more than AI slop?- Can LeCun be trusted given that he wears knee-high white socks?Many thanks to",
+          "source": "@NVIDIAAI"
+        },
+        {
+          "title": "(2x DGX Sparks) + MiniMax M2.7 NVFP4 = 16 local AI agents running simultaneously 👀",
+          "link": "https://x.com/NVIDIAAI/status/2058921531481510074",
+          "id": "https://twitter.com/NVIDIAAI/status/2058921531481510074",
+          "publishedAt": "2026-05-25T14:42:00.000Z",
+          "author": "@NVIDIAAI",
+          "summary": "(2x DGX Sparks) + MiniMax M2.7 NVFP4 = 16 local AI agents running simultaneously 👀mr-r0b0t: 16 local AI agents streaming at once!MiniMax M2.7 NVFP4 — 2x GB10, no cloud APIs.",
+          "source": "@NVIDIAAI"
+        },
+        {
+          "title": "RT NVIDIA Asia Pacific: The best way to kick off #NVIDIAGTC Taipei? A surprise visit from CEO Jensen Huang at the Meet-a-Claw event. 🦞 Meet-a-Claw ...",
+          "link": "https://x.com/NVIDIAAI/status/2058198849873916241",
+          "id": "https://twitter.com/NVIDIAAI/status/2058198849873916241",
+          "publishedAt": "2026-05-23T14:18:53.000Z",
+          "author": "@NVIDIAAI",
+          "summary": "RT NVIDIA Asia PacificThe best way to kick off #NVIDIAGTC Taipei? A surprise visit from CEO Jensen Huang at the Meet-a-Claw event. 🦞Meet-a-Claw brought together Taiwan's developer community for an afternoon of hands-on demos, tech talks from our experts and fellow developer evangelists, networking, and a personal DGX Spark giveaway from Jensen to one lucky winner.Catch the excitement here 👇",
+          "source": "@NVIDIAAI"
+        }
+      ]
     },
     {
       "id": "twitter-ycombinator",
@@ -268,10 +798,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/ycombinator",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Eden (@thefinalcompany) is building autonomous robotic services. Today they are launching Eden I, their industrial semi-humanoid robot you can hire by...",
+          "link": "https://x.com/ycombinator/status/2059650319680962672",
+          "id": "https://twitter.com/ycombinator/status/2059650319680962672",
+          "publishedAt": "2026-05-27T14:57:57.000Z",
+          "author": "@ycombinator",
+          "summary": "Eden (@thefinalcompany) is building autonomous robotic services.Today they are launching Eden I, their industrial semi-humanoid robot you can hire by the hour.Congratulations on the launch @cybermetheus and @joeyhumphreys4!https://www.ycombinator.com/launches/QXU-eden-autonomous-services-for-humanity",
+          "source": "@ycombinator"
+        },
+        {
+          "title": "RT Nemil Dalal: Looking forward to speaking @ethconf New York City on June 8th. Will be sharing what we're seeing @ycombinator in this next phase of c...",
+          "link": "https://x.com/ycombinator/status/2059646123913236535",
+          "id": "https://twitter.com/ycombinator/status/2059646123913236535",
+          "publishedAt": "2026-05-27T14:40:29.000Z",
+          "author": "@ycombinator",
+          "summary": "RT Nemil DalalLooking forward to speaking @ethconf New York City on June 8th. Will be sharing what we're seeing @ycombinator in this next phase of crypto with stablecoins, agentic commerce, trading, and tokenization.Have a limited set of office hours slots, link below",
+          "source": "@ycombinator"
+        },
+        {
+          "title": "KelAI (@kelaicapital) is an autonomous AI research engine for hedge funds and institutional investors, built by an experienced quant PM. It runs the f...",
+          "link": "https://x.com/ycombinator/status/2059635742981132468",
+          "id": "https://twitter.com/ycombinator/status/2059635742981132468",
+          "publishedAt": "2026-05-27T14:00:01.000Z",
+          "author": "@ycombinator",
+          "summary": "KelAI (@kelaicapital) is an autonomous AI research engine for hedge funds and institutional investors, built by an experienced quant PM. It runs the full research loop in a unified agentic platform: from idea generation to validation, monitoring, and feedback.https://www.ycombinator.com/launches/QXP-kelai-autonomous-ai-research-engine-for-hedge-funds",
+          "source": "@ycombinator"
+        },
+        {
+          "title": "RT Garry Tan: Founders must stop trying to building 2010-era businesses with 2026-era technology. Don't try to rebuild Foursquare or Yelp. Don't try t...",
+          "link": "https://x.com/ycombinator/status/2059642091131773256",
+          "id": "https://twitter.com/ycombinator/status/2059642091131773256",
+          "publishedAt": "2026-05-27T06:26:41.000Z",
+          "author": "@ycombinator",
+          "summary": "RT Garry TanFounders must stop trying to building 2010-era businesses with 2026-era technology. Don't try to rebuild Foursquare or Yelp. Don't try to recreate Basecamp by 37 Signals with $10/mo SaaS pricing. Don't underprice! If it works it's worth a lot more.Don't be tempted to become \"Tech enabled PE\" with revenue tricks. The rules of tech changed with AI. Play the new game.",
+          "source": "@ycombinator"
+        },
+        {
+          "title": "RT Gustaf Alströmer: It seems like only VCs use the word “operators” when they just mean employees. “former operator” = employee with a non-inves...",
+          "link": "https://x.com/ycombinator/status/2059417378992320896",
+          "id": "https://twitter.com/ycombinator/status/2059417378992320896",
+          "publishedAt": "2026-05-26T23:31:58.000Z",
+          "author": "@ycombinator",
+          "summary": "RT Gustaf AlströmerIt seems like only VCs use the word “operators” when they just mean employees. “former operator” = employee with a non-investing job“operator mindset” = can do the job",
+          "source": "@ycombinator"
+        }
+      ]
     },
     {
       "id": "twitter-langchain",
@@ -284,10 +859,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/LangChain",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Today at #TorontoTechWeek",
+          "link": "https://x.com/LangChain/status/2059643731897163987",
+          "id": "https://twitter.com/LangChain/status/2059643731897163987",
+          "publishedAt": "2026-05-27T14:31:46.000Z",
+          "author": "@LangChain",
+          "summary": "Today at #TorontoTechWeekLangChain: We’ll be @ #TorontoTechWeek on 5/27 w/ • Haider Zaidi, Deployed Engineer @LangChain• Jasen Mackie, Senior Principal AI Engineer @Questrade RSVP: https://luma.com/axp0tudp We'll walk through what it actually takes to deploy long-running agents & the runtime capabilities that",
+          "source": "@LangChain"
+        },
+        {
+          "title": "Deep Agents v0.6 brings Delta channels, reducing checkpoint storage by up to 100x for long-running agents, without sacrificing observability or resili...",
+          "link": "https://x.com/LangChain/status/2059634226836746483",
+          "id": "https://twitter.com/LangChain/status/2059634226836746483",
+          "publishedAt": "2026-05-27T13:54:00.000Z",
+          "author": "@LangChain",
+          "summary": "Deep Agents v0.6 brings Delta channels, reducing checkpoint storage by up to 100x for long-running agents, without sacrificing observability or resilience.Here’s a 200-turn coding agent session.Without Delta Channels: 5.3GB of checkpoint storageWith Delta Channels: 129mb",
+          "source": "@LangChain"
+        },
+        {
+          "title": "NY Tech Week is almost here! The LangChain team will be at the Generative AI Summit on June 4: https://world.aiacceleratorinstitute.com/location/newyo...",
+          "link": "https://x.com/LangChain/status/2059624252588921223",
+          "id": "https://twitter.com/LangChain/status/2059624252588921223",
+          "publishedAt": "2026-05-27T13:14:22.000Z",
+          "author": "@LangChain",
+          "summary": "NY Tech Week is almost here! The LangChain team will be at the Generative AI Summit on June 4: https://world.aiacceleratorinstitute.com/location/newyork/This event brings together 500+ engineers, developers, and technical leaders focused on one thing: shipping AI systems that actually work in production.If you're navigating the gap between a promising prototype and something reliable at scale — this is the room for it.Come find us, catch our session, and let's talk about what you're building.",
+          "source": "@LangChain"
+        },
+        {
+          "title": "Happening today!!!",
+          "link": "https://x.com/LangChain/status/2059608798344396885",
+          "id": "https://twitter.com/LangChain/status/2059608798344396885",
+          "publishedAt": "2026-05-27T12:12:57.000Z",
+          "author": "@LangChain",
+          "summary": "Happening today!!!Sydney Runkle: it's boston tech week!come join @masondrxy and i with the @blitzyai team to learn about building deep agents!https://luma.com/9ob847de",
+          "source": "@LangChain"
+        },
+        {
+          "title": ".@AdamRLucek on how we use traces to build evals for production agents.",
+          "link": "https://x.com/LangChain/status/2059384451331723272",
+          "id": "https://twitter.com/LangChain/status/2059384451331723272",
+          "publishedAt": "2026-05-26T21:21:29.000Z",
+          "author": "@LangChain",
+          "summary": ".@AdamRLucek on how we use traces to build evals for production agents.Adam Łucek: Trace data is literally worth its weight in gold these days, if you know what to do with it! As has been established, creating effective agents requires shipping early, observing behavior, and iterating quickly. At the core of this are your agent traces capturing exact inputs,",
+          "source": "@LangChain"
+        }
+      ]
     },
     {
       "id": "twitter-thariq",
@@ -301,7 +921,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -316,10 +936,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/MSFTResearch",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Can AI reason about human values with real-world complexity? Microsoft Research Asia's new Global AI Values Challenge invites researchers across philo...",
+          "link": "https://x.com/MSFTResearch/status/2059273348232724565",
+          "id": "https://twitter.com/MSFTResearch/status/2059273348232724565",
+          "publishedAt": "2026-05-26T14:00:00.000Z",
+          "author": "@MSFTResearch",
+          "summary": "Can AI reason about human values with real-world complexity? Microsoft Research Asia's new Global AI Values Challenge invites researchers across philosophy, ethics, law, and the social sciences to help find out. Register now: https://msft.it/6012vk8OO",
+          "source": "@MSFTResearch"
+        },
+        {
+          "title": "Vega turns a full credential into a single proof, sharing only what is needed and nothing more, with performance that works in real apps. https://msft...",
+          "link": "https://x.com/MSFTResearch/status/2057485456737018332",
+          "id": "https://twitter.com/MSFTResearch/status/2057485456737018332",
+          "publishedAt": "2026-05-21T15:35:33.000Z",
+          "author": "@MSFTResearch",
+          "summary": "Vega turns a full credential into a single proof, sharing only what is needed and nothing more, with performance that works in real apps. https://msft.it/6013vVRQc",
+          "source": "@MSFTResearch"
+        },
+        {
+          "title": "Modern apps and services manage memory at a scale that didn't exist a decade ago. mimalloc is the open-source project quietly making that possible. ht...",
+          "link": "https://x.com/MSFTResearch/status/2057131825626046524",
+          "id": "https://twitter.com/MSFTResearch/status/2057131825626046524",
+          "publishedAt": "2026-05-20T16:10:21.000Z",
+          "author": "@MSFTResearch",
+          "summary": "Modern apps and services manage memory at a scale that didn't exist a decade ago. mimalloc is the open-source project quietly making that possible. https://msft.it/6015vpoa7",
+          "source": "@MSFTResearch"
+        },
+        {
+          "title": "Equipping communities to influence AI through involvement in AI development pipelines can improve AI and help communities realize the potential AI has...",
+          "link": "https://x.com/MSFTResearch/status/2056781934714290682",
+          "id": "https://twitter.com/MSFTResearch/status/2056781934714290682",
+          "publishedAt": "2026-05-19T17:00:01.000Z",
+          "author": "@MSFTResearch",
+          "summary": "Equipping communities to influence AI through involvement in AI development pipelines can improve AI and help communities realize the potential AI has to serve them well. https://news.microsoft.com/source/features/ai/why-better-ai-starts-with-the-people-it-often-misses/",
+          "source": "@MSFTResearch"
+        },
+        {
+          "title": "New in Research Focus: Cloud efficiency, smarter agentic cost reduction, a randomized trial on 3D telemedicine, and an open call for inclusive AI lang...",
+          "link": "https://x.com/MSFTResearch/status/2056407227615814091",
+          "id": "https://twitter.com/MSFTResearch/status/2056407227615814091",
+          "publishedAt": "2026-05-18T16:11:03.000Z",
+          "author": "@MSFTResearch",
+          "summary": "New in Research Focus: Cloud efficiency, smarter agentic cost reduction, a randomized trial on 3D telemedicine, and an open call for inclusive AI language projects in Africa. https://msft.it/6010vTpuG",
+          "source": "@MSFTResearch"
+        }
+      ]
     },
     {
       "id": "twitter-shanselman",
@@ -332,10 +997,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/shanselman",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "RT Klaus Loeffelmann: \"Copilot doesn't work with #WinForms.\" Yeah? - Watch me prove you wrong. 🧵 Robert Green and I used the WinForms Expert Agent ...",
+          "link": "https://x.com/shanselman/status/2059459167220572374",
+          "id": "https://twitter.com/shanselman/status/2059459167220572374",
+          "publishedAt": "2026-05-26T21:24:40.000Z",
+          "author": "@shanselman",
+          "summary": "RT Klaus Loeffelmann\"Copilot doesn't work with #WinForms.\"Yeah? - Watch me prove you wrong. 🧵Robert Green and I used the WinForms Expert Agent in #VisualStudio and also #Copilot CLI to build a live WinForms + EF Core 10 client for some old, old SQL Database on Visual Studio Toolbox - including one unscripted feature we genuinely didn't think would work.ALFKI is back. 👇 https://www.youtube.com/watch?v=YgP1ZJj6ers",
+          "source": "@shanselman"
+        },
+        {
+          "title": "🧐",
+          "link": "https://x.com/shanselman/status/2059354926518796554",
+          "id": "https://twitter.com/shanselman/status/2059354926518796554",
+          "publishedAt": "2026-05-26T19:24:10.000Z",
+          "author": "@shanselman",
+          "summary": "🧐Clint Rutkas:",
+          "source": "@shanselman"
+        },
+        {
+          "title": "RT Clint Rutkas:",
+          "link": "https://x.com/shanselman/status/2059354869191057811",
+          "id": "https://twitter.com/shanselman/status/2059354869191057811",
+          "publishedAt": "2026-05-26T18:07:11.000Z",
+          "author": "@shanselman",
+          "summary": "RT Clint Rutkas",
+          "source": "@shanselman"
+        },
+        {
+          "title": "Trying the @GitHubCopilot App on my real workflow https://youtu.be/PUCYm32ZBaU?si=wr3gvnMqVQfgpZnM @github",
+          "link": "https://x.com/shanselman/status/2059322397933879331",
+          "id": "https://twitter.com/shanselman/status/2059322397933879331",
+          "publishedAt": "2026-05-26T17:14:54.000Z",
+          "author": "@shanselman",
+          "summary": "Trying the @GitHubCopilot App on my real workflow https://youtu.be/PUCYm32ZBaU?si=wr3gvnMqVQfgpZnM @github",
+          "source": "@shanselman"
+        },
+        {
+          "title": "RT Microsoft: Building with AI is one thing, shipping it is another. Microsoft Build is where developers go deep on the hard parts: real systems, real...",
+          "link": "https://x.com/shanselman/status/2057928152421425337",
+          "id": "https://twitter.com/shanselman/status/2057928152421425337",
+          "publishedAt": "2026-05-22T20:30:00.000Z",
+          "author": "@shanselman",
+          "summary": "RT MicrosoftBuilding with AI is one thing, shipping it is another. Microsoft Build is where developers go deep on the hard parts: real systems, real workflows, and the tools behind what’s next. Register to join digitally and explore the sessions: https://msft.it/6008vnJHg",
+          "source": "@shanselman"
+        }
+      ]
     },
     {
       "id": "twitter-dotnetfdn",
@@ -348,10 +1058,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/dotnetfdn",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "The .NET Foundation Board Election is underway. From nominations to voting and onboarding, here’s a look at the key dates for the 2026 election cycle...",
+          "link": "https://x.com/dotnetfdn/status/2059621270199914561",
+          "id": "https://twitter.com/dotnetfdn/status/2059621270199914561",
+          "publishedAt": "2026-05-27T13:02:31.000Z",
+          "author": "@dotnetfdn",
+          "summary": "The .NET Foundation Board Election is underway. From nominations to voting and onboarding, here’s a look at the key dates for the 2026 election cycle.🗓️ Voting: June 6–19📢 New board members announced: June 20",
+          "source": "@dotnetfdn"
+        },
+        {
+          "title": "Serving on the .NET Foundation Board means more than attending meetings — it means showing up, staying engaged, collaborating, and helping shape the ...",
+          "link": "https://x.com/dotnetfdn/status/2059248826368860205",
+          "id": "https://twitter.com/dotnetfdn/status/2059248826368860205",
+          "publishedAt": "2026-05-26T12:22:33.000Z",
+          "author": "@dotnetfdn",
+          "summary": "Serving on the .NET Foundation Board means more than attending meetings — it means showing up, staying engaged, collaborating, and helping shape the future of the community.Here’s what we expect from board members.",
+          "source": "@dotnetfdn"
+        },
+        {
+          "title": "Thank you to everyone who submitted nominations for the .NET Foundation Board Election 2026. Your participation helps strengthen the community, recogn...",
+          "link": "https://x.com/dotnetfdn/status/2058984413976039483",
+          "id": "https://twitter.com/dotnetfdn/status/2058984413976039483",
+          "publishedAt": "2026-05-25T18:51:53.000Z",
+          "author": "@dotnetfdn",
+          "summary": "Thank you to everyone who submitted nominations for the .NET Foundation Board Election 2026. Your participation helps strengthen the community, recognize leaders across the ecosystem, and support the future growth of the Foundation. https://dotnetfoundation.org/board-elections/nomination-process-and-expectations",
+          "source": "@dotnetfdn"
+        },
+        {
+          "title": "Version 6.2.0 of Cake has just been released. - RWX CI support - Multi-target fixes - Security & bug fixes - Quieter builds & more: https://hubs.li/Q0...",
+          "link": "https://x.com/dotnetfdn/status/2058891843815776660",
+          "id": "https://twitter.com/dotnetfdn/status/2058891843815776660",
+          "publishedAt": "2026-05-25T12:44:02.000Z",
+          "author": "@dotnetfdn",
+          "summary": "Version 6.2.0 of Cake has just been released. - RWX CI support- Multi-target fixes- Security & bug fixes- Quieter builds & more:https://hubs.li/Q04hKCb10🍰 🚀 #dotnet #devops #csharp",
+          "source": "@dotnetfdn"
+        },
+        {
+          "title": "Become a .NET Foundation member and help shape the future of the .NET ecosystem. Members can vote in Board elections, connect with the community, and ...",
+          "link": "https://x.com/dotnetfdn/status/2058891664387924470",
+          "id": "https://twitter.com/dotnetfdn/status/2058891664387924470",
+          "publishedAt": "2026-05-25T12:43:19.000Z",
+          "author": "@dotnetfdn",
+          "summary": "Become a .NET Foundation member and help shape the future of the .NET ecosystem. Members can vote in Board elections, connect with the community, and support the Foundation’s growth. Submit a membership application to get started and make your voice count. https://dotnetfoundation.org/membership/become-a-member",
+          "source": "@dotnetfdn"
+        }
+      ]
     },
     {
       "id": "twitter-llama-index",
@@ -364,10 +1119,55 @@
       "rssUrl": "https://rsshub-boost.23751.net/twitter/user/llama_index",
       "limit": 5,
       "timeoutMs": 20000,
-      "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
-      "error": "The operation was aborted due to timeout",
-      "items": []
+      "status": "ok",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "items": [
+        {
+          "title": "Automate a loan underwriting pipeline in just a few lines of code✨️ A typical loan file is a stack of pay stubs and brokerage statements, every one ...",
+          "link": "https://x.com/llama_index/status/2059276359269023804",
+          "id": "https://twitter.com/llama_index/status/2059276359269023804",
+          "publishedAt": "2026-05-26T14:11:58.000Z",
+          "author": "@llama_index",
+          "summary": "Automate a loan underwriting pipeline in just a few lines of code✨️ A typical loan file is a stack of pay stubs and brokerage statements, every one formatted differently, every number re-typed by hand.Here's a pipeline that does it automatically with LlamaParse: PDFs to clean markdown, fields into Pydantic models, then cross-document analysis that produces an underwriting summary with discrepancy flags.Full post and repo: https://www.llamaindex.ai/blog/building-a-financial-document-pipeline-with-llamaparse",
+          "source": "@llama_index"
+        },
+        {
+          "title": "RT Jerry Liu: A full tour through RAG, document context, and AI agents - from 2023 to 2026 🌎🤖 @hexapode gave a comprehensive 90-min workshop at ...",
+          "link": "https://x.com/llama_index/status/2059309991241355433",
+          "id": "https://twitter.com/llama_index/status/2059309991241355433",
+          "publishedAt": "2026-05-25T16:47:53.000Z",
+          "author": "@llama_index",
+          "summary": "RT Jerry LiuA full tour through RAG, document context, and AI agents - from 2023 to 2026 🌎🤖@hexapode gave a comprehensive 90-min workshop at @aiDotEngineer Singapore last week that comprehensively traces through how topics like retrieval, agent loops, agentic workflows, and document understanding have evolved in the last 3 years.We’re excited to share the 116-page slide deck online. If you’re seeing this for the first time, you’ll get a sense of how all AI patterns have evolved since the very beginning. Including the following topics:💡 The 12 pain points of naive RAG💡The importance of reranking and query-rewriting💡How we’ve increased offloaded logic to the agentic loop as models improved (and coincidentally, the retrieval layer can get simpler)💡Retrieval being the bottleneck as agents improved💡Why document parsing is an extremely hard problem, even now in 2026💡Exploring parsing outputs, from markdown to chunks to structured JSON metadata💡Modern agent form factors around workflows and deep researchIf you’ve followed us or the space since the beginning, some of this will feel a bit nostalgic and will provide context on why our core focus today is narrowly focused on SOTA document parsing for agents.If you’re seeing this for the first time, hopefully there’s some useful historical context in here!Slides: https://drive.google.com/file/d/1IQ7G0aEyQQNBaxTBFkJ6YD-xvPZ5QM67/view?usp=sharing",
+          "source": "@llama_index"
+        },
+        {
+          "title": "LlamaParse now parses HEIC files natively 🎉 . HEIC is Apple's default image format, so it shows up all over enterprise file systems. Photos of whit...",
+          "link": "https://x.com/llama_index/status/2058910711728771476",
+          "id": "https://twitter.com/llama_index/status/2058910711728771476",
+          "publishedAt": "2026-05-25T13:59:01.000Z",
+          "author": "@llama_index",
+          "summary": "LlamaParse now parses HEIC files natively 🎉 .HEIC is Apple's default image format, so it shows up all over enterprise file systems. Photos of whiteboards, scanned docs, receipts snapped on an iPhone.You no longer need to convert to JPEG first. Point LlamaParse at the .heic file and it parses.Go ahead, parse that messy whiteboard.",
+          "source": "@llama_index"
+        },
+        {
+          "title": "New in LlamaParse: Latency Metrics is now live. For every Parse, Extract, and Classify job, you can now get a full latency breakdown. All broken down ...",
+          "link": "https://x.com/llama_index/status/2057543405891125376",
+          "id": "https://twitter.com/llama_index/status/2057543405891125376",
+          "publishedAt": "2026-05-21T19:25:49.000Z",
+          "author": "@llama_index",
+          "summary": "New in LlamaParse: Latency Metrics is now live.For every Parse, Extract, and Classify job, you can now get a full latency breakdown.All broken down by tier.⏱ Queue time ⚡Processing time 📊 Total latencyThere's also a new Metrics tab with a latency scatter plot and job volume histogram if you want to dig into patterns across your usage over time.Head to your Parse History tab to check it out. 🦙 https://cloud.llamaindex.ai",
+          "source": "@llama_index"
+        },
+        {
+          "title": "RT Jerry Liu: We built an AI agent for due diligence, with exact audit trails back to the source page, that you can use as a template without paying a...",
+          "link": "https://x.com/llama_index/status/2057369830131470542",
+          "id": "https://twitter.com/llama_index/status/2057369830131470542",
+          "publishedAt": "2026-05-20T18:12:58.000Z",
+          "author": "@llama_index",
+          "summary": "RT Jerry LiuWe built an AI agent for due diligence, with exact audit trails back to the source page, that you can use as a template without paying a single dime for PDF parsing 🔥🆓The secret sauce is LiteParse - our free, open-source, model-free document parser. It can extract text from financial documents with complex layouts and tables, and return citations that describe exact bounding boxes in the source text. For a free, open-source parser, it is extremely powerful and is a key ingredient in agentic workflows! Check out our full blog post here: https://www.llamaindex.ai/blog/building-a-financial-due-diligence-agent-with-liteparse?utm_medium=socials&utm_source=twitter&utm_campaign=2026-may-LlamaIndex 🦙: Financial analysts spend ~70% of their time pulling numbers out of PDFs.We built a demo agent that ingests SEC filings and answers questions with exact citations highlighted on the original PDF page.About 600 lines of Next.js. No vector DB. Just LiteParse.",
+          "source": "@llama_index"
+        }
+      ]
     },
     {
       "id": "twitter-googledeepmind",
@@ -381,7 +1181,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -397,7 +1197,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -413,7 +1213,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -429,7 +1229,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -445,7 +1245,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -461,7 +1261,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -477,7 +1277,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     },
@@ -493,7 +1293,7 @@
       "limit": 5,
       "timeoutMs": 20000,
       "status": "error",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "error": "The operation was aborted due to timeout",
       "items": []
     }

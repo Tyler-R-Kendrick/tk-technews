@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T17:09:33.223Z",
+  "generatedAt": "2026-05-27T15:23:34.530Z",
   "sources": [
     {
       "id": "towards-data-science",
@@ -9,7 +9,7 @@
       "rssUrl": "https://medium.com/feed/towards-data-science",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "items": [
         {
           "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
@@ -181,8 +181,89 @@
       "rssUrl": "https://www.marktechpost.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "items": [
+        {
+          "title": "Meet EAGLE 3.1: The Speculative Decoding Algorithm That Fixes Attention Drift in LLM Inference",
+          "link": "https://www.marktechpost.com/2026/05/27/meet-eagle-3-1-the-speculative-decoding-algorithm-that-fixes-attention-drift-in-llm-inference/",
+          "id": "https://www.marktechpost.com/?p=80132",
+          "publishedAt": "2026-05-27T07:23:10.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>The EAGLE team, vLLM, and TorchSpec jointly release EAGLE 3.1 to fix speculative decoding instability in production.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/27/meet-eagle-3-1-the-speculative-decoding-algorithm-that-fixes-attention-drift-in-llm-inference/\">Meet EAGLE 3.1: The Speculative Decoding Algorithm That Fixes Attention Drift in LLM Inference</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Infrastructure",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "For Devs",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "MEMO: A Modular Framework for Training a Dedicated Memory Model on New Knowledge Without Modifying LLM Parameters",
+          "link": "https://www.marktechpost.com/2026/05/26/memo-a-modular-framework-for-training-a-dedicated-memory-model-on-new-knowledge-without-modifying-llm-parameters/",
+          "id": "https://www.marktechpost.com/?p=80126",
+          "publishedAt": "2026-05-27T05:24:33.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Researchers from NUS, MIT, and A*STAR propose MEMO, a modular framework that encodes corpus knowledge into a separate trainable MEMORY model.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/26/memo-a-modular-framework-for-training-a-dedicated-memory-model-on-new-knowledge-without-modifying-llm-parameters/\">MEMO: A Modular Framework for Training a Dedicated Memory Model on New Knowledge Without Modifying LLM Parameters</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Paper Summary",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Design a High-Precision Retrieve-and-Rerank Pipeline with ZeroEntropy Zerank-2 Reranker",
+          "link": "https://www.marktechpost.com/2026/05/26/design-a-high-precision-retrieve-and-rerank-pipeline-with-zeroentropy-zerank-2-reranker/",
+          "id": "https://www.marktechpost.com/?p=80123",
+          "publishedAt": "2026-05-26T23:13:09.000Z",
+          "author": "Sana Hassan",
+          "summary": "<p>In this tutorial, we use zeroentropy/zerank-2-reranker, a 4B Qwen3-based cross-encoder reranker, to improve retrieval quality. We start by setting up the runtime, loading the reranker, and understanding how it scores query-document pairs. Then, we move from simple pairwise scoring to a practical two-stage retrieve-and-rerank pipeline, where a fast bi-encoder first retrieves candidates and zerank-2 reranks [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/26/design-a-high-precision-retrieve-and-rerank-pipeline-with-zeroentropy-zerank-2-reranker/\">Design a High-Precision Retrieve-and-Rerank Pipeline with ZeroEntropy Zerank-2 Reranker</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Artificial Intelligence",
+            "Editors Pick",
+            "RAG",
+            "Staff",
+            "Technology",
+            "Tutorials"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Stability AI Releases Stable Audio 3: A Family of Fast Latent Diffusion Models for Audio Generation and Editing",
+          "link": "https://www.marktechpost.com/2026/05/26/stability-ai-releases-stable-audio-3-a-family-of-fast-latent-diffusion-models-for-audio-generation-and-editing/",
+          "id": "https://www.marktechpost.com/?p=80118",
+          "publishedAt": "2026-05-26T22:31:02.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Stability AI has released Stable Audio 3, a family of latent diffusion models for instrumental music and sound effects generation. The release includes open weights for the small and medium variants. Small runs on a MacBook Pro M4 CPU. Medium fits on consumer GPUs with 8 GB of VRAM. Both generate stereo audio at 44.1 kHz using a three-stage training pipeline: flow matching, distillation warmup, and adversarial post-training. On the BBC Sound Effects benchmark at 5 seconds, SA3 medium scores FAD 0.369 — lower than every open-weight baseline evaluated in the paper.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/26/stability-ai-releases-stable-audio-3-a-family-of-fast-latent-diffusion-models-for-audio-generation-and-editing/\">Stability AI Releases Stable Audio 3: A Family of Fast Latent Diffusion Models for Audio Generation and Editing</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Artificial Intelligence",
+            "Audio Language Model",
+            "Editors Pick",
+            "Language Model",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Technology",
+            "Voice AI"
+          ],
+          "source": "MarkTechPost"
+        },
         {
           "title": "Meet OmniVoice Studio: A Local, Open-Source Alternative to ElevenLabs",
           "link": "https://www.marktechpost.com/2026/05/26/meet-omnivoice-studio-a-local-open-source-alternative-to-elevenlabs/",
@@ -300,98 +381,6 @@
             "Editors Pick",
             "For Devs",
             "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Build a Complete Langfuse Observability and Evaluation Pipeline for Tracing, Prompt Management, Scoring, and Experiments",
-          "link": "https://www.marktechpost.com/2026/05/24/build-a-complete-langfuse-observability-and-evaluation-pipeline-for-tracing-prompt-management-scoring-and-experiments/",
-          "id": "https://www.marktechpost.com/?p=80089",
-          "publishedAt": "2026-05-24T23:03:09.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>In this tutorial, we implement the Langfuse (an open-source LLM engineering platform) pipeline for tracing, prompt management, scoring, datasets, and experiments. We build a complete workflow that works with either a real OpenAI key or a deterministic mock LLM, so we can understand every major Langfuse feature without depending on paid model access. We start [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/24/build-a-complete-langfuse-observability-and-evaluation-pipeline-for-tracing-prompt-management-scoring-and-experiments/\">Build a Complete Langfuse Observability and Evaluation Pipeline for Tracing, Prompt Management, Scoring, and Experiments</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "Staff",
-            "Tech News",
-            "Technology",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "StepFun Releases StepAudio 2.5 Realtime: An End-to-End Voice Model with Roleplay-Specific RLHF and Paralinguistic Comprehension",
-          "link": "https://www.marktechpost.com/2026/05/24/stepfun-releases-stepaudio-2-5-realtime-an-end-to-end-voice-model-with-roleplay-specific-rlhf-and-paralinguistic-comprehension/",
-          "id": "https://www.marktechpost.com/?p=80084",
-          "publishedAt": "2026-05-24T22:51:05.000Z",
-          "author": "Michal Sutter",
-          "summary": "<p>StepFun, the Shanghai-based AI lab, released StepAudio 2.5 Realtime in May 2026 — an end-to-end real-time speech large language model with fully customizable persona capabilities. The model connects via a WebSocket API, supports Chinese and English, and ranked first across all five benchmark dimensions tested in April 2026, including an 80.41 human evaluation score and 82.18 on paralinguistic comprehension.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/24/stepfun-releases-stepaudio-2-5-realtime-an-end-to-end-voice-model-with-roleplay-specific-rlhf-and-paralinguistic-comprehension/\">StepFun Releases StepAudio 2.5 Realtime: An End-to-End Voice Model with Roleplay-Specific RLHF and Paralinguistic Comprehension</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Artificial Intelligence",
-            "Audio Language Model",
-            "Editors Pick",
-            "Language Model",
-            "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Technology",
-            "TTS",
-            "Voice AI"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Microsoft Research Releases Webwright: A Terminal-Native Web Agent Framework That Scores 60.1% on Odysseys, Up from Base GPT-5.4’s 33.5%",
-          "link": "https://www.marktechpost.com/2026/05/24/microsoft-research-releases-webwright-a-terminal-native-web-agent-framework-that-scores-60-1-on-odysseys-up-from-base-gpt-5-4s-33-5/",
-          "id": "https://www.marktechpost.com/?p=80077",
-          "publishedAt": "2026-05-24T08:56:19.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Microsoft Research introduces Webwright, a terminal-native browser agent framework that replaces click-trace web automation with reusable Playwright scripts. Using a single agent loop across three modules and roughly 1,000 lines of code, Webwright powered by GPT-5.4 reaches 60.1% on the long-horizon Odysseys benchmark and 86.7% on Online-Mind2Web — the highest AutoEval score among open-sourced harness recipes.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/24/microsoft-research-releases-webwright-a-terminal-native-web-agent-framework-that-scores-60-1-on-odysseys-up-from-base-gpt-5-4s-33-5/\">Microsoft Research Releases Webwright: A Terminal-Native Web Agent Framework That Scores 60.1% on Odysseys, Up from Base GPT-5.4&#8217;s 33.5%</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Agents",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "New Releases",
-            "Open Source",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "NVIDIA AI Releases Gated DeltaNet-2: A Linear Attention Layer That Decouples Erase and Write in the Delta Rule",
-          "link": "https://www.marktechpost.com/2026/05/24/nvidia-ai-releases-gated-deltanet-2-a-linear-attention-layer-that-decouples-erase-and-write-in-the-delta-rule/",
-          "id": "https://www.marktechpost.com/?p=80071",
-          "publishedAt": "2026-05-24T07:42:09.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Linear attention squeezes the unbounded KV cache into a fixed-size recurrent state, but editing that memory without scrambling existing associations is hard. Prior delta-rule models like Gated DeltaNet and KDA use one scalar gate to control both erasing old content and writing new content. NVIDIA's Gated DeltaNet-2 decouples these into a channel-wise erase gate b_t on the key axis and a channel-wise write gate w_t on the value axis. At 1.3B parameters trained on 100B FineWeb-Edu tokens, it outperforms Mamba-2, Gated DeltaNet, KDA, and Mamba-3 across language modeling, commonsense reasoning, and long-context retrieval — with the largest gains on RULER S-NIAH and multi-key needle retrieval.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/24/nvidia-ai-releases-gated-deltanet-2-a-linear-attention-layer-that-decouples-erase-and-write-in-the-delta-rule/\">NVIDIA AI Releases Gated DeltaNet-2: A Linear Attention Layer That Decouples Erase and Write in the Delta Rule</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "AI Infrastructure",
-            "AI Paper Summary",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "Machine Learning",
-            "New Releases",
-            "Open Source",
-            "Physical AI",
             "Software Engineering",
             "Staff",
             "Tech News",

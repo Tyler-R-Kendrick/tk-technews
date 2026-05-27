@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T17:09:33.223Z",
+  "generatedAt": "2026-05-27T15:23:34.530Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-26T17:09:33.223Z",
+    "fetchedAt": "2026-05-27T15:23:34.530Z",
     "items": [
+      {
+        "title": "Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening",
+        "link": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
+        "id": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
+        "publishedAt": "2026-05-26T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
       {
         "title": "Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical \"Magnifica humanitas\"",
         "link": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
@@ -77,15 +86,6 @@
         "link": "https://www.anthropic.com/news/higher-limits-spacex",
         "id": "https://www.anthropic.com/news/higher-limits-spacex",
         "publishedAt": "2026-05-06T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Agents for financial services",
-        "link": "https://www.anthropic.com/news/finance-agents",
-        "id": "https://www.anthropic.com/news/finance-agents",
-        "publishedAt": "2026-05-05T05:00:00.000Z",
         "author": "Anthropic",
         "summary": "",
         "category": "Announcements"

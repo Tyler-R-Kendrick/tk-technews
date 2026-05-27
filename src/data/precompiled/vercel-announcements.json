@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T17:09:33.223Z",
+  "generatedAt": "2026-05-27T15:23:34.530Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,8 +9,35 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "items": [
+        {
+          "title": "Sandbox persistence is now GA",
+          "link": "https://vercel.com/changelog/sandbox-persistence-is-now-ga",
+          "id": "https://vercel.com/changelog/sandbox-persistence-is-now-ga",
+          "publishedAt": "2026-05-26T00:01:00.000Z",
+          "author": "Marc Codina Segura",
+          "summary": "now automatically save and restore filesystem state between sessions. Persistence is on by default, meaning no snapshots to manage or state to track manually.Vercel Sandboxes\nEach sandbox has a durable,  that acts as a unique reference in your project. You can create, retrieve, or resume a sandbox by name. Vercel spins sessions up and down automatically, without interrupting your workflow.customizable name\nWhen you call , persistence is enabled by default:Sandbox.create()\n\nEach automatic snapshot consumes , which is billed separately from compute. For ephemeral workloads, opt out of persistence to minimize storage costs:snapshot storage\nTo opt out of persistence with the CLI, pass  to . Non-persistent sandboxes discard their filesystem when the session ends.--non-persistentsandbox create\nResuming is automatic. Any call on a stopped sandbox, like  or , starts a new session from the most recent snapshot.runCommand()writeFiles()\nUpgrade to the latest version to create persistent sandboxes by default: \nLearn more about persistent sandboxes in the .documentation\n\nRead more\nCreate a persistent sandbox\nResume a persistent sandbox\nOther improvements\nGet started \n\n\n\n: Create a new sandbox from an existing oneSandbox.fork()\n\n: Idempotent retrieve-or-create for long-lived sandboxesSandbox.getOrCreate()\n\n: Permanently delete a sandboxSandbox.delete()\n\nRicher : Returns snapshot metadata plus active-CPU and network-transfer totalssandbox.stop()\n\nLifecycle hooks:  and  hooks for , , and onCreateonResumecreategetgetOrCreate\n\n: Assign custom properties to sandboxes for multi-tenant trackingTags\n\n\npnpm install @vercel/sandbox@latest # SDK\n\npnpm install -g sandbox@latest    # CLI",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Vercel Domains now supports price sorting and availability filtering",
+          "link": "https://vercel.com/changelog/vercel-domains-now-supports-price-sorting-and-availability-filtering",
+          "id": "https://vercel.com/changelog/vercel-domains-now-supports-price-sorting-and-availability-filtering",
+          "publishedAt": "2026-05-26T00:00:00.000Z",
+          "author": "Elliot Dauber",
+          "summary": "Vercel Domains now supports price sorting and availability filtering.\nPrice sorting shows lower cost domains first, so you can quickly find a domain that fits your budget. Availability filtering moves unavailable domains to the bottom of the search results, so you can focus on domains that you can actually purchase.\nTry it at .vercel.com/domains\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Firecrawl joins the Vercel Marketplace",
+          "link": "https://vercel.com/changelog/firecrawl-joins-the-vercel-marketplace",
+          "id": "https://vercel.com/changelog/firecrawl-joins-the-vercel-marketplace",
+          "publishedAt": "2026-05-26T00:00:00.000Z",
+          "author": "Michael Toth",
+          "summary": "is now available on the , allowing Vercel teams to power AI agents and applications with structured web data without managing crawling infrastructure.FirecrawlVercel Marketplace\nThis integration helps developers scrape websites into LLM-ready formats, search and retrieve full page content, and interact with dynamic pages for retrieval and agent workflows.\nKey capabilities include:\nGet started with  on the Vercel Marketplace.Firecrawl\nRead more\n\nScrape pages into markdown, HTML, structured data, or screenshots\n\nSearch the web and retrieve full page content in a single call\n\nInteract with dynamic websites using AI prompts or code",
+          "source": "Vercel Changelog"
+        },
         {
           "title": "Microfrontends routing now applies to vc alias and branch domains",
           "link": "https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains",
@@ -72,33 +99,6 @@
           "publishedAt": "2026-05-20T00:00:00.000Z",
           "author": "Ben Sabic",
           "summary": "You can now read the parent issue or pull request when your bot is mentioned in a Linear or GitHub comment.  resolves to that parent with title, status, URL, and the full typed payload.message.subject\n is cached per message, so repeated access only hits the API once. It resolves to  on Slack and other chat platforms, where there's no parent resource.message.subjectnull\nThe GitHub, Linear, and Slack adapters now expose their underlying platform SDKs. Use them to extend your bot by calling provider APIs directly.\nThe previous  getter remains as a  alias on the adapters. .client@deprecated\nRead the  to get started, or explore one of our .documentationtemplates\n\nRead more\n\n\nDirect access to platform SDKs",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Chat SDK now supports callback URLs on buttons and modals",
-          "link": "https://vercel.com/changelog/chat-sdk-now-supports-callback-urls-on-buttons-and-modals",
-          "id": "https://vercel.com/changelog/chat-sdk-now-supports-callback-urls-on-buttons-and-modals",
-          "publishedAt": "2026-05-20T00:00:00.000Z",
-          "author": "Ben Sabic",
-          "summary": "You can now pause a  run on a Chat SDK card and resume it when someone clicks a button. The same flow works for form submissions. Buttons and modals accept a new  prop, and the event payload is sent to that endpoint.WorkflowcallbackUrl\nTo build a card like this, create a  and pass its URL to each button's  prop inside your  component:workflow webhookcallbackUrl<Card>\nFor the  component, the form data is in the payload.  works for buttons on most platforms with an , and for modals on Slack and Teams.<Modal>callbackUrlofficial adapter\nRead the  or  to start building.documentationwalkthrough guide\n\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Vercel AI Gateway plugin for WordPress",
-          "link": "https://vercel.com/changelog/vercel-ai-gateway-plugin-for-wordpress",
-          "id": "https://vercel.com/changelog/vercel-ai-gateway-plugin-for-wordpress",
-          "publishedAt": "2026-05-20T00:00:00.000Z",
-          "author": "Felix Arntz",
-          "summary": "The  gives any WordPress site access to hundreds of models from 40+ providers through a single API key. Providers include Anthropic, Google, OpenAI, xAI, DeepSeek, MiniMax, Moonshot AI, and more.Vercel AI Gateway plugin\nThe plugin is implemented as a connector for the new , which requires WordPress 7.0, released today.WordPress AI Client\nTo call AI Gateway directly from your own code:\nSee the  for more details, including examples for text, structured JSON output, image generation, and video.plugin documentation\n\nRead more\nWhat this enables\nGetting started\n\nPlugins built on the WordPress AI Client pick up the connector without their own provider integrations or API keys.Any AI-powered plugin works automatically. \n\nManage a single AI Gateway key in  instead of credentials per provider.One key, many providers. Settings > Connectors\n\n Text, structured JSON, image generation and editing, and video, all through the same prompt builder.Multi-modal content generation.\n\nAI features stay online during provider outages.Automatic fallbacks. \n\nNew models become available without a plugin update.Dynamic model discovery. \n\nacross providers, at provider prices.Unified billing and observability \n\n\nInstall the  on your WordPress siteVercel AI Gateway plugin\n\nAdd your  API key under AI GatewaySettings > Connectors",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Nuxt MCP Toolkit now supports MCP apps",
-          "link": "https://vercel.com/changelog/nuxt-mcp-toolkit-mcp-apps",
-          "id": "https://vercel.com/changelog/nuxt-mcp-toolkit-mcp-apps",
-          "publishedAt": "2026-05-19T14:00:00.000Z",
-          "author": "Hugo Richard",
-          "summary": "The  now supports . Your agent tools can return interactive HTML responses that MCP clients like Claude and ChatGPT render inline, rather than plain-text responses.Nuxt MCP ToolkitMCP apps\nDeclare a tool with the  macro, then read pre-hydrated data, trigger follow-up prompts, or call other tools from inside the UI with the  composable. The toolkit bundles each Vue SFC into a self-contained HTML file at build time and serves it from your MCP endpoint.defineMcpAppuseMcpApp\nRead the  to get started.Nuxt MCP Toolkit documentation\nRead more",
           "source": "Vercel Changelog"
         }
       ]
@@ -111,8 +111,35 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-26T17:09:33.223Z",
+      "fetchedAt": "2026-05-27T15:23:34.530Z",
       "items": [
+        {
+          "title": "Sandbox persistence is now GA",
+          "link": "https://vercel.com/changelog/sandbox-persistence-is-now-ga",
+          "id": "https://vercel.com/changelog/sandbox-persistence-is-now-ga",
+          "publishedAt": "2026-05-26T00:01:00.000Z",
+          "author": "Marc Codina Segura",
+          "summary": "now automatically save and restore filesystem state between sessions. Persistence is on by default, meaning no snapshots to manage or state to track manually.Vercel Sandboxes\nEach sandbox has a durable,  that acts as a unique reference in your project. You can create, retrieve, or resume a sandbox by name. Vercel spins sessions up and down automatically, without interrupting your workflow.customizable name\nWhen you call , persistence is enabled by default:Sandbox.create()\n\nEach automatic snapshot consumes , which is billed separately from compute. For ephemeral workloads, opt out of persistence to minimize storage costs:snapshot storage\nTo opt out of persistence with the CLI, pass  to . Non-persistent sandboxes discard their filesystem when the session ends.--non-persistentsandbox create\nResuming is automatic. Any call on a stopped sandbox, like  or , starts a new session from the most recent snapshot.runCommand()writeFiles()\nUpgrade to the latest version to create persistent sandboxes by default: \nLearn more about persistent sandboxes in the .documentation\n\nRead more\nCreate a persistent sandbox\nResume a persistent sandbox\nOther improvements\nGet started \n\n\n\n: Create a new sandbox from an existing oneSandbox.fork()\n\n: Idempotent retrieve-or-create for long-lived sandboxesSandbox.getOrCreate()\n\n: Permanently delete a sandboxSandbox.delete()\n\nRicher : Returns snapshot metadata plus active-CPU and network-transfer totalssandbox.stop()\n\nLifecycle hooks:  and  hooks for , , and onCreateonResumecreategetgetOrCreate\n\n: Assign custom properties to sandboxes for multi-tenant trackingTags\n\n\npnpm install @vercel/sandbox@latest # SDK\n\npnpm install -g sandbox@latest    # CLI",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Vercel Domains now supports price sorting and availability filtering",
+          "link": "https://vercel.com/changelog/vercel-domains-now-supports-price-sorting-and-availability-filtering",
+          "id": "https://vercel.com/changelog/vercel-domains-now-supports-price-sorting-and-availability-filtering",
+          "publishedAt": "2026-05-26T00:00:00.000Z",
+          "author": "Elliot Dauber",
+          "summary": "Vercel Domains now supports price sorting and availability filtering.\nPrice sorting shows lower cost domains first, so you can quickly find a domain that fits your budget. Availability filtering moves unavailable domains to the bottom of the search results, so you can focus on domains that you can actually purchase.\nTry it at .vercel.com/domains\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Firecrawl joins the Vercel Marketplace",
+          "link": "https://vercel.com/changelog/firecrawl-joins-the-vercel-marketplace",
+          "id": "https://vercel.com/changelog/firecrawl-joins-the-vercel-marketplace",
+          "publishedAt": "2026-05-26T00:00:00.000Z",
+          "author": "Michael Toth",
+          "summary": "is now available on the , allowing Vercel teams to power AI agents and applications with structured web data without managing crawling infrastructure.FirecrawlVercel Marketplace\nThis integration helps developers scrape websites into LLM-ready formats, search and retrieve full page content, and interact with dynamic pages for retrieval and agent workflows.\nKey capabilities include:\nGet started with  on the Vercel Marketplace.Firecrawl\nRead more\n\nScrape pages into markdown, HTML, structured data, or screenshots\n\nSearch the web and retrieve full page content in a single call\n\nInteract with dynamic websites using AI prompts or code",
+          "source": "Vercel Blog"
+        },
         {
           "title": "Microfrontends routing now applies to vc alias and branch domains",
           "link": "https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains",
@@ -174,33 +201,6 @@
           "publishedAt": "2026-05-20T00:00:00.000Z",
           "author": "Ben Sabic",
           "summary": "You can now read the parent issue or pull request when your bot is mentioned in a Linear or GitHub comment.  resolves to that parent with title, status, URL, and the full typed payload.message.subject\n is cached per message, so repeated access only hits the API once. It resolves to  on Slack and other chat platforms, where there's no parent resource.message.subjectnull\nThe GitHub, Linear, and Slack adapters now expose their underlying platform SDKs. Use them to extend your bot by calling provider APIs directly.\nThe previous  getter remains as a  alias on the adapters. .client@deprecated\nRead the  to get started, or explore one of our .documentationtemplates\n\nRead more\n\n\nDirect access to platform SDKs",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Chat SDK now supports callback URLs on buttons and modals",
-          "link": "https://vercel.com/changelog/chat-sdk-now-supports-callback-urls-on-buttons-and-modals",
-          "id": "https://vercel.com/changelog/chat-sdk-now-supports-callback-urls-on-buttons-and-modals",
-          "publishedAt": "2026-05-20T00:00:00.000Z",
-          "author": "Ben Sabic",
-          "summary": "You can now pause a  run on a Chat SDK card and resume it when someone clicks a button. The same flow works for form submissions. Buttons and modals accept a new  prop, and the event payload is sent to that endpoint.WorkflowcallbackUrl\nTo build a card like this, create a  and pass its URL to each button's  prop inside your  component:workflow webhookcallbackUrl<Card>\nFor the  component, the form data is in the payload.  works for buttons on most platforms with an , and for modals on Slack and Teams.<Modal>callbackUrlofficial adapter\nRead the  or  to start building.documentationwalkthrough guide\n\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Vercel AI Gateway plugin for WordPress",
-          "link": "https://vercel.com/changelog/vercel-ai-gateway-plugin-for-wordpress",
-          "id": "https://vercel.com/changelog/vercel-ai-gateway-plugin-for-wordpress",
-          "publishedAt": "2026-05-20T00:00:00.000Z",
-          "author": "Felix Arntz",
-          "summary": "The  gives any WordPress site access to hundreds of models from 40+ providers through a single API key. Providers include Anthropic, Google, OpenAI, xAI, DeepSeek, MiniMax, Moonshot AI, and more.Vercel AI Gateway plugin\nThe plugin is implemented as a connector for the new , which requires WordPress 7.0, released today.WordPress AI Client\nTo call AI Gateway directly from your own code:\nSee the  for more details, including examples for text, structured JSON output, image generation, and video.plugin documentation\n\nRead more\nWhat this enables\nGetting started\n\nPlugins built on the WordPress AI Client pick up the connector without their own provider integrations or API keys.Any AI-powered plugin works automatically. \n\nManage a single AI Gateway key in  instead of credentials per provider.One key, many providers. Settings > Connectors\n\n Text, structured JSON, image generation and editing, and video, all through the same prompt builder.Multi-modal content generation.\n\nAI features stay online during provider outages.Automatic fallbacks. \n\nNew models become available without a plugin update.Dynamic model discovery. \n\nacross providers, at provider prices.Unified billing and observability \n\n\nInstall the  on your WordPress siteVercel AI Gateway plugin\n\nAdd your  API key under AI GatewaySettings > Connectors",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Nuxt MCP Toolkit now supports MCP apps",
-          "link": "https://vercel.com/changelog/nuxt-mcp-toolkit-mcp-apps",
-          "id": "https://vercel.com/changelog/nuxt-mcp-toolkit-mcp-apps",
-          "publishedAt": "2026-05-19T14:00:00.000Z",
-          "author": "Hugo Richard",
-          "summary": "The  now supports . Your agent tools can return interactive HTML responses that MCP clients like Claude and ChatGPT render inline, rather than plain-text responses.Nuxt MCP ToolkitMCP apps\nDeclare a tool with the  macro, then read pre-hydrated data, trigger follow-up prompts, or call other tools from inside the UI with the  composable. The toolkit bundles each Vue SFC into a self-contained HTML file at build time and serves it from your MCP endpoint.defineMcpAppuseMcpApp\nRead the  to get started.Nuxt MCP Toolkit documentation\nRead more",
           "source": "Vercel Blog"
         }
       ]

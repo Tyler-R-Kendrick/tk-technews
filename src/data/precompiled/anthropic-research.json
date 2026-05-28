@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-27T15:23:34.530Z",
+    "fetchedAt": "2026-05-28T15:45:13.317Z",
     "items": [
+      {
+        "title": "Coding agents in the social sciences",
+        "link": "https://www.anthropic.com/research/coding-agents-social-sciences",
+        "id": "https://www.anthropic.com/research/coding-agents-social-sciences",
+        "publishedAt": "2026-05-27T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Economic Research"
+      },
       {
         "title": "Project Glasswing: An initial update",
         "link": "https://www.anthropic.com/research/glasswing-initial-update",
@@ -85,15 +94,6 @@
         "title": "Announcing the Anthropic Economic Index Survey",
         "link": "https://www.anthropic.com/research/economic-index-survey-announcement",
         "id": "https://www.anthropic.com/research/economic-index-survey-announcement",
-        "publishedAt": "2026-04-22T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Economic Research"
-      },
-      {
-        "title": "What 81,000 people told us about the economics of AI",
-        "link": "https://www.anthropic.com/research/81k-economics",
-        "id": "https://www.anthropic.com/research/81k-economics",
         "publishedAt": "2026-04-22T05:00:00.000Z",
         "author": "Anthropic",
         "summary": "",

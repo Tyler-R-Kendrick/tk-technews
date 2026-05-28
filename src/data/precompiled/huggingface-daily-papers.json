@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-05-27T15:23:34.530Z",
+    "fetchedAt": "2026-05-28T15:45:13.317Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -28,7 +28,7 @@
           "Xing Yu"
         ],
         "summary": "Anti-Self-Distillation reverses the direction of knowledge transfer in self-distillation to improve math reasoning efficiency and accuracy.",
-        "upvotes": 191,
+        "upvotes": 193,
         "comments": 4,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.11609.png",
         "projectPage": null,
@@ -87,7 +87,7 @@
           "Huaxiu Yao"
         ],
         "summary": "AutoResearchClaw is a multi-agent autonomous research system that improves scientific discovery through structured debate, self-healing execution, verifiable reporting, human collaboration, and evolutionary learning, outperforming previous systems on a benchmark while maintaining human oversight.",
-        "upvotes": 182,
+        "upvotes": 184,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20025.png",
         "projectPage": "https://github.com/aiming-lab/AutoResearchClaw",
@@ -123,7 +123,7 @@
           "Peng Qi"
         ],
         "summary": "Video-capable multimodal large language models exhibit apparent audio understanding driven by visual cues rather than actual audio processing, necessitating intervention-based frameworks for diagnosing and improving audio-visual alignment.",
-        "upvotes": 148,
+        "upvotes": 149,
         "comments": 2,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.16403.png",
         "projectPage": "https://rakanwen.github.io/when-vision-speaks-for-sound/",
@@ -157,7 +157,7 @@
           "Luciano del Corro"
         ],
         "summary": "Pairwise ranking prompting is reformulated as active learning from noisy comparisons, with improved rankers that enhance ranking quality under call constraints and address position bias through a randomized oracle.",
-        "upvotes": 96,
+        "upvotes": 97,
         "comments": 4,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.14236.png",
         "projectPage": null,
@@ -190,7 +190,7 @@
           "Arman Cohan"
         ],
         "summary": "OpenComputer presents a framework for creating verifiable software environments for computer-use agents through integrated state verification, self-improving layers, task synthesis, and evaluation systems across multiple desktop applications.",
-        "upvotes": 57,
+        "upvotes": 81,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19769.png",
         "projectPage": "https://echo0715.github.io/OpenComputer/",
@@ -231,7 +231,7 @@
           "Han Li"
         ],
         "summary": "GoLongRL presents an open-source approach for long-context reinforcement learning with diverse reward optimization through capability-oriented data construction and TMN-Reweight methodology.",
-        "upvotes": 56,
+        "upvotes": 58,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19577.png",
         "projectPage": "https://huggingface.co/collections/Kwai-Klear/golongrl",
@@ -266,7 +266,7 @@
           "Jiaxin Huang"
         ],
         "summary": "BetaPRM introduces a distributional approach to process reward models that predicts both success probabilities and prediction reliability, enabling adaptive computation allocation that reduces token usage while maintaining accuracy.",
-        "upvotes": 52,
+        "upvotes": 53,
         "comments": 2,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.15529.png",
         "projectPage": null,
@@ -500,7 +500,7 @@
           "Tianmin Shu"
         ],
         "summary": "ThoughtTrace presents a large-scale dataset pairing human-AI conversations with self-reported thoughts, enabling improved user behavior prediction and personalized assistant training through thought-guided rewrites.",
-        "upvotes": 16,
+        "upvotes": 17,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20087.png",
         "projectPage": "https://thoughttrace-project.github.io/",

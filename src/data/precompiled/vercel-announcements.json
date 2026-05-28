@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,8 +9,17 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "fetchedAt": "2026-05-28T15:45:13.317Z",
       "items": [
+        {
+          "title": "Redesigned Deployments List",
+          "link": "https://vercel.com/changelog/redesigned-deployments-list",
+          "id": "https://vercel.com/changelog/redesigned-deployments-list",
+          "publishedAt": "2026-05-27T00:00:00.000Z",
+          "author": "William Bout",
+          "summary": "The deployments list has been redesigned with a denser layout, so you can see more deployments at once. Environments are now grouped with statuses, and the updated layout makes branches and commits easier to scan. The mobile experience has also been improved, making it easier to scan deployment activity on busy projects.\n to see the updated design.Open your dashboard\nRead more",
+          "source": "Vercel Changelog"
+        },
         {
           "title": "Sandbox persistence is now GA",
           "link": "https://vercel.com/changelog/sandbox-persistence-is-now-ga",
@@ -90,15 +99,6 @@
           "publishedAt": "2026-05-20T00:00:00.000Z",
           "author": "Ben Sabic",
           "summary": "Chat SDK now ships a built-in  toolset through the new  subpath. One  call wires Chat SDK's read and write actions into your agent.AI SDKchat/aicreateChatTools(chat)\n and its supporting types have moved to . The previous  re-exports are flagged .toAiMessageschat/aichat@deprecated\nRead the  to get started, or try one of our .documentationtemplates\n\nRead more\n\n\nwrite tools are gated by a  option.Approval by default: requireApproval\n\n, , and  scope the toolset.Presets: readermessengermoderator\n\nonly the tools your preset allows are constructed.Lazy loading:",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Chat SDK adds message subjects and direct SDK access",
-          "link": "https://vercel.com/changelog/chat-sdk-adds-message-subjects-and-direct-sdk-access",
-          "id": "https://vercel.com/changelog/chat-sdk-adds-message-subjects-and-direct-sdk-access",
-          "publishedAt": "2026-05-20T00:00:00.000Z",
-          "author": "Ben Sabic",
-          "summary": "You can now read the parent issue or pull request when your bot is mentioned in a Linear or GitHub comment.  resolves to that parent with title, status, URL, and the full typed payload.message.subject\n is cached per message, so repeated access only hits the API once. It resolves to  on Slack and other chat platforms, where there's no parent resource.message.subjectnull\nThe GitHub, Linear, and Slack adapters now expose their underlying platform SDKs. Use them to extend your bot by calling provider APIs directly.\nThe previous  getter remains as a  alias on the adapters. .client@deprecated\nRead the  to get started, or explore one of our .documentationtemplates\n\nRead more\n\n\nDirect access to platform SDKs",
           "source": "Vercel Changelog"
         }
       ]
@@ -111,8 +111,17 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "fetchedAt": "2026-05-28T15:45:13.317Z",
       "items": [
+        {
+          "title": "Redesigned Deployments List",
+          "link": "https://vercel.com/changelog/redesigned-deployments-list",
+          "id": "https://vercel.com/changelog/redesigned-deployments-list",
+          "publishedAt": "2026-05-27T00:00:00.000Z",
+          "author": "William Bout",
+          "summary": "The deployments list has been redesigned with a denser layout, so you can see more deployments at once. Environments are now grouped with statuses, and the updated layout makes branches and commits easier to scan. The mobile experience has also been improved, making it easier to scan deployment activity on busy projects.\n to see the updated design.Open your dashboard\nRead more",
+          "source": "Vercel Blog"
+        },
         {
           "title": "Sandbox persistence is now GA",
           "link": "https://vercel.com/changelog/sandbox-persistence-is-now-ga",
@@ -192,15 +201,6 @@
           "publishedAt": "2026-05-20T00:00:00.000Z",
           "author": "Ben Sabic",
           "summary": "Chat SDK now ships a built-in  toolset through the new  subpath. One  call wires Chat SDK's read and write actions into your agent.AI SDKchat/aicreateChatTools(chat)\n and its supporting types have moved to . The previous  re-exports are flagged .toAiMessageschat/aichat@deprecated\nRead the  to get started, or try one of our .documentationtemplates\n\nRead more\n\n\nwrite tools are gated by a  option.Approval by default: requireApproval\n\n, , and  scope the toolset.Presets: readermessengermoderator\n\nonly the tools your preset allows are constructed.Lazy loading:",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Chat SDK adds message subjects and direct SDK access",
-          "link": "https://vercel.com/changelog/chat-sdk-adds-message-subjects-and-direct-sdk-access",
-          "id": "https://vercel.com/changelog/chat-sdk-adds-message-subjects-and-direct-sdk-access",
-          "publishedAt": "2026-05-20T00:00:00.000Z",
-          "author": "Ben Sabic",
-          "summary": "You can now read the parent issue or pull request when your bot is mentioned in a Linear or GitHub comment.  resolves to that parent with title, status, URL, and the full typed payload.message.subject\n is cached per message, so repeated access only hits the API once. It resolves to  on Slack and other chat platforms, where there's no parent resource.message.subjectnull\nThe GitHub, Linear, and Slack adapters now expose their underlying platform SDKs. Use them to extend your bot by calling provider APIs directly.\nThe previous  getter remains as a  alias on the adapters. .client@deprecated\nRead the  to get started, or explore one of our .documentationtemplates\n\nRead more\n\n\nDirect access to platform SDKs",
           "source": "Vercel Blog"
         }
       ]

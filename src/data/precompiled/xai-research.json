@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,7 +10,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "fetchedAt": "2026-05-28T15:45:13.317Z",
       "items": [
         {
           "title": "Skills in web, iOS, and Android - xAI",
@@ -40,12 +40,12 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Grok Imagine Quality Mode API - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBEX0tNa0QtSm9zVHctM2xaSnJzQ0EwQmE0aFNFTDc1YkF3QnJGTGg0bjNWc2hXVzdDZjZlU2dTRzhKSG4yNEVNT2NNVkRpUHlvRkF4dHhB?oc=5",
-          "id": "CBMiVkFVX3lxTFBEX0tNa0QtSm9zVHctM2xaSnJzQ0EwQmE0aFNFTDc1YkF3QnJGTGg0bjNWc2hXVzdDZjZlU2dTRzhKSG4yNEVNT2NNVkRpUHlvRkF4dHhB",
-          "publishedAt": "2026-05-06T07:00:00.000Z",
+          "title": "Grok Speech to Text and Text to Speech APIs - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5EZFpZWjRNWExxak96QmlNNlkxcU9hTkQxS29ZWExvMVVlNGNlOXZVSV9oSmt0ZzNCanFqdjBaRE5NcTFQY0FlazNsWVZHZGJh?oc=5",
+          "id": "CBMiUEFVX3lxTE5EZFpZWjRNWExxak96QmlNNlkxcU9hTkQxS29ZWExvMVVlNGNlOXZVSV9oSmt0ZzNCanFqdjBaRE5NcTFQY0FlazNsWVZHZGJh",
+          "publishedAt": "2026-04-17T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Grok Imagine Quality Mode API  xAI",
+          "summary": "Grok Speech to Text and Text to Speech APIs  xAI",
           "source": "xAI Official News"
         },
         {
@@ -95,7 +95,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "fetchedAt": "2026-05-28T15:45:13.317Z",
       "items": [
         {
           "title": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff - The Information",
@@ -119,7 +119,7 @@
           "title": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles - Time Magazine",
           "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3?oc=5",
           "id": "CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3",
-          "publishedAt": "2026-05-19T22:17:17.000Z",
+          "publishedAt": "2026-05-19T07:00:00.000Z",
           "author": "xAI",
           "summary": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles  Time Magazine",
           "source": "xAI Research and Labs"
@@ -179,12 +179,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "xAI's Grok 4: The tension of frontier performance with a side of Elon favoritism - Interconnects AI",
-          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qbHNRd2N5WjhPYW44VnBmaVQ2eEFaT1NmbEdNbEdRUWJGQXpfR2FsdEk2T29ldEE1SXVKWUJ6N2JtczlmcUtDREtXTlNGTGpjSnNZVVBTeUFLQlprbkVIeGczT21pZEJwejhWa2FnV0dwUQ?oc=5",
-          "id": "CBMickFVX3lxTE5qbHNRd2N5WjhPYW44VnBmaVQ2eEFaT1NmbEdNbEdRUWJGQXpfR2FsdEk2T29ldEE1SXVKWUJ6N2JtczlmcUtDREtXTlNGTGpjSnNZVVBTeUFLQlprbkVIeGczT21pZEJwejhWa2FnV0dwUQ",
-          "publishedAt": "2025-07-12T07:00:00.000Z",
+          "title": "Grok Cheat Sheet: A Complete Guide to Elon Musk’s Chatbot - eWeek",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHdFNXek9RWUJKRDFZQkh1X1BLVGc3eUdRZUFhN0YyRGw0TWlRaExJYUxFU1pQRFJrME9IcU9hZjM0cEFjY1VzVV8xN2tZQzJLWTl3aEV0SHdoTXBuRk1JQkJkNXIzNGk3TXg4?oc=5",
+          "id": "CBMia0FVX3lxTFBHdFNXek9RWUJKRDFZQkh1X1BLVGc3eUdRZUFhN0YyRGw0TWlRaExJYUxFU1pQRFJrME9IcU9hZjM0cEFjY1VzVV8xN2tZQzJLWTl3aEV0SHdoTXBuRk1JQkJkNXIzNGk3TXg4",
+          "publishedAt": "2026-04-16T07:00:00.000Z",
           "author": "xAI",
-          "summary": "xAI's Grok 4: The tension of frontier performance with a side of Elon favoritism  Interconnects AI",
+          "summary": "Grok Cheat Sheet: A Complete Guide to Elon Musk’s Chatbot  eWeek",
           "source": "xAI Research and Labs"
         }
       ]

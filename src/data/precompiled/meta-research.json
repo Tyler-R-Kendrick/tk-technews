@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "sources": [
     {
       "id": "meta-research",
@@ -9,7 +9,7 @@
       "rssUrl": "https://research.facebook.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-27T15:23:34.530Z",
+      "fetchedAt": "2026-05-28T15:45:13.317Z",
       "items": [
         {
           "title": "How generational differences affect consumer attitudes towards ads",
@@ -151,7 +151,7 @@
     "sourceUrl": "https://ai.meta.com/research/",
     "limit": 1,
     "status": "ok",
-    "fetchedAt": "2026-05-27T15:23:34.530Z",
+    "fetchedAt": "2026-05-28T15:45:13.317Z",
     "items": [
       {
         "title": "AI Research: Introducing Muse Spark - New Foundation Model",

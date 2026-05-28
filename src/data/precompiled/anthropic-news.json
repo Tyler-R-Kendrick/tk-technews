@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-27T15:23:34.530Z",
+    "fetchedAt": "2026-05-28T15:45:13.317Z",
     "items": [
+      {
+        "title": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
+        "link": "https://www.anthropic.com/news/milan-office-opening",
+        "id": "https://www.anthropic.com/news/milan-office-opening",
+        "publishedAt": "2026-05-27T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
       {
         "title": "Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening",
         "link": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
@@ -77,15 +86,6 @@
         "link": "https://www.anthropic.com/news/claude-for-small-business",
         "id": "https://www.anthropic.com/news/claude-for-small-business",
         "publishedAt": "2026-05-13T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Higher usage limits for Claude and a compute deal with SpaceX",
-        "link": "https://www.anthropic.com/news/higher-limits-spacex",
-        "id": "https://www.anthropic.com/news/higher-limits-spacex",
-        "publishedAt": "2026-05-06T05:00:00.000Z",
         "author": "Anthropic",
         "summary": "",
         "category": "Announcements"

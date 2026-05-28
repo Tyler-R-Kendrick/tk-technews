@@ -142,6 +142,17 @@ const dailyArticleContentSchema = z.object({
   keyTakeaways: z.array(z.string().min(45)).min(2)
 });
 
+const dailyArticleCandidateSchema = z.object({
+  dek: z.string().min(1),
+  bodySections: z.array(z.object({
+    heading: z.string().min(1),
+    intent: z.string().optional(),
+    paragraphs: z.array(z.string().min(1)).min(1),
+    citations: z.array(z.url()).min(1)
+  })).min(1),
+  keyTakeaways: z.array(z.string().min(1)).min(1)
+});
+
 export function buildDailyArticleStubs({ date, ledger, maxStubs = 12 }) {
   const items = dedupeCitationLikeItems((ledger.items ?? [])
     .filter((item) => isPublishedOnDate(item.publishedAt, date))
@@ -407,7 +418,7 @@ export async function buildDailyArticleStubsWithGenerationLoop({
     const result = await runGeneratedOutputLoop({
       task: `Generate a real TK TechNews daily article for "${stub.title}".`,
       outputKind: 'article',
-      schema: dailyArticleContentSchema,
+      schema: dailyArticleCandidateSchema,
       prompt: dailyArticlePrompt({ stub, voiceProfile }),
       context: dailyArticleEvalContext(stub),
       voiceProfile,
@@ -504,24 +515,49 @@ function buildKeyTakeaways({ title, bodySections, summary, excludeText = [] }) {
       const words = wordsFrom(sentence);
       const overlap = words.filter((word) => titleWords.has(word)).length;
       return words.length > 7 && overlap < Math.max(5, Math.floor(words.length * 0.6));
-    }))
+    })
     .filter((sentence) => {
       const key = fingerprint(sentence);
       if (!key || seen.has(key) || isNearDuplicate(sentence, seenValues)) return false;
       seen.add(key);
       seenValues.push(sentence);
       return true;
-    })
-    .slice(0, 4);
+    }));
 
-  if (candidates.length > 0) return candidates;
-  return sentenceSplit(summary).filter((sentence) => {
+  if (candidates.length >= 2) return candidates.slice(0, 4);
+
+  const fallbackPool = [
+    ...sentenceSplit(summary),
+    ...bodySections.map((section) => section.paragraphs?.[0]).filter(Boolean)
+  ];
+
+  for (const sentence of fallbackPool) {
+    if (candidates.length >= 2) break;
     const key = fingerprint(sentence);
-    if (!key || seen.has(key) || isNearDuplicate(sentence, seenValues)) return false;
+    if (!key || seen.has(key) || isNearDuplicate(sentence, seenValues)) continue;
     seen.add(key);
     seenValues.push(sentence);
-    return true;
-  }).slice(0, 3);
+    candidates.push(sentence);
+  }
+
+  if (candidates.length >= 2) return candidates.slice(0, 4);
+
+  const topic = title.replace(/\s+Update$/i, '').trim();
+  const sectionHeadings = bodySections
+    .map((section) => section.heading)
+    .filter(Boolean)
+    .slice(0, 2);
+  for (const heading of sectionHeadings) {
+    if (candidates.length >= 2) break;
+    const synthesized = `${topic} matters because ${heading.charAt(0).toLowerCase()}${heading.slice(1)}.`;
+    const key = fingerprint(synthesized);
+    if (!key || seen.has(key) || isNearDuplicate(synthesized, seenValues)) continue;
+    seen.add(key);
+    seenValues.push(synthesized);
+    candidates.push(synthesized);
+  }
+
+  return candidates.slice(0, Math.max(2, candidates.length));
 }
 
 function buildDek({ combinedSummary, bodySections }) {
@@ -826,6 +862,17 @@ function ensureBodySections(sections, { title, summary, citationUrls }) {
   return output;
 }
 
+function ensureDek(dek, { title, summary, bodySections }) {
+  const cleaned = stripNoise(dek);
+  if (cleaned.length >= 48) return cleaned;
+  const fallbackParagraph = bodySections.flatMap((section) => section.paragraphs ?? []).find(Boolean);
+  const fallback = stripNoise(fallbackParagraph ?? summary ?? title);
+  const expanded = fallback.length >= 48
+    ? fallback
+    : `${trimTitle(fallback || title, 180)} The cited details matter because they change what builders should measure, implement, or validate next.`;
+  return trimTitle(expanded, 220);
+}
+
 function insufficientSourceArticle(citationUrls) {
   const citations = citationUrls.slice(0, Math.max(1, Math.min(2, citationUrls.length)));
   return {
@@ -1020,7 +1067,30 @@ function sanitizeGeneratedHeading(heading) {
 }
 
 function normalizeDailyArticleContent(candidate, stub) {
-  const parsed = dailyArticleContentSchema.parse(candidate);
+  const citationUrls = stub.sources.map((source) => source.url);
+  const bodySections = ensureBodySections(
+    (candidate?.bodySections ?? []).map((section) => ({
+      heading: sanitizeGeneratedHeading(section?.heading ?? ''),
+      intent: stripNoise(section?.intent ?? ''),
+      paragraphs: (section?.paragraphs ?? []).map(stripNoise).filter(Boolean),
+      citations: (section?.citations ?? []).filter((url) => citationUrls.includes(url))
+    })),
+    {
+      title: stub.title,
+      summary: stub.dek,
+      citationUrls
+    }
+  );
+  const keyTakeaways = ensureKeyTakeaways(candidate?.keyTakeaways, {
+    title: stub.title,
+    summary: stub.dek,
+    bodySections
+  });
+  const parsed = dailyArticleContentSchema.parse({
+    dek: ensureDek(candidate?.dek, { title: stub.title, summary: stub.dek, bodySections }),
+    bodySections,
+    keyTakeaways
+  });
   const allowed = new Set(stub.sources.map((source) => source.url));
   return {
     dek: parsed.dek,

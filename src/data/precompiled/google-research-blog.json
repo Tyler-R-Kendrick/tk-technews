@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T15:23:34.530Z",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,8 +8,19 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-27T15:23:34.530Z",
+    "fetchedAt": "2026-05-28T15:45:13.317Z",
     "items": [
+      {
+        "title": "Private analytics via zero-trust aggregation",
+        "link": "https://research.google/blog/private-analytics-via-zero-trust-aggregation/",
+        "id": "https://research.google/blog/private-analytics-via-zero-trust-aggregation/",
+        "publishedAt": "2026-05-27T16:56:05.000Z",
+        "author": "Google Research",
+        "summary": "Security, Privacy and Abuse Prevention",
+        "categories": [
+          "Security, Privacy and Abuse Prevention"
+        ]
+      },
       {
         "title": "Empirical Research Assistance (ERA): From Nature publication to catalyzing Computational Discovery",
         "link": "https://research.google/blog/empirical-research-assistance-era-from-nature-publication-to-catalyzing-computational-discovery/",
@@ -125,18 +136,6 @@
         "categories": [
           "Generative AI",
           "Machine Intelligence",
-          "Natural Language Processing"
-        ]
-      },
-      {
-        "title": "Improving the academic workflow: Introducing two AI agents for better figures and peer review",
-        "link": "https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/",
-        "id": "https://research.google/blog/improving-the-academic-workflow-introducing-two-ai-agents-for-better-figures-and-peer-review/",
-        "publishedAt": "2026-04-08T20:01:33.000Z",
-        "author": "Google Research",
-        "summary": "Generative AI",
-        "categories": [
-          "Generative AI",
           "Natural Language Processing"
         ]
       }

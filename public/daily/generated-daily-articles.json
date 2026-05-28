@@ -1,12 +1,12 @@
 {
-  "date": "2026-05-26",
-  "generatedAt": "2026-05-26T17:09:33.223Z",
-  "sourceItemCount": 10,
+  "date": "2026-05-28",
+  "generatedAt": "2026-05-28T15:45:13.317Z",
+  "sourceItemCount": 15,
   "articleStubs": [
     {
-      "id": "2026-05-26-github-vercel-labs-zerolang-update",
-      "slug": "2026-05-26-github-vercel-labs-zerolang-update",
-      "href": "/daily/2026-05-26/2026-05-26-github-vercel-labs-zerolang-update/",
+      "id": "2026-05-28-github-vercel-labs-zerolang-update",
+      "slug": "2026-05-28-github-vercel-labs-zerolang-update",
+      "href": "/daily/2026-05-28/2026-05-28-github-vercel-labs-zerolang-update/",
       "title": "GitHub Vercel Labs Zerolang Update",
       "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
       "status": "generated",
@@ -19,8 +19,8 @@
           ],
           "citations": [
             "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/open-agents",
-            "https://github.com/vercel-labs/agent-skills"
+            "https://github.com/vercel-labs/ai-gateway-provider-php",
+            "https://github.com/vercel-labs/agent-browser"
           ]
         },
         {
@@ -31,8 +31,8 @@
           ],
           "citations": [
             "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/open-agents",
-            "https://github.com/vercel-labs/agent-skills"
+            "https://github.com/vercel-labs/ai-gateway-provider-php",
+            "https://github.com/vercel-labs/agent-browser"
           ]
         }
       ],
@@ -41,7 +41,7 @@
         "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
       ],
       "sourceCount": 3,
-      "latestPublishedAt": "2026-05-26T17:06:15Z",
+      "latestPublishedAt": "2026-05-28T14:47:20Z",
       "tags": [
         "GitHub",
         "Vercel",
@@ -55,7 +55,7 @@
           "title": "vercel-labs/zerolang",
           "url": "https://github.com/vercel-labs/zerolang",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-26T17:06:15Z",
+          "publishedAt": "2026-05-28T14:47:20Z",
           "summary": "The programming language for agents",
           "preview": {
             "kind": "source",
@@ -70,36 +70,36 @@
           }
         },
         {
-          "title": "vercel-labs/open-agents",
-          "url": "https://github.com/vercel-labs/open-agents",
+          "title": "vercel-labs/ai-gateway-provider-php",
+          "url": "https://github.com/vercel-labs/ai-gateway-provider-php",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-26T11:42:05Z",
-          "summary": "An open source template for building cloud agents.",
+          "publishedAt": "2026-05-28T03:09:17Z",
+          "summary": "Vercel AI Gateway provider for the PHP AI Client SDK. Works as a Composer package and WordPress plugin.",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://github.com/vercel-labs/open-agents",
-            "title": "vercel-labs/open-agents",
+            "href": "https://github.com/vercel-labs/ai-gateway-provider-php",
+            "title": "vercel-labs/ai-gateway-provider-php",
             "source": "vercel-labs GitHub",
-            "snippet": "An open source template for building cloud agents.",
+            "snippet": "Vercel AI Gateway provider for the PHP AI Client SDK. Works as a Composer package and WordPress plugin.",
             "host": "github.com",
             "thumbnailUrl": null,
             "social": null
           }
         },
         {
-          "title": "vercel-labs/agent-skills",
-          "url": "https://github.com/vercel-labs/agent-skills",
+          "title": "vercel-labs/agent-browser",
+          "url": "https://github.com/vercel-labs/agent-browser",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-26T00:50:55Z",
-          "summary": "Vercel's official collection of agent skills",
+          "publishedAt": "2026-05-28T01:07:02Z",
+          "summary": "Browser automation CLI for AI agents",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://github.com/vercel-labs/agent-skills",
-            "title": "vercel-labs/agent-skills",
+            "href": "https://github.com/vercel-labs/agent-browser",
+            "title": "vercel-labs/agent-browser",
             "source": "vercel-labs GitHub",
-            "snippet": "Vercel's official collection of agent skills",
+            "snippet": "Browser automation CLI for AI agents",
             "host": "github.com",
             "thumbnailUrl": null,
             "social": null
@@ -274,520 +274,63 @@
       "model": null
     },
     {
-      "id": "2026-05-26-cursor-just-beat-everyone-update",
-      "slug": "2026-05-26-cursor-just-beat-everyone-update",
-      "href": "/daily/2026-05-26/2026-05-26-cursor-just-beat-everyone-update/",
-      "title": "Cursor Just Beat Everyone Update",
-      "dek": "Cursor Composer 2.5 is presented as a workhorse coding model competing on cost per completed coding task, not only on frontier-model capability.",
+      "id": "2026-05-28-google-coding-guide-implement-update",
+      "slug": "2026-05-28-google-coding-guide-implement-update",
+      "href": "/daily/2026-05-28/2026-05-28-google-coding-guide-implement-update/",
+      "title": "Google Coding Guide Implement Update",
+      "dek": "The source is also clear about the weak spots. A recurrence trigger can reduce waste, but static thresholds may be brittle, and vector retrieval can struggle with precise constraints such as hard negations.",
       "status": "generated",
       "bodySections": [
         {
-          "heading": "Composer 2.5 Competes On Cost Per Task",
-          "intent": "Explain the cited technical development and its implementation consequence.",
+          "heading": "Google Coding Guide Implement Tutorial Set The Hard Edge",
+          "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "The video frames Cursor Composer 2.5 as a Cursor-native coding model built for everyday programming work. The central evidence is price-to-performance: Composer 2.5 is described as strong on CursorBench while being cheaper to run than heavier frontier models for routine coding tasks. That makes the comparison operational: the model is valuable if it completes normal edit-test-debug loops cheaply enough to become the default inside the editor."
+            "The source is also clear about the weak spots. A recurrence trigger can reduce waste, but static thresholds may be brittle, and vector retrieval can struggle with precise constraints such as hard negations.",
+            "That means recurrent memory is not a complete answer by itself. It is a useful architectural move, but high-stakes agent memory still needs stronger retrieval, constraint tracking, and evaluation around what should never be forgotten or misread."
           ],
           "citations": [
-            "https://www.youtube.com/watch?v=GBISeUYMzoU"
+            "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/"
           ]
         },
         {
-          "heading": "Agentic Coding Changes The Model-Routing Problem",
-          "intent": "Explain the cited technical development and its implementation consequence.",
+          "heading": "The Mechanism Needs A Check",
+          "intent": "Explain the technical consequence of the extracted evidence.",
           "paragraphs": [
-            "That matters because coding agents spend tokens across edits, tool calls, tests, and verification loops. If a workhorse model can handle sustained implementation work at lower cost, teams can route ordinary coding tasks to Composer 2.5 and reserve more expensive frontier models for harder architecture, debugging, or reasoning cases. The benchmark to watch is therefore not a single leaderboard score; it is completed coding work per dollar under realistic agent workflows."
+            "In this tutorial, we build a complete pgvector playground inside Google Colab and explore how PostgreSQL can work as a powerful vector database for modern AI applications. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating the citation as a production-ready claim."
           ],
           "citations": [
-            "https://www.youtube.com/watch?v=GBISeUYMzoU"
+            "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/"
           ]
         }
       ],
       "keyTakeaways": [
-        "Composer 2.5 is positioned as a default workhorse model for Cursor coding workflows.",
-        "The technical measurement is cost per completed agentic coding task, not only raw benchmark rank."
+        "We start by installing PostgreSQL, compiling...",
+        "We start by installing PostgreSQL, compiling the pgvector extension, connecting through Psycopg, and registering vector types for smooth Python integration."
       ],
       "sourceCount": 1,
-      "latestPublishedAt": "2026-05-26T16:40:27.000Z",
+      "latestPublishedAt": "2026-05-28T08:07:09.000Z",
       "tags": [
-        "Cursor",
-        "cursor",
-        "just",
-        "beat",
-        "everyone",
-        "youtube"
+        "Google",
+        "coding",
+        "guide",
+        "implement",
+        "pgvector",
+        "powered"
       ],
       "sources": [
         {
-          "title": "Cursor just beat EVERYONE.",
-          "url": "https://www.youtube.com/watch?v=GBISeUYMzoU",
-          "sourceName": "Matthew Berman",
-          "publishedAt": "2026-05-26T16:40:27.000Z",
-          "summary": "The first thing I want to talk about today is how the new cursor model is just quietly best coding model on the planet. Cursor released Composer 2.5, the next iteration of their homegrown coding models, the workhorse model, the model that they're probably all hoping everybody moves to because that's the one that they are having the highest margins on because it's their own model and built for coding. The first thing I want to talk about today is how the new cursor model is just quietly best coding model on the planet. Cursor released Composer 2.5, the next iteration of their homegrown coding models, the workhorse model, the model that they're probably all hoping everybody moves to because that's the one that they are having the highest margins on because it's their own model and built for coding. And it turns out it's actually incredibly good at coding. like up there with the Frontier models at a fraction of the price. And that's the important part that I want to talk about today.",
-          "preview": {
-            "kind": "video",
-            "label": "Video",
-            "href": "https://www.youtube.com/watch?v=GBISeUYMzoU",
-            "title": "Cursor just beat EVERYONE.",
-            "source": "Matthew Berman",
-            "snippet": "The first thing I want to talk about today is how the new cursor model is just quietly best coding model on the planet. Cursor released Composer 2.5, the next iteration of their homegrown coding models, the workhorse...",
-            "host": "youtube.com",
-            "thumbnailUrl": "https://i.ytimg.com/vi/GBISeUYMzoU/hqdefault.jpg",
-            "social": null
-          }
-        }
-      ],
-      "evalReport": {
-        "score": 1,
-        "verdict": "pass",
-        "assertions": [
-          {
-            "name": "citation-coverage",
-            "text": "Citation coverage passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation coverage",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "citation-richness",
-            "text": "Citation richness passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation richness",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "link-health",
-            "text": "Link syntax passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Link health",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "grounding",
-            "text": "Grounding passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Grounding",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "relevance",
-            "text": "Relevance passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Relevance",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "speculation-boundary",
-            "text": "No speculation boundary needed.",
-            "passed": true,
-            "score": 1,
-            "label": "Speculation boundary",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "reader-facing-language",
-            "text": "Reader-facing language passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Reader-facing language",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "tone-match",
-            "text": "Tone match passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Tone match",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "word-choice",
-            "text": "Word choice passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Word choice",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "detail-level",
-            "text": "Level of detail passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Level of detail",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "voice-adherence",
-            "text": "Voice adherence passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Voice adherence",
-            "required": false,
-            "weight": 0.04
-          },
-          {
-            "name": "daily-article-word-count",
-            "text": "daily-article-word-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-section-count",
-            "text": "daily-article-section-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-title-echo-paragraphs",
-            "text": "daily-article-no-title-echo-paragraphs passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-template-headings",
-            "text": "daily-article-no-template-headings passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-hard-science-detail",
-            "text": "daily-article-hard-science-detail passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-copied-source-headlines",
-            "text": "daily-article-no-copied-source-headlines passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-generation-instructions",
-            "text": "daily-article-no-generation-instructions passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-has-usable-source-evidence",
-            "text": "daily-article-has-usable-source-evidence passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-grounded-in-source-terms",
-            "text": "daily-article-grounded-in-source-terms passed.",
-            "passed": true,
-            "score": 1
-          }
-        ],
-        "feedback": [],
-        "requiredFixes": []
-      },
-      "evalScore": 1,
-      "evalAttempts": 1,
-      "evalStatus": "passed",
-      "provider": "deterministic-daily-journalist",
-      "model": null
-    },
-    {
-      "id": "2026-05-26-running-local-ai-on-amd",
-      "slug": "2026-05-26-running-local-ai-on-amd",
-      "href": "/daily/2026-05-26/2026-05-26-running-local-ai-on-amd/",
-      "title": "Running Local AI on AMD",
-      "dek": "The AMD local-AI item argues that open-weight models, token costs, privacy, and control are making workstation inference a practical architecture choice.",
-      "status": "generated",
-      "bodySections": [
-        {
-          "heading": "Local AI Moves Onto The Workstation",
-          "intent": "Explain the cited technical development and its implementation consequence.",
-          "paragraphs": [
-            "The video argues that local AI is becoming more practical because open-weight models are narrowing the gap with frontier systems. The AMD workstation is the concrete deployment example: capable local hardware can run useful models without sending every agent request to a hosted frontier API. That turns hardware selection into part of the AI architecture, especially for teams running coding agents, personal agents, or private workflows repeatedly."
-          ],
-          "citations": [
-            "https://www.youtube.com/watch?v=PEg08OAht2s"
-          ]
-        },
-        {
-          "heading": "The Trade-Off Is Control Versus Peak Capability",
-          "intent": "Explain the cited technical development and its implementation consequence.",
-          "paragraphs": [
-            "The engineering constraint is not only model quality. Agent workloads can burn tokens through reasoning, tool use, and long-running loops, so predictable inference cost, privacy, and data control become part of the architecture decision. Teams still need benchmarks for throughput, VRAM limits, latency, task quality, and maintenance overhead before replacing hosted models in real workflows."
-          ],
-          "citations": [
-            "https://www.youtube.com/watch?v=PEg08OAht2s"
-          ]
-        }
-      ],
-      "keyTakeaways": [
-        "Local AI is framed as an architecture option for agent workloads that need privacy, control, or predictable inference budgets.",
-        "AMD hardware matters only if it meets the workload benchmark: throughput, memory, latency, and quality all have to hold up."
-      ],
-      "sourceCount": 1,
-      "latestPublishedAt": "2026-05-26T16:00:37.000Z",
-      "tags": [
-        "running",
-        "local",
-        "amd",
-        "youtube"
-      ],
-      "sources": [
-        {
-          "title": "Running Local AI on AMD",
-          "url": "https://www.youtube.com/watch?v=PEg08OAht2s",
-          "sourceName": "Sam Witteveen",
-          "publishedAt": "2026-05-26T16:00:37.000Z",
-          "summary": "Okay, so I think it's becoming very clear that local AI is a huge part of the AI future. Open weight models have closed the gap to the frontier models from being really far behind to being somewhere between sort of three to six months off the cutting edge. Okay, so I think it's becoming very clear that local AI is a huge part of the AI future. Open weight models have closed the gap to the frontier models from being really far behind to being somewhere between sort of three to six months off the cutting edge. Meanwhile, if you look at the frontier labs, tokens look like they're getting cheaper on paper, but practically people's bills are going up because agents and reasoning eat tokens at a completely different scale than chat ever did. And then the other thing that's becoming totally clear is that people really want to have privacy and control over the AI that they're using. And so while there are these amazing frontier models that are coming, the big question seems to be is who's going to be able to afford to use them at scale.",
-          "preview": {
-            "kind": "video",
-            "label": "Video",
-            "href": "https://www.youtube.com/watch?v=PEg08OAht2s",
-            "title": "Running Local AI on AMD",
-            "source": "Sam Witteveen",
-            "snippet": "Okay, so I think it's becoming very clear that local AI is a huge part of the AI future. Open weight models have closed the gap to the frontier models from being really far behind to being somewhere between sort of th...",
-            "host": "youtube.com",
-            "thumbnailUrl": "https://i.ytimg.com/vi/PEg08OAht2s/hqdefault.jpg",
-            "social": null
-          }
-        }
-      ],
-      "evalReport": {
-        "score": 1,
-        "verdict": "pass",
-        "assertions": [
-          {
-            "name": "citation-coverage",
-            "text": "Citation coverage passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation coverage",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "citation-richness",
-            "text": "Citation richness passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation richness",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "link-health",
-            "text": "Link syntax passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Link health",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "grounding",
-            "text": "Grounding passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Grounding",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "relevance",
-            "text": "Relevance passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Relevance",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "speculation-boundary",
-            "text": "No speculation boundary needed.",
-            "passed": true,
-            "score": 1,
-            "label": "Speculation boundary",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "reader-facing-language",
-            "text": "Reader-facing language passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Reader-facing language",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "tone-match",
-            "text": "Tone match passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Tone match",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "word-choice",
-            "text": "Word choice passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Word choice",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "detail-level",
-            "text": "Level of detail passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Level of detail",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "voice-adherence",
-            "text": "Voice adherence passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Voice adherence",
-            "required": false,
-            "weight": 0.04
-          },
-          {
-            "name": "daily-article-word-count",
-            "text": "daily-article-word-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-section-count",
-            "text": "daily-article-section-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-title-echo-paragraphs",
-            "text": "daily-article-no-title-echo-paragraphs passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-template-headings",
-            "text": "daily-article-no-template-headings passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-hard-science-detail",
-            "text": "daily-article-hard-science-detail passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-copied-source-headlines",
-            "text": "daily-article-no-copied-source-headlines passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-generation-instructions",
-            "text": "daily-article-no-generation-instructions passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-has-usable-source-evidence",
-            "text": "daily-article-has-usable-source-evidence passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-grounded-in-source-terms",
-            "text": "daily-article-grounded-in-source-terms passed.",
-            "passed": true,
-            "score": 1
-          }
-        ],
-        "feedback": [],
-        "requiredFixes": []
-      },
-      "evalScore": 1,
-      "evalAttempts": 1,
-      "evalStatus": "passed",
-      "provider": "deterministic-daily-journalist",
-      "model": null
-    },
-    {
-      "id": "2026-05-26-design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-promp",
-      "slug": "2026-05-26-design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-promp",
-      "href": "/daily/2026-05-26/2026-05-26-design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-promp/",
-      "title": "Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Re...",
-      "dek": "The Open-MM-RL tutorial turns multimodal RLVR into a reproducible pipeline built around dataset inspection, reward scoring, and GRPO export.",
-      "status": "generated",
-      "bodySections": [
-        {
-          "heading": "Open-MM-RL Becomes The Testbed",
-          "intent": "Explain the cited technical development and its implementation consequence.",
-          "paragraphs": [
-            "The tutorial uses the TuringEnterprises/Open-MM-RL dataset as the practical foundation for multimodal reasoning with verifiable rewards. The evidence is implementation-oriented: load the dataset, inspect its schema, analyze domains and answer formats, and visualize representative image-question examples. That makes the dataset inspection step part of the method, because reward design only makes sense after the team understands what the examples actually contain."
-          ],
-          "citations": [
-            "https://www.marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export/"
-          ]
-        },
-        {
-          "heading": "Reward Scoring Structures The Pipeline",
-          "intent": "Explain the cited technical development and its implementation consequence.",
-          "paragraphs": [
-            "The technical mechanism is the pipeline order. Builders first understand the multimodal data distribution, then construct prompts and reward checks around examples that can be verified, and finally export the work into a GRPO-style reinforcement learning flow. That separates data quality, scoring, and training behavior into testable stages before anyone claims the model has learned a better reasoning policy."
-          ],
-          "citations": [
-            "https://www.marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export/"
-          ]
-        }
-      ],
-      "keyTakeaways": [
-        "The tutorial is useful because it makes the RLVR workflow inspectable instead of treating multimodal reinforcement learning as a black box.",
-        "The reproducible pieces are dataset analysis, vision-language prompting, reward scoring, and GRPO export."
-      ],
-      "sourceCount": 1,
-      "latestPublishedAt": "2026-05-26T07:25:55.000Z",
-      "tags": [
-        "design",
-        "complete",
-        "multimodal",
-        "rlvr",
-        "pipeline",
-        "open"
-      ],
-      "sources": [
-        {
-          "title": "Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export",
-          "url": "https://www.marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export/",
+          "title": "A Coding Guide to Implement a pgvector-Powered Semantic, Hybrid, Sparse, and Quantized Vector Search System",
+          "url": "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/",
           "sourceName": "MarkTechPost",
-          "publishedAt": "2026-05-26T07:25:55.000Z",
-          "summary": "In this tutorial, we explore the TuringEnterprises/Open-MM-RL dataset as a practical foundation for multimodal reasoning and reinforcement learning with verifiable rewards. We load the dataset, inspect its schema, analyze domains, formats, question lengths, answer types, and image distributions, and visualize representative examples from each domain.",
+          "publishedAt": "2026-05-28T08:07:09.000Z",
+          "summary": "In this tutorial, we build a complete pgvector playground inside Google Colab and explore how PostgreSQL can work as a powerful vector database for modern AI applications. We start by installing PostgreSQL, compiling the pgvector extension, connecting through Psycopg, and registering vector types for smooth Python integration.",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://www.marktechpost.com/2026/05/26/design-a-complete-multimodal-rlvr-pipeline-with-open-mm-rl-vision-language-prompting-reward-scoring-and-grpo-export/",
-            "title": "Design a Complete Multimodal RLVR Pipeline with Open-MM-RL, Vision-Language Prompting, Reward Scoring, and GRPO Export",
+            "href": "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/",
+            "title": "A Coding Guide to Implement a pgvector-Powered Semantic, Hybrid, Sparse, and Quantized Vector Search System",
             "source": "MarkTechPost",
-            "snippet": "In this tutorial, we explore the TuringEnterprises/Open-MM-RL dataset as a practical foundation for multimodal reasoning and reinforcement learning with verifiable rewards. We load the dataset, inspect its schema, ana...",
+            "snippet": "In this tutorial, we build a complete pgvector playground inside Google Colab and explore how PostgreSQL can work as a powerful vector database for modern AI applications. We start by installing PostgreSQL, compiling...",
             "host": "marktechpost.com",
             "thumbnailUrl": null,
             "social": null
@@ -845,7 +388,7 @@
           },
           {
             "name": "speculation-boundary",
-            "text": "No speculation boundary needed.",
+            "text": "Speculation boundary passed.",
             "passed": true,
             "score": 1,
             "label": "Speculation boundary",

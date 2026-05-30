@@ -1,12 +1,12 @@
 {
-  "date": "2026-05-28",
-  "generatedAt": "2026-05-28T15:45:13.317Z",
-  "sourceItemCount": 15,
+  "date": "2026-05-30",
+  "generatedAt": "2026-05-30T21:55:00.444Z",
+  "sourceItemCount": 7,
   "articleStubs": [
     {
-      "id": "2026-05-28-github-vercel-labs-zerolang-update",
-      "slug": "2026-05-28-github-vercel-labs-zerolang-update",
-      "href": "/daily/2026-05-28/2026-05-28-github-vercel-labs-zerolang-update/",
+      "id": "2026-05-30-github-vercel-labs-zerolang-update",
+      "slug": "2026-05-30-github-vercel-labs-zerolang-update",
+      "href": "/daily/2026-05-30/2026-05-30-github-vercel-labs-zerolang-update/",
       "title": "GitHub Vercel Labs Zerolang Update",
       "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
       "status": "generated",
@@ -19,8 +19,7 @@
           ],
           "citations": [
             "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/ai-gateway-provider-php",
-            "https://github.com/vercel-labs/agent-browser"
+            "https://github.com/vercel-labs/deepsec"
           ]
         },
         {
@@ -31,8 +30,7 @@
           ],
           "citations": [
             "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/ai-gateway-provider-php",
-            "https://github.com/vercel-labs/agent-browser"
+            "https://github.com/vercel-labs/deepsec"
           ]
         }
       ],
@@ -40,8 +38,8 @@
         "The Vercel Labs items are best read together as an agent-infrastructure experiment.",
         "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
       ],
-      "sourceCount": 3,
-      "latestPublishedAt": "2026-05-28T14:47:20Z",
+      "sourceCount": 2,
+      "latestPublishedAt": "2026-05-30T21:50:42Z",
       "tags": [
         "GitHub",
         "Vercel",
@@ -55,7 +53,7 @@
           "title": "vercel-labs/zerolang",
           "url": "https://github.com/vercel-labs/zerolang",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-28T14:47:20Z",
+          "publishedAt": "2026-05-30T21:50:42Z",
           "summary": "The programming language for agents",
           "preview": {
             "kind": "source",
@@ -70,36 +68,18 @@
           }
         },
         {
-          "title": "vercel-labs/ai-gateway-provider-php",
-          "url": "https://github.com/vercel-labs/ai-gateway-provider-php",
+          "title": "vercel-labs/deepsec",
+          "url": "https://github.com/vercel-labs/deepsec",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-28T03:09:17Z",
-          "summary": "Vercel AI Gateway provider for the PHP AI Client SDK. Works as a Composer package and WordPress plugin.",
+          "publishedAt": "2026-05-30T17:03:39Z",
+          "summary": "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://github.com/vercel-labs/ai-gateway-provider-php",
-            "title": "vercel-labs/ai-gateway-provider-php",
+            "href": "https://github.com/vercel-labs/deepsec",
+            "title": "vercel-labs/deepsec",
             "source": "vercel-labs GitHub",
-            "snippet": "Vercel AI Gateway provider for the PHP AI Client SDK. Works as a Composer package and WordPress plugin.",
-            "host": "github.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "vercel-labs/agent-browser",
-          "url": "https://github.com/vercel-labs/agent-browser",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-28T01:07:02Z",
-          "summary": "Browser automation CLI for AI agents",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://github.com/vercel-labs/agent-browser",
-            "title": "vercel-labs/agent-browser",
-            "source": "vercel-labs GitHub",
-            "snippet": "Browser automation CLI for AI agents",
+            "snippet": "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
             "host": "github.com",
             "thumbnailUrl": null,
             "social": null
@@ -274,63 +254,63 @@
       "model": null
     },
     {
-      "id": "2026-05-28-google-coding-guide-implement-update",
-      "slug": "2026-05-28-google-coding-guide-implement-update",
-      "href": "/daily/2026-05-28/2026-05-28-google-coding-guide-implement-update/",
-      "title": "Google Coding Guide Implement Update",
-      "dek": "The source is also clear about the weak spots. A recurrence trigger can reduce waste, but static thresholds may be brittle, and vector retrieval can struggle with precise constraints such as hard negations.",
+      "id": "2026-05-30-genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-sca",
+      "slug": "2026-05-30-genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-sca",
+      "href": "/daily/2026-05-30/2026-05-30-genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-sca/",
+      "title": "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable R...",
+      "dek": "The system achieves a Pearson correlation of 0.8996 between simulation and real-world robot rollouts, and reduces policy evaluation time from over 200 hours to under 0.5 hours.",
       "status": "generated",
       "bodySections": [
         {
-          "heading": "Google Coding Guide Implement Tutorial Set The Hard Edge",
+          "heading": "Genesis Nyx Quadrants Genesis World Defines The Technical Claim",
           "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "The source is also clear about the weak spots. A recurrence trigger can reduce waste, but static thresholds may be brittle, and vector retrieval can struggle with precise constraints such as hard negations.",
-            "That means recurrent memory is not a complete answer by itself. It is a useful architectural move, but high-stakes agent memory still needs stronger retrieval, constraint tracking, and evaluation around what should never be forgotten or misread."
+            "The system achieves a Pearson correlation of 0.8996 between simulation and real-world robot rollouts, and reduces policy evaluation time from over 200 hours to under 0.5 hours. The cited detail gives readers an implementation point to verify before treating the claim as production-ready.",
+            "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The practical next step is to connect that detail to benchmarks, architecture, cost, or workflow behavior."
           ],
           "citations": [
-            "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/"
+            "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/"
           ]
         },
         {
           "heading": "The Mechanism Needs A Check",
           "intent": "Explain the technical consequence of the extracted evidence.",
           "paragraphs": [
-            "In this tutorial, we build a complete pgvector playground inside Google Colab and explore how PostgreSQL can work as a powerful vector database for modern AI applications. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating the citation as a production-ready claim."
+            "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating the citation as a production-ready claim."
           ],
           "citations": [
-            "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/"
+            "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/"
           ]
         }
       ],
       "keyTakeaways": [
-        "We start by installing PostgreSQL, compiling...",
-        "We start by installing PostgreSQL, compiling the pgvector extension, connecting through Psycopg, and registering vector types for smooth Python integration."
+        "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable R... matters because genesis Nyx Quadrants Genesis World Defines The Technical Claim.",
+        "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable R... matters because the Mechanism Needs A Check."
       ],
       "sourceCount": 1,
-      "latestPublishedAt": "2026-05-28T08:07:09.000Z",
+      "latestPublishedAt": "2026-05-30T09:25:14.000Z",
       "tags": [
-        "Google",
-        "coding",
-        "guide",
-        "implement",
-        "pgvector",
-        "powered"
+        "genesis",
+        "nyx",
+        "quadrants",
+        "world",
+        "physics",
+        "platform"
       ],
       "sources": [
         {
-          "title": "A Coding Guide to Implement a pgvector-Powered Semantic, Hybrid, Sparse, and Quantized Vector Search System",
-          "url": "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/",
+          "title": "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable Robotics Foundation Model Evaluation",
+          "url": "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/",
           "sourceName": "MarkTechPost",
-          "publishedAt": "2026-05-28T08:07:09.000Z",
-          "summary": "In this tutorial, we build a complete pgvector playground inside Google Colab and explore how PostgreSQL can work as a powerful vector database for modern AI applications. We start by installing PostgreSQL, compiling the pgvector extension, connecting through Psycopg, and registering vector types for smooth Python integration.",
+          "publishedAt": "2026-05-30T09:25:14.000Z",
+          "summary": "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The system achieves a Pearson correlation of 0.8996 between simulation and real-world robot rollouts, and reduces policy evaluation time from over 200 hours to under 0.5 hours.",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system/",
-            "title": "A Coding Guide to Implement a pgvector-Powered Semantic, Hybrid, Sparse, and Quantized Vector Search System",
+            "href": "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/",
+            "title": "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable Robotics Foundation Model Evaluation",
             "source": "MarkTechPost",
-            "snippet": "In this tutorial, we build a complete pgvector playground inside Google Colab and explore how PostgreSQL can work as a powerful vector database for modern AI applications. We start by installing PostgreSQL, compiling...",
+            "snippet": "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The system achieves a Pearson correlation of 0.8996 between simulatio...",
             "host": "marktechpost.com",
             "thumbnailUrl": null,
             "social": null

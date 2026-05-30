@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T15:45:13.317Z",
+  "generatedAt": "2026-05-30T21:55:00.444Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,13 +8,27 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-28T15:45:13.317Z",
+    "fetchedAt": "2026-05-30T21:55:00.444Z",
     "items": [
+      {
+        "title": "A New Era of Innovation: Google Research at I/O 2026",
+        "link": "https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/",
+        "id": "https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/",
+        "publishedAt": "2026-05-28T20:58:00.000Z",
+        "author": "Google Research",
+        "summary": "General Science",
+        "categories": [
+          "General Science",
+          "Generative AI",
+          "Global",
+          "Quantum"
+        ]
+      },
       {
         "title": "Private analytics via zero-trust aggregation",
         "link": "https://research.google/blog/private-analytics-via-zero-trust-aggregation/",
         "id": "https://research.google/blog/private-analytics-via-zero-trust-aggregation/",
-        "publishedAt": "2026-05-27T16:56:05.000Z",
+        "publishedAt": "2026-05-27T16:56:00.000Z",
         "author": "Google Research",
         "summary": "Security, Privacy and Abuse Prevention",
         "categories": [
@@ -124,19 +138,6 @@
         "categories": [
           "Education Innovation",
           "Generative AI"
-        ]
-      },
-      {
-        "title": "ConvApparel: Measuring and bridging the realism gap in user simulators",
-        "link": "https://research.google/blog/convapparel-measuring-and-bridging-the-realism-gap-in-user-simulators/",
-        "id": "https://research.google/blog/convapparel-measuring-and-bridging-the-realism-gap-in-user-simulators/",
-        "publishedAt": "2026-04-09T11:22:00.000Z",
-        "author": "Google Research",
-        "summary": "Generative AI",
-        "categories": [
-          "Generative AI",
-          "Machine Intelligence",
-          "Natural Language Processing"
         ]
       }
     ]

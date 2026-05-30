@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T15:45:13.317Z",
+  "generatedAt": "2026-05-30T21:55:00.444Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,8 +7,26 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-28T15:45:13.317Z",
+    "fetchedAt": "2026-05-30T21:55:00.444Z",
     "items": [
+      {
+        "title": "Introducing Claude Opus 4.8",
+        "link": "https://www.anthropic.com/news/claude-opus-4-8",
+        "id": "https://www.anthropic.com/news/claude-opus-4-8",
+        "publishedAt": "2026-05-28T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "An upgrade to our Opus class of models, with stronger performance across coding, agentic tasks, and professional work, and the consistency to handle long-running work.",
+        "category": "Product"
+      },
+      {
+        "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+        "link": "https://www.anthropic.com/news/series-h",
+        "id": "https://www.anthropic.com/news/series-h",
+        "publishedAt": "2026-05-28T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
       {
         "title": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
         "link": "https://www.anthropic.com/news/milan-office-opening",
@@ -68,24 +86,6 @@
         "link": "https://www.anthropic.com/news/pwc-expanded-partnership",
         "id": "https://www.anthropic.com/news/pwc-expanded-partnership",
         "publishedAt": "2026-05-14T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Anthropic forms $200 million partnership with the Gates Foundation",
-        "link": "https://www.anthropic.com/news/gates-foundation-partnership",
-        "id": "https://www.anthropic.com/news/gates-foundation-partnership",
-        "publishedAt": "2026-05-14T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Introducing Claude for Small Business",
-        "link": "https://www.anthropic.com/news/claude-for-small-business",
-        "id": "https://www.anthropic.com/news/claude-for-small-business",
-        "publishedAt": "2026-05-13T05:00:00.000Z",
         "author": "Anthropic",
         "summary": "",
         "category": "Announcements"

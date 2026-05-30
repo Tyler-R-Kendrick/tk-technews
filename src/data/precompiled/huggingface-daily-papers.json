@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T15:45:13.317Z",
+  "generatedAt": "2026-05-30T21:55:00.444Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-05-28T15:45:13.317Z",
+    "fetchedAt": "2026-05-30T21:55:00.444Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -28,7 +28,7 @@
           "Xing Yu"
         ],
         "summary": "Anti-Self-Distillation reverses the direction of knowledge transfer in self-distillation to improve math reasoning efficiency and accuracy.",
-        "upvotes": 193,
+        "upvotes": 195,
         "comments": 4,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.11609.png",
         "projectPage": null,
@@ -87,7 +87,7 @@
           "Huaxiu Yao"
         ],
         "summary": "AutoResearchClaw is a multi-agent autonomous research system that improves scientific discovery through structured debate, self-healing execution, verifiable reporting, human collaboration, and evolutionary learning, outperforming previous systems on a benchmark while maintaining human oversight.",
-        "upvotes": 184,
+        "upvotes": 185,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20025.png",
         "projectPage": "https://github.com/aiming-lab/AutoResearchClaw",
@@ -157,7 +157,7 @@
           "Luciano del Corro"
         ],
         "summary": "Pairwise ranking prompting is reformulated as active learning from noisy comparisons, with improved rankers that enhance ranking quality under call constraints and address position bias through a randomized oracle.",
-        "upvotes": 97,
+        "upvotes": 98,
         "comments": 4,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.14236.png",
         "projectPage": null,

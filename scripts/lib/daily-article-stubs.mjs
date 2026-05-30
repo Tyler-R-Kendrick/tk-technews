@@ -819,7 +819,12 @@ function composeDailyArticleContent(stub, { attempt = 1 } = {}) {
 }
 
 function ensureKeyTakeaways(takeaways, { title, summary, bodySections }) {
-  const output = [...(takeaways ?? [])].filter(Boolean);
+  const output = [];
+  for (const [index, takeaway] of [...(takeaways ?? [])].entries()) {
+    const normalized = expandTakeaway(takeaway, { title, summary, bodySections, index });
+    if (!normalized || isNearDuplicate(normalized, output)) continue;
+    output.push(normalized);
+  }
   const firstSentence = sentenceSplit(summary)[0] ?? title;
   const sectionHeading = bodySections[0]?.heading ?? 'the cited technical change';
   const fillers = [
@@ -831,6 +836,26 @@ function ensureKeyTakeaways(takeaways, { title, summary, bodySections }) {
     if (!isNearDuplicate(filler, output)) output.push(filler);
   }
   return output;
+}
+
+function expandTakeaway(takeaway, { title, summary, bodySections, index = 0 }) {
+  const cleaned = stripNoise(takeaway);
+  if (!cleaned) return '';
+  if (cleaned.length >= 45) return cleaned;
+
+  const section = bodySections[index] ?? bodySections[0] ?? null;
+  const paragraph = stripNoise(section?.paragraphs?.find(Boolean) ?? '');
+  const sectionHeading = stripNoise(section?.heading ?? '');
+  const firstSentence = sentenceSplit(summary)[0] ?? title;
+  const prefix = trimTitle(cleaned.replace(/[.?!,:;]+$/g, ''), 120);
+  const supportText = trimTitle(paragraph || firstSentence || title, 180);
+  const connector = /[.?!]$/.test(cleaned) ? ' ' : ': ';
+  const expanded = trimTitle(
+    `${prefix}${connector}${supportText || sectionHeading || trimTitle(title, 120)}`,
+    220
+  );
+  if (expanded.length >= 45) return expanded;
+  return `${trimTitle(sectionHeading || title, 120)} matters because it changes what readers should benchmark, implement, or validate next.`;
 }
 
 function ensureBodySections(sections, { title, summary, citationUrls }) {

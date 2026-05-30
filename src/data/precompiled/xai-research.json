@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T15:45:13.317Z",
+  "generatedAt": "2026-05-30T21:55:00.444Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,17 +10,8 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-28T15:45:13.317Z",
+      "fetchedAt": "2026-05-30T21:55:00.444Z",
       "items": [
-        {
-          "title": "Skills in web, iOS, and Android - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0?oc=5",
-          "id": "CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0",
-          "publishedAt": "2026-05-18T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Skills in web, iOS, and Android  xAI",
-          "source": "xAI Official News"
-        },
         {
           "title": "Grok-2 Beta Release - xAI",
           "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE1oei1wY0ZrX0dKRDdTYWJaQ0p3MGVORFFTZHhDbVhPbDJoQ05ycHZjdkl4X2hzLVBYYnF5eA?oc=5",
@@ -40,12 +31,12 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Grok Speech to Text and Text to Speech APIs - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5EZFpZWjRNWExxak96QmlNNlkxcU9hTkQxS29ZWExvMVVlNGNlOXZVSV9oSmt0ZzNCanFqdjBaRE5NcTFQY0FlazNsWVZHZGJh?oc=5",
-          "id": "CBMiUEFVX3lxTE5EZFpZWjRNWExxak96QmlNNlkxcU9hTkQxS29ZWExvMVVlNGNlOXZVSV9oSmt0ZzNCanFqdjBaRE5NcTFQY0FlazNsWVZHZGJh",
-          "publishedAt": "2026-04-17T07:00:00.000Z",
+          "title": "Skills in web, iOS, and Android - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0?oc=5",
+          "id": "CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0",
+          "publishedAt": "2026-05-18T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Grok Speech to Text and Text to Speech APIs  xAI",
+          "summary": "Skills in web, iOS, and Android  xAI",
           "source": "xAI Official News"
         },
         {
@@ -95,7 +86,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-28T15:45:13.317Z",
+      "fetchedAt": "2026-05-30T21:55:00.444Z",
       "items": [
         {
           "title": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff - The Information",
@@ -143,12 +134,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "The xAI Grok 4 model is now available on OCI - Oracle Blogs",
-          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBRRHJZcWV5U01YUEhkZGxTX2s2VjNYTFVMQkpsdGFwYzkzcVVNODJZeXQweFQxSXQ0NlFaMXdWRkpXX3VIbFFqLW4zeGVfV0xaQ3ZGelV1R0FkdnRyUDRqcFRneEI5NTY2MGFSUGc2UnBfWm1nM2x6eWtB?oc=5",
-          "id": "CBMiekFVX3lxTFBRRHJZcWV5U01YUEhkZGxTX2s2VjNYTFVMQkpsdGFwYzkzcVVNODJZeXQweFQxSXQ0NlFaMXdWRkpXX3VIbFFqLW4zeGVfV0xaQ3ZGelV1R0FkdnRyUDRqcFRneEI5NTY2MGFSUGc2UnBfWm1nM2x6eWtB",
-          "publishedAt": "2025-07-25T07:00:00.000Z",
+          "title": "Elon Musk testifies that xAI trained Grok on OpenAI models - TechCrunch",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA?oc=5",
+          "id": "CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA",
+          "publishedAt": "2026-04-30T07:00:00.000Z",
           "author": "xAI",
-          "summary": "The xAI Grok 4 model is now available on OCI  Oracle Blogs",
+          "summary": "Elon Musk testifies that xAI trained Grok on OpenAI models  TechCrunch",
           "source": "xAI Research and Labs"
         },
         {
@@ -179,12 +170,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "Grok Cheat Sheet: A Complete Guide to Elon Musk’s Chatbot - eWeek",
-          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHdFNXek9RWUJKRDFZQkh1X1BLVGc3eUdRZUFhN0YyRGw0TWlRaExJYUxFU1pQRFJrME9IcU9hZjM0cEFjY1VzVV8xN2tZQzJLWTl3aEV0SHdoTXBuRk1JQkJkNXIzNGk3TXg4?oc=5",
-          "id": "CBMia0FVX3lxTFBHdFNXek9RWUJKRDFZQkh1X1BLVGc3eUdRZUFhN0YyRGw0TWlRaExJYUxFU1pQRFJrME9IcU9hZjM0cEFjY1VzVV8xN2tZQzJLWTl3aEV0SHdoTXBuRk1JQkJkNXIzNGk3TXg4",
-          "publishedAt": "2026-04-16T07:00:00.000Z",
+          "title": "Elon Musk released xAI’s Grok 4 without any safety reports—despite calling AI more ‘dangerous than nukes’ - Fortune",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4wOHdsRkE1c1dqQlZ1ck5OZUZkVXJWbTNlcjg5aGxKVHFWeVY2Z3FMMlNCWW5xdXpSdXhEei1WQWRJUnBveldSTENKLU1jaTB6M0JocXlHa2EwZG1ZMS1GMnpCcnFqUEhUTzFNSHYySGhwM0N5UW9uUw?oc=5",
+          "id": "CBMieEFVX3lxTE4wOHdsRkE1c1dqQlZ1ck5OZUZkVXJWbTNlcjg5aGxKVHFWeVY2Z3FMMlNCWW5xdXpSdXhEei1WQWRJUnBveldSTENKLU1jaTB6M0JocXlHa2EwZG1ZMS1GMnpCcnFqUEhUTzFNSHYySGhwM0N5UW9uUw",
+          "publishedAt": "2025-07-17T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Grok Cheat Sheet: A Complete Guide to Elon Musk’s Chatbot  eWeek",
+          "summary": "Elon Musk released xAI’s Grok 4 without any safety reports—despite calling AI more ‘dangerous than nukes’  Fortune",
           "source": "xAI Research and Labs"
         }
       ]

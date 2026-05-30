@@ -576,6 +576,68 @@ test('daily generation loop produces substantive journalist content and eval met
   assert.match(bodyText, /evidence|mechanism|constraint|measurement|trade-off|architecture/i);
 });
 
+test('daily generation loop expands short generated takeaways to meet schema minimums', async () => {
+  const result = await buildDailyArticleStubsWithGenerationLoop({
+    date: '2026-05-20',
+    ledger: {
+      generatedAt: '2026-05-20T18:00:00.000Z',
+      items: [
+        {
+          id: 'cursor-model',
+          title: 'Cursor just beat EVERYONE.',
+          summary: 'Cursor released Composer 2.5, a coding model focused on lower cost per task and higher CursorBench performance for everyday agentic programming workflows.',
+          url: 'https://www.youtube.com/watch?v=cursor-model',
+          sourceName: 'Matthew Berman',
+          publishedAt: '2026-05-20T16:40:27.000Z',
+          tags: ['youtube', 'cursor', 'coding'],
+          transcript: {
+            status: 'ok',
+            videoId: 'cursor-model',
+            text: 'Cursor released Composer 2.5 as a workhorse coding model for everyday agentic programming. The practical benchmark in the video is price-to-performance on CursorBench and cost per sustained coding task.'
+          }
+        }
+      ]
+    },
+    maxStubs: 1,
+    evalMode: 'off',
+    maxEvalIterations: 1,
+    inference: async () => ({
+      provider: 'test-provider',
+      model: 'test-model',
+      output: {
+        dek: 'Composer 2.5 is a cheaper workhorse model for coding agents.',
+        bodySections: [
+          {
+            heading: 'Composer 2.5 Targets Everyday Coding Work',
+            paragraphs: [
+              'The video frames Composer 2.5 as a lower-cost coding model for everyday agentic programming, with price-to-performance and completed coding work per dollar used as the practical benchmark.'
+            ],
+            citations: ['https://www.youtube.com/watch?v=cursor-model']
+          },
+          {
+            heading: 'Cost Per Finished Task Becomes The Useful Metric',
+            paragraphs: [
+              'Because coding agents burn tokens across edits, tools, and verification loops, the article argues that teams should evaluate cost per sustained coding task rather than raw benchmark rank alone.'
+            ],
+            citations: ['https://www.youtube.com/watch?v=cursor-model']
+          }
+        ],
+        keyTakeaways: [
+          'Cheaper coding model.',
+          'Cost per task matters.'
+        ]
+      }
+    })
+  });
+
+  const stub = result.articleStubs[0];
+  assert.ok(stub, 'expected a generated article');
+  assert.equal(stub.evalStatus, 'passed');
+  assert.ok(stub.keyTakeaways.every((takeaway) => takeaway.length >= 45), 'expected normalized takeaways to meet the schema minimum');
+  assert.match(stub.keyTakeaways[0], /Cheaper coding model/i);
+  assert.match(stub.keyTakeaways[1], /Cost per task matters/i);
+});
+
 test('each source in article stubs includes a rich citation preview object', () => {
   const result = buildDailyArticleStubs({
     date: '2026-05-20',

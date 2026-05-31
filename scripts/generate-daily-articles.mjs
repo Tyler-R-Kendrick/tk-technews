@@ -2,6 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDailyArticleStubsWithGenerationLoop } from './lib/daily-article-stubs.mjs';
+import { assertDailyPayloadIsPublishable } from './lib/daily-publish-guard.mjs';
 import { buildWeeklyLedgerFromPrecompiled } from './lib/precompiled-weekly-ledger.mjs';
 
 const repoRoot = dirname(fileURLToPath(new URL('../package.json', import.meta.url)));
@@ -52,6 +53,11 @@ const payload = {
   ...dailyBrief,
   voice: args.voice ?? 'tk-technews-journalist'
 };
+
+assertDailyPayloadIsPublishable(payload, {
+  allowEmpty: args['allow-empty'] === 'true',
+  date
+});
 
 writeJson('src/data/daily/generated-daily-articles.json', payload);
 writeJson('public/daily/generated-daily-articles.json', payload);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,8 +7,26 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-03T01:11:12.584Z",
+    "fetchedAt": "2026-06-03T15:15:39.998Z",
     "items": [
+      {
+        "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
+        "link": "https://www.anthropic.com/news/services-track-partner-hub",
+        "id": "https://www.anthropic.com/news/services-track-partner-hub",
+        "publishedAt": "2026-06-03T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
+      {
+        "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
+        "link": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+        "id": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+        "publishedAt": "2026-06-03T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Policy"
+      },
       {
         "title": "Expanding Project Glasswing",
         "link": "https://www.anthropic.com/news/expanding-project-glasswing",
@@ -68,24 +86,6 @@
         "link": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
         "id": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
         "publishedAt": "2026-05-25T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Widening the conversation on frontier AI",
-        "link": "https://www.anthropic.com/news/widening-conversation-ai",
-        "id": "https://www.anthropic.com/news/widening-conversation-ai",
-        "publishedAt": "2026-05-19T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
-        "link": "https://www.anthropic.com/news/anthropic-kpmg",
-        "id": "https://www.anthropic.com/news/anthropic-kpmg",
-        "publishedAt": "2026-05-19T05:00:00.000Z",
         "author": "Anthropic",
         "summary": "",
         "category": "Announcements"

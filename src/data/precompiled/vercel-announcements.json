@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,7 +9,7 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Edit Git settings for all projects in a repo",
@@ -111,7 +111,7 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Edit Git settings for all projects in a repo",

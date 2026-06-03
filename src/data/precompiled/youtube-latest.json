@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "sources": [
     {
       "id": "youtube-news-matthew-berman",
@@ -11,7 +11,7 @@
       "title": "Matthew Berman",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCawZsQWqfGSbCI5yjkdVkTA",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Everyone's holding their laptops open",
@@ -155,7 +155,7 @@
       "title": "Wes Roth",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCqcbQf6yw5KzRoDDcZ_wBSw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "GPT-5.6 about to DROP",
@@ -299,7 +299,7 @@
       "title": "Universe of AI",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCYwLV1gDwzGbg7jXQ52bVnQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "MiniMax M3: Rivals Opus, 17x Cheaper, Fully Open!",
@@ -443,7 +443,7 @@
       "title": "Sam Witteveen",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC55ODQSvARtgSyc8ThfiepQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Cosmos 3 - NVIDIA's World Foundation Model",
@@ -587,7 +587,7 @@
       "title": "AI Revolution Deutschland",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC5LTm52VaiV-5Q3C-txWVGQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Die schockierenden KI-Enthüllungen der CES 2026 (TAG 3)",
@@ -731,8 +731,21 @@
       "title": "Prompt Engineering",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCDq7SjbgRKty5TgGafW8Clg",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "Claude Can Now Build Its Own Harness... For Every Task",
+          "link": "https://www.youtube.com/watch?v=l5rae4LMKBc",
+          "id": "yt:video:l5rae4LMKBc",
+          "publishedAt": "2026-06-03T12:45:34.000Z",
+          "author": "Prompt Engineering",
+          "summary": "",
+          "transcript": {
+            "videoId": "l5rae4LMKBc",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=l5rae4LMKBc! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "What is Dynamic Workflow and how to build a great one!",
           "link": "https://www.youtube.com/watch?v=WnmVGVOPtrA",
@@ -760,7 +773,7 @@
           }
         },
         {
-          "title": "DeepSeek’s Price Cut Wasn’t Magic",
+          "title": "Prompt Caching: Cut Your AI Cost by 90%",
           "link": "https://www.youtube.com/watch?v=HDMqDV7mmGo",
           "id": "yt:video:HDMqDV7mmGo",
           "publishedAt": "2026-05-27T12:45:19.000Z",
@@ -849,19 +862,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=-Bc_VeH3kQ4! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "Minimax Mavis Agent: The Verifier Pattern Changes Everything",
-          "link": "https://www.youtube.com/watch?v=VNMvqCgA7C0",
-          "id": "yt:video:VNMvqCgA7C0",
-          "publishedAt": "2026-05-17T12:45:13.000Z",
-          "author": "Prompt Engineering",
-          "summary": "",
-          "transcript": {
-            "videoId": "VNMvqCgA7C0",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=VNMvqCgA7C0! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -875,7 +875,7 @@
       "title": "Beyond Fireship",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC2Xd-TjJByJyK2w1zNwY0zQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "I built a DeepSeek R1 powered VS Code extension…",
@@ -1019,7 +1019,7 @@
       "title": "Matt Pocock",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCswG6FSbgZjbWtdf_hMLaow",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Can Cursor's HARDCORE Review Skill Stop The Slop?",
@@ -1163,7 +1163,7 @@
       "title": "Ben Davis",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCFvPgPdb_emE_bpMZq6hmJQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "I re-subbed to Claude Max, was it worth it?",
@@ -1307,8 +1307,21 @@
       "title": "LangChain",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCC-lyoTfSrcJzA1ab3APAgw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "Building Frontier CX Agents | Interrupt 26",
+          "link": "https://www.youtube.com/watch?v=McZgnvn-e84",
+          "id": "yt:video:McZgnvn-e84",
+          "publishedAt": "2026-06-03T12:42:54.000Z",
+          "author": "LangChain",
+          "summary": "",
+          "transcript": {
+            "videoId": "McZgnvn-e84",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=McZgnvn-e84! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "How \"Supply side agents\" capture org context without needing user access | Max Agency #podcast",
           "link": "https://www.youtube.com/shorts/ubHhXcKDgMY",
@@ -1425,19 +1438,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=MVvFDfxaeWg! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "Hot vs. cold context isn't about time — it's about whether it's being used | Max Agency #podcast",
-          "link": "https://www.youtube.com/shorts/-05qYgiH1OY",
-          "id": "yt:video:-05qYgiH1OY",
-          "publishedAt": "2026-05-26T19:00:35.000Z",
-          "author": "LangChain",
-          "summary": "",
-          "transcript": {
-            "videoId": "-05qYgiH1OY",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=-05qYgiH1OY! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -1451,8 +1451,21 @@
       "title": "Hugging Face",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCHlNU7kIZhRgSbhHvFoy72w",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "Train AI Robots Without Writing Code! (Introducing LeLab)",
+          "link": "https://www.youtube.com/watch?v=VqyKUuW9V1g",
+          "id": "yt:video:VqyKUuW9V1g",
+          "publishedAt": "2026-06-03T14:30:19.000Z",
+          "author": "Hugging Face",
+          "summary": "",
+          "transcript": {
+            "videoId": "VqyKUuW9V1g",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=VqyKUuW9V1g! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "How to Create an LLM Dataset | FineWeb Overview",
           "link": "https://www.youtube.com/watch?v=vB9pHTZKoGQ",
@@ -1569,19 +1582,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=cixmqTsi2A4! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "Hugging Face Journal Club: Embarrassingly Simple Self-Distillation Improves Code Generation",
-          "link": "https://www.youtube.com/watch?v=ZD3wwGliWwc",
-          "id": "yt:video:ZD3wwGliWwc",
-          "publishedAt": "2026-04-16T13:54:48.000Z",
-          "author": "Hugging Face",
-          "summary": "",
-          "transcript": {
-            "videoId": "ZD3wwGliWwc",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=ZD3wwGliWwc! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -1595,7 +1595,7 @@
       "title": "OpenAI",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCXZCJLdBC09xxGZ6gcdrc6A",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Turn the world into cheese (or anything really) with this camera.",
@@ -1672,7 +1672,7 @@
           "transcript": {
             "videoId": "cdflu9ZXZGE",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=cdflu9ZXZGE! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
@@ -1739,7 +1739,7 @@
       "title": "Chong-U — AI Oriented Dev",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCE4PyAWiZ5gdPVFxDe4lLPQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Turning One Image Into a Playable iOS Game With AI - Full Tutorial  (Step-by-Step)",
@@ -1883,7 +1883,7 @@
       "title": "Burke Holland",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC9Rd0gi2po8pDZC5qKlQW6Q",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "GitHub’s New App Wants to Replace Half Your Dev Workflow",
@@ -2027,32 +2027,58 @@
       "title": "GitHub",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC7c3Kb6jYCRj4JOHHZTxKsQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "4 GitHub updates from Microsoft Build",
+          "link": "https://www.youtube.com/shorts/8OcHV-Yo5Ac",
+          "id": "yt:video:8OcHV-Yo5Ac",
+          "publishedAt": "2026-06-03T14:00:38.000Z",
+          "author": "GitHub",
+          "summary": "",
+          "transcript": {
+            "videoId": "8OcHV-Yo5Ac",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=8OcHV-Yo5Ac! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
+        {
+          "title": "How to run GitHub Copilot in local and cloud sandboxes | demo",
+          "link": "https://www.youtube.com/watch?v=J8laUDXs08c",
+          "id": "yt:video:J8laUDXs08c",
+          "publishedAt": "2026-06-03T14:00:13.000Z",
+          "author": "GitHub",
+          "summary": "",
+          "transcript": {
+            "videoId": "J8laUDXs08c",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=J8laUDXs08c! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "Scott and Mark Learn to Vibe Check",
           "link": "https://www.youtube.com/watch?v=GYo2uLuLXgQ",
           "id": "yt:video:GYo2uLuLXgQ",
-          "publishedAt": "2026-05-18T22:04:25.000Z",
+          "publishedAt": "2026-06-03T10:07:12.000Z",
           "author": "GitHub",
           "summary": "",
           "transcript": {
             "videoId": "GYo2uLuLXgQ",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=GYo2uLuLXgQ! This is most likely caused by:\r\n\r\nSubtitles are disabled for this video\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=GYo2uLuLXgQ! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
           "title": "The Terminal Live - Day 1 at Microsoft Build",
           "link": "https://www.youtube.com/watch?v=Wn5r4uqfsGY",
           "id": "yt:video:Wn5r4uqfsGY",
-          "publishedAt": "2026-05-25T22:20:37.000Z",
+          "publishedAt": "2026-06-03T01:16:30.000Z",
           "author": "GitHub",
           "summary": "",
           "transcript": {
             "videoId": "Wn5r4uqfsGY",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=Wn5r4uqfsGY! This is most likely caused by:\r\n\r\nSubtitles are disabled for this video\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=Wn5r4uqfsGY! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
@@ -2132,32 +2158,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=FiGYvsxtNAg! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "Maintainer Month Special: Introducing Project Pods",
-          "link": "https://www.youtube.com/watch?v=Aj1YByoVPBs",
-          "id": "yt:video:Aj1YByoVPBs",
-          "publishedAt": "2026-05-29T15:24:23.000Z",
-          "author": "GitHub",
-          "summary": "",
-          "transcript": {
-            "videoId": "Aj1YByoVPBs",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=Aj1YByoVPBs! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
-        },
-        {
-          "title": "Open Source Friday: Building the Contributor Pipeline at Pollinations.ai",
-          "link": "https://www.youtube.com/watch?v=apxwKja5JWE",
-          "id": "yt:video:apxwKja5JWE",
-          "publishedAt": "2026-05-29T14:30:44.000Z",
-          "author": "GitHub",
-          "summary": "",
-          "transcript": {
-            "videoId": "apxwKja5JWE",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=apxwKja5JWE! This is most likely caused by:\r\n\r\nThe video is unplayable for the following reason: This live event will begin in 37 days.\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -2171,7 +2171,7 @@
       "title": "Google for Developers",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Getting Started with Managed Agents",
@@ -2315,7 +2315,7 @@
       "title": "Microsoft 365 Developer",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCV_6HOhwxYLXAGd-JOqKPoQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Hello from Microsoft Build in San Francisco 👋 #MSBuild #ai #agent #Microsoft #M365",
@@ -2459,7 +2459,7 @@
       "title": "Fritz's Tech Tips and Chatter",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfvJirlbRTN-bU9sMWMb_ZQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Get Started with Web Development Workshop 2026",
@@ -2603,136 +2603,136 @@
       "title": "Microsoft Developer",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCsMica-v34Irf9KVTh6xx-g",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
-          "title": "GitHub App | Microsoft Build Day 1 is streaming now!",
-          "link": "https://www.youtube.com/shorts/y5xvOzypyEA",
-          "id": "yt:video:y5xvOzypyEA",
-          "publishedAt": "2026-06-02T20:45:16.000Z",
+          "title": "AI Building Blocks for .NET: Add intelligence to your C# apps | OD805",
+          "link": "https://www.youtube.com/watch?v=LB64QnwhLZM",
+          "id": "yt:video:LB64QnwhLZM",
+          "publishedAt": "2026-06-03T14:52:23.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "y5xvOzypyEA",
+            "videoId": "LB64QnwhLZM",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=y5xvOzypyEA! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=LB64QnwhLZM! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Project Lobster: Building an AI Assistant with Agency and Memory",
-          "link": "https://www.youtube.com/watch?v=imSCFgAIf2Q",
-          "id": "yt:video:imSCFgAIf2Q",
-          "publishedAt": "2026-06-02T19:21:08.000Z",
+          "title": "Taking your AI to the edge with .NET MAUI | OD803",
+          "link": "https://www.youtube.com/watch?v=YSr1W-d4GVw",
+          "id": "yt:video:YSr1W-d4GVw",
+          "publishedAt": "2026-06-03T14:46:57.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "imSCFgAIf2Q",
+            "videoId": "YSr1W-d4GVw",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=imSCFgAIf2Q! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=YSr1W-d4GVw! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Work IQ: Data, Context, and Tools at Scale",
-          "link": "https://www.youtube.com/watch?v=yj9JX08cxtw",
-          "id": "yt:video:yj9JX08cxtw",
-          "publishedAt": "2026-06-02T18:02:01.000Z",
+          "title": "Simplifying .NET Installs with dotnetup | OD804",
+          "link": "https://www.youtube.com/watch?v=ZMnyohA5yrw",
+          "id": "yt:video:ZMnyohA5yrw",
+          "publishedAt": "2026-06-03T14:44:50.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "yj9JX08cxtw",
+            "videoId": "ZMnyohA5yrw",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=yj9JX08cxtw! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=ZMnyohA5yrw! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Horizon DB | Microsoft Build streaming now!",
-          "link": "https://www.youtube.com/shorts/UdQmZa7ugr8",
-          "id": "yt:video:UdQmZa7ugr8",
-          "publishedAt": "2026-06-02T17:49:44.000Z",
+          "title": "Building for the agentic web with .NET 11 | OD802",
+          "link": "https://www.youtube.com/watch?v=z2ppHjPRTjQ",
+          "id": "yt:video:z2ppHjPRTjQ",
+          "publishedAt": "2026-06-03T14:41:10.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "UdQmZa7ugr8",
+            "videoId": "z2ppHjPRTjQ",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=UdQmZa7ugr8! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=z2ppHjPRTjQ! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Watch the Microsoft Build opening keynote with Satya Nadella!",
-          "link": "https://www.youtube.com/shorts/pgYa7Wdf0kY",
-          "id": "yt:video:pgYa7Wdf0kY",
-          "publishedAt": "2026-06-02T17:08:08.000Z",
+          "title": "Microsoft Dataverse plugin: unleashing coding agents on the enterprise | OD849",
+          "link": "https://www.youtube.com/watch?v=3f3rCMF0ESA",
+          "id": "yt:video:3f3rCMF0ESA",
+          "publishedAt": "2026-06-03T14:38:23.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "pgYa7Wdf0kY",
+            "videoId": "3f3rCMF0ESA",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=pgYa7Wdf0kY! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=3f3rCMF0ESA! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Microsoft Build streaming now!",
-          "link": "https://www.youtube.com/shorts/6hW6UDBagFA",
-          "id": "yt:video:6hW6UDBagFA",
-          "publishedAt": "2026-06-02T16:48:01.000Z",
+          "title": "Azure Storage for AI workloads​ | OD870",
+          "link": "https://www.youtube.com/watch?v=TN9cJ9abiJY",
+          "id": "yt:video:TN9cJ9abiJY",
+          "publishedAt": "2026-06-03T14:36:22.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "6hW6UDBagFA",
+            "videoId": "TN9cJ9abiJY",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=6hW6UDBagFA! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=TN9cJ9abiJY! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "5 Ways We're Confusing AI Capability and AI Reality with Microsoft CTO Kevin Scott",
-          "link": "https://www.youtube.com/watch?v=9Y63uWXJ0eA",
-          "id": "yt:video:9Y63uWXJ0eA",
-          "publishedAt": "2026-06-02T16:39:03.000Z",
+          "title": "Create enterprise AI apps at scale with Bolt and Microsoft | ODSP940",
+          "link": "https://www.youtube.com/watch?v=w8vAY4vK3HQ",
+          "id": "yt:video:w8vAY4vK3HQ",
+          "publishedAt": "2026-06-03T14:28:28.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "9Y63uWXJ0eA",
+            "videoId": "w8vAY4vK3HQ",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=9Y63uWXJ0eA! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=w8vAY4vK3HQ! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Microsoft Build 2026 Day 1 LIVE | Opening Keynote, Live Coding & Demos",
-          "link": "https://www.youtube.com/watch?v=HG0twQJ7aG4",
-          "id": "yt:video:HG0twQJ7aG4",
-          "publishedAt": "2026-05-15T17:41:22.000Z",
+          "title": "Using autonomous SRE to move from alerts to action | OD800",
+          "link": "https://www.youtube.com/watch?v=sf3y8TRcBDI",
+          "id": "yt:video:sf3y8TRcBDI",
+          "publishedAt": "2026-06-03T14:25:23.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "HG0twQJ7aG4",
+            "videoId": "sf3y8TRcBDI",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=HG0twQJ7aG4! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=sf3y8TRcBDI! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Getting Started with the Microsoft Agent Pre-Purchase Plan",
-          "link": "https://www.youtube.com/watch?v=0-RN85uZzTY",
-          "id": "yt:video:0-RN85uZzTY",
-          "publishedAt": "2026-06-01T07:00:05.000Z",
+          "title": "Modernize intelligent apps and agents with .NET that scale as you grow | OD801",
+          "link": "https://www.youtube.com/watch?v=wtUD8IV7rdA",
+          "id": "yt:video:wtUD8IV7rdA",
+          "publishedAt": "2026-06-03T14:23:27.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "0-RN85uZzTY",
+            "videoId": "wtUD8IV7rdA",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=0-RN85uZzTY! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=wtUD8IV7rdA! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
-          "title": "Introducing Work IQ in the IQ Series",
-          "link": "https://www.youtube.com/watch?v=3l6PHAQO5_w",
-          "id": "yt:video:3l6PHAQO5_w",
-          "publishedAt": "2026-05-29T18:47:07.000Z",
+          "title": "Mitigate software supply chain risks in Github Actions | ODSP938",
+          "link": "https://www.youtube.com/watch?v=FPjvL-No46E",
+          "id": "yt:video:FPjvL-No46E",
+          "publishedAt": "2026-06-03T14:21:29.000Z",
           "author": "Microsoft Developer",
           "summary": "",
           "transcript": {
-            "videoId": "3l6PHAQO5_w",
+            "videoId": "FPjvL-No46E",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=3l6PHAQO5_w! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=FPjvL-No46E! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         }
       ]
@@ -2747,8 +2747,21 @@
       "title": "Microsoft Reactor",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCkm6luGCS3hD25jcEhvRMIA",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "New Breakpoint: S5 Ep 11 | Platform Engineering Rewritten: From Pipelines to Prompts",
+          "link": "https://www.youtube.com/watch?v=_KunObDxpTQ",
+          "id": "yt:video:_KunObDxpTQ",
+          "publishedAt": "2026-06-03T04:03:10.000Z",
+          "author": "Microsoft Reactor",
+          "summary": "",
+          "transcript": {
+            "videoId": "_KunObDxpTQ",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=_KunObDxpTQ! This is most likely caused by:\r\n\r\nThe video is unplayable for the following reason: This live event will begin in 7 days.\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "Build Digital Recap (Japan)",
           "link": "https://www.youtube.com/watch?v=8MFC-h3WgA0",
@@ -2759,7 +2772,7 @@
           "transcript": {
             "videoId": "8MFC-h3WgA0",
             "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=8MFC-h3WgA0! This is most likely caused by:\r\n\r\nThe video is unplayable for the following reason: This live event will begin in 8 days.\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=8MFC-h3WgA0! This is most likely caused by:\r\n\r\nThe video is unplayable for the following reason: This live event will begin in 7 days.\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
         },
         {
@@ -2865,19 +2878,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=Xj5LqH6k0U4! This is most likely caused by:\r\n\r\nThe video is unplayable for the following reason: This live event will begin in 7 days.\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "Agents League: Creative Apps Battle",
-          "link": "https://www.youtube.com/watch?v=MlpngZ6Snxo",
-          "id": "yt:video:MlpngZ6Snxo",
-          "publishedAt": "2026-05-28T16:25:09.000Z",
-          "author": "Microsoft Reactor",
-          "summary": "",
-          "transcript": {
-            "videoId": "MlpngZ6Snxo",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=MlpngZ6Snxo! This is most likely caused by:\r\n\r\nThe video is unplayable for the following reason: This live event will begin in 6 days.\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -2891,7 +2891,7 @@
       "title": "CopilotKit",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbC2DjohfqaUcXK_XmXBVUg",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "CopilotKit Just Raised $27M - Here's What it is!",
@@ -3035,8 +3035,21 @@
       "title": "Discover AI",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfOvNb3xj28SNqPQ_JIbumg",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "MemoryGraphRAG (Outperforms Every RAG)",
+          "link": "https://www.youtube.com/watch?v=RfAbsdq_b-A",
+          "id": "yt:video:RfAbsdq_b-A",
+          "publishedAt": "2026-06-03T13:30:26.000Z",
+          "author": "Discover AI",
+          "summary": "",
+          "transcript": {
+            "videoId": "RfAbsdq_b-A",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=RfAbsdq_b-A! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "YES: Harness Self-optimization w/ 9B LLM (Local AI)",
           "link": "https://www.youtube.com/watch?v=aaViBfjnh78",
@@ -3153,19 +3166,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=CIoK6be6hoE! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "The BEST Deep Research AI is ...",
-          "link": "https://www.youtube.com/watch?v=Lgl8IlsoGQQ",
-          "id": "yt:video:Lgl8IlsoGQQ",
-          "publishedAt": "2026-05-24T13:30:10.000Z",
-          "author": "Discover AI",
-          "summary": "",
-          "transcript": {
-            "videoId": "Lgl8IlsoGQQ",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=Lgl8IlsoGQQ! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -3179,8 +3179,21 @@
       "title": "Two Minute Papers",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "Claude Opus 4.8: Lying Machine No More",
+          "link": "https://www.youtube.com/watch?v=ypL7kUiw_LM",
+          "id": "yt:video:ypL7kUiw_LM",
+          "publishedAt": "2026-06-03T13:49:31.000Z",
+          "author": "Two Minute Papers",
+          "summary": "",
+          "transcript": {
+            "videoId": "ypL7kUiw_LM",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=ypL7kUiw_LM! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "A Second Nobel Prize for AlphaFold? 🧬🏆 #alphafold #deepmind #nobelprize #science #ai",
           "link": "https://www.youtube.com/shorts/MOviZKtFeHM",
@@ -3297,19 +3310,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=p7K3xfViWCE! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "NVIDIA's New AI Turns One Photo Into A World That Never Breaks",
-          "link": "https://www.youtube.com/watch?v=eCw33snvoNI",
-          "id": "yt:video:eCw33snvoNI",
-          "publishedAt": "2026-05-03T17:02:48.000Z",
-          "author": "Two Minute Papers",
-          "summary": "",
-          "transcript": {
-            "videoId": "eCw33snvoNI",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=eCw33snvoNI! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -3323,7 +3323,7 @@
       "title": "bycloud 2",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfg9ux4m8P0YDITTPptrmLg",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "How To Setup Sonnet 3.6's Computer Use Demo",
@@ -3467,7 +3467,7 @@
       "title": "AI Papers Academy",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCjqDDqUh1DgjrlNjLR5p8nw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "The End of Standard Attention in LLMs? | DeepSeek-V4 Paper Explained",
@@ -3611,7 +3611,7 @@
       "title": "Jia-Bin Huang",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCkQS_dP6GJTmYnMlox-YiKQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "The 60-Year Hunt for AI's Most Important Function",
@@ -3755,7 +3755,7 @@
       "title": "Ksenia | Turing Post",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC5M-w62kRmrD3-Saf-qGTug",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "THE BIGGEST THING HOLDING PEOPLE BACK FROM BUILDING",
@@ -3899,7 +3899,7 @@
       "title": "Protorikis",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC8RHewAQcUjOu_MkjnTeBiw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Does Lifting MacBook Speed Up AI Inference? Sustained Load Test (llama.cpp & Ollama)",
@@ -4043,7 +4043,7 @@
       "title": "Ndea",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCulKqca6tzZIIjv7myJkEYQ",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Researcher hustle: cold email your dream co-author",
@@ -4187,8 +4187,21 @@
       "title": "Microsoft",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCFtEEv80fQVKkD4h1PF-Xqw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "Keynote in 2 minutes: Satya Nadella at Microsoft Build 2026",
+          "link": "https://www.youtube.com/watch?v=ZhZqeo7SD0Y",
+          "id": "yt:video:ZhZqeo7SD0Y",
+          "publishedAt": "2026-06-03T04:00:44.000Z",
+          "author": "Microsoft",
+          "summary": "",
+          "transcript": {
+            "videoId": "ZhZqeo7SD0Y",
+            "status": "unavailable",
+            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=ZhZqeo7SD0Y! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
+          }
+        },
         {
           "title": "Conversation with NVIDIA Founder and CEO Jensen Huang: Satya Nadella at Microsoft Build 2026",
           "link": "https://www.youtube.com/watch?v=rASAk00B3JU",
@@ -4305,19 +4318,6 @@
             "status": "unavailable",
             "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=vHlFzbE78jk! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
           }
-        },
-        {
-          "title": "Unpacking how the world is using AI | Microsoft's AI Diffusion Report",
-          "link": "https://www.youtube.com/watch?v=u8bKR3RHAYA",
-          "id": "yt:video:u8bKR3RHAYA",
-          "publishedAt": "2026-05-28T16:04:01.000Z",
-          "author": "Microsoft",
-          "summary": "",
-          "transcript": {
-            "videoId": "u8bKR3RHAYA",
-            "status": "unavailable",
-            "reason": "C:\\Python313\\Lib\\site-packages\\requests\\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (6.0.0.post1)/charset_normalizer (3.4.3) doesn't match a supported version!\r\n  warnings.warn(\r\n\r\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=u8bKR3RHAYA! This is most likely caused by:\r\n\r\nYouTube is blocking requests from your IP. This usually is due to one of the following reasons:\r\n- You have done too many requests and your IP has been blocked by YouTube\r\n- You are doing requests from an IP belonging to a cloud provider (like AWS, Google Cloud Platform, Azure, etc.). Unfortunately, most IPs from cloud providers are blocked by YouTube.\r\n\r\nWays to work around this are explained in the \"Working around IP bans\" section of the README (https://github.com/jdepoix/youtube-transcript-api?tab=readme-ov-file#working-around-ip-bans-requestblocked-or-ipblocked-exception).\r\n\r\n\r\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!\r\n"
-          }
         }
       ]
     },
@@ -4331,7 +4331,7 @@
       "title": "Sebastian Raschka",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_CzsS7UTjcxJ-xXp1ftxtA",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "What I Learned From Implementing LLM Architectures From Scratch (And How to Get Started)",
@@ -4475,7 +4475,7 @@
       "title": "NeuroDump",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCMHBJH5rX2dF1S7o-fJuY-A",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Do LLMs memorize or understand?",
@@ -4515,7 +4515,7 @@
       "title": "3Blue1Brown",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Tie random ends: How many loops?",
@@ -4659,7 +4659,7 @@
       "title": "Towards Data Science",
       "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCuHZ1UYfHRqk3-5N5oc97Kw",
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Edouard Harris - New Research: Advanced AI may tend to seek power *by default*",

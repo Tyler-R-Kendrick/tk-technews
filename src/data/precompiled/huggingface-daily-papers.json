@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-06-03T01:11:12.584Z",
+    "fetchedAt": "2026-06-03T15:15:39.998Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -345,7 +345,7 @@
           "Chen Zhao"
         ],
         "summary": "HASP introduces executable program functions that serve as active guardrails for LLM agents, enabling direct intervention in agent loops and improving performance across complex tasks.",
-        "upvotes": 35,
+        "upvotes": 36,
         "comments": 2,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.17734.png",
         "projectPage": null,

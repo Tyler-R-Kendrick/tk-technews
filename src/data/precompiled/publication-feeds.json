@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "sources": [
     {
       "id": "towards-data-science",
@@ -9,7 +9,7 @@
       "rssUrl": "https://medium.com/feed/towards-data-science",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
@@ -181,8 +181,56 @@
       "rssUrl": "https://www.marktechpost.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
+        {
+          "title": "Nous Research Releases Hermes Desktop: A Native Cross-Platform Front End for Hermes Agent v0.15.2 with Streaming Tool Output",
+          "link": "https://www.marktechpost.com/2026/06/03/nous-research-releases-hermes-desktop-a-native-cross-platform-front-end-for-hermes-agent-v0-15-2-with-streaming-tool-output/",
+          "id": "https://www.marktechpost.com/?p=80271",
+          "publishedAt": "2026-06-03T09:38:32.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Hermes Desktop is a no-terminal GUI sharing one agent core, skills, and memory with the Hermes Agent CLI.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/03/nous-research-releases-hermes-desktop-a-native-cross-platform-front-end-for-hermes-agent-v0-15-2-with-streaming-tool-output/\">Nous Research Releases Hermes Desktop: A Native Cross-Platform Front End for Hermes Agent v0.15.2 with Streaming Tool Output</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "NVIDIA Releases Cosmos 3: A Two-Tower Mixture-of-Transformers Foundation Model Unifying Physical Reasoning, World Generation, and Action Generation",
+          "link": "https://www.marktechpost.com/2026/06/03/nvidia-releases-cosmos-3-a-two-tower-mixture-of-transformers-foundation-model-unifying-physical-reasoning-world-generation-and-action-generation/",
+          "id": "https://www.marktechpost.com/?p=80266",
+          "publishedAt": "2026-06-03T08:35:44.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>NVIDIA released Cosmos 3, open omnimodal world models pairing an autoregressive VLM reasoner with a diffusion generator for physical AI.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/03/nvidia-releases-cosmos-3-a-two-tower-mixture-of-transformers-foundation-model-unifying-physical-reasoning-world-generation-and-action-generation/\">NVIDIA Releases Cosmos 3: A Two-Tower Mixture-of-Transformers Foundation Model Unifying Physical Reasoning, World Generation, and Action Generation</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Infrastructure",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "New Releases",
+            "Open Source",
+            "Physical AI",
+            "Robotics",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
         {
           "title": "How to Fine-Tune LFM2 Using QLoRA and DPO: A Complete Step-by-Step Coding Tutorial on Google Colab",
           "link": "https://www.marktechpost.com/2026/06/02/how-to-fine-tune-lfm2-using-qlora-and-dpo-a-complete-step-by-step-coding-tutorial-on-google-colab/",
@@ -363,38 +411,6 @@
             "Staff",
             "Tech News",
             "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "An Implementation of the Microsoft Agent Governance Toolkit for Safe AI Agent Tool Use with Policies, Approvals, Audit Logs, and Risk Controls",
-          "link": "https://www.marktechpost.com/2026/05/31/an-implementation-of-the-microsoft-agent-governance-toolkit-for-safe-ai-agent-tool-use-with-policies-approvals-audit-logs-and-risk-controls/",
-          "id": "https://www.marktechpost.com/?p=80228",
-          "publishedAt": "2026-05-31T20:07:01.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>In this tutorial, we build a governed AI-agent workflow using Microsoft’s Agent Governance Toolkit as the reference point. We create a Colab-ready implementation where agents do not directly execute tools; instead, every action first passes through a governance layer that checks the agent’s identity, trust score, risk tier, requested tool, action type, sensitivity level, and [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/31/an-implementation-of-the-microsoft-agent-governance-toolkit-for-safe-ai-agent-tool-use-with-policies-approvals-audit-logs-and-risk-controls/\">An Implementation of the Microsoft Agent Governance Toolkit for Safe AI Agent Tool Use with Policies, Approvals, Audit Logs, and Risk Controls</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "Editors Pick",
-            "Staff",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "A Coding Implementation on Loguru for Designing Robust, Structured, Concurrent, and Production-Ready Python Logging Pipelines",
-          "link": "https://www.marktechpost.com/2026/05/31/a-coding-implementation-on-loguru-for-designing-robust-structured-concurrent-and-production-ready-python-logging-pipelines/",
-          "id": "https://www.marktechpost.com/?p=80225",
-          "publishedAt": "2026-05-31T08:58:06.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>In this tutorial, we implement a practical use case with Loguru, a powerful, flexible, and production-ready logging library for Python.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/05/31/a-coding-implementation-on-loguru-for-designing-robust-structured-concurrent-and-production-ready-python-logging-pipelines/\">A Coding Implementation on Loguru for Designing Robust, Structured, Concurrent, and Production-Ready Python Logging Pipelines</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "AI Infrastructure",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Staff",
-            "Technology",
-            "Tutorials"
           ],
           "source": "MarkTechPost"
         }

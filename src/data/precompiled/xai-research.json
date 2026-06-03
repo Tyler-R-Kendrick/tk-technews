@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,7 +10,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Grok-2 Beta Release - xAI",
@@ -86,7 +86,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T01:11:12.584Z",
+      "fetchedAt": "2026-06-03T15:15:39.998Z",
       "items": [
         {
           "title": "Researchers Put AI Models in Charge of a Simulated Society. Grok Oversaw a Crime Spree - Gizmodo",
@@ -143,15 +143,6 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers - eWeek",
-          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw?oc=5",
-          "id": "CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw",
-          "publishedAt": "2026-05-18T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers  eWeek",
-          "source": "xAI Research and Labs"
-        },
-        {
           "title": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026] - tech-insider.org",
           "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw?oc=5",
           "id": "CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw",
@@ -161,21 +152,30 @@
           "source": "xAI Research and Labs"
         },
         {
+          "title": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers - eWeek",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw?oc=5",
+          "id": "CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw",
+          "publishedAt": "2026-05-18T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers  eWeek",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "Elon Musk testifies that xAI trained Grok on OpenAI models - TechCrunch",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA?oc=5",
+          "id": "CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA",
+          "publishedAt": "2026-04-30T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Elon Musk testifies that xAI trained Grok on OpenAI models  TechCrunch",
+          "source": "xAI Research and Labs"
+        },
+        {
           "title": "Grok Revenue and Usage Statistics (2026) - Business of Apps",
           "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43eTFobmtwVHhMR0t4OEFrVzk5dHpvdUZRVGhaSUJyVlkwcE51R255aDZKQ1U5QUdWcUVwWEFhckhQVkpZNUs2UHlXVnVodllLOGFWLXBiSkVQWFR0bXNfSVd3?oc=5",
           "id": "CBMiYkFVX3lxTE43eTFobmtwVHhMR0t4OEFrVzk5dHpvdUZRVGhaSUJyVlkwcE51R255aDZKQ1U5QUdWcUVwWEFhckhQVkpZNUs2UHlXVnVodllLOGFWLXBiSkVQWFR0bXNfSVd3",
           "publishedAt": "2026-03-31T07:00:00.000Z",
           "author": "xAI",
           "summary": "Grok Revenue and Usage Statistics (2026)  Business of Apps",
-          "source": "xAI Research and Labs"
-        },
-        {
-          "title": "xAI releases Grok 4, claiming Ph.D.-level smarts across all fields - R&D World",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbnJEbW45Sm9HLXJVOHBJdnNya0lhRXBVQ0ZQRWRkLUxwMDk2LU5IOEpoLWpjYzFTTUNxeVc5NmRBMlNEcGk4ZWU2SGJvcWx2YnhLQnVFWURqbzNDNV8yMWZoakg0TE0tejRESEhCQm11QmE2TFRfdXRQc29lTnRDVlM1dEw4UnJoOUlza3BKRkRESk9iV3MtTGhXbw?oc=5",
-          "id": "CBMimwFBVV95cUxQbnJEbW45Sm9HLXJVOHBJdnNya0lhRXBVQ0ZQRWRkLUxwMDk2LU5IOEpoLWpjYzFTTUNxeVc5NmRBMlNEcGk4ZWU2SGJvcWx2YnhLQnVFWURqbzNDNV8yMWZoakg0TE0tejRESEhCQm11QmE2TFRfdXRQc29lTnRDVlM1dEw4UnJoOUlza3BKRkRESk9iV3MtTGhXbw",
-          "publishedAt": "2025-07-10T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "xAI releases Grok 4, claiming Ph.D.-level smarts across all fields  R&D World",
           "source": "xAI Research and Labs"
         }
       ]

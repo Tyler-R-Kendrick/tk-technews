@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-03T01:11:12.584Z",
+    "fetchedAt": "2026-06-03T15:15:39.998Z",
     "items": [
       {
         "title": "Coding agents in the social sciences",
@@ -91,13 +91,13 @@
         "category": "Science"
       },
       {
-        "title": "Announcing the Anthropic Economic Index Survey",
-        "link": "https://www.anthropic.com/research/economic-index-survey-announcement",
-        "id": "https://www.anthropic.com/research/economic-index-survey-announcement",
-        "publishedAt": "2026-04-22T05:00:00.000Z",
+        "title": "Project Vend: Phase two",
+        "link": "https://www.anthropic.com/research/project-vend-2",
+        "id": "https://www.anthropic.com/research/project-vend-2",
+        "publishedAt": "2025-12-18T06:00:00.000Z",
         "author": "Anthropic",
-        "summary": "",
-        "category": "Economic Research"
+        "summary": "In June, we revealed that we’d set up a small shop in our San Francisco office lunchroom, run by an AI shopkeeper. It was part of Project Vend, a free-form experiment exploring how well AIs could do on complex, real-world tasks. How has Claude's business been since we last wrote?",
+        "category": "Policy"
       }
     ]
   }

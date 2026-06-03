@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "generatedAt": "2026-06-03T15:15:39.998Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,7 +8,7 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-03T01:11:12.584Z",
+    "fetchedAt": "2026-06-03T15:15:39.998Z",
     "items": [
       {
         "title": "A New Era of Discovery: Google Research at I/O 2026",

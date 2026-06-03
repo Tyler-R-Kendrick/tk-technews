@@ -1,13 +1,13 @@
 {
   "date": "2026-06-03",
-  "generatedAt": "2026-06-03T01:11:12.584Z",
-  "sourceItemCount": 3,
+  "generatedAt": "2026-06-03T15:15:39.998Z",
+  "sourceItemCount": 6,
   "articleStubs": [
     {
-      "id": "2026-06-03-github-vercel-labs-skills-update",
-      "slug": "2026-06-03-github-vercel-labs-skills-update",
-      "href": "/daily/2026-06-03/2026-06-03-github-vercel-labs-skills-update/",
-      "title": "GitHub Vercel Labs Skills Update",
+      "id": "2026-06-03-github-vercel-labs-zerolang-update",
+      "slug": "2026-06-03-github-vercel-labs-zerolang-update",
+      "href": "/daily/2026-06-03/2026-06-03-github-vercel-labs-zerolang-update/",
+      "title": "GitHub Vercel Labs Zerolang Update",
       "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
       "status": "generated",
       "bodySections": [
@@ -18,8 +18,8 @@
             "The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer."
           ],
           "citations": [
-            "https://github.com/vercel-labs/skills",
-            "https://github.com/vercel-labs/zerolang"
+            "https://github.com/vercel-labs/zerolang",
+            "https://github.com/vercel-labs/skills"
           ]
         },
         {
@@ -29,8 +29,8 @@
             "The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow."
           ],
           "citations": [
-            "https://github.com/vercel-labs/skills",
-            "https://github.com/vercel-labs/zerolang"
+            "https://github.com/vercel-labs/zerolang",
+            "https://github.com/vercel-labs/skills"
           ]
         }
       ],
@@ -39,39 +39,21 @@
         "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
       ],
       "sourceCount": 2,
-      "latestPublishedAt": "2026-06-03T01:09:58Z",
+      "latestPublishedAt": "2026-06-03T15:11:49Z",
       "tags": [
         "GitHub",
         "Vercel",
         "vercel",
         "labs",
-        "skills",
+        "zerolang",
         "github"
       ],
       "sources": [
         {
-          "title": "vercel-labs/skills",
-          "url": "https://github.com/vercel-labs/skills",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-03T01:09:58Z",
-          "summary": "The open agent skills tool - npx skills",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://github.com/vercel-labs/skills",
-            "title": "vercel-labs/skills",
-            "source": "vercel-labs GitHub",
-            "snippet": "The open agent skills tool - npx skills",
-            "host": "github.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
           "title": "vercel-labs/zerolang",
           "url": "https://github.com/vercel-labs/zerolang",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-03T00:59:21Z",
+          "publishedAt": "2026-06-03T15:11:49Z",
           "summary": "The programming language for agents",
           "preview": {
             "kind": "source",
@@ -80,6 +62,24 @@
             "title": "vercel-labs/zerolang",
             "source": "vercel-labs GitHub",
             "snippet": "The programming language for agents",
+            "host": "github.com",
+            "thumbnailUrl": null,
+            "social": null
+          }
+        },
+        {
+          "title": "vercel-labs/skills",
+          "url": "https://github.com/vercel-labs/skills",
+          "sourceName": "vercel-labs GitHub",
+          "publishedAt": "2026-06-03T02:19:03Z",
+          "summary": "The open agent skills tool - npx skills",
+          "preview": {
+            "kind": "source",
+            "label": "Source",
+            "href": "https://github.com/vercel-labs/skills",
+            "title": "vercel-labs/skills",
+            "source": "vercel-labs GitHub",
+            "snippet": "The open agent skills tool - npx skills",
             "host": "github.com",
             "thumbnailUrl": null,
             "social": null

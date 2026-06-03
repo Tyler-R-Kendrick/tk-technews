@@ -49,7 +49,9 @@ export function buildPythonInvocation(input) {
 
 export async function callTranscriptTool(input) {
   const invocation = buildPythonInvocation(input);
-  const result = await runProcess(invocation);
+  const result = await runProcess(invocation, {
+    timeoutMs: Number(input.timeoutMs ?? 20000)
+  });
 
   if (result.exitCode !== 0) {
     throw new Error(result.stderr || `Transcript helper exited with code ${result.exitCode}`);
@@ -73,7 +75,7 @@ export function toMcpJson(value) {
   };
 }
 
-function runProcess({ command, args, stdin }) {
+export function runProcess({ command, args, stdin }, { timeoutMs } = {}) {
   return new Promise((resolve) => {
     const child = spawn(command, args, {
       cwd: process.cwd(),
@@ -82,6 +84,26 @@ function runProcess({ command, args, stdin }) {
     });
     let stdout = '';
     let stderr = '';
+    let settled = false;
+    const timer = Number.isFinite(timeoutMs) && timeoutMs > 0
+      ? setTimeout(() => {
+          if (settled) return;
+          settled = true;
+          child.kill();
+          resolve({
+            exitCode: -1,
+            stdout,
+            stderr: stderr || `Transcript helper timed out after ${timeoutMs}ms`
+          });
+        }, timeoutMs)
+      : null;
+
+    const finish = (result) => {
+      if (settled) return;
+      settled = true;
+      if (timer) clearTimeout(timer);
+      resolve(result);
+    };
 
     child.stdout.on('data', (chunk) => {
       stdout += chunk.toString();
@@ -90,7 +112,14 @@ function runProcess({ command, args, stdin }) {
       stderr += chunk.toString();
     });
     child.on('close', (exitCode) => {
-      resolve({ exitCode, stdout, stderr });
+      finish({ exitCode, stdout, stderr });
+    });
+    child.on('error', (error) => {
+      finish({
+        exitCode: -1,
+        stdout,
+        stderr: error.message
+      });
     });
     child.stdin.end(stdin);
   });

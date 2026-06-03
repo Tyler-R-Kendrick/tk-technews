@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T21:55:00.444Z",
+  "generatedAt": "2026-06-03T01:11:12.584Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,7 +10,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-30T21:55:00.444Z",
+      "fetchedAt": "2026-06-03T01:11:12.584Z",
       "items": [
         {
           "title": "Grok-2 Beta Release - xAI",
@@ -31,21 +31,21 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Skills in web, iOS, and Android - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0?oc=5",
-          "id": "CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0",
-          "publishedAt": "2026-05-18T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Skills in web, iOS, and Android  xAI",
-          "source": "xAI Official News"
-        },
-        {
           "title": "Grok Imagine API - xAI",
           "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn?oc=5",
           "id": "CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn",
           "publishedAt": "2026-01-28T08:00:00.000Z",
           "author": "xAI",
           "summary": "Grok Imagine API  xAI",
+          "source": "xAI Official News"
+        },
+        {
+          "title": "Skills in web, iOS, and Android - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0?oc=5",
+          "id": "CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0",
+          "publishedAt": "2026-05-18T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Skills in web, iOS, and Android  xAI",
           "source": "xAI Official News"
         },
         {
@@ -86,15 +86,15 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-05-30T21:55:00.444Z",
+      "fetchedAt": "2026-06-03T01:11:12.584Z",
       "items": [
         {
-          "title": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff - The Information",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ29FMEpVTjdINlc1b0VkZFBwaXYzYjBLVXotbm1BQ3FmMlE4bldNYTNRNEpKSy1LUDFBQ29zS19jZ2VRTXJTVEFyUUsxVERmdk55Q0EyWTRMT19WVWRqazIzX3dsUnN4OTBWbUxpTGNDTGFZbTBaZDhueFloWGpHTHhGTXhYWnJzN0V1RUp0SlRheWg1T0VvTks2UjRrZkdIai1lTThyczI?oc=5",
-          "id": "CBMiqAFBVV95cUxOQ29FMEpVTjdINlc1b0VkZFBwaXYzYjBLVXotbm1BQ3FmMlE4bldNYTNRNEpKSy1LUDFBQ29zS19jZ2VRTXJTVEFyUUsxVERmdk55Q0EyWTRMT19WVWRqazIzX3dsUnN4OTBWbUxpTGNDTGFZbTBaZDhueFloWGpHTHhGTXhYWnJzN0V1RUp0SlRheWg1T0VvTks2UjRrZkdIai1lTThyczI",
-          "publishedAt": "2026-05-14T07:00:00.000Z",
+          "title": "Researchers Put AI Models in Charge of a Simulated Society. Grok Oversaw a Crime Spree - Gizmodo",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPemZVSTdFWGcwamNGRDB5VnZvdVdXeVJFODZLdk03bzFQNHFFOHdHTGVPeFQwY3d4NzdoSW9UekY1UklnVG9WWS1TVkNnRGtsc24tVjlNZE8xeDBURGxfOFQzUndMUWtiMFJQQWFwbXlUeDBEcDdvaWhMUFVhU1hvblFLNE9NSUR2WmFTNVZlaGFYSGhDbEYzNFRPbFg0bXctUGprZjdTa2I1bnRrMzVMV2tqT0hkcms?oc=5",
+          "id": "CBMitwFBVV95cUxPemZVSTdFWGcwamNGRDB5VnZvdVdXeVJFODZLdk03bzFQNHFFOHdHTGVPeFQwY3d4NzdoSW9UekY1UklnVG9WWS1TVkNnRGtsc24tVjlNZE8xeDBURGxfOFQzUndMUWtiMFJQQWFwbXlUeDBEcDdvaWhMUFVhU1hvblFLNE9NSUR2WmFTNVZlaGFYSGhDbEYzNFRPbFg0bXctUGprZjdTa2I1bnRrMzVMV2tqT0hkcms",
+          "publishedAt": "2026-05-28T21:10:53.000Z",
           "author": "xAI",
-          "summary": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff  The Information",
+          "summary": "Researchers Put AI Models in Charge of a Simulated Society. Grok Oversaw a Crime Spree  Gizmodo",
           "source": "xAI Research and Labs"
         },
         {
@@ -104,6 +104,15 @@
           "publishedAt": "2026-02-02T08:00:00.000Z",
           "author": "xAI",
           "summary": "An Energy Department-run national lab is piloting xAI’s Grok  FedScoop",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff - The Information",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOQ29FMEpVTjdINlc1b0VkZFBwaXYzYjBLVXotbm1BQ3FmMlE4bldNYTNRNEpKSy1LUDFBQ29zS19jZ2VRTXJTVEFyUUsxVERmdk55Q0EyWTRMT19WVWRqazIzX3dsUnN4OTBWbUxpTGNDTGFZbTBaZDhueFloWGpHTHhGTXhYWnJzN0V1RUp0SlRheWg1T0VvTks2UjRrZkdIai1lTThyczI?oc=5",
+          "id": "CBMiqAFBVV95cUxOQ29FMEpVTjdINlc1b0VkZFBwaXYzYjBLVXotbm1BQ3FmMlE4bldNYTNRNEpKSy1LUDFBQ29zS19jZ2VRTXJTVEFyUUsxVERmdk55Q0EyWTRMT19WVWRqazIzX3dsUnN4OTBWbUxpTGNDTGFZbTBaZDhueFloWGpHTHhGTXhYWnJzN0V1RUp0SlRheWg1T0VvTks2UjRrZkdIai1lTThyczI",
+          "publishedAt": "2026-05-14T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "The SpaceXAI Exodus: More Than 50 Recent Exits as Meta, Thinking Machines Hire Staff  The Information",
           "source": "xAI Research and Labs"
         },
         {
@@ -134,12 +143,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "Elon Musk testifies that xAI trained Grok on OpenAI models - TechCrunch",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA?oc=5",
-          "id": "CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA",
-          "publishedAt": "2026-04-30T07:00:00.000Z",
+          "title": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers - eWeek",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw?oc=5",
+          "id": "CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw",
+          "publishedAt": "2026-05-18T07:00:00.000Z",
           "author": "xAI",
-          "summary": "Elon Musk testifies that xAI trained Grok on OpenAI models  TechCrunch",
+          "summary": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers  eWeek",
           "source": "xAI Research and Labs"
         },
         {
@@ -161,21 +170,12 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "xAI Launches Standalone Grok Speech-to-Text and Text-to-Speech APIs, Targeting Enterprise Voice Developers - MarkTechPost",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOY09RY0dONHF6YllnWlNMekExaFNSVVZpblRLVC1teGhPOFl1RFRkUmprVWtmcGo3Ml9ybzE0MDFfZ0VPaWhFN1BjdEpsYlhoQlpiLVJET2Q1LUVCU0xEWWhDU2xIM3JTM0N5VUNhc0dPUG5RUEsxZ0Vjc21kTHAyVHdFYnFLa1FpTWRWOWFrY3JVOHFJYVhYdXNJWnVDYzF5ODlPWFJiRUdLbGVtQ1hNOFptdzJfMUV6RlhEcWdOUWVQRGowakF2RkVwaTFkNnZudk9JbjlYQlZKV2dqXzVj?oc=5",
-          "id": "CBMi3wFBVV95cUxOY09RY0dONHF6YllnWlNMekExaFNSVVZpblRLVC1teGhPOFl1RFRkUmprVWtmcGo3Ml9ybzE0MDFfZ0VPaWhFN1BjdEpsYlhoQlpiLVJET2Q1LUVCU0xEWWhDU2xIM3JTM0N5VUNhc0dPUG5RUEsxZ0Vjc21kTHAyVHdFYnFLa1FpTWRWOWFrY3JVOHFJYVhYdXNJWnVDYzF5ODlPWFJiRUdLbGVtQ1hNOFptdzJfMUV6RlhEcWdOUWVQRGowakF2RkVwaTFkNnZudk9JbjlYQlZKV2dqXzVj",
-          "publishedAt": "2026-04-18T07:00:00.000Z",
+          "title": "xAI releases Grok 4, claiming Ph.D.-level smarts across all fields - R&D World",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbnJEbW45Sm9HLXJVOHBJdnNya0lhRXBVQ0ZQRWRkLUxwMDk2LU5IOEpoLWpjYzFTTUNxeVc5NmRBMlNEcGk4ZWU2SGJvcWx2YnhLQnVFWURqbzNDNV8yMWZoakg0TE0tejRESEhCQm11QmE2TFRfdXRQc29lTnRDVlM1dEw4UnJoOUlza3BKRkRESk9iV3MtTGhXbw?oc=5",
+          "id": "CBMimwFBVV95cUxQbnJEbW45Sm9HLXJVOHBJdnNya0lhRXBVQ0ZQRWRkLUxwMDk2LU5IOEpoLWpjYzFTTUNxeVc5NmRBMlNEcGk4ZWU2SGJvcWx2YnhLQnVFWURqbzNDNV8yMWZoakg0TE0tejRESEhCQm11QmE2TFRfdXRQc29lTnRDVlM1dEw4UnJoOUlza3BKRkRESk9iV3MtTGhXbw",
+          "publishedAt": "2025-07-10T07:00:00.000Z",
           "author": "xAI",
-          "summary": "xAI Launches Standalone Grok Speech-to-Text and Text-to-Speech APIs, Targeting Enterprise Voice Developers  MarkTechPost",
-          "source": "xAI Research and Labs"
-        },
-        {
-          "title": "Elon Musk released xAI’s Grok 4 without any safety reports—despite calling AI more ‘dangerous than nukes’ - Fortune",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE4wOHdsRkE1c1dqQlZ1ck5OZUZkVXJWbTNlcjg5aGxKVHFWeVY2Z3FMMlNCWW5xdXpSdXhEei1WQWRJUnBveldSTENKLU1jaTB6M0JocXlHa2EwZG1ZMS1GMnpCcnFqUEhUTzFNSHYySGhwM0N5UW9uUw?oc=5",
-          "id": "CBMieEFVX3lxTE4wOHdsRkE1c1dqQlZ1ck5OZUZkVXJWbTNlcjg5aGxKVHFWeVY2Z3FMMlNCWW5xdXpSdXhEei1WQWRJUnBveldSTENKLU1jaTB6M0JocXlHa2EwZG1ZMS1GMnpCcnFqUEhUTzFNSHYySGhwM0N5UW9uUw",
-          "publishedAt": "2025-07-17T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Elon Musk released xAI’s Grok 4 without any safety reports—despite calling AI more ‘dangerous than nukes’  Fortune",
+          "summary": "xAI releases Grok 4, claiming Ph.D.-level smarts across all fields  R&D World",
           "source": "xAI Research and Labs"
         }
       ]

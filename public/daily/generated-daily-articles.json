@@ -1,13 +1,13 @@
 {
-  "date": "2026-05-30",
-  "generatedAt": "2026-05-30T21:55:00.444Z",
-  "sourceItemCount": 7,
+  "date": "2026-06-03",
+  "generatedAt": "2026-06-03T01:11:12.584Z",
+  "sourceItemCount": 3,
   "articleStubs": [
     {
-      "id": "2026-05-30-github-vercel-labs-zerolang-update",
-      "slug": "2026-05-30-github-vercel-labs-zerolang-update",
-      "href": "/daily/2026-05-30/2026-05-30-github-vercel-labs-zerolang-update/",
-      "title": "GitHub Vercel Labs Zerolang Update",
+      "id": "2026-06-03-github-vercel-labs-skills-update",
+      "slug": "2026-06-03-github-vercel-labs-skills-update",
+      "href": "/daily/2026-06-03/2026-06-03-github-vercel-labs-skills-update/",
+      "title": "GitHub Vercel Labs Skills Update",
       "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
       "status": "generated",
       "bodySections": [
@@ -18,8 +18,8 @@
             "The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer."
           ],
           "citations": [
-            "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/deepsec"
+            "https://github.com/vercel-labs/skills",
+            "https://github.com/vercel-labs/zerolang"
           ]
         },
         {
@@ -29,8 +29,8 @@
             "The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow."
           ],
           "citations": [
-            "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/deepsec"
+            "https://github.com/vercel-labs/skills",
+            "https://github.com/vercel-labs/zerolang"
           ]
         }
       ],
@@ -39,21 +39,39 @@
         "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
       ],
       "sourceCount": 2,
-      "latestPublishedAt": "2026-05-30T21:50:42Z",
+      "latestPublishedAt": "2026-06-03T01:09:58Z",
       "tags": [
         "GitHub",
         "Vercel",
         "vercel",
         "labs",
-        "zerolang",
+        "skills",
         "github"
       ],
       "sources": [
         {
+          "title": "vercel-labs/skills",
+          "url": "https://github.com/vercel-labs/skills",
+          "sourceName": "vercel-labs GitHub",
+          "publishedAt": "2026-06-03T01:09:58Z",
+          "summary": "The open agent skills tool - npx skills",
+          "preview": {
+            "kind": "source",
+            "label": "Source",
+            "href": "https://github.com/vercel-labs/skills",
+            "title": "vercel-labs/skills",
+            "source": "vercel-labs GitHub",
+            "snippet": "The open agent skills tool - npx skills",
+            "host": "github.com",
+            "thumbnailUrl": null,
+            "social": null
+          }
+        },
+        {
           "title": "vercel-labs/zerolang",
           "url": "https://github.com/vercel-labs/zerolang",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-30T21:50:42Z",
+          "publishedAt": "2026-06-03T00:59:21Z",
           "summary": "The programming language for agents",
           "preview": {
             "kind": "source",
@@ -62,24 +80,6 @@
             "title": "vercel-labs/zerolang",
             "source": "vercel-labs GitHub",
             "snippet": "The programming language for agents",
-            "host": "github.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "vercel-labs/deepsec",
-          "url": "https://github.com/vercel-labs/deepsec",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-05-30T17:03:39Z",
-          "summary": "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://github.com/vercel-labs/deepsec",
-            "title": "vercel-labs/deepsec",
-            "source": "vercel-labs GitHub",
-            "snippet": "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
             "host": "github.com",
             "thumbnailUrl": null,
             "social": null
@@ -138,237 +138,6 @@
           {
             "name": "speculation-boundary",
             "text": "No speculation boundary needed.",
-            "passed": true,
-            "score": 1,
-            "label": "Speculation boundary",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "reader-facing-language",
-            "text": "Reader-facing language passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Reader-facing language",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "tone-match",
-            "text": "Tone match passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Tone match",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "word-choice",
-            "text": "Word choice passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Word choice",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "detail-level",
-            "text": "Level of detail passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Level of detail",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "voice-adherence",
-            "text": "Voice adherence passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Voice adherence",
-            "required": false,
-            "weight": 0.04
-          },
-          {
-            "name": "daily-article-word-count",
-            "text": "daily-article-word-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-section-count",
-            "text": "daily-article-section-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-title-echo-paragraphs",
-            "text": "daily-article-no-title-echo-paragraphs passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-template-headings",
-            "text": "daily-article-no-template-headings passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-hard-science-detail",
-            "text": "daily-article-hard-science-detail passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-copied-source-headlines",
-            "text": "daily-article-no-copied-source-headlines passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-generation-instructions",
-            "text": "daily-article-no-generation-instructions passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-has-usable-source-evidence",
-            "text": "daily-article-has-usable-source-evidence passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-grounded-in-source-terms",
-            "text": "daily-article-grounded-in-source-terms passed.",
-            "passed": true,
-            "score": 1
-          }
-        ],
-        "feedback": [],
-        "requiredFixes": []
-      },
-      "evalScore": 1,
-      "evalAttempts": 1,
-      "evalStatus": "passed",
-      "provider": "deterministic-daily-journalist",
-      "model": null
-    },
-    {
-      "id": "2026-05-30-genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-sca",
-      "slug": "2026-05-30-genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-sca",
-      "href": "/daily/2026-05-30/2026-05-30-genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-sca/",
-      "title": "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable R...",
-      "dek": "The system achieves a Pearson correlation of 0.8996 between simulation and real-world robot rollouts, and reduces policy evaluation time from over 200 hours to under 0.5 hours.",
-      "status": "generated",
-      "bodySections": [
-        {
-          "heading": "Genesis Nyx Quadrants Genesis World Defines The Technical Claim",
-          "intent": "Explain the source-backed development and its technical consequence.",
-          "paragraphs": [
-            "The system achieves a Pearson correlation of 0.8996 between simulation and real-world robot rollouts, and reduces policy evaluation time from over 200 hours to under 0.5 hours. The cited detail gives readers an implementation point to verify before treating the claim as production-ready.",
-            "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The practical next step is to connect that detail to benchmarks, architecture, cost, or workflow behavior."
-          ],
-          "citations": [
-            "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/"
-          ]
-        },
-        {
-          "heading": "The Mechanism Needs A Check",
-          "intent": "Explain the technical consequence of the extracted evidence.",
-          "paragraphs": [
-            "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating the citation as a production-ready claim."
-          ],
-          "citations": [
-            "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/"
-          ]
-        }
-      ],
-      "keyTakeaways": [
-        "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable R... matters because genesis Nyx Quadrants Genesis World Defines The Technical Claim.",
-        "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable R... matters because the Mechanism Needs A Check."
-      ],
-      "sourceCount": 1,
-      "latestPublishedAt": "2026-05-30T09:25:14.000Z",
-      "tags": [
-        "genesis",
-        "nyx",
-        "quadrants",
-        "world",
-        "physics",
-        "platform"
-      ],
-      "sources": [
-        {
-          "title": "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable Robotics Foundation Model Evaluation",
-          "url": "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/",
-          "sourceName": "MarkTechPost",
-          "publishedAt": "2026-05-30T09:25:14.000Z",
-          "summary": "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The system achieves a Pearson correlation of 0.8996 between simulation and real-world robot rollouts, and reduces policy evaluation time from over 200 hours to under 0.5 hours.",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://www.marktechpost.com/2026/05/30/genesis-ai-releases-nyx-quadrants-and-genesis-world-1-0-physics-platform-for-scalable-robotics-foundation-model-evaluation/",
-            "title": "Genesis AI Releases Nyx, Quadrants, and Genesis World 1.0 Physics Platform for Scalable Robotics Foundation Model Evaluation",
-            "source": "MarkTechPost",
-            "snippet": "Genesis AI released Genesis World 1.0 on May 27, 2026 — a four-component simulation platform covering physics, rendering, compilation, and tooling. The system achieves a Pearson correlation of 0.8996 between simulatio...",
-            "host": "marktechpost.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        }
-      ],
-      "evalReport": {
-        "score": 1,
-        "verdict": "pass",
-        "assertions": [
-          {
-            "name": "citation-coverage",
-            "text": "Citation coverage passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation coverage",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "citation-richness",
-            "text": "Citation richness passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation richness",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "link-health",
-            "text": "Link syntax passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Link health",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "grounding",
-            "text": "Grounding passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Grounding",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "relevance",
-            "text": "Relevance passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Relevance",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "speculation-boundary",
-            "text": "Speculation boundary passed.",
             "passed": true,
             "score": 1,
             "label": "Speculation boundary",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T21:55:00.444Z",
+  "generatedAt": "2026-06-03T01:11:12.584Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,10 +8,10 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-05-30T21:55:00.444Z",
+    "fetchedAt": "2026-06-03T01:11:12.584Z",
     "items": [
       {
-        "title": "A New Era of Innovation: Google Research at I/O 2026",
+        "title": "A New Era of Discovery: Google Research at I/O 2026",
         "link": "https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/",
         "id": "https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/",
         "publishedAt": "2026-05-28T20:58:00.000Z",

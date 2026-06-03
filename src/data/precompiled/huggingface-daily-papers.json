@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T21:55:00.444Z",
+  "generatedAt": "2026-06-03T01:11:12.584Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-05-30T21:55:00.444Z",
+    "fetchedAt": "2026-06-03T01:11:12.584Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -309,7 +309,7 @@
           "Zhijiang Guo"
         ],
         "summary": "EnvFactory automates the creation of executable tool environments and natural multi-turn trajectories for training LLMs with agentic reinforcement learning, achieving superior performance with fewer resources.",
-        "upvotes": 48,
+        "upvotes": 50,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18703.png",
         "projectPage": null,
@@ -329,6 +329,40 @@
           "MCP-Atlas",
           "τ²-Bench",
           "VitaBench"
+        ]
+      },
+      {
+        "title": "Harnessing LLM Agents with Skill Programs",
+        "link": "https://huggingface.co/papers/2605.17734",
+        "id": "2605.17734",
+        "publishedAt": "2026-05-18T00:00:00.000Z",
+        "submittedAt": "2026-05-20T00:00:00.000Z",
+        "author": "Hongjun Liu, Yifei Ming, Shafiq Joty",
+        "authors": [
+          "Hongjun Liu",
+          "Yifei Ming",
+          "Shafiq Joty",
+          "Chen Zhao"
+        ],
+        "summary": "HASP introduces executable program functions that serve as active guardrails for LLM agents, enabling direct intervention in agent loops and improving performance across complex tasks.",
+        "upvotes": 35,
+        "comments": 2,
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.17734.png",
+        "projectPage": null,
+        "githubRepo": null,
+        "keywords": [
+          "LLM agents",
+          "skill programs",
+          "Program Functions",
+          "executable guardrails",
+          "agent loop intervention",
+          "post-training",
+          "self-improvement",
+          "web-search reasoning",
+          "math reasoning",
+          "coding tasks",
+          "ReAct Agent",
+          "Search-R1"
         ]
       },
       {
@@ -364,40 +398,6 @@
           "closed-loop architecture",
           "CogReasonBench",
           "CogControlBench"
-        ]
-      },
-      {
-        "title": "Harnessing LLM Agents with Skill Programs",
-        "link": "https://huggingface.co/papers/2605.17734",
-        "id": "2605.17734",
-        "publishedAt": "2026-05-18T00:00:00.000Z",
-        "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Hongjun Liu, Yifei Ming, Shafiq Joty",
-        "authors": [
-          "Hongjun Liu",
-          "Yifei Ming",
-          "Shafiq Joty",
-          "Chen Zhao"
-        ],
-        "summary": "HASP introduces executable program functions that serve as active guardrails for LLM agents, enabling direct intervention in agent loops and improving performance across complex tasks.",
-        "upvotes": 34,
-        "comments": 2,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.17734.png",
-        "projectPage": null,
-        "githubRepo": null,
-        "keywords": [
-          "LLM agents",
-          "skill programs",
-          "Program Functions",
-          "executable guardrails",
-          "agent loop intervention",
-          "post-training",
-          "self-improvement",
-          "web-search reasoning",
-          "math reasoning",
-          "coding tasks",
-          "ReAct Agent",
-          "Search-R1"
         ]
       },
       {
@@ -500,7 +500,7 @@
           "Tianmin Shu"
         ],
         "summary": "ThoughtTrace presents a large-scale dataset pairing human-AI conversations with self-reported thoughts, enabling improved user behavior prediction and personalized assistant training through thought-guided rewrites.",
-        "upvotes": 17,
+        "upvotes": 18,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20087.png",
         "projectPage": "https://thoughttrace-project.github.io/",
@@ -710,6 +710,44 @@
         ]
       },
       {
+        "title": "Semantic Generative Tuning for Unified Multimodal Models",
+        "link": "https://huggingface.co/papers/2605.18714",
+        "id": "2605.18714",
+        "publishedAt": "2026-05-18T00:00:00.000Z",
+        "submittedAt": "2026-05-20T00:00:00.000Z",
+        "author": "Songsong Yu, Yuxin Chen, Ying Shan",
+        "authors": [
+          "Songsong Yu",
+          "Yuxin Chen",
+          "Ying Shan",
+          "Yanwei Li"
+        ],
+        "summary": "Generative post-training with semantic segmentation as a proxy aligns visual understanding and generation in unified multimodal models, improving both perception and generative fidelity.",
+        "upvotes": 11,
+        "comments": 1,
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18714.png",
+        "projectPage": "https://song2yu.github.io/SGT/",
+        "githubRepo": "https://github.com/song2yu/SGT",
+        "keywords": [
+          "unified multimodal models",
+          "visual understanding",
+          "visual generation",
+          "sparse text signals",
+          "dense pixel objectives",
+          "decoupled strategy",
+          "representation spaces",
+          "generative post-training",
+          "hierarchical visual tasks",
+          "generative proxies",
+          "image segmentation",
+          "semantic tasks",
+          "multimodal capabilities",
+          "Semantic Generative Tuning",
+          "feature linear separability",
+          "visual-textual attention allocation"
+        ]
+      },
+      {
         "title": "Fast 4D Mesh Generation by Spatio-Temporal Attention Chains",
         "link": "https://huggingface.co/papers/2605.19786",
         "id": "2605.19786",
@@ -738,44 +776,6 @@
           "2D object tracking",
           "4D tracking",
           "camera estimation"
-        ]
-      },
-      {
-        "title": "Semantic Generative Tuning for Unified Multimodal Models",
-        "link": "https://huggingface.co/papers/2605.18714",
-        "id": "2605.18714",
-        "publishedAt": "2026-05-18T00:00:00.000Z",
-        "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Songsong Yu, Yuxin Chen, Ying Shan",
-        "authors": [
-          "Songsong Yu",
-          "Yuxin Chen",
-          "Ying Shan",
-          "Yanwei Li"
-        ],
-        "summary": "Generative post-training with semantic segmentation as a proxy aligns visual understanding and generation in unified multimodal models, improving both perception and generative fidelity.",
-        "upvotes": 10,
-        "comments": 1,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.18714.png",
-        "projectPage": "https://song2yu.github.io/SGT/",
-        "githubRepo": "https://github.com/song2yu/SGT",
-        "keywords": [
-          "unified multimodal models",
-          "visual understanding",
-          "visual generation",
-          "sparse text signals",
-          "dense pixel objectives",
-          "decoupled strategy",
-          "representation spaces",
-          "generative post-training",
-          "hierarchical visual tasks",
-          "generative proxies",
-          "image segmentation",
-          "semantic tasks",
-          "multimodal capabilities",
-          "Semantic Generative Tuning",
-          "feature linear separability",
-          "visual-textual attention allocation"
         ]
       }
     ]

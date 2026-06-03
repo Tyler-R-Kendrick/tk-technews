@@ -348,7 +348,8 @@ export async function fetchYouTubeSource(source, options = {}) {
       transcriptFetcher: options.transcriptFetcher,
       transcriptLanguages: options.transcriptLanguages,
       transcriptEnabled: options.transcriptEnabled,
-      maxTranscriptItems: options.maxTranscriptItems
+      maxTranscriptItems: options.maxTranscriptItems,
+      transcriptTimeoutMs: options.transcriptTimeoutMs
     });
 
     return {
@@ -384,7 +385,8 @@ export async function enrichYouTubeItemsWithTranscripts(items, options = {}) {
         idOrUrl: item.link,
         languages,
         transcript_type: 'any',
-        format: 'text'
+        format: 'text',
+        timeoutMs: options.transcriptTimeoutMs
       });
       const text = normalizeTranscriptText(result.transcript);
       const transcriptSummary = summarizeTranscriptText(text);
@@ -421,7 +423,8 @@ export async function fetchHuggingFaceDailyPapers(source, options = {}) {
       headers: {
         'accept': 'application/json',
         'user-agent': 'tk-technews source precompiler; local research agent'
-      }
+      },
+      signal: AbortSignal.timeout(Number(options.timeoutMs ?? 20000))
     });
 
     if (!response.ok) {
@@ -562,7 +565,8 @@ export async function fetchMetaAiResearchSource(source, options = {}) {
       headers: {
         'accept': 'text/html',
         'user-agent': 'tk-technews source precompiler; local research agent'
-      }
+      },
+      signal: AbortSignal.timeout(Number(options.timeoutMs ?? 20000))
     });
 
     if (!response.ok) {
@@ -587,7 +591,8 @@ export async function fetchGitHubOrganizationSource(source, options = {}) {
       headers: {
         'accept': 'application/vnd.github+json',
         'user-agent': 'tk-technews source precompiler; local research agent'
-      }
+      },
+      signal: AbortSignal.timeout(Number(options.timeoutMs ?? 20000))
     });
 
     if (!response.ok) {
@@ -628,7 +633,8 @@ async function fetchAnthropicIndex(source, options = {}) {
       headers: {
         'accept': 'text/html',
         'user-agent': 'tk-technews source precompiler; local research agent'
-      }
+      },
+      signal: AbortSignal.timeout(Number(options.timeoutMs ?? 20000))
     });
 
     if (!response.ok) {
@@ -656,7 +662,8 @@ export async function resolveYouTubeChannel(channelUrl) {
     headers: {
       'user-agent': 'Mozilla/5.0 tk-technews source precompiler'
     },
-    redirect: 'follow'
+    redirect: 'follow',
+    signal: AbortSignal.timeout(20000)
   });
 
   if (!response.ok) {

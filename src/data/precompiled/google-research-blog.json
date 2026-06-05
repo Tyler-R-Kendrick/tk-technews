@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T15:15:39.998Z",
+  "generatedAt": "2026-06-05T15:35:04.860Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,8 +8,35 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-03T15:15:39.998Z",
+    "fetchedAt": "2026-06-05T15:35:04.860Z",
     "items": [
+      {
+        "title": "Towards passive heart health monitoring via smartphone camera",
+        "link": "https://research.google/blog/towards-passive-heart-health-monitoring-via-smartphone-camera/",
+        "id": "https://research.google/blog/towards-passive-heart-health-monitoring-via-smartphone-camera/",
+        "publishedAt": "2026-06-04T19:47:12.000Z",
+        "author": "Google Research",
+        "summary": "Health & Bioscience",
+        "categories": [
+          "Health & Bioscience",
+          "Human-Computer Interaction and Visualization",
+          "Machine Intelligence"
+        ]
+      },
+      {
+        "title": "The next chapter in flood resilience: Open sourcing Google’s hydrology framework",
+        "link": "https://research.google/blog/the-next-chapter-in-flood-resilience-open-sourcing-googles-hydrology-framework/",
+        "id": "https://research.google/blog/the-next-chapter-in-flood-resilience-open-sourcing-googles-hydrology-framework/",
+        "publishedAt": "2026-06-03T18:37:32.000Z",
+        "author": "Google Research",
+        "summary": "Climate & Sustainability",
+        "categories": [
+          "Climate & Sustainability",
+          "Earth AI",
+          "Generative AI",
+          "Open Source Models & Datasets"
+        ]
+      },
       {
         "title": "A New Era of Discovery: Google Research at I/O 2026",
         "link": "https://research.google/blog/a-new-era-of-innovation-google-research-at-io-2026/",
@@ -113,31 +140,6 @@
           "Generative AI",
           "Machine Intelligence",
           "Natural Language Processing"
-        ]
-      },
-      {
-        "title": "AI-generated synthetic neurons speed up brain mapping",
-        "link": "https://research.google/blog/ai-generated-synthetic-neurons-speed-up-brain-mapping/",
-        "id": "https://research.google/blog/ai-generated-synthetic-neurons-speed-up-brain-mapping/",
-        "publishedAt": "2026-04-16T12:18:00.000Z",
-        "author": "Google Research",
-        "summary": "General Science",
-        "categories": [
-          "General Science",
-          "Health & Bioscience",
-          "Machine Intelligence"
-        ]
-      },
-      {
-        "title": "Towards developing future-ready skills with generative AI",
-        "link": "https://research.google/blog/towards-developing-future-ready-skills-with-generative-ai/",
-        "id": "https://research.google/blog/towards-developing-future-ready-skills-with-generative-ai/",
-        "publishedAt": "2026-04-13T18:15:59.000Z",
-        "author": "Google Research",
-        "summary": "Education Innovation",
-        "categories": [
-          "Education Innovation",
-          "Generative AI"
         ]
       }
     ]

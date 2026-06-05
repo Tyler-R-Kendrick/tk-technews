@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T15:15:39.998Z",
+  "generatedAt": "2026-06-05T15:35:04.860Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-06-03T15:15:39.998Z",
+    "fetchedAt": "2026-06-05T15:35:04.860Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -123,7 +123,7 @@
           "Peng Qi"
         ],
         "summary": "Video-capable multimodal large language models exhibit apparent audio understanding driven by visual cues rather than actual audio processing, necessitating intervention-based frameworks for diagnosing and improving audio-visual alignment.",
-        "upvotes": 149,
+        "upvotes": 158,
         "comments": 2,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.16403.png",
         "projectPage": "https://rakanwen.github.io/when-vision-speaks-for-sound/",

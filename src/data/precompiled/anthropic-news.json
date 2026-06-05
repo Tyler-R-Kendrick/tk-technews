@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T15:15:39.998Z",
+  "generatedAt": "2026-06-05T15:35:04.860Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-03T15:15:39.998Z",
+    "fetchedAt": "2026-06-05T15:35:04.860Z",
     "items": [
       {
         "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
@@ -33,7 +33,7 @@
         "id": "https://www.anthropic.com/news/expanding-project-glasswing",
         "publishedAt": "2026-06-02T05:00:00.000Z",
         "author": "Anthropic",
-        "summary": "",
+        "summary": "We’re extending Project Glasswing to approximately 150 new organizations in more than fifteen countries.",
         "category": "Announcements"
       },
       {
@@ -87,17 +87,17 @@
         "id": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
         "publishedAt": "2026-05-25T05:00:00.000Z",
         "author": "Anthropic",
-        "summary": "",
+        "summary": "The full text of Chris Olah's remarks on the Pope's encyclical on AI.",
         "category": "Announcements"
       },
       {
-        "title": "Introducing Claude Design by Anthropic Labs",
-        "link": "https://www.anthropic.com/news/claude-design-anthropic-labs",
-        "id": "https://www.anthropic.com/news/claude-design-anthropic-labs",
-        "publishedAt": "2026-04-17T05:00:00.000Z",
+        "title": "Widening the conversation on frontier AI",
+        "link": "https://www.anthropic.com/news/widening-conversation-ai",
+        "id": "https://www.anthropic.com/news/widening-conversation-ai",
+        "publishedAt": "2026-05-19T05:00:00.000Z",
         "author": "Anthropic",
-        "summary": "Today, we’re launching Claude Design, a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.",
-        "category": "Product"
+        "summary": "Over the past several months, we’ve been organizing dialogues with groups whose work and traditions bear on the questions raised by AI.",
+        "category": "Announcements"
       }
     ]
   }

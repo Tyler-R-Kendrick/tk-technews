@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T15:15:39.998Z",
+  "generatedAt": "2026-06-05T15:35:04.860Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-03T15:15:39.998Z",
+    "fetchedAt": "2026-06-05T15:35:04.860Z",
     "items": [
       {
         "title": "Coding agents in the social sciences",

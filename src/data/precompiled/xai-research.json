@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T15:15:39.998Z",
+  "generatedAt": "2026-06-05T15:35:04.860Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,7 +10,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T15:15:39.998Z",
+      "fetchedAt": "2026-06-05T15:35:04.860Z",
       "items": [
         {
           "title": "Grok-2 Beta Release - xAI",
@@ -31,15 +31,6 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Grok Imagine API - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn?oc=5",
-          "id": "CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn",
-          "publishedAt": "2026-01-28T08:00:00.000Z",
-          "author": "xAI",
-          "summary": "Grok Imagine API  xAI",
-          "source": "xAI Official News"
-        },
-        {
           "title": "Skills in web, iOS, and Android - xAI",
           "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0?oc=5",
           "id": "CBMiQ0FVX3lxTE41VHBMZnJMR0ljcjE2cmdURVlZaTlwbXY4QkxDM1d0RVZTYVYzTENqSVk3MHpCRnZ1aTE1UUwxUlp4Vk0",
@@ -49,12 +40,12 @@
           "source": "xAI Official News"
         },
         {
-          "title": "Expanding xAI for Government with GSA OneGov - xAI",
-          "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw?oc=5",
-          "id": "CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw",
-          "publishedAt": "2025-09-25T07:00:00.000Z",
+          "title": "Grok Imagine API - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn?oc=5",
+          "id": "CBMiSkFVX3lxTE1ycmRTdVlnOUNaXy1UOWdLNGJ4c0pQYjBkY3l6VDVpdWhRSDBiUDZXaE1DbUVWU0lZN2htY3V6SUhLMVlfdVZTWjdn",
+          "publishedAt": "2026-01-28T08:00:00.000Z",
           "author": "xAI",
-          "summary": "Expanding xAI for Government with GSA OneGov  xAI",
+          "summary": "Grok Imagine API  xAI",
           "source": "xAI Official News"
         },
         {
@@ -64,6 +55,15 @@
           "publishedAt": "2024-12-12T08:00:00.000Z",
           "author": "xAI",
           "summary": "Bringing Grok to Everyone  xAI",
+          "source": "xAI Official News"
+        },
+        {
+          "title": "Expanding xAI for Government with GSA OneGov - xAI",
+          "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw?oc=5",
+          "id": "CBMiPEFVX3lxTE5MSk5HaXFTMWh1WEJCcTdkY3VUZ2c4SHNCUUhfQmxRSXBDay1kOWxSbkpTelY4N1ZZaHRCaw",
+          "publishedAt": "2025-09-25T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Expanding xAI for Government with GSA OneGov  xAI",
           "source": "xAI Official News"
         },
         {
@@ -86,7 +86,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-03T15:15:39.998Z",
+      "fetchedAt": "2026-06-05T15:35:04.860Z",
       "items": [
         {
           "title": "Researchers Put AI Models in Charge of a Simulated Society. Grok Oversaw a Crime Spree - Gizmodo",
@@ -95,15 +95,6 @@
           "publishedAt": "2026-05-28T21:10:53.000Z",
           "author": "xAI",
           "summary": "Researchers Put AI Models in Charge of a Simulated Society. Grok Oversaw a Crime Spree  Gizmodo",
-          "source": "xAI Research and Labs"
-        },
-        {
-          "title": "An Energy Department-run national lab is piloting xAI’s Grok - FedScoop",
-          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE10cVFwVkxmM1Z6TjdZaEZISEtOSHRpM0lWNEdULXVEQVhwcTlLYkRIQmgtdGpwT3llYWVpNk8zY0JrTVlRN1k0TzIxQUZJRFlpdFgtY3BFZUZmdjRZTzhScDJxeHZVWFlDVV8xdXZ3?oc=5",
-          "id": "CBMibkFVX3lxTE10cVFwVkxmM1Z6TjdZaEZISEtOSHRpM0lWNEdULXVEQVhwcTlLYkRIQmgtdGpwT3llYWVpNk8zY0JrTVlRN1k0TzIxQUZJRFlpdFgtY3BFZUZmdjRZTzhScDJxeHZVWFlDVV8xdXZ3",
-          "publishedAt": "2026-02-02T08:00:00.000Z",
-          "author": "xAI",
-          "summary": "An Energy Department-run national lab is piloting xAI’s Grok  FedScoop",
           "source": "xAI Research and Labs"
         },
         {
@@ -116,12 +107,21 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles - Time Magazine",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3?oc=5",
-          "id": "CBMiggFBVV95cUxPTWRsbXg0eXU1aTZENDB0LTRfWjg5b2lrV2NQT0VDdXQwUnk0QURON1Jac05PbGlIeEN6MFhNU1hpZTdSR2hGVF94VXBLX0M4ZEpmLVR5R2Y1WEYtQUhWQVo5QXpaLTZwcWI5d3RoaGFqaGp5a0UzQ19HMGdzTllDaWd3",
-          "publishedAt": "2026-05-19T07:00:00.000Z",
+          "title": "An Energy Department-run national lab is piloting xAI’s Grok - FedScoop",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE10cVFwVkxmM1Z6TjdZaEZISEtOSHRpM0lWNEdULXVEQVhwcTlLYkRIQmgtdGpwT3llYWVpNk8zY0JrTVlRN1k0TzIxQUZJRFlpdFgtY3BFZUZmdjRZTzhScDJxeHZVWFlDVV8xdXZ3?oc=5",
+          "id": "CBMibkFVX3lxTE10cVFwVkxmM1Z6TjdZaEZISEtOSHRpM0lWNEdULXVEQVhwcTlLYkRIQmgtdGpwT3llYWVpNk8zY0JrTVlRN1k0TzIxQUZJRFlpdFgtY3BFZUZmdjRZTzhScDJxeHZVWFlDVV8xdXZ3",
+          "publishedAt": "2026-02-02T08:00:00.000Z",
           "author": "xAI",
-          "summary": "Musk’s Failed OpenAI Lawsuit Underscores xAI’s Struggles  Time Magazine",
+          "summary": "An Energy Department-run national lab is piloting xAI’s Grok  FedScoop",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers - eWeek",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw?oc=5",
+          "id": "CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw",
+          "publishedAt": "2026-05-18T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers  eWeek",
           "source": "xAI Research and Labs"
         },
         {
@@ -131,6 +131,24 @@
           "publishedAt": "2026-05-01T07:00:00.000Z",
           "author": "xAI",
           "summary": "xAI launches Grok 4.3 at an aggressively low price and a new, fast, powerful voice cloning suite  VentureBeat",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "Exodus at xAI: Over 50 Researchers Depart After SpaceX Merger - 조선일보",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSjBVX3ZtRVVYNHl2M2kwdk9DMDBvMG9WSUdXWXQ2aXdLLV9aNlQ2Mm0yUU9JTGVKdFk2OXc3TlFNN3FvLXZWaUVzQ1RWcjAxeHFhTlV1RHZaU0dRU3J2eGNKNWxxQUNIdUszWWlMU2FQMnVIVldPdmFaR2tRQ2NGMUVnTkFqOE5r?oc=5",
+          "id": "CBMiiAFBVV95cUxPSjBVX3ZtRVVYNHl2M2kwdk9DMDBvMG9WSUdXWXQ2aXdLLV9aNlQ2Mm0yUU9JTGVKdFk2OXc3TlFNN3FvLXZWaUVzQ1RWcjAxeHFhTlV1RHZaU0dRU3J2eGNKNWxxQUNIdUszWWlMU2FQMnVIVldPdmFaR2tRQ2NGMUVnTkFqOE5r",
+          "publishedAt": "2026-05-15T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Exodus at xAI: Over 50 Researchers Depart After SpaceX Merger  조선일보",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "Elon Musk testifies that xAI trained Grok on OpenAI models - TechCrunch",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA?oc=5",
+          "id": "CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA",
+          "publishedAt": "2026-04-30T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "Elon Musk testifies that xAI trained Grok on OpenAI models  TechCrunch",
           "source": "xAI Research and Labs"
         },
         {
@@ -149,24 +167,6 @@
           "publishedAt": "2026-04-01T07:00:00.000Z",
           "author": "xAI",
           "summary": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026]  tech-insider.org",
-          "source": "xAI Research and Labs"
-        },
-        {
-          "title": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers - eWeek",
-          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw?oc=5",
-          "id": "CBMiZkFVX3lxTE9NLWNYcjR4a1NSblhveE1lVUFvNzlKaVZoNnVLTlJFU2VhOS0yMXlhUjZ3Z2NtTkhsRTBsYXRVYm1GbGU1MUxGcXI4VUlWZkMtcVFpSHhUamdnbGJ5WWJMQ0NGa0tfZw",
-          "publishedAt": "2026-05-18T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Elon Musk’s xAI Launches ‘Grok Build,’ a Coding Agent for Developers  eWeek",
-          "source": "xAI Research and Labs"
-        },
-        {
-          "title": "Elon Musk testifies that xAI trained Grok on OpenAI models - TechCrunch",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA?oc=5",
-          "id": "CBMimAFBVV95cUxOY01zTHhueVN3OXB6aGtYaDY2cnhaaXdreEFsQjJ5bDk3aXdEQXBWUnd0VVBxYkdaWkRjRHprQmZ5X0RJM3ZqaGpIUy1ITFl3WHJDRWtxaFIyZnJxTWZnWklwY0FyM0Rqc3d4Zkt4RWI2cmtZSXN5UVFrZXVmX1BTUkZBc3hlUENzWE1BSVlyVExJVGdxX2pqcA",
-          "publishedAt": "2026-04-30T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "Elon Musk testifies that xAI trained Grok on OpenAI models  TechCrunch",
           "source": "xAI Research and Labs"
         },
         {

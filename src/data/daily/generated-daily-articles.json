@@ -1,86 +1,68 @@
 {
-  "date": "2026-06-05",
-  "generatedAt": "2026-06-05T15:35:04.860Z",
-  "sourceItemCount": 9,
+  "date": "2026-06-06",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
+  "sourceItemCount": 1,
   "articleStubs": [
     {
-      "id": "2026-06-05-github-vercel-labs-zerolang-update",
-      "slug": "2026-06-05-github-vercel-labs-zerolang-update",
-      "href": "/daily/2026-06-05/2026-06-05-github-vercel-labs-zerolang-update/",
-      "title": "GitHub Vercel Labs Zerolang Update",
-      "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
+      "id": "2026-06-06-moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescrip",
+      "slug": "2026-06-06-moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescrip",
+      "href": "/daily/2026-06-06/2026-06-06-moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescrip/",
+      "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Ne...",
+      "dek": "Kimi Code CLI is best read as a terminal-native coding-agent architecture rather than a simple command-line wrapper.",
       "status": "generated",
       "bodySections": [
         {
-          "heading": "Vercel Labs Is Packaging Agent Primitives",
-          "intent": "Explain the cited technical development and its implementation consequence.",
+          "heading": "A Terminal AI Coding Agent Defines The Technical Claim",
+          "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer."
+            "Kimi Code CLI is best read as a terminal-native coding-agent architecture rather than a simple command-line wrapper. The important mechanism is how TypeScript implementation, subagents, Model Context Protocol configuration, repository editing, and tool orchestration are packaged into a workflow that can act inside a developer environment while preserving enough structure for review, testing, and policy control.",
+            "The constraint is operational control. A terminal agent becomes useful only if teams can measure repeatable edits, permission boundaries, benchmarked coding work, and integration failure modes before it touches production repositories. That makes evaluation less about the announcement and more about whether the agent can complete real tasks under predictable guardrails.",
+            "For engineering teams, the trade-off is speed versus supervision. Local command-line automation can shorten edit-test loops and make tool use explicit, but it also raises architecture questions around sandboxing, auditability, and when a subagent should be allowed to change files or call external services."
           ],
           "citations": [
-            "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/skills"
+            "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/"
           ]
         },
         {
-          "heading": "The Engineering Question Is Composability",
-          "intent": "Explain the cited technical development and its implementation consequence.",
+          "heading": "The Mechanism Needs A Check",
+          "intent": "Explain the technical consequence of the extracted evidence.",
           "paragraphs": [
-            "The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow."
+            "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating it as production-ready. The important measurement is whether the tool changes real developer work under repeatable conditions, not whether the announcement sounds complete."
           ],
           "citations": [
-            "https://github.com/vercel-labs/zerolang",
-            "https://github.com/vercel-labs/skills"
+            "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/"
           ]
         }
       ],
       "keyTakeaways": [
-        "The Vercel Labs items are best read together as an agent-infrastructure experiment.",
-        "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
+        "A Terminal AI Coding Agent Defines The Technical Claim matters because it connects the reported detail to implementation constraints, benchmarks, architecture, or workflow behavior.",
+        "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration. is the concrete technical detail readers should test before treating it as production guidance."
       ],
-      "sourceCount": 2,
-      "latestPublishedAt": "2026-06-05T15:25:11Z",
+      "sourceCount": 1,
+      "latestPublishedAt": "2026-06-06T09:11:08.000Z",
       "tags": [
-        "GitHub",
-        "Vercel",
-        "vercel",
-        "labs",
-        "zerolang",
-        "github"
+        "moonshot",
+        "kimi",
+        "code",
+        "cli",
+        "terminal",
+        "coding"
       ],
       "sources": [
         {
-          "title": "vercel-labs/zerolang",
-          "url": "https://github.com/vercel-labs/zerolang",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-05T15:25:11Z",
-          "summary": "The programming language for agents",
+          "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents",
+          "url": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/",
+          "sourceName": "MarkTechPost",
+          "publishedAt": "2026-06-06T09:11:08.000Z",
+          "summary": "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration.",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://github.com/vercel-labs/zerolang",
-            "title": "vercel-labs/zerolang",
-            "source": "vercel-labs GitHub",
-            "snippet": "The programming language for agents",
-            "host": "github.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "vercel-labs/skills",
-          "url": "https://github.com/vercel-labs/skills",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-05T14:38:13Z",
-          "summary": "The open agent skills tool - npx skills",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://github.com/vercel-labs/skills",
-            "title": "vercel-labs/skills",
-            "source": "vercel-labs GitHub",
-            "snippet": "The open agent skills tool - npx skills",
-            "host": "github.com",
+            "href": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/",
+            "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents",
+            "source": "MarkTechPost",
+            "snippet": "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration.",
+            "host": "marktechpost.com",
             "thumbnailUrl": null,
             "social": null
           }

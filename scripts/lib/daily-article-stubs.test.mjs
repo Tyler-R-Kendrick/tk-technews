@@ -576,6 +576,79 @@ test('daily generation loop produces substantive journalist content and eval met
   assert.match(bodyText, /evidence|mechanism|constraint|measurement|trade-off|architecture/i);
 });
 
+test('publish-only daily generation keeps single-source articles with usable technical evidence', async () => {
+  const result = await buildDailyArticleStubsWithGenerationLoop({
+    date: '2026-06-06',
+    ledger: {
+      generatedAt: '2026-06-06T15:00:00.000Z',
+      items: [
+        {
+          id: 'kimi-code-cli',
+          title: 'Moonshot AI releases Kimi Code CLI: a terminal AI coding agent built in TypeScript',
+          summary: 'Moonshot AI released Kimi Code CLI, an open-source terminal coding agent implemented in TypeScript for local developer workflows. The project describes subagents, Model Context Protocol configuration, command-line automation, repository editing, and tool orchestration for coding tasks. Builders need to evaluate how the agent handles permissions, repeatable edits, benchmarked coding work, and integration with existing development environments before adopting it as a production coding workflow. The post Moonshot AI releases Kimi Code CLI appeared first on MarkTechPost.',
+          url: 'https://github.com/MoonshotAI/kimi-code-cli',
+          sourceName: 'GitHub',
+          publishedAt: '2026-06-06T09:11:08.000Z',
+          tags: ['github', 'coding', 'agents']
+        }
+      ]
+    },
+    maxStubs: 1,
+    publishOnlyPassed: true,
+    requireUsableSourceEvidence: true
+  });
+
+  const stub = result.articleStubs[0];
+  assert.ok(stub, 'expected a generated article to survive publish-only filtering');
+  const bodyText = [
+    stub.dek,
+    ...stub.bodySections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ...stub.keyTakeaways
+  ].join('\n');
+
+  assert.equal(stub.status, 'generated');
+  assert.equal(stub.evalStatus, 'passed');
+  assert.ok(stub.evalScore >= 0.86);
+  assert.ok(stub.bodySections.flatMap((section) => section.paragraphs).join(' ').split(/\s+/).length >= 120);
+  assert.doesNotMatch(bodyText, /\bcitation|cited|source metadata|generation instructions\b/i);
+  assert.doesNotMatch(bodyText, /appeared first|The post/i);
+  assert.match(bodyText, /Kimi Code CLI|terminal coding agent|Model Context Protocol|permissions|benchmark/i);
+});
+
+test('daily generation strips publisher boilerplate from sparse source summaries', async () => {
+  const result = await buildDailyArticleStubsWithGenerationLoop({
+    date: '2026-06-06',
+    ledger: {
+      generatedAt: '2026-06-06T15:00:00.000Z',
+      items: [
+        {
+          id: 'kimi-code-cli-sparse',
+          title: 'Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents',
+          summary: "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration. The post Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents appeared first on MarkTechPost .",
+          url: 'https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/',
+          sourceName: 'MarkTechPost',
+          publishedAt: '2026-06-06T09:11:08.000Z',
+          tags: ['moonshot', 'kimi', 'coding']
+        }
+      ]
+    },
+    maxStubs: 1,
+    publishOnlyPassed: true,
+    requireUsableSourceEvidence: true
+  });
+
+  const stub = result.articleStubs[0];
+  assert.ok(stub, 'expected sparse but usable article to survive publish-only filtering');
+  const bodyText = [
+    stub.dek,
+    ...stub.bodySections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ...stub.keyTakeaways,
+    ...stub.sources.map((source) => `${source.summary} ${source.preview?.snippet ?? ''}`)
+  ].join('\n');
+
+  assert.doesNotMatch(bodyText, /appeared first|The post/i);
+});
+
 test('daily generation loop expands short generated takeaways to meet schema minimums', async () => {
   const result = await buildDailyArticleStubsWithGenerationLoop({
     date: '2026-05-20',

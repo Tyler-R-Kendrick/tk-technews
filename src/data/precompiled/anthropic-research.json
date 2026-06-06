@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T15:35:04.860Z",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-05T15:35:04.860Z",
+    "fetchedAt": "2026-06-06T15:19:39.542Z",
     "items": [
+      {
+        "title": "Making Claude a chemist",
+        "link": "https://www.anthropic.com/research/making-claude-a-chemist",
+        "id": "https://www.anthropic.com/research/making-claude-a-chemist",
+        "publishedAt": "2026-06-05T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Science"
+      },
       {
         "title": "Coding agents in the social sciences",
         "link": "https://www.anthropic.com/research/coding-agents-social-sciences",
@@ -80,15 +89,6 @@
         "author": "Anthropic",
         "summary": "",
         "category": "Societal Impacts"
-      },
-      {
-        "title": "Evaluating Claude’s bioinformatics research capabilities with BioMysteryBench",
-        "link": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
-        "id": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
-        "publishedAt": "2026-04-29T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Science"
       },
       {
         "title": "Project Vend: Phase two",

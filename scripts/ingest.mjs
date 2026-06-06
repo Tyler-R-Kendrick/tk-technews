@@ -23,6 +23,7 @@ const entries = [
 ].filter((source) => !source.disabled);
 
 const summaries = [];
+const sourceErrors = [];
 
 for (const source of entries) {
   try {
@@ -34,15 +35,13 @@ for (const source of entries) {
       summaries.push(await ingestYoutube(source));
     }
   } catch (error) {
-    summaries.push({
-      id: `${source.id}-error`,
+    sourceErrors.push({
       sourceId: source.id,
       sourceName: source.name,
       kind: source.kind,
-      title: `Failed to ingest ${source.name}`,
       url: source.url,
       fetchedAt: new Date().toISOString(),
-      summary: error instanceof Error ? error.message : String(error),
+      error: error instanceof Error ? error.message : String(error),
       tags: source.topicTags ?? [],
       status: 'error'
     });
@@ -53,11 +52,14 @@ const output = {
   generatedAt: new Date().toISOString(),
   sourceCount: entries.length,
   itemCount: summaries.length,
+  sourceErrorCount: sourceErrors.length,
+  sourceErrors,
   items: summaries
 };
 
 await fs.writeFile(path.join(summariesDir, 'latest.json'), `${JSON.stringify(output, null, 2)}\n`);
-console.log(`Wrote ${summaries.length} summaries to data/summaries/latest.json`);
+const errorSuffix = sourceErrors.length > 0 ? ` (${sourceErrors.length} source errors omitted from summaries)` : '';
+console.log(`Wrote ${summaries.length} summaries to data/summaries/latest.json${errorSuffix}`);
 
 async function ingestRss(source) {
   const feed = await parser.parseURL(source.url);

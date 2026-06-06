@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T15:35:04.860Z",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,8 +9,26 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-05T15:35:04.860Z",
+      "fetchedAt": "2026-06-06T15:19:39.542Z",
       "items": [
+        {
+          "title": "Drives for Vercel Sandbox in Private Beta",
+          "link": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+          "id": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+          "publishedAt": "2026-06-05T00:01:00.000Z",
+          "author": "Joe Haddad",
+          "summary": "now supports drives in private beta. Drives are persistent, attachable storage with a lifecycle independent from any sandbox.Vercel Sandbox\nCreate a drive once, then mount it at a configurable path when starting a sandbox. When the sandbox stops, the drive remains available to attach to a later sandbox.\nInstall the beta  () or beta  (), then create and mount a drive:SDKCLI@vercel/sandbox@betasandbox@beta\nSandbox Drives are useful for:\nDuring the private beta, a drive can be mounted read-write by one sandbox at a time. Sandbox drives should not be used for production data while in private beta. \nSign up  to join the waitlist, and learn more in the .heredocs\nRead more\n\n\nKeeping agent workspaces across disposable sandboxes\n\nRetaining cloned repositories, dependencies, and build outputs\n\nManaging data independently from the sandbox lifecycle",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "The skills.sh API is now available",
+          "link": "https://vercel.com/changelog/the-skills-sh-api-is-now-available",
+          "id": "https://vercel.com/changelog/the-skills-sh-api-is-now-available",
+          "publishedAt": "2026-06-05T00:00:00.000Z",
+          "author": "Andrew Qu",
+          "summary": "The  API is now available. Authenticate with your project's  and start querying more than 600,000 skills from across the open-source ecosystem.skills.shVercel OIDC token\nSearch for skills, pull detailed info on any one, check its security audit, and more.\nVercel issues a short-lived token scoped to your team and project, rotated automatically, so there's no long-lived secret to leak or rotate. On each request, skills.sh verifies the token and applies a rate limit of 600 requests per minute per team and project.\nRead the  to get started.skills.sh API documentation\nRead more",
+          "source": "Vercel Changelog"
+        },
         {
           "title": "Updates to Legal Terms",
           "link": "https://vercel.com/changelog/updates-to-legal-terms-june-2026",
@@ -36,6 +54,15 @@
           "publishedAt": "2026-06-04T00:00:00.000Z",
           "author": "Michael Toth",
           "summary": "You can now create a  start building a production-ready storefront in minutes.Shopify store directly from Vercel and\n to automatically configure your Shopify credentials in Vercel. Create a free test store, build with  and deploy without leaving your workflow. When you're ready to launch, you can claim the store and take ownership of it.Install the Shopify integrationv0\nComing soon: Connect an existing Shopify store to Vercel.\nGet started by installing ,  , or  to start building your next .Shopify from the Vercel Marketplacev0Vercel CLIcommerce experience\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Trace any Vercel request from the CLI",
+          "link": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
+          "id": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
+          "publishedAt": "2026-06-03T00:00:00.000Z",
+          "author": "Andrew Gadzik",
+          "summary": "You can now generate  through the Vercel CLI.Session Traces\nUse the new  command to generate an OpenTelemetry trace to the specified endpoint from the terminal. vercel curl --trace\nUse the new  command to fetch the generated trace by request ID.vercel traces get\nAvailable on all plans.\n\nUpdate the Vercel CLI to the latest version and run  to get started. Learn more about the vercel curl --trace CLI command.vercel curl\nRead more",
           "source": "Vercel Changelog"
         },
         {
@@ -72,33 +99,6 @@
           "publishedAt": "2026-06-01T18:30:00.000Z",
           "author": "Mehul Kar",
           "summary": "Elastic build machines now monitor your build's memory usage and automatically adjust to prevent out-of-memory (OOM) failures:\nThresholds are set conservatively to balance deployment reliability and cost. Vercel only considers your build's memory usage, not the memory used by Vercel's own build infrastructure.\nEnable elastic builds in your  or , or read the .team settingsproject settingsdocs\nRead more\n\nIf your build is fast but memory-intensive, we will no longer downgrade you to a smaller machine\n\nIf your build is close to running out of memory, we will automatically upgrade to a higher tier\n\nIf your build fails due to an out-of-memory error, the next deployment will automatically run on a higher tier",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Qwen 3.7 Plus now available on AI Gateway",
-          "link": "https://vercel.com/changelog/qwen-3-7-plus-now-available-on-ai-gateway",
-          "id": "https://vercel.com/changelog/qwen-3-7-plus-now-available-on-ai-gateway",
-          "publishedAt": "2026-06-01T07:00:00.000Z",
-          "author": "Walter Korman",
-          "summary": "Qwen 3.7 Plus from Alibaba is now available on . Both Qwen 3.7 Plus and 3.7 Max are free for paid AI Gateway users till 6/4/26 12:00pm PT.Vercel AI Gateway\nThe model unifies vision and language into a single agent foundation, with capabilities spanning GUI and CLI operation, coding and productivity workflows with full-modality input, and visual agent tasks including perception and reasoning. It is designed to generalize across diverse agent harnesses.\nTo use Qwen 3.7 Plus, set model to  in the .alibaba/qwen-3.7-plusAI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Vercel Blob now supports OIDC authentication",
-          "link": "https://vercel.com/changelog/vercel-blob-now-supports-oidc-authentication",
-          "id": "https://vercel.com/changelog/vercel-blob-now-supports-oidc-authentication",
-          "publishedAt": "2026-06-01T00:00:00.000Z",
-          "author": "Agustin Falco",
-          "summary": "now supports OIDC authentication and is the default setting when connecting new projects.Vercel Blob\nVercel-issued OIDC tokens are short-lived and rotate automatically, so you no longer need a long-lived .BLOB_READ_WRITE_TOKEN\nTo upgrade an existing store, first update your project to use the latest , then navigate to the  under your Blob store and select Upgrade to OIDC from the project's context menu.@vercel/blobProjects tab\nFunctions running on Vercel receive the token automatically and authenticate requests with it:\nThe Vercel CLI picks up the same environment variables once you update it, so you and your agents can read and write to a private store from your terminal without a long-lived token:\nRead the  to get started.documentation\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Chat SDK adds Lark and Feishu support",
-          "link": "https://vercel.com/changelog/chat-sdk-adds-lark-feishu-support",
-          "id": "https://vercel.com/changelog/chat-sdk-adds-lark-feishu-support",
-          "publishedAt": "2026-05-31T14:00:00.000Z",
-          "author": "Ben Sabic",
-          "summary": "Chat SDK now supports Lark and Feishu via a new .vendor-official adapter\nBuild bots that post, edit, and delete messages, stream replies via Lark's native cardkit typewriter API, send interactive cards, and react with emojis across both Lark and Feishu conversations.\nThe adapter connects over Lark's WebSocket transport, so bots run from any long-running Node process without exposing an HTTP webhook endpoint.\nTo get started, read the  or  documentation.LarkFeishu\n\nRead more",
           "source": "Vercel Changelog"
         }
       ]
@@ -111,8 +111,26 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-05T15:35:04.860Z",
+      "fetchedAt": "2026-06-06T15:19:39.542Z",
       "items": [
+        {
+          "title": "Drives for Vercel Sandbox in Private Beta",
+          "link": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+          "id": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
+          "publishedAt": "2026-06-05T00:01:00.000Z",
+          "author": "Joe Haddad",
+          "summary": "now supports drives in private beta. Drives are persistent, attachable storage with a lifecycle independent from any sandbox.Vercel Sandbox\nCreate a drive once, then mount it at a configurable path when starting a sandbox. When the sandbox stops, the drive remains available to attach to a later sandbox.\nInstall the beta  () or beta  (), then create and mount a drive:SDKCLI@vercel/sandbox@betasandbox@beta\nSandbox Drives are useful for:\nDuring the private beta, a drive can be mounted read-write by one sandbox at a time. Sandbox drives should not be used for production data while in private beta. \nSign up  to join the waitlist, and learn more in the .heredocs\nRead more\n\n\nKeeping agent workspaces across disposable sandboxes\n\nRetaining cloned repositories, dependencies, and build outputs\n\nManaging data independently from the sandbox lifecycle",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "The skills.sh API is now available",
+          "link": "https://vercel.com/changelog/the-skills-sh-api-is-now-available",
+          "id": "https://vercel.com/changelog/the-skills-sh-api-is-now-available",
+          "publishedAt": "2026-06-05T00:00:00.000Z",
+          "author": "Andrew Qu",
+          "summary": "The  API is now available. Authenticate with your project's  and start querying more than 600,000 skills from across the open-source ecosystem.skills.shVercel OIDC token\nSearch for skills, pull detailed info on any one, check its security audit, and more.\nVercel issues a short-lived token scoped to your team and project, rotated automatically, so there's no long-lived secret to leak or rotate. On each request, skills.sh verifies the token and applies a rate limit of 600 requests per minute per team and project.\nRead the  to get started.skills.sh API documentation\nRead more",
+          "source": "Vercel Blog"
+        },
         {
           "title": "Updates to Legal Terms",
           "link": "https://vercel.com/changelog/updates-to-legal-terms-june-2026",
@@ -138,6 +156,15 @@
           "publishedAt": "2026-06-04T00:00:00.000Z",
           "author": "Michael Toth",
           "summary": "You can now create a  start building a production-ready storefront in minutes.Shopify store directly from Vercel and\n to automatically configure your Shopify credentials in Vercel. Create a free test store, build with  and deploy without leaving your workflow. When you're ready to launch, you can claim the store and take ownership of it.Install the Shopify integrationv0\nComing soon: Connect an existing Shopify store to Vercel.\nGet started by installing ,  , or  to start building your next .Shopify from the Vercel Marketplacev0Vercel CLIcommerce experience\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Trace any Vercel request from the CLI",
+          "link": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
+          "id": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
+          "publishedAt": "2026-06-03T00:00:00.000Z",
+          "author": "Andrew Gadzik",
+          "summary": "You can now generate  through the Vercel CLI.Session Traces\nUse the new  command to generate an OpenTelemetry trace to the specified endpoint from the terminal. vercel curl --trace\nUse the new  command to fetch the generated trace by request ID.vercel traces get\nAvailable on all plans.\n\nUpdate the Vercel CLI to the latest version and run  to get started. Learn more about the vercel curl --trace CLI command.vercel curl\nRead more",
           "source": "Vercel Blog"
         },
         {
@@ -174,33 +201,6 @@
           "publishedAt": "2026-06-01T18:30:00.000Z",
           "author": "Mehul Kar",
           "summary": "Elastic build machines now monitor your build's memory usage and automatically adjust to prevent out-of-memory (OOM) failures:\nThresholds are set conservatively to balance deployment reliability and cost. Vercel only considers your build's memory usage, not the memory used by Vercel's own build infrastructure.\nEnable elastic builds in your  or , or read the .team settingsproject settingsdocs\nRead more\n\nIf your build is fast but memory-intensive, we will no longer downgrade you to a smaller machine\n\nIf your build is close to running out of memory, we will automatically upgrade to a higher tier\n\nIf your build fails due to an out-of-memory error, the next deployment will automatically run on a higher tier",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Qwen 3.7 Plus now available on AI Gateway",
-          "link": "https://vercel.com/changelog/qwen-3-7-plus-now-available-on-ai-gateway",
-          "id": "https://vercel.com/changelog/qwen-3-7-plus-now-available-on-ai-gateway",
-          "publishedAt": "2026-06-01T07:00:00.000Z",
-          "author": "Walter Korman",
-          "summary": "Qwen 3.7 Plus from Alibaba is now available on . Both Qwen 3.7 Plus and 3.7 Max are free for paid AI Gateway users till 6/4/26 12:00pm PT.Vercel AI Gateway\nThe model unifies vision and language into a single agent foundation, with capabilities spanning GUI and CLI operation, coding and productivity workflows with full-modality input, and visual agent tasks including perception and reasoning. It is designed to generalize across diverse agent harnesses.\nTo use Qwen 3.7 Plus, set model to  in the .alibaba/qwen-3.7-plusAI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Vercel Blob now supports OIDC authentication",
-          "link": "https://vercel.com/changelog/vercel-blob-now-supports-oidc-authentication",
-          "id": "https://vercel.com/changelog/vercel-blob-now-supports-oidc-authentication",
-          "publishedAt": "2026-06-01T00:00:00.000Z",
-          "author": "Agustin Falco",
-          "summary": "now supports OIDC authentication and is the default setting when connecting new projects.Vercel Blob\nVercel-issued OIDC tokens are short-lived and rotate automatically, so you no longer need a long-lived .BLOB_READ_WRITE_TOKEN\nTo upgrade an existing store, first update your project to use the latest , then navigate to the  under your Blob store and select Upgrade to OIDC from the project's context menu.@vercel/blobProjects tab\nFunctions running on Vercel receive the token automatically and authenticate requests with it:\nThe Vercel CLI picks up the same environment variables once you update it, so you and your agents can read and write to a private store from your terminal without a long-lived token:\nRead the  to get started.documentation\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Chat SDK adds Lark and Feishu support",
-          "link": "https://vercel.com/changelog/chat-sdk-adds-lark-feishu-support",
-          "id": "https://vercel.com/changelog/chat-sdk-adds-lark-feishu-support",
-          "publishedAt": "2026-05-31T14:00:00.000Z",
-          "author": "Ben Sabic",
-          "summary": "Chat SDK now supports Lark and Feishu via a new .vendor-official adapter\nBuild bots that post, edit, and delete messages, stream replies via Lark's native cardkit typewriter API, send interactive cards, and react with emojis across both Lark and Feishu conversations.\nThe adapter connects over Lark's WebSocket transport, so bots run from any long-running Node process without exposing an HTTP webhook endpoint.\nTo get started, read the  or  documentation.LarkFeishu\n\nRead more",
           "source": "Vercel Blog"
         }
       ]

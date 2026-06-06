@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T15:35:04.860Z",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
   "sources": [
     {
       "id": "towards-data-science",
@@ -9,7 +9,7 @@
       "rssUrl": "https://medium.com/feed/towards-data-science",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-05T15:35:04.860Z",
+      "fetchedAt": "2026-06-06T15:19:39.542Z",
       "items": [
         {
           "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
@@ -181,8 +181,96 @@
       "rssUrl": "https://www.marktechpost.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-05T15:35:04.860Z",
+      "fetchedAt": "2026-06-06T15:19:39.542Z",
       "items": [
+        {
+          "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents",
+          "link": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/",
+          "id": "https://www.marktechpost.com/?p=80348",
+          "publishedAt": "2026-06-06T09:11:08.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/\">Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Model Context Protocol",
+            "Model Context Protocol (MCP)",
+            "New Releases",
+            "Open Source",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "NVIDIA Releases Nemotron 3.5 ASR: A 600M-Parameter Cache-Aware Streaming Model Transcribing 40 Language-Locales in Real Time",
+          "link": "https://www.marktechpost.com/2026/06/06/nvidia-releases-nemotron-3-5-asr-a-600m-parameter-cache-aware-streaming-model-transcribing-40-language-locales-in-real-time/",
+          "id": "https://www.marktechpost.com/?p=80343",
+          "publishedAt": "2026-06-06T07:55:40.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>NVIDIA released Nemotron 3.5 ASR, a cache-aware 600M streaming model transcribing 40 language-locales in real time from one checkpoint.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/06/nvidia-releases-nemotron-3-5-asr-a-600m-parameter-cache-aware-streaming-model-transcribing-40-language-locales-in-real-time/\">NVIDIA Releases Nemotron 3.5 ASR: A 600M-Parameter Cache-Aware Streaming Model Transcribing 40 Language-Locales in Real Time</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "Artificial Intelligence",
+            "Audio Language Model",
+            "Editors Pick",
+            "Language Model",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Technology",
+            "Voice AI"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "A Hands-On Coding Tutorial on Qualcomm AI Hub Models for Classification, Object Detection, and Hardware-Aware Deployment",
+          "link": "https://www.marktechpost.com/2026/06/05/a-hands-on-coding-tutorial-on-qualcomm-ai-hub-models-for-classification-object-detection-and-hardware-aware-deployment/",
+          "id": "https://www.marktechpost.com/?p=80340",
+          "publishedAt": "2026-06-05T22:32:51.000Z",
+          "author": "Sana Hassan",
+          "summary": "<p>Set up Qualcomm AI Hub Models to run MobileNet-V2 inference, YOLOv7 detection, and compile models on real devices.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/a-hands-on-coding-tutorial-on-qualcomm-ai-hub-models-for-classification-object-detection-and-hardware-aware-deployment/\">A Hands-On Coding Tutorial on Qualcomm AI Hub Models for Classification, Object Detection, and Hardware-Aware Deployment</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Artificial Intelligence",
+            "Computer Vision",
+            "Editors Pick",
+            "Staff",
+            "Technology",
+            "Tutorials"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Google DeepMind Releases Gemma 4 QAT Checkpoints: Q4_0 and a New Mobile Format Cut On-Device Memory",
+          "link": "https://www.marktechpost.com/2026/06/05/google-deepmind-releases-gemma-4-qat-checkpoints-q4_0-and-a-new-mobile-format-cut-on-device-memory/",
+          "id": "https://www.marktechpost.com/?p=80337",
+          "publishedAt": "2026-06-05T18:59:38.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Compare Gemma 4 edge formats: BF16, Q4_0 QAT, and mobile QAT, on published memory numbers and design tradeoffs.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/google-deepmind-releases-gemma-4-qat-checkpoints-q4_0-and-a-new-mobile-format-cut-on-device-memory/\">Google DeepMind Releases Gemma 4 QAT Checkpoints: Q4_0 and a New Mobile Format Cut On-Device Memory</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Infrastructure",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Edge AI",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
         {
           "title": "NVIDIA AI Releases Dynamo Snapshot: A CRIU-Based Fast Startup System for AI Inference on Kubernetes",
           "link": "https://www.marktechpost.com/2026/06/05/nvidia-ai-releases-dynamo-snapshot-a-criu-based-fast-startup-system-for-ai-inference-on-kubernetes/",
@@ -296,97 +384,6 @@
             "Machine Learning",
             "New Releases",
             "Open Source",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Miso Labs Releases MisoTTS: An 8B Emotive Text-to-Speech Model with Open Weights",
-          "link": "https://www.marktechpost.com/2026/06/04/miso-labs-releases-misotts-an-8b-emotive-text-to-speech-model-with-open-weights/",
-          "id": "https://www.marktechpost.com/?p=80295",
-          "publishedAt": "2026-06-04T08:11:05.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Miso Labs has released MisoTTS, an open-weights 8B text-to-speech model. It uses residual vector quantization (RVQ) to scale its sonic range without scaling parameters, and conditions on both text and audio context to respond to speaker tone. The architecture pairs a 7.7B backbone with a 300M depth decoder.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/04/miso-labs-releases-misotts-an-8b-emotive-text-to-speech-model-with-open-weights/\">Miso Labs Releases MisoTTS: An 8B Emotive Text-to-Speech Model with Open Weights</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "Artificial Intelligence",
-            "Audio Language Model",
-            "Editors Pick",
-            "Language Model",
-            "New Releases",
-            "Open Source",
-            "Software Engineering",
-            "Staff",
-            "Technology",
-            "TTS",
-            "Voice AI"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Meet OpenJarvis: A Local-First Framework for On-Device Personal AI Agents with Tools, Memory, and Learning",
-          "link": "https://www.marktechpost.com/2026/06/03/meet-openjarvis-a-local-first-framework-for-on-device-personal-ai-agents-with-tools-memory-and-learning/",
-          "id": "https://www.marktechpost.com/?p=80289",
-          "publishedAt": "2026-06-04T06:23:10.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Stanford researchers released OpenJarvis, an open-source framework that runs inference, agents, memory, and learning entirely on-device. It decomposes a personal AI system into five composable primitives — Intelligence, Engine, Agents, Tools &#038; Memory, and Learning — and lands within 3.2 points of the best cloud model at roughly 800× lower marginal API cost.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/03/meet-openjarvis-a-local-first-framework-for-on-device-personal-ai-agents-with-tools-memory-and-learning/\">Meet OpenJarvis: A Local-First Framework for On-Device Personal AI Agents with Tools, Memory, and Learning</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "AI Infrastructure",
-            "AI Paper Summary",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Language Model",
-            "Machine Learning",
-            "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "How to Build a Document Intelligence Backend with iii Using Workers, Functions, and Cron Triggers",
-          "link": "https://www.marktechpost.com/2026/06/03/how-to-build-a-document-intelligence-backend-with-iii-using-workers-functions-and-cron-triggers/",
-          "id": "https://www.marktechpost.com/?p=80285",
-          "publishedAt": "2026-06-03T19:15:07.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>We build a document intelligence backend with iii by registering modular functions and reusing them across multiple triggers.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/03/how-to-build-a-document-intelligence-backend-with-iii-using-workers-functions-and-cron-triggers/\">How to Build a Document Intelligence Backend with iii Using Workers, Functions, and Cron Triggers</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "AI Infrastructure",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Machine Learning",
-            "Staff",
-            "Technology",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Google DeepMind Releases Gemma 4 12B: An Encoder-Free Multimodal Model with Native audio that runs on a 16 GB laptop",
-          "link": "https://www.marktechpost.com/2026/06/03/google-deepmind-releases-gemma-4-12b-an-encoder-free-multimodal-model-with-native-audio-that-runs-on-a-16-gb-laptop/",
-          "id": "https://www.marktechpost.com/?p=80280",
-          "publishedAt": "2026-06-03T18:46:41.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Gemma 4 12B feeds vision and audio straight into the LLM backbone, running locally under an Apache 2.0 license.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/03/google-deepmind-releases-gemma-4-12b-an-encoder-free-multimodal-model-with-native-audio-that-runs-on-a-16-gb-laptop/\">Google DeepMind Releases Gemma 4 12B: An Encoder-Free Multimodal Model with Native audio that runs on a 16 GB laptop</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Enterprise AI",
-            "Language Model",
-            "Large Language Model",
-            "Machine Learning",
-            "New Releases",
             "Software Engineering",
             "Staff",
             "Tech News",

@@ -542,14 +542,13 @@ function buildKeyTakeaways({ title, bodySections, summary, excludeText = [] }) {
 
   if (candidates.length >= 2) return candidates.slice(0, 4);
 
-  const topic = title.replace(/\s+Update$/i, '').trim();
   const sectionHeadings = bodySections
     .map((section) => section.heading)
     .filter(Boolean)
     .slice(0, 2);
   for (const heading of sectionHeadings) {
     if (candidates.length >= 2) break;
-    const synthesized = `${topic} matters because ${heading.charAt(0).toLowerCase()}${heading.slice(1)}.`;
+    const synthesized = `${heading} matters because it connects the reported detail to implementation constraints, benchmarks, architecture, or workflow behavior.`;
     const key = fingerprint(synthesized);
     if (!key || seen.has(key) || isNearDuplicate(synthesized, seenValues)) continue;
     seen.add(key);
@@ -581,16 +580,24 @@ function buildStubTitle(cluster, lead) {
 
 function normalizeItem(item) {
   const title = cleanTitle(item.title);
-  const preview = citationPreview(item);
+  const cleanedSummary = stripNoise(item.summary);
+  const cleanedDescription = stripNoise(item.description);
+  const preview = citationPreview({
+    ...item,
+    title,
+    summary: cleanedSummary,
+    snippet: stripNoise(item.snippet),
+    description: cleanedDescription
+  });
   const isSocial = isTweetUrl(item.url);
   const transcriptText = item.transcript?.status === 'ok' ? item.transcript.text : '';
   const transcriptSummary = stripNoise(item.transcriptSummary ?? '');
   const summarizedTranscript = transcriptText ? summarizeText(stripNoise(transcriptText), 5) : '';
   const evidenceText = stripNoise([
-    item.summary,
+    cleanedSummary,
     transcriptSummary,
     transcriptSummary ? '' : summarizedTranscript,
-    item.description
+    cleanedDescription
   ].filter((value) => isUsableSourceEvidenceText(value, title)).join(' '));
   const body = stripNoise(`${evidenceText} ${(item.tags ?? []).join(' ')}`);
   const searchText = `${title} ${body}`.toLowerCase();
@@ -608,7 +615,7 @@ function normalizeItem(item) {
     url: item.url,
     sourceName: item.sourceName ?? 'Source',
     publishedAt: item.publishedAt ?? null,
-    summary: evidenceText || stripNoise(item.summary ?? transcriptSummary ?? title),
+    summary: evidenceText || stripNoise(cleanedSummary ?? transcriptSummary ?? title),
     transcriptSummary,
     sourceText: isSocial ? '' : evidenceText,
     relatedUrls: [
@@ -659,7 +666,12 @@ function isPublishedOnDate(value, date) {
 }
 
 function stripNoise(value) {
-  return String(value ?? '').replace(/\s+/g, ' ').trim();
+  return stripPublisherBoilerplate(String(value ?? '')).replace(/\s+/g, ' ').trim();
+}
+
+function stripPublisherBoilerplate(value) {
+  return String(value ?? '')
+    .replace(/\bThe post\s+.+?\s+appeared first on\s+[^.?!]+[.?!]?/gis, ' ');
 }
 
 function sentenceSplit(value) {
@@ -828,8 +840,8 @@ function ensureKeyTakeaways(takeaways, { title, summary, bodySections }) {
   const firstSentence = sentenceSplit(summary)[0] ?? title;
   const sectionHeading = bodySections[0]?.heading ?? 'the cited technical change';
   const fillers = [
-    `${trimTitle(firstSentence, 140)} is the concrete evidence readers should use before treating ${trimTitle(title, 80)} as more than a headline.`,
-    `${sectionHeading} is the practical lens for the story: it ties the cited details to developer workflow, architecture, benchmarks, or operational risk.`
+    `${trimTitle(firstSentence, 140)} is the concrete technical detail readers should test before treating it as production guidance.`,
+    `${sectionHeading} is the practical lens for the story: it ties the reported details to developer workflow, architecture, benchmarks, or operational risk.`
   ];
   for (const filler of fillers) {
     if (output.length >= 2) break;
@@ -867,7 +879,7 @@ function ensureBodySections(sections, { title, summary, citationUrls }) {
       heading: 'The Mechanism Needs A Check',
       intent: 'Explain the technical consequence of the extracted evidence.',
       paragraphs: [
-        `${trimTitle(sentences[0] ?? title, 180)} The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating the citation as a production-ready claim.`
+        `${trimTitle(sentences[0] ?? title, 180)} The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating it as production-ready. The important measurement is whether the tool changes real developer work under repeatable conditions, not whether the announcement sounds complete.`
       ],
       citations
     },
@@ -875,7 +887,7 @@ function ensureBodySections(sections, { title, summary, citationUrls }) {
       heading: 'The Constraint Is Operational',
       intent: 'Name the practical constraint raised by the evidence.',
       paragraphs: [
-        `${trimTitle(sentences[1] ?? sentences[0] ?? title, 180)} The practical question is where the cited change would alter routing, automation, reliability, cost, or developer process in a real deployment.`
+        `${trimTitle(sentences[1] ?? sentences[0] ?? title, 180)} The practical question is where the change would alter routing, automation, reliability, cost, permissions, or developer process in a real deployment. Teams need architecture and benchmark checks that expose failure modes before the workflow becomes part of daily engineering.`
       ],
       citations
     }
@@ -1471,6 +1483,14 @@ function synthesizeConceptParagraphs({ concept, sentences }) {
     ];
   }
 
+  if (lower.includes('terminal coding agent') || lower.includes('kimi code') || lower.includes('model context protocol') || lower.includes('subagents')) {
+    return [
+      'Kimi Code CLI is best read as a terminal-native coding-agent architecture rather than a simple command-line wrapper. The important mechanism is how TypeScript implementation, subagents, Model Context Protocol configuration, repository editing, and tool orchestration are packaged into a workflow that can act inside a developer environment while preserving enough structure for review, testing, and policy control.',
+      'The constraint is operational control. A terminal agent becomes useful only if teams can measure repeatable edits, permission boundaries, benchmarked coding work, and integration failure modes before it touches production repositories. That makes evaluation less about the announcement and more about whether the agent can complete real tasks under predictable guardrails.',
+      'For engineering teams, the trade-off is speed versus supervision. Local command-line automation can shorten edit-test loops and make tool use explicit, but it also raises architecture questions around sandboxing, auditability, and when a subagent should be allowed to change files or call external services.'
+    ];
+  }
+
   if (lower.includes('media teams') || lower.includes('gemini') || lower.includes('editorial workflows')) {
     return [
       'The cited Google Cloud course is about applying AI agents to media production workflows. It describes agents that ingest assets, coordinate editorial steps, and automate production tasks with Gemini and cloud services rather than simply using a chatbot for isolated copy generation.',
@@ -1520,7 +1540,7 @@ function sourceSpecificFollowups(value) {
     ];
   }
   return [
-    'The cited detail gives readers an implementation point to verify before treating the claim as production-ready.',
+    'The reported detail gives readers an implementation point to verify before treating the claim as production-ready.',
     'The practical next step is to connect that detail to benchmarks, architecture, cost, or workflow behavior.'
   ];
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T15:35:04.860Z",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-05T15:35:04.860Z",
+    "fetchedAt": "2026-06-06T15:19:39.542Z",
     "items": [
       {
         "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",

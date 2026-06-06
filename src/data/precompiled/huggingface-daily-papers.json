@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T15:35:04.860Z",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-06-05T15:35:04.860Z",
+    "fetchedAt": "2026-06-06T15:19:39.542Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -87,7 +87,7 @@
           "Huaxiu Yao"
         ],
         "summary": "AutoResearchClaw is a multi-agent autonomous research system that improves scientific discovery through structured debate, self-healing execution, verifiable reporting, human collaboration, and evolutionary learning, outperforming previous systems on a benchmark while maintaining human oversight.",
-        "upvotes": 185,
+        "upvotes": 186,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20025.png",
         "projectPage": "https://github.com/aiming-lab/AutoResearchClaw",

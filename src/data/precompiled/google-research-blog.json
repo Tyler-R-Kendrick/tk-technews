@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T15:35:04.860Z",
+  "generatedAt": "2026-06-06T15:19:39.542Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,8 +8,22 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-05T15:35:04.860Z",
+    "fetchedAt": "2026-06-06T15:19:39.542Z",
     "items": [
+      {
+        "title": "Unlocking dependable responses with Gemini Enterprise Agent Platform’s Agentic RAG",
+        "link": "https://research.google/blog/unlocking-dependable-responses-with-gemini-enterprise-agent-platforms-agentic-rag/",
+        "id": "https://research.google/blog/unlocking-dependable-responses-with-gemini-enterprise-agent-platforms-agentic-rag/",
+        "publishedAt": "2026-06-05T11:26:00.000Z",
+        "author": "Google Research",
+        "summary": "Data Management",
+        "categories": [
+          "Data Management",
+          "Machine Intelligence",
+          "Natural Language Processing",
+          "Product"
+        ]
+      },
       {
         "title": "Towards passive heart health monitoring via smartphone camera",
         "link": "https://research.google/blog/towards-passive-heart-health-monitoring-via-smartphone-camera/",
@@ -121,19 +135,6 @@
         "link": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
         "id": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
         "publishedAt": "2026-04-21T16:42:22.000Z",
-        "author": "Google Research",
-        "summary": "Generative AI",
-        "categories": [
-          "Generative AI",
-          "Machine Intelligence",
-          "Natural Language Processing"
-        ]
-      },
-      {
-        "title": "Designing synthetic datasets for the real world: Mechanism design and reasoning from first principles",
-        "link": "https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles/",
-        "id": "https://research.google/blog/designing-synthetic-datasets-for-the-real-world-mechanism-design-and-reasoning-from-first-principles/",
-        "publishedAt": "2026-04-16T14:41:00.000Z",
         "author": "Google Research",
         "summary": "Generative AI",
         "categories": [

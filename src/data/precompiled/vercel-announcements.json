@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T15:19:39.542Z",
+  "generatedAt": "2026-06-07T15:32:26.273Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,7 +9,7 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-06T15:19:39.542Z",
+      "fetchedAt": "2026-06-07T15:32:26.273Z",
       "items": [
         {
           "title": "Drives for Vercel Sandbox in Private Beta",
@@ -111,7 +111,7 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-06T15:19:39.542Z",
+      "fetchedAt": "2026-06-07T15:32:26.273Z",
       "items": [
         {
           "title": "Drives for Vercel Sandbox in Private Beta",

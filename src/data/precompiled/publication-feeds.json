@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T15:19:39.542Z",
+  "generatedAt": "2026-06-07T15:32:26.273Z",
   "sources": [
     {
       "id": "towards-data-science",
@@ -9,7 +9,7 @@
       "rssUrl": "https://medium.com/feed/towards-data-science",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-06T15:19:39.542Z",
+      "fetchedAt": "2026-06-07T15:32:26.273Z",
       "items": [
         {
           "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
@@ -181,8 +181,102 @@
       "rssUrl": "https://www.marktechpost.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-06T15:19:39.542Z",
+      "fetchedAt": "2026-06-07T15:32:26.273Z",
       "items": [
+        {
+          "title": "Best 21 Low-Code and No-Code AI Tools in 2026",
+          "link": "https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/",
+          "id": "https://www.marktechpost.com/?p=41782",
+          "publishedAt": "2026-06-07T08:40:25.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Low-code and no-code AI platforms now turn a prompt into a working app, agent, or model. This guide compares 21 tools across app builders, automation, AI agents, and machine learning platforms, each linked to its official site.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/\">Best 21 Low-Code and No-Code AI Tools in 2026</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Tool",
+            "AI Tools Club",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology",
+            "Top",
+            "Uncategorized"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Meet Harness-1: A 20B Retrieval Subagent Trained With Reinforcement Learning Inside a Stateful Search Harness on gpt-oss-20b",
+          "link": "https://www.marktechpost.com/2026/06/06/meet-harness-1-a-20b-retrieval-subagent-trained-with-reinforcement-learning-inside-a-stateful-search-harness-on-gpt-oss-20b/",
+          "id": "https://www.marktechpost.com/?p=80360",
+          "publishedAt": "2026-06-07T06:25:18.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>UIUC and Chroma's Harness-1 is a 20B retrieval subagent trained with reinforcement learning inside a stateful search harness. The harness maintains the bookkeeping — candidate pool, importance-tagged curated set, evidence graph, verification records — while the policy decides what to search, curate, verify, and when to stop. It reaches 0.730 average curated recall across eight benchmarks, beating the next open subagent by 11.4 points and trailing only Opus-4.6. Weights and harness code are public.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/06/meet-harness-1-a-20b-retrieval-subagent-trained-with-reinforcement-learning-inside-a-stateful-search-harness-on-gpt-oss-20b/\">Meet Harness-1: A 20B Retrieval Subagent Trained With Reinforcement Learning Inside a Stateful Search Harness on gpt-oss-20b</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "AI Infrastructure",
+            "AI Paper Summary",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "New Releases",
+            "Open Source",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "NVIDIA garak Tutorial: Build a Complete Defensive LLM Red-Teaming Workflow with Custom Probes and Detectors",
+          "link": "https://www.marktechpost.com/2026/06/06/nvidia-garak-tutorial-build-a-complete-defensive-llm-red-teaming-workflow-with-custom-probes-and-detectors/",
+          "id": "https://www.marktechpost.com/?p=80357",
+          "publishedAt": "2026-06-07T05:11:09.000Z",
+          "author": "Sana Hassan",
+          "summary": "<p>This tutorial walks through NVIDIA garak as an end-to-end framework for defensive LLM red-teaming. It covers setup, plugin discovery, dry runs, real-model scans on a Hugging Face generator, and multi-probe evaluations. The workflow then analyzes safety scores and attack success rates, inspects flagged outputs, and extends garak with a custom probe and detector. It closes by exporting results in AVID format for structured vulnerability</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/06/nvidia-garak-tutorial-build-a-complete-defensive-llm-red-teaming-workflow-with-custom-probes-and-detectors/\">NVIDIA garak Tutorial: Build a Complete Defensive LLM Red-Teaming Workflow with Custom Probes and Detectors</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Infrastructure",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Security",
+            "Software Engineering",
+            "Staff",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Google’s New Colab CLI Lets Developers and AI Agents Run Python on Remote Colab GPUs and TPUs From the Terminal",
+          "link": "https://www.marktechpost.com/2026/06/06/googles-new-colab-cli-lets-developers-and-ai-agents-run-python-on-remote-colab-gpus-and-tpus-from-the-terminal/",
+          "id": "https://www.marktechpost.com/?p=80353",
+          "publishedAt": "2026-06-06T22:07:34.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Google released the Colab CLI, letting developers and AI agents run local code on remote Colab GPU and TPU runtime</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/06/googles-new-colab-cli-lets-developers-and-ai-agents-run-python-on-remote-colab-gpus-and-tpus-from-the-terminal/\">Google&#8217;s New Colab CLI Lets Developers and AI Agents Run Python on Remote Colab GPUs and TPUs From the Terminal</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "For Devs",
+            "Machine Learning",
+            "New Releases",
+            "Open Source",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology",
+            "Uncategorized"
+          ],
+          "source": "MarkTechPost"
+        },
         {
           "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents",
           "link": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/",
@@ -308,83 +402,6 @@
             "Artificial Intelligence",
             "Editors Pick",
             "New Releases",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Microsoft Fara Tutorial: Run a Browser-Use Agent in Google Colab with a Mock OpenAI-Compatible Endpoint",
-          "link": "https://www.marktechpost.com/2026/06/05/microsoft-fara-tutorial-run-a-browser-use-agent-in-google-colab-with-a-mock-openai-compatible-endpoint/",
-          "id": "https://www.marktechpost.com/?p=80314",
-          "publishedAt": "2026-06-05T09:04:55.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>A hands-on guide to running Microsoft Fara in Colab, testing the browser agent loop with a mock endpoint.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/microsoft-fara-tutorial-run-a-browser-use-agent-in-google-colab-with-a-mock-openai-compatible-endpoint/\">Microsoft Fara Tutorial: Run a Browser-Use Agent in Google Colab with a Mock OpenAI-Compatible Endpoint</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "Editors Pick",
-            "Software Engineering",
-            "Staff",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "15 Best Vibe Coding Tools in 2026 Compared: Pricing, Features, and Best Fit",
-          "link": "https://www.marktechpost.com/2026/06/05/15-best-vibe-coding-tools-in-2026-compared-pricing-features-and-best-fit/",
-          "id": "https://www.marktechpost.com/?p=71903",
-          "publishedAt": "2026-06-05T08:07:46.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Vibe coding turns plain language into working software. Explore 15 tools shaping how developers build apps in 2026.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/15-best-vibe-coding-tools-in-2026-compared-pricing-features-and-best-fit/\">15 Best Vibe Coding Tools in 2026 Compared: Pricing, Features, and Best Fit</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Agents",
-            "Editors Pick",
-            "Software Engineering",
-            "Top",
-            "Vibe Coding"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Building a Semantic Search Engine and Open-Status Classifier over the ResearchMath-14k Dataset",
-          "link": "https://www.marktechpost.com/2026/06/04/building-a-semantic-search-engine-and-open-status-classifier-over-the-researchmath-14k-dataset/",
-          "id": "https://www.marktechpost.com/?p=80308",
-          "publishedAt": "2026-06-04T22:24:10.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>This tutorial walks through a complete NLP pipeline for research-level mathematics. Using the ResearchMath-14k dataset, we extract field-specific keywords with TF-IDF, generate sentence embeddings, visualize the problem landscape with UMAP, cluster with K-Means, build a semantic search engine, and train a classifier to predict each problem's open status — then surface near-duplicate problems by similarity.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/04/building-a-semantic-search-engine-and-open-status-classifier-over-the-researchmath-14k-dataset/\">Building a Semantic Search Engine and Open-Status Classifier over the ResearchMath-14k Dataset</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Machine Learning",
-            "Staff",
-            "Technology",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "NVIDIA AI Releases Nemotron 3 Ultra: An Open 550B Mixture-of-Experts Hybrid Mamba-Transformer for Long-Running Agents",
-          "link": "https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/",
-          "id": "https://www.marktechpost.com/?p=80300",
-          "publishedAt": "2026-06-04T21:42:28.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>NVIDIA has released Nemotron 3 Ultra, a 550B total (55B active) open Mixture-of-Experts hybrid Mamba-Transformer for long-running agents. It pairs a 1M-token context with up to ~6x higher inference throughput than comparable open LLMs at on-par accuracy, and ships with open weights, training data, and recipes under OpenMDW-1.1.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/\">NVIDIA AI Releases Nemotron 3 Ultra: An Open 550B Mixture-of-Experts Hybrid Mamba-Transformer for Long-Running Agents</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Paper Summary",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Context Engineering",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "Machine Learning",
-            "New Releases",
-            "Open Source",
-            "Software Engineering",
             "Staff",
             "Tech News",
             "Technology"

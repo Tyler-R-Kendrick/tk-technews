@@ -1,67 +1,296 @@
 {
-  "date": "2026-06-06",
-  "generatedAt": "2026-06-06T15:19:39.542Z",
-  "sourceItemCount": 1,
+  "date": "2026-06-07",
+  "generatedAt": "2026-06-07T15:32:26.273Z",
+  "sourceItemCount": 7,
   "articleStubs": [
     {
-      "id": "2026-06-06-moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescrip",
-      "slug": "2026-06-06-moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescrip",
-      "href": "/daily/2026-06-06/2026-06-06-moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescrip/",
-      "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Ne...",
-      "dek": "Kimi Code CLI is best read as a terminal-native coding-agent architecture rather than a simple command-line wrapper.",
+      "id": "2026-06-07-github-vercel-labs-open-update",
+      "slug": "2026-06-07-github-vercel-labs-open-update",
+      "href": "/daily/2026-06-07/2026-06-07-github-vercel-labs-open-update/",
+      "title": "GitHub Vercel Labs Open Update",
+      "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
       "status": "generated",
       "bodySections": [
         {
-          "heading": "A Terminal AI Coding Agent Defines The Technical Claim",
-          "intent": "Explain the source-backed development and its technical consequence.",
+          "heading": "Vercel Labs Is Packaging Agent Primitives",
+          "intent": "Explain the cited technical development and its implementation consequence.",
           "paragraphs": [
-            "Kimi Code CLI is best read as a terminal-native coding-agent architecture rather than a simple command-line wrapper. The important mechanism is how TypeScript implementation, subagents, Model Context Protocol configuration, repository editing, and tool orchestration are packaged into a workflow that can act inside a developer environment while preserving enough structure for review, testing, and policy control.",
-            "The constraint is operational control. A terminal agent becomes useful only if teams can measure repeatable edits, permission boundaries, benchmarked coding work, and integration failure modes before it touches production repositories. That makes evaluation less about the announcement and more about whether the agent can complete real tasks under predictable guardrails.",
-            "For engineering teams, the trade-off is speed versus supervision. Local command-line automation can shorten edit-test loops and make tool use explicit, but it also raises architecture questions around sandboxing, auditability, and when a subagent should be allowed to change files or call external services."
+            "The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer."
           ],
           "citations": [
-            "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/"
+            "https://github.com/vercel-labs/open-agents"
+          ]
+        },
+        {
+          "heading": "The Engineering Question Is Composability",
+          "intent": "Explain the cited technical development and its implementation consequence.",
+          "paragraphs": [
+            "The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow."
+          ],
+          "citations": [
+            "https://github.com/vercel-labs/open-agents"
+          ]
+        }
+      ],
+      "keyTakeaways": [
+        "The Vercel Labs items are best read together as an agent-infrastructure experiment.",
+        "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
+      ],
+      "sourceCount": 1,
+      "latestPublishedAt": "2026-06-07T13:01:01Z",
+      "tags": [
+        "GitHub",
+        "Vercel",
+        "vercel",
+        "labs",
+        "open",
+        "agents"
+      ],
+      "sources": [
+        {
+          "title": "vercel-labs/open-agents",
+          "url": "https://github.com/vercel-labs/open-agents",
+          "sourceName": "vercel-labs GitHub",
+          "publishedAt": "2026-06-07T13:01:01Z",
+          "summary": "An open source template for building cloud agents.",
+          "preview": {
+            "kind": "source",
+            "label": "Source",
+            "href": "https://github.com/vercel-labs/open-agents",
+            "title": "vercel-labs/open-agents",
+            "source": "vercel-labs GitHub",
+            "snippet": "An open source template for building cloud agents.",
+            "host": "github.com",
+            "thumbnailUrl": null,
+            "social": null
+          }
+        }
+      ],
+      "evalReport": {
+        "score": 1,
+        "verdict": "pass",
+        "assertions": [
+          {
+            "name": "citation-coverage",
+            "text": "Citation coverage passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Citation coverage",
+            "required": true,
+            "weight": 0.14
+          },
+          {
+            "name": "citation-richness",
+            "text": "Citation richness passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Citation richness",
+            "required": true,
+            "weight": 0.09
+          },
+          {
+            "name": "link-health",
+            "text": "Link syntax passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Link health",
+            "required": true,
+            "weight": 0.09
+          },
+          {
+            "name": "grounding",
+            "text": "Grounding passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Grounding",
+            "required": true,
+            "weight": 0.14
+          },
+          {
+            "name": "relevance",
+            "text": "Relevance passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Relevance",
+            "required": true,
+            "weight": 0.1
+          },
+          {
+            "name": "speculation-boundary",
+            "text": "No speculation boundary needed.",
+            "passed": true,
+            "score": 1,
+            "label": "Speculation boundary",
+            "required": true,
+            "weight": 0.07
+          },
+          {
+            "name": "reader-facing-language",
+            "text": "Reader-facing language passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Reader-facing language",
+            "required": true,
+            "weight": 0.07
+          },
+          {
+            "name": "tone-match",
+            "text": "Tone match passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Tone match",
+            "required": true,
+            "weight": 0.1
+          },
+          {
+            "name": "word-choice",
+            "text": "Word choice passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Word choice",
+            "required": true,
+            "weight": 0.08
+          },
+          {
+            "name": "detail-level",
+            "text": "Level of detail passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Level of detail",
+            "required": true,
+            "weight": 0.08
+          },
+          {
+            "name": "voice-adherence",
+            "text": "Voice adherence passed.",
+            "passed": true,
+            "score": 1,
+            "label": "Voice adherence",
+            "required": false,
+            "weight": 0.04
+          },
+          {
+            "name": "daily-article-word-count",
+            "text": "daily-article-word-count passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-section-count",
+            "text": "daily-article-section-count passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-no-title-echo-paragraphs",
+            "text": "daily-article-no-title-echo-paragraphs passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-no-template-headings",
+            "text": "daily-article-no-template-headings passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-hard-science-detail",
+            "text": "daily-article-hard-science-detail passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-no-copied-source-headlines",
+            "text": "daily-article-no-copied-source-headlines passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-no-generation-instructions",
+            "text": "daily-article-no-generation-instructions passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-has-usable-source-evidence",
+            "text": "daily-article-has-usable-source-evidence passed.",
+            "passed": true,
+            "score": 1
+          },
+          {
+            "name": "daily-article-grounded-in-source-terms",
+            "text": "daily-article-grounded-in-source-terms passed.",
+            "passed": true,
+            "score": 1
+          }
+        ],
+        "feedback": [],
+        "requiredFixes": []
+      },
+      "evalScore": 1,
+      "evalAttempts": 1,
+      "evalStatus": "passed",
+      "provider": "deterministic-daily-journalist",
+      "model": null
+    },
+    {
+      "id": "2026-06-07-best-21-low-code-and-no-code-ai-tools-in-2026",
+      "slug": "2026-06-07-best-21-low-code-and-no-code-ai-tools-in-2026",
+      "href": "/daily/2026-06-07/2026-06-07-best-21-low-code-and-no-code-ai-tools-in-2026/",
+      "title": "Best 21 Low-Code and No-Code AI Tools in 2026",
+      "dek": "This guide compares 21 tools across app builders, automation, AI agents, and machine learning platforms, each linked to its offi...",
+      "status": "generated",
+      "bodySections": [
+        {
+          "heading": "Best Low Code Code Tools Defines The Technical Claim",
+          "intent": "Explain the source-backed development and its technical consequence.",
+          "paragraphs": [
+            "This guide compares 21 tools across app builders, automation, AI agents, and machine learning platforms, each linked to its offi... The reported detail gives readers an implementation point to verify before treating the claim as production-ready.",
+            "Low-code and no-code AI platforms now turn a prompt into a working app, agent, or model. The practical next step is to connect that detail to benchmarks, architecture, cost, or workflow behavior."
+          ],
+          "citations": [
+            "https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/"
           ]
         },
         {
           "heading": "The Mechanism Needs A Check",
           "intent": "Explain the technical consequence of the extracted evidence.",
           "paragraphs": [
-            "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating it as production-ready. The important measurement is whether the tool changes real developer work under repeatable conditions, not whether the announcement sounds complete."
+            "Low-code and no-code AI platforms now turn a prompt into a working app, agent, or model. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating it as production-ready. The important measurement is whether the tool changes real developer work under repeatable conditions, not whether the announcement sounds complete."
           ],
           "citations": [
-            "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/"
+            "https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/"
           ]
         }
       ],
       "keyTakeaways": [
-        "A Terminal AI Coding Agent Defines The Technical Claim matters because it connects the reported detail to implementation constraints, benchmarks, architecture, or workflow behavior.",
-        "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration. is the concrete technical detail readers should test before treating it as production guidance."
+        "Best Low Code Code Tools Defines The Technical Claim matters because it connects the reported detail to implementation constraints, benchmarks, architecture, or workflow behavior.",
+        "Low-code and no-code AI platforms now turn a prompt into a working app, agent, or model. is the concrete technical detail readers should test before treating it as production guidance."
       ],
       "sourceCount": 1,
-      "latestPublishedAt": "2026-06-06T09:11:08.000Z",
+      "latestPublishedAt": "2026-06-07T08:40:25.000Z",
       "tags": [
-        "moonshot",
-        "kimi",
+        "best",
+        "low",
         "code",
-        "cli",
-        "terminal",
-        "coding"
+        "tools",
+        "2026",
+        "publications"
       ],
       "sources": [
         {
-          "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents",
-          "url": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/",
+          "title": "Best 21 Low-Code and No-Code AI Tools in 2026",
+          "url": "https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/",
           "sourceName": "MarkTechPost",
-          "publishedAt": "2026-06-06T09:11:08.000Z",
-          "summary": "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration.",
+          "publishedAt": "2026-06-07T08:40:25.000Z",
+          "summary": "Low-code and no-code AI platforms now turn a prompt into a working app, agent, or model. This guide compares 21 tools across app builders, automation, AI agents, and machine learning platforms, each linked to its official site.",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://www.marktechpost.com/2026/06/06/moonshot-ai-releases-kimi-code-cli-a-terminal-ai-coding-agent-built-in-typescript-for-next-gen-agents/",
-            "title": "Moonshot AI Releases Kimi Code CLI: A Terminal AI Coding Agent Built in TypeScript for Next-Gen Agents",
+            "href": "https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/",
+            "title": "Best 21 Low-Code and No-Code AI Tools in 2026",
             "source": "MarkTechPost",
-            "snippet": "Kimi Code CLI is Moonshot AI's open-source terminal coding agent, written in TypeScript with subagents and MCP configuration.",
+            "snippet": "Low-code and no-code AI platforms now turn a prompt into a working app, agent, or model. This guide compares 21 tools across app builders, automation, AI agents, and machine learning platforms, each linked to its offi...",
             "host": "marktechpost.com",
             "thumbnailUrl": null,
             "social": null

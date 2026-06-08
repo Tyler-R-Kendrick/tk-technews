@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T15:32:26.273Z",
+  "generatedAt": "2026-06-08T15:20:14.697Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-07T15:32:26.273Z",
+    "fetchedAt": "2026-06-08T15:20:14.697Z",
     "items": [
       {
         "title": "Making Claude a chemist",

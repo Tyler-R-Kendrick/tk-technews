@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T15:32:26.273Z",
+  "generatedAt": "2026-06-08T15:20:14.697Z",
   "sources": [
     {
       "id": "towards-data-science",
@@ -9,7 +9,7 @@
       "rssUrl": "https://medium.com/feed/towards-data-science",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-07T15:32:26.273Z",
+      "fetchedAt": "2026-06-08T15:20:14.697Z",
       "items": [
         {
           "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
@@ -181,8 +181,66 @@
       "rssUrl": "https://www.marktechpost.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-07T15:32:26.273Z",
+      "fetchedAt": "2026-06-08T15:20:14.697Z",
       "items": [
+        {
+          "title": "Microsoft AI Introduces MAI-Transcribe-1.5: 2.4% WER on Artificial Analysis, Best-in-Class FLEURS Accuracy, and Up to 5x Faster Long-Audio Transcription",
+          "link": "https://www.marktechpost.com/2026/06/08/microsoft-ai-introduces-mai-transcribe-1-5-2-4-wer-on-artificial-analysis-best-in-class-fleurs-accuracy-and-up-to-5x-faster-long-audio-transcription/",
+          "id": "https://www.marktechpost.com/?p=80379",
+          "publishedAt": "2026-06-08T08:56:49.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Microsoft AI has released MAI-Transcribe-1.5, the second iteration of its in-house speech-to-text family. The model covers 43 languages, adds keyword (entity) biasing for domain-specific terms, posts a 2.4% Word-Error-Rate on the Artificial Analysis leaderboard, and transcribes an hour of audio in under 15 seconds. It is generally available in Azure AI Foundry.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/08/microsoft-ai-introduces-mai-transcribe-1-5-2-4-wer-on-artificial-analysis-best-in-class-fleurs-accuracy-and-up-to-5x-faster-long-audio-transcription/\">Microsoft AI Introduces MAI-Transcribe-1.5: 2.4% WER on Artificial Analysis, Best-in-Class FLEURS Accuracy, and Up to 5x Faster Long-Audio Transcription</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "Artificial Intelligence",
+            "Audio Language Model",
+            "Editors Pick",
+            "Language Model",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Technology",
+            "Voice AI"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Google Research Adds Agentic RAG to Gemini Enterprise Agent Platform with a Sufficient Context Agent for multi-hop queries",
+          "link": "https://www.marktechpost.com/2026/06/08/google-research-adds-agentic-rag-to-gemini-enterprise-agent-platform-with-a-sufficient-context-agent-for-multi-hop-queries/",
+          "id": "https://www.marktechpost.com/?p=80374",
+          "publishedAt": "2026-06-08T08:25:51.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Google Research details an agentic RAG framework in Gemini Enterprise Agent Platform. A Sufficient Context Agent re-searches until multi-hop, multi-source queries have enough grounding to answer. The framework raises factuality accuracy up to 34% versus standard RAG.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/08/google-research-adds-agentic-rag-to-gemini-enterprise-agent-platform-with-a-sufficient-context-agent-for-multi-hop-queries/\">Google Research Adds Agentic RAG to Gemini Enterprise Agent Platform with a Sufficient Context Agent for multi-hop queries</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "New Releases",
+            "RAG",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Building Reflective Prompt Optimization with GEPA: Multi-Component Prompts, Structured Feedback, and Held-Out Validation",
+          "link": "https://www.marktechpost.com/2026/06/07/building-reflective-prompt-optimization-with-gepa-multi-component-prompts-structured-feedback-and-held-out-validation/",
+          "id": "https://www.marktechpost.com/?p=80370",
+          "publishedAt": "2026-06-07T17:05:04.000Z",
+          "author": "Sana Hassan",
+          "summary": "<p>In this tutorial, we use GEPA as a reflective prompt-evolution framework to improve how a small language model solves multi-step arithmetic word problems. We start from a weak seed prompt, build a deterministic benchmark, and define a structured evaluator that returns actionable feedback. A multi-component setup evolves both the instruction field and the output-format rules together. We then compare the baseline and optimized prompts on a held-out validation set to check whether the gains generalize.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/07/building-reflective-prompt-optimization-with-gepa-multi-component-prompts-structured-feedback-and-held-out-validation/\">Building Reflective Prompt Optimization with GEPA: Multi-Component Prompts, Structured Feedback, and Held-Out Validation</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "Staff",
+            "Technology",
+            "Tutorials"
+          ],
+          "source": "MarkTechPost"
+        },
         {
           "title": "Best 21 Low-Code and No-Code AI Tools in 2026",
           "link": "https://www.marktechpost.com/2026/06/07/best-21-low-code-and-no-code-ai-tools-in-2026/",
@@ -337,74 +395,6 @@
             "Staff",
             "Technology",
             "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Google DeepMind Releases Gemma 4 QAT Checkpoints: Q4_0 and a New Mobile Format Cut On-Device Memory",
-          "link": "https://www.marktechpost.com/2026/06/05/google-deepmind-releases-gemma-4-qat-checkpoints-q4_0-and-a-new-mobile-format-cut-on-device-memory/",
-          "id": "https://www.marktechpost.com/?p=80337",
-          "publishedAt": "2026-06-05T18:59:38.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Compare Gemma 4 edge formats: BF16, Q4_0 QAT, and mobile QAT, on published memory numbers and design tradeoffs.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/google-deepmind-releases-gemma-4-qat-checkpoints-q4_0-and-a-new-mobile-format-cut-on-device-memory/\">Google DeepMind Releases Gemma 4 QAT Checkpoints: Q4_0 and a New Mobile Format Cut On-Device Memory</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Infrastructure",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Edge AI",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "NVIDIA AI Releases Dynamo Snapshot: A CRIU-Based Fast Startup System for AI Inference on Kubernetes",
-          "link": "https://www.marktechpost.com/2026/06/05/nvidia-ai-releases-dynamo-snapshot-a-criu-based-fast-startup-system-for-ai-inference-on-kubernetes/",
-          "id": "https://www.marktechpost.com/?p=80320",
-          "publishedAt": "2026-06-05T10:23:12.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>NVIDIA Dynamo Snapshot checkpoints and restores vLLM inference workers on Kubernetes using CRIU and cuda-checkpoint tools.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/nvidia-ai-releases-dynamo-snapshot-a-criu-based-fast-startup-system-for-ai-inference-on-kubernetes/\">NVIDIA AI Releases Dynamo Snapshot: A CRIU-Based Fast Startup System for AI Inference on Kubernetes</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "AI Infrastructure",
-            "AI Shorts",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "Machine Learning",
-            "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Perplexity AI Introduces Hybrid Local-Server Inference Orchestrator for Personal Computer: Automatic On-Device and Cloud Task Routing",
-          "link": "https://www.marktechpost.com/2026/06/05/perplexity-ai-introduces-hybrid-local-server-inference-orchestrator-for-personal-computer-automatic-on-device-and-cloud-task-routing/",
-          "id": "https://www.marktechpost.com/?p=80317",
-          "publishedAt": "2026-06-05T09:44:39.000Z",
-          "author": "Michal Sutter",
-          "summary": "<p>Perplexity AI announces a hybrid local-server inference orchestrator for Personal Computer, automatically routing AI tasks between on-device and cloud models.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/05/perplexity-ai-introduces-hybrid-local-server-inference-orchestrator-for-personal-computer-automatic-on-device-and-cloud-task-routing/\">Perplexity AI Introduces Hybrid Local-Server Inference Orchestrator for Personal Computer: Automatic On-Device and Cloud Task Routing</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Infrastructure",
-            "AI Shorts",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "New Releases",
-            "Staff",
-            "Tech News",
-            "Technology"
           ],
           "source": "MarkTechPost"
         }

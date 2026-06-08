@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T15:32:26.273Z",
+  "generatedAt": "2026-06-08T15:20:14.697Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,7 +10,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-07T15:32:26.273Z",
+      "fetchedAt": "2026-06-08T15:20:14.697Z",
       "items": [
         {
           "title": "Grok-2 Beta Release - xAI",
@@ -86,7 +86,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-07T15:32:26.273Z",
+      "fetchedAt": "2026-06-08T15:20:14.697Z",
       "items": [
         {
           "title": "An Energy Department-run national lab is piloting xAI’s Grok - FedScoop",

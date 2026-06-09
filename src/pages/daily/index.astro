@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { dailyArchiveSummary } from '../../lib/daily-feed.mjs';
+
+const archiveDays = dailyArchiveSummary;
+---
+
+<BaseLayout title="Daily Archive | TK TechNews" description="Published daily AI briefing archive.">
+  <main class="site-shell">
+    <header class="masthead">
+      <a class="brand" href="/">TK TechNews</a>
+      <nav aria-label="Primary navigation">
+        <a href="/">Today</a>
+        <a href="/sources/">Sources</a>
+        <a href="/wiki/">Wiki</a>
+      </nav>
+    </header>
+
+    <section class="hero daily-hero">
+      <div>
+        <p class="article-date">Published briefings</p>
+        <h1>Daily Archive</h1>
+        <p>Each successful daily generation is archived by date so previously published article stubs stay linkable and browsable.</p>
+      </div>
+    </section>
+
+    <section class="article-list daily-stub-list" aria-labelledby="archive-heading">
+      <div class="section-heading">
+        <h2 id="archive-heading">Archived Days</h2>
+        <p>The latest good brief remains available even when a later ingest day fails closed.</p>
+      </div>
+
+      <div class="cards">
+        {archiveDays.map((entry) => (
+          <article class="article-card">
+            <div class="card-meta">
+              <time datetime={entry.date}>{entry.date}</time>
+              <span>{entry.articleCount} stubs</span>
+            </div>
+            <h3>
+              {entry.leadSlug ? (
+                <a href={`/daily/${entry.date}/${entry.leadSlug}/`}>{entry.leadTitle ?? entry.date}</a>
+              ) : (
+                entry.date
+              )}
+            </h3>
+            <p>{entry.sourceItemCount} source items in the published brief.</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

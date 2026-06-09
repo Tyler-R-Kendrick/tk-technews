@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { dailyBrief } from '../../../lib/daily-feed.mjs';
+import { archivedDailyBriefByDate } from '../../../lib/daily-feed.mjs';
 import { renderInlineMarkdown } from '../../../lib/inline-markdown.mjs';
+import { buildDailyStaticPaths } from '../../../../scripts/lib/daily-archive.mjs';
 import { citationPreview } from '../../../../scripts/lib/rich-citations.mjs';
 
 type DailyStub = {
@@ -40,14 +41,11 @@ type DailyStub = {
 };
 
 export function getStaticPaths() {
-  return dailyBrief.articleStubs.map((stub: DailyStub) => ({
-    params: { date: dailyBrief.date, slug: stub.slug },
-    props: { stub }
-  }));
+  return buildDailyStaticPaths([...archivedDailyBriefByDate.values()]);
 }
 
-const { stub } = Astro.props as { stub: DailyStub };
-const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateString('en-US', {
+const { brief, stub } = Astro.props as { brief: { date: string }, stub: DailyStub };
+const displayDate = new Date(`${brief.date}T12:00:00.000Z`).toLocaleDateString('en-US', {
   dateStyle: 'full'
 });
 const citationPreviews = stub.sources.map((source) => source.preview ?? citationPreview(source));
@@ -59,6 +57,7 @@ const citationPreviews = stub.sources.map((source) => source.preview ?? citation
       <a class="brand" href="/">TK TechNews</a>
       <nav aria-label="Primary navigation">
         <a href="/">Today</a>
+        <a href="/daily/">Archive</a>
         <a href="/sources/">Sources</a>
         <a href="/wiki/">Wiki</a>
       </nav>

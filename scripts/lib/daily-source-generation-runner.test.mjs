@@ -9,6 +9,7 @@ import {
   chicagoDate,
   parseChangedFiles,
   runDailySourceGeneration,
+  shouldRunFullBuild,
   validateDailyArtifacts
 } from './daily-source-generation-runner.mjs';
 
@@ -17,7 +18,11 @@ test('allows only daily generated artifacts and precompiled json files', () => {
     'src/data/precompiled/source-index.json',
     'src/data/precompiled/youtube-latest.json',
     'src/data/daily/generated-daily-articles.json',
-    'public/daily/generated-daily-articles.json'
+    'public/daily/generated-daily-articles.json',
+    'src/data/daily/archive-index.json',
+    'public/daily/archive-index.json',
+    'src/data/daily/archive/2026-05-22.json',
+    'public/daily/archive/2026-05-22.json'
   ]));
 
   assert.throws(
@@ -29,10 +34,11 @@ test('allows only daily generated artifacts and precompiled json files', () => {
 test('parseChangedFiles combines tracked and untracked paths', () => {
   assert.deepEqual(parseChangedFiles({
     diffNameOnly: 'src/data/precompiled/source-index.json\n',
-    untracked: 'public/daily/generated-daily-articles.json\n'
+    untracked: 'public/daily/generated-daily-articles.json\npublic/daily/archive/2026-05-22.json\n'
   }), [
     'src/data/precompiled/source-index.json',
-    'public/daily/generated-daily-articles.json'
+    'public/daily/generated-daily-articles.json',
+    'public/daily/archive/2026-05-22.json'
   ]);
 });
 
@@ -46,6 +52,16 @@ test('validateDailyArtifacts rejects date mismatches', async () => {
     date: '2026-05-22',
     articleStubs: []
   });
+  await writeJson(root, 'src/data/daily/archive/2026-05-22.json', {
+    date: '2026-05-22',
+    articleStubs: []
+  });
+  await writeJson(root, 'public/daily/archive/2026-05-22.json', {
+    date: '2026-05-22',
+    articleStubs: []
+  });
+  await writeJson(root, 'src/data/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
+  await writeJson(root, 'public/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
 
   await assert.rejects(
     () => validateDailyArtifacts({ root, expectedDate: '2026-05-22' }),
@@ -70,6 +86,10 @@ test('validateDailyArtifacts rejects raw transcript payloads', async () => {
   };
   await writeJson(root, 'src/data/daily/generated-daily-articles.json', payload);
   await writeJson(root, 'public/daily/generated-daily-articles.json', payload);
+  await writeJson(root, 'src/data/daily/archive/2026-05-22.json', payload);
+  await writeJson(root, 'public/daily/archive/2026-05-22.json', payload);
+  await writeJson(root, 'src/data/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
+  await writeJson(root, 'public/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
 
   await assert.rejects(
     () => validateDailyArtifacts({ root, expectedDate: '2026-05-22' }),
@@ -99,8 +119,10 @@ test('runner exits without committing when generation produces no changes', asyn
   const result = await runDailySourceGeneration({ root, expectedDate: '2026-05-22', npm: 'npm', exec });
 
   assert.equal(result.status, 'no_changes');
-  assert.ok(calls.some((call) => call.command === 'npm' && call.args.join(' ') === 'ci'));
+  assert.ok(calls.some((call) => call.command === 'node' && call.args.join(' ') === 'scripts/ensure-local-runtime-deps.mjs'));
   assert.ok(calls.some((call) => call.command === 'npm' && call.args.join(' ') === 'run daily:generate'));
+  assert.ok(calls.some((call) => call.command === 'npm' && call.args.join(' ') === 'run test:daily'));
+  assert.equal(calls.some((call) => call.command === 'npm' && call.args.join(' ') === 'run build'), shouldRunFullBuild());
   assert.ok(!calls.some((call) => call.command === 'git' && call.args[0] === 'commit'));
 });
 
@@ -108,14 +130,15 @@ test('runner commits and pushes allowed generated artifact changes', async () =>
   const root = await rootWithValidArtifacts();
   const calls = [];
   const exec = fakeExec(calls, {
-    'git diff --name-only HEAD --': 'src/data/precompiled/source-index.json\nsrc/data/daily/generated-daily-articles.json\n',
+    'git diff --name-only HEAD --': 'src/data/precompiled/source-index.json\nsrc/data/daily/generated-daily-articles.json\nsrc/data/daily/archive-index.json\nsrc/data/daily/archive/2026-05-22.json\n',
     'git ls-files --others --exclude-standard': ''
   });
 
   const result = await runDailySourceGeneration({ root, expectedDate: '2026-05-22', npm: 'npm', exec });
 
   assert.equal(result.status, 'committed');
-  assert.ok(calls.some((call) => call.command === 'git' && call.args.join(' ') === 'add -- src/data/precompiled/source-index.json src/data/daily/generated-daily-articles.json'));
+  assert.equal(calls.some((call) => call.command === 'npm' && call.args.join(' ') === 'run build'), shouldRunFullBuild());
+  assert.ok(calls.some((call) => call.command === 'git' && call.args.join(' ') === 'add -- src/data/precompiled/source-index.json src/data/daily/generated-daily-articles.json src/data/daily/archive-index.json src/data/daily/archive/2026-05-22.json'));
   assert.ok(calls.some((call) => call.command === 'git' && call.args.join(' ') === 'commit -m chore(daily): update generated artifacts for 2026-05-22 [skip ci]'));
   assert.ok(calls.some((call) => call.command === 'git' && call.args.join(' ') === 'push origin HEAD:main'));
 });
@@ -135,6 +158,25 @@ test('runner fails before commit when generation touches disallowed files', asyn
   assert.ok(!calls.some((call) => call.command === 'git' && call.args[0] === 'commit'));
 });
 
+test('validateDailyArtifacts rejects non-navigable archived article hrefs', async () => {
+  const root = await tempRoot();
+  const payload = {
+    date: '2026-05-22',
+    articleStubs: [{ slug: 'lead-story', title: 'Lead Story', href: '/daily/2026-05-21/lead-story/' }]
+  };
+  await writeJson(root, 'src/data/daily/generated-daily-articles.json', payload);
+  await writeJson(root, 'public/daily/generated-daily-articles.json', payload);
+  await writeJson(root, 'src/data/daily/archive/2026-05-22.json', payload);
+  await writeJson(root, 'public/daily/archive/2026-05-22.json', payload);
+  await writeJson(root, 'src/data/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
+  await writeJson(root, 'public/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
+
+  await assert.rejects(
+    () => validateDailyArtifacts({ root, expectedDate: '2026-05-22' }),
+    /unexpected href/
+  );
+});
+
 async function tempRoot() {
   return fs.mkdtemp(path.join(os.tmpdir(), 'daily-source-runner-'));
 }
@@ -144,6 +186,10 @@ async function rootWithValidArtifacts() {
   const payload = { date: '2026-05-22', articleStubs: [] };
   await writeJson(root, 'src/data/daily/generated-daily-articles.json', payload);
   await writeJson(root, 'public/daily/generated-daily-articles.json', payload);
+  await writeJson(root, 'src/data/daily/archive/2026-05-22.json', payload);
+  await writeJson(root, 'public/daily/archive/2026-05-22.json', payload);
+  await writeJson(root, 'src/data/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
+  await writeJson(root, 'public/daily/archive-index.json', { days: [{ date: '2026-05-22' }] });
   return root;
 }
 

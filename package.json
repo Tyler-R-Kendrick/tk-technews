@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "deps:prepare": "node scripts/ensure-local-runtime-deps.mjs",
     "ingest": "node scripts/ingest.mjs",
     "summaries:weekly": "node scripts/build-weekly-summaries.mjs",
     "precompile:sources": "node scripts/precompile-sources.mjs",
@@ -37,6 +38,7 @@
     "eval:daily-social": "node scripts/agentv-daily-social-eval-runner.mjs run",
     "eval:daily-social:sdk": "node --experimental-strip-types --test scripts/agentv-source-grounding-sdk.test.ts",
     "eval:daily-social:fixtures": "node --experimental-strip-types --test scripts/agentv-daily-social-provider.test.mjs scripts/agentv-source-grounding-sdk.test.ts scripts/lib/rich-citations.test.mjs scripts/lib/daily-article-stubs.test.mjs",
+    "test:daily": "node --test scripts/package-scripts.test.mjs scripts/ingest.test.mjs scripts/lib/daily-archive.test.mjs scripts/lib/daily-article-stubs.test.mjs scripts/lib/daily-publish-guard.test.mjs scripts/lib/daily-source-generation-runner.test.mjs scripts/lib/precompile-sources.test.mjs scripts/lib/rich-citations.test.mjs src/lib/inline-markdown.test.mjs",
     "test": "node --test"
   },
   "dependencies": {

@@ -16,3 +16,16 @@ test('agentic daily source workflow uses guarded runner script', () => {
     'node scripts/run-daily-source-generation.mjs'
   );
 });
+
+test('dependency preparation uses the repo-local repair script', () => {
+  assert.equal(
+    packageJson.scripts['deps:prepare'],
+    'node scripts/ensure-local-runtime-deps.mjs'
+  );
+});
+
+test('daily verification uses the targeted daily test suite', () => {
+  assert.match(packageJson.scripts['test:daily'], /daily-archive\.test\.mjs/);
+  assert.match(packageJson.scripts['test:daily'], /daily-article-stubs\.test\.mjs/);
+  assert.doesNotMatch(packageJson.scripts['test:daily'], /agentv-source-grounding-sdk\.test\.ts/);
+});

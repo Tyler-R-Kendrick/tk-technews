@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { dailyBrief, dailyLedger } from '../lib/daily-feed.mjs';
+import { dailyArchiveSummary, dailyBrief } from '../lib/daily-feed.mjs';
 
 const generatedAt = new Date(dailyBrief.generatedAt).toLocaleString('en-US', {
   dateStyle: 'medium',
@@ -23,6 +23,7 @@ const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
       <a class="brand" href={withBase('/')}>TK TechNews</a>
       <nav aria-label="Primary navigation">
         <a href={withBase('/sources/')}>Sources</a>
+        <a href={withBase('/daily/')}>Archive</a>
         <a href={withBase('/wiki/')}>Wiki</a>
         <a href={withBase('/articles/last-week-in-ai-2026-05-20/')}>Weekly</a>
       </nav>
@@ -39,8 +40,7 @@ const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
         </p>
       </div>
       <aside class="process-panel" aria-label="Daily aggregation stats">
-        <span>{dailyLedger.sourceCount} sources checked</span>
-        <span>{dailyBrief.sourceItemCount} items today</span>
+        <span>{dailyBrief.sourceItemCount} source items</span>
         <span>{dailyBrief.articleStubs.length} deduped stubs</span>
         <span>Updated {generatedAt}</span>
       </aside>
@@ -86,5 +86,35 @@ const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
         ))}
       </div>
     </section>
+
+    {dailyArchiveSummary.length > 1 && (
+      <section class="article-list daily-stub-list" aria-labelledby="archive-heading">
+        <div class="section-heading">
+          <h2 id="archive-heading">Daily Archive</h2>
+          <p>Recent published briefing days remain available even when a new ingest run does not produce a publishable update.</p>
+        </div>
+
+        <div class="cards">
+          {dailyArchiveSummary.slice(0, 6).map((entry) => (
+            <article class="article-card">
+              <div class="card-meta">
+                <time datetime={entry.date}>{entry.date}</time>
+                <span>{entry.articleCount} stubs</span>
+              </div>
+              <h3>
+                {entry.leadSlug ? (
+                  <a href={withBase(`/daily/${entry.date}/${entry.leadSlug}/`)}>
+                    {entry.leadTitle ?? entry.date}
+                  </a>
+                ) : (
+                  entry.date
+                )}
+              </h3>
+              <p>{entry.sourceItemCount} source items captured for the published brief.</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
   </main>
 </BaseLayout>

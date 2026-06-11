@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T15:20:14.697Z",
+  "generatedAt": "2026-06-11T15:20:47.422Z",
   "source": {
     "id": "google-research-blog",
     "category": "research",
@@ -8,8 +8,21 @@
     "rssUrl": "https://research.google/blog/rss/",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-08T15:20:14.697Z",
+    "fetchedAt": "2026-06-11T15:20:47.422Z",
     "items": [
+      {
+        "title": "New framework for auditing machine unlearning",
+        "link": "https://research.google/blog/new-framework-for-auditing-machine-unlearning/",
+        "id": "https://research.google/blog/new-framework-for-auditing-machine-unlearning/",
+        "publishedAt": "2026-06-10T17:34:55.000Z",
+        "author": "Google Research",
+        "summary": "Algorithms & Theory",
+        "categories": [
+          "Algorithms & Theory",
+          "Responsible AI",
+          "Security, Privacy and Abuse Prevention"
+        ]
+      },
       {
         "title": "Unlocking dependable responses with Gemini Enterprise Agent Platform’s Agentic RAG",
         "link": "https://research.google/blog/unlocking-dependable-responses-with-gemini-enterprise-agent-platforms-agentic-rag/",
@@ -28,7 +41,7 @@
         "title": "Towards passive heart health monitoring via smartphone camera",
         "link": "https://research.google/blog/towards-passive-heart-health-monitoring-via-smartphone-camera/",
         "id": "https://research.google/blog/towards-passive-heart-health-monitoring-via-smartphone-camera/",
-        "publishedAt": "2026-06-04T19:47:12.000Z",
+        "publishedAt": "2026-06-04T19:47:00.000Z",
         "author": "Google Research",
         "summary": "Health & Bioscience",
         "categories": [
@@ -41,7 +54,7 @@
         "title": "The next chapter in flood resilience: Open sourcing Google’s hydrology framework",
         "link": "https://research.google/blog/the-next-chapter-in-flood-resilience-open-sourcing-googles-hydrology-framework/",
         "id": "https://research.google/blog/the-next-chapter-in-flood-resilience-open-sourcing-googles-hydrology-framework/",
-        "publishedAt": "2026-06-03T18:37:32.000Z",
+        "publishedAt": "2026-06-03T18:37:00.000Z",
         "author": "Google Research",
         "summary": "Climate & Sustainability",
         "categories": [
@@ -128,19 +141,6 @@
         "categories": [
           "Generative AI",
           "Photography"
-        ]
-      },
-      {
-        "title": "ReasoningBank: Enabling agents to learn from experience",
-        "link": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
-        "id": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
-        "publishedAt": "2026-04-21T16:42:22.000Z",
-        "author": "Google Research",
-        "summary": "Generative AI",
-        "categories": [
-          "Generative AI",
-          "Machine Intelligence",
-          "Natural Language Processing"
         ]
       }
     ]

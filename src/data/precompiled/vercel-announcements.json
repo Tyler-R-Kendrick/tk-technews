@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T15:20:14.697Z",
+  "generatedAt": "2026-06-11T15:20:47.422Z",
   "sources": [
     {
       "id": "vercel-changelog",
@@ -9,8 +9,62 @@
       "rssUrl": "https://vercel.com/changelog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-08T15:20:14.697Z",
+      "fetchedAt": "2026-06-11T15:20:47.422Z",
       "items": [
+        {
+          "title": "DeepSeek models now available via Azure on AI Gateway",
+          "link": "https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway",
+          "id": "https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway",
+          "publishedAt": "2026-06-11T00:00:00.000Z",
+          "author": "Aayush Kapoor",
+          "summary": "Azure is now a provider for DeepSeek V4 Pro and V4 Flash on .AI Gateway\nRequests to either model can route through Azure alongside the existing providers for another failover path. No code changes are required: default routing considers Azure automatically, and if a provider fails the gateway falls back through the remaining list.\nIf you want requests to try Azure first, use  in the gateway provider options to prefer Azure while keeping the other providers as fallback for  or  in the :orderdeepseek/deepseek-v4-prodeepseek/deepseek-v4-flashAI SDK\nIf you have existing Azure credentials, you can bring your own key and AI Gateway will use it for requests routed to Azure. See  for setup.API key authentication and BYOK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportbudgets for API keysBring Your Own Key\nLearn more about , view the  or try it in our .\nAI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Threshold billing is now enabled for Pro teams",
+          "link": "https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams",
+          "id": "https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams",
+          "publishedAt": "2026-06-10T00:00:00.000Z",
+          "author": "Bryan Mishkin",
+          "summary": "Threshold billing now sends Pro teams a partial invoice mid-cycle once on-demand usage reaches a threshold, instead of holding all charges until the end of the billing period. Partial invoices and the end-of-cycle invoice add up to your total usage, so the same usage is never billed twice.\nLearn more about .partial invoices\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Claude Fable 5 now available on AI Gateway",
+          "link": "https://vercel.com/changelog/claude-fable-5-now-available-on-ai-gateway",
+          "id": "https://vercel.com/changelog/claude-fable-5-now-available-on-ai-gateway",
+          "publishedAt": "2026-06-09T07:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "Claude Fable 5 from Anthropic is now available on . A Mythos-class model, Fable 5 is a notable step up over prior Claude models on long-running, ambiguous, multi-step tasks, executing end-to-end on work that previously required frequent human check-ins.AI Gateway\nThe model sustains productive output across multi-day runs and dependably dispatches parallel sub-agents, and lower effort settings often match what prior Claude models produced at their highest effort. Code review, bug-finding, and repository investigation are stronger, and first-shot correctness on complex problems is noticeably higher.\nFable 5 ships with blocking classifiers in place that refuse offensive cybersecurity, biology, and summarized-thinking extraction, because the model's capabilities in those areas introduce real misuse risk. Anthropic also does not support Zero Data Retention because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.\nTo use Fable 5, set model to  in the .anthropic/claude-fable-5AI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Budgets for API keys on AI Gateway",
+          "link": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+          "id": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+          "publishedAt": "2026-06-09T00:00:00.000Z",
+          "author": "Mark Roberts",
+          "summary": "AI costs are getting harder to forecast. As teams lean more on coding agents and other token-heavy workflows, a key can burn cost faster than anyone notices:\nSet a spend cap on any key, and  rejects further requests on that key once the limit is exceeded, until the budget resets or you raise it. The cap applies to all AI Gateway providers and models running through the key, making it easier to consolidate and govern AI costs.AI Gateway\nOn the , click , enable the  option, enter a limit in dollars, and choose a refresh period.AI Gateway API Keys pageCreate KeySpend Quota\nYou can also edit existing keys and add, change, or remove budgets by clicking the right hand side ... menu and .Edit Key\nCreate a budgeted API key programmatically via the Vercel CLI. The format is:\nPair a key with an optional refresh period (, , , or ) to scope the limit to a window. Each period resets at the start of its window in UTC.dailyweeklymonthlynone\nKeys created programmatically will also appear in your team , so you can see all keys in one place. AI Gateway API Keys view\nRead the  for more information about setting and using budgets for API keys.\nAPI keys documentation\nRead more\n\nAutonomous workflows that can loop or fan out without supervision\n\nDemos and prototypes that could catch unexpected traffic if shared or shipped\n\nDevelopers exploring or experimenting without a sense of per-model cost\n\nAPI key budgets in the Vercel Dashboard\nAPI key budgets in the Vercel CLI",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "Domain Search is now available through the Vercel CLI",
+          "link": "https://vercel.com/changelog/domain-search-is-now-available-through-the-vercel-cli",
+          "id": "https://vercel.com/changelog/domain-search-is-now-available-through-the-vercel-cli",
+          "publishedAt": "2026-06-09T00:00:00.000Z",
+          "author": "Can Temizyurek",
+          "summary": "You can now use the Vercel CLI to search domains. Using the  command, you can supply a domain name and retrieve availability and price results for all TLDs that Vercel supports. vercel domains search\nYou can also filter by TLD, apply sorting, and filter out unavailable domains.\nUpgrade your Vercel CLI to version  to get started.54.10.1\nRead more",
+          "source": "Vercel Changelog"
+        },
+        {
+          "title": "DeepSeek enters the fight for token volume, Anthropic continues to dominate spend",
+          "link": "https://vercel.com/blog/ai-gateway-production-index-june-2026",
+          "id": "https://vercel.com/blog/ai-gateway-production-index-june-2026",
+          "publishedAt": "2026-06-08T04:00:00.000Z",
+          "author": "Jerilyn Zheng",
+          "summary": "Every month,  routes tens of trillions of tokens between production applications and AI labs, giving us visibility into what AI usage actually looks like, separate from leaderboards and benchmarks. We publish the data monthly in the AI Gateway production index. AI Gateway\nLast month, headlines about blown token budgets dominated tech news:  its annual Claude Code budget shortly after Q1 and Amazon  to curb unproductive tokenmaxxing. While runaway cost is a real problem, this month’s report shows that spend on production use cases still increased. Uber burned throughshut down KiroRank\nTwo insights emerged from AI Gateway data in May:\nFrom February to April, volume distribution across labs on AI Gateway changed slowly, but in May, DeepSeek V4's launch completely shifted token share. The low-cost end of the market that barely existed in April became AI Gateway’s third-largest provider by volume in May, without a significant impact on overall spend.\nIn April, DeepSeek accounted for less than 1% of AI Gateway tokens and less than 0.2% of spend. In May, its volume share jumped to 17% of tokens, putting it in third place, ahead of OpenAI. Almost all of the volume comes from two models:  and , both released in May.deepseek/deepseek-v4-flashdeepseek/deepseek-v4-pro\nThe spend picture tells the other half of the story. Even though DeepSeek’s token share grew to 17% in a single month, its cost share stayed near 1%.\nDeepSeek V4 Flash launched at $0.14 input / $0.28 output per million tokens, roughly 20–50× lower than comparable Anthropic models and 8–12× lower than other value-tier flagships like Qwen 3.6 Plus and Kimi K2.6. With a savings gap that big, teams adopted V4 Flash quickly. \nPrice alone wouldn’t have shifted DeepSeek’s volume that much in a month, meaning teams testing DeepSeek V4 against their existing evals found the output good enough to ship, not just low-cost enough to try. \nValue-tier models have always been available on AI Gateway, but have never captured token share at this scale, meaning DeepSeek V4 was the first model at its price point to clear the quality bar for production work.\nEven as the low-cost end of the market grew fastest in volume, the expensive end grew faster in dollars.\nAnthropic’s token share grew from 26% to 32%, and its spend share from 61% to 65%. OpenAI’s token share held near 13%, but its spend share ticked up from 12% to 13% on a much larger total, so customers were paying more per OpenAI token in May.\nThe average token got more expensive in May, even with DeepSeek pulling the average down. That increase happened because the work that demands frontier models grew faster than the work that doesn’t. The AI coding agent use case shows the low-cost/frontier split most clearly:\nLower-cost models are now a meaningful part of production workflows, but frontier model use is still growing, driving the increase in overall spend.\nThe frontier is getting more expensive per token, and customers are still paying. Anthropic continues to lead on spend, taking 65% of all gateway spend in May, and 70–80% of spend across every high-stakes use case. \nIncreased overall spend showed that demand for AI continued to grow in May, but teams applied more precision to their budgets through routing. They sent the cheap, high-volume work to lower-priced models and used frontier models where quality mattered most. Slow adoption of Google's latest Flash model is a clear example. \nGemini 3.5 Flash launched in May at a higher price point than Gemini 3.0 Flash, but migration didn’t happen at scale. By month-end, 3.5 held only 7% of the Flash family’s tokens while 3.0 held 90%. \nCompared to the rapid adoption of Gemini 3.1 Pro across February and March, slower migration to 3.5 Flash shows that teams happy with 3.0 Flash aren't willing to pay the higher cost yet. \nThis month's report signals increased pricing sensitivity in the market, even as overall spend and token volume grow. That means developers are looking for ways to get more out of every dollar. \nData revealed two optimization strategies: \nRouting gives teams the ability to adjust their model mix, and budget, in real time as the labs compete for different layers of production AI workloads. \nB2B applications run fewer, more expensive calls, while B2C applications run many cheap ones. On a per-token basis, B2B cost roughly 60% more than B2C in May. \nJust under a quarter of requests end in a tool call, but those requests carry well over half of all tokens. Both metrics are roughly flat month-over-month. \nThe more requests an app serves, the more models it runs in production. Single-model setups dominate the lowest-volume tier, while at 1M+ requests the majority of apps route across 11 or more models.\nUse case cost share indicates how expensive a wrong answer is, not how many tokens it burns. Personal assistants and coding agents run cheap per token, while back-office and recruiting work costs far more.\nRead the . April 2026 AI Gateway production index\nThis analysis is based on anonymized, aggregate routing data from the Vercel AI Gateway through May 2026.\nA few notes on measurement:\n\nRead more\nMay 2026 summary\nToken vs cost share by B2B classification\nAgent tool use across tokens and requests\nModel diversity distribution by request volume\nCost vs volume share by use case\nAbout this data\n\nTotal AI Gateway tokens grew ; total spend grew . Customers paid almost 20% more per token on average than in April.+20% MoM+43% MoM\n\nDeepSeek’s share of tokens jumped from under  in a single month, while its share of spend stayed near 1%.1% to 17%\n\nAnthropic’s share of spend grew from  in May, holding 70–80% of spend across every high-stakes use case (AI app generation, back office agents, and coding agents).61% to 65%\n\nCost-consciousness meant smarter routing between low-cost and frontier models. Customers got more deliberate about which model did which work, while overall usage kept climbing.\n\n\n New models shipped at price points that made the established labs look even more expensive, and they are capable enough to enter the mix in production.Low-cost models entered production:\n\n Teams are still increasing token budgets, but they are implementing smarter routing strategies to get more value out of every dollar.Spend is increasing, but with smarter model mixes:\n\n\nDeepSeek drove 49% of the segment’s token volume, but only 4% of the cost.\n\nAnthropic drove 28% of tokens and 70% of the cost.\n\n\nuses market-rate pricing (published list price) to provide a normalized view across teams that bring their own API keys.Spend \n\ncounts tokens routed through AI Gateway.Volume \n\n, , and  classificationsare aggregate. No individual team or workload is identified.B2CB2Buse-case \n\n\nLow-cost models saw significant production volume for the first time\nFrontier labs continued to capture a majority of new spend\nCost discipline became a routing strategy\nConclusion: Cost-effective, capable options mean smarter model mixes\nAppendix\nPrevious reports\n\n\n\n\n\n\n\nUsing DeepSeek's cheap, but capable V4 family for lower-risk, high-volume tasks\n\nChoosing to delay model family upgrades until the ROI makes sense",
+          "source": "Vercel Changelog"
+        },
         {
           "title": "Drives for Vercel Sandbox in Private Beta",
           "link": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
@@ -45,60 +99,6 @@
           "publishedAt": "2026-06-04T07:00:00.000Z",
           "author": "Walter Korman",
           "summary": "Nemotron 3 Ultra from Nvidia is now available on .Vercel AI Gateway\nNemotron 3 Ultra is an open Mixture-of-Experts reasoning model built for orchestrating long-running agent workflows, with a 1M token context window. The model targets multi-turn agent workflows: planning, tool use, sub-agent delegation, and error recovery. Throughput reaches up to 350 tokens per second, with up to 30% lower cost on agentic tasks.\nTo use Nemotron 3 Ultra, set model to  in the .nvidia/nemotron-3-ultra-550b-a55bAI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Build and deploy Shopify storefronts on Vercel",
-          "link": "https://vercel.com/changelog/build-and-deploy-shopify-storefronts-on-vercel",
-          "id": "https://vercel.com/changelog/build-and-deploy-shopify-storefronts-on-vercel",
-          "publishedAt": "2026-06-04T00:00:00.000Z",
-          "author": "Michael Toth",
-          "summary": "You can now create a  start building a production-ready storefront in minutes.Shopify store directly from Vercel and\n to automatically configure your Shopify credentials in Vercel. Create a free test store, build with  and deploy without leaving your workflow. When you're ready to launch, you can claim the store and take ownership of it.Install the Shopify integrationv0\nComing soon: Connect an existing Shopify store to Vercel.\nGet started by installing ,  , or  to start building your next .Shopify from the Vercel Marketplacev0Vercel CLIcommerce experience\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Trace any Vercel request from the CLI",
-          "link": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
-          "id": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
-          "publishedAt": "2026-06-03T00:00:00.000Z",
-          "author": "Andrew Gadzik",
-          "summary": "You can now generate  through the Vercel CLI.Session Traces\nUse the new  command to generate an OpenTelemetry trace to the specified endpoint from the terminal. vercel curl --trace\nUse the new  command to fetch the generated trace by request ID.vercel traces get\nAvailable on all plans.\n\nUpdate the Vercel CLI to the latest version and run  to get started. Learn more about the vercel curl --trace CLI command.vercel curl\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Grok Imagine Video 1.5 on AI Gateway",
-          "link": "https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway",
-          "id": "https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway",
-          "publishedAt": "2026-06-03T00:00:00.000Z",
-          "author": "Sam Chitgopekar",
-          "summary": "Grok Imagine Video 1.5 from xAI is now available on AI Gateway. The model generates video from an input image with synchronized audio in a single pass.\nThis release improves audio quality, prompt following, and photorealism. Face accuracy and character consistency are stronger across longer sequences, with better lighting and physical realism in the output. Reference image support has been expanded to give more control over visual style and subject.\nTo use this model, set model to  in the AI SDK. Chain an image model with Grok Imagine Video 1.5 to generate a still and animate it in one flow:xai/grok-imagine-video-1.5-preview\nYou can also try this Grok Imagine Video 1.5 directly in the .AI Gateway Playground\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests. Learn more about  and view the .custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own KeyAI GatewayAI Gateway model leaderboard\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Edit Git settings for all projects in a repo",
-          "link": "https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo",
-          "id": "https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo",
-          "publishedAt": "2026-06-02T06:00:00.000Z",
-          "author": "Mery Kaftar",
-          "summary": "Monorepos that deploy many projects can now configure all of their project's Git settings more conveniently. \nPreviously, if you wanted to consistently configure each project's settings for commit status, , etc., you had to click through to every project's settings and consistently apply the same setting. Now, you can do it all in one place. eventsrepository_dispatch\nTry it out in  or visit  to learn more!project settingsthe docs\nRead more",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Signed URLs are now available for Vercel Blob",
-          "link": "https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob",
-          "id": "https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob",
-          "publishedAt": "2026-06-02T00:00:00.000Z",
-          "author": "Agustin Falco",
-          "summary": "You can now generate time-bound signed URLs for . A signed URL is a scoped URL with an expiry that allows you to upload, download, inspect, or delete a specific object without giving access to your entire Blob store.Vercel Blob\nEach URL is scoped to a single operation (, , , or ), a single pathname, and an expiry you choose, up to 7 days. The signature covers the operation and constraints, so a URL signed for a  can't be reused as a .putgetheaddeleteGETPUT\nUpload URLs () support multipart, so the browser can stream large files straight to Blob storage without round-tripping through your server.put\nDelete URLs accept an  option so the delete only applies if the object hasn't been overwritten since you signed the URL:ifMatch\nSigned URLs work alongside . Your server authenticates to Blob via OIDC, generates a signed token, and produces narrowly scoped, time-bound URLs for the browser, so your long-lived  never leaves the server.OIDCBLOB_READ_WRITE_TOKEN\nUpdate  to  and  to get started.@vercel/blob2.4.0read the documentation\nRead more\n\n\nDirect uploads from the browser\nConditional deletes",
-          "source": "Vercel Changelog"
-        },
-        {
-          "title": "Elastic Build Machines now protect against out of memory builds",
-          "link": "https://vercel.com/changelog/elastic-build-machines-now-protect-against-out-of-memory-builds",
-          "id": "https://vercel.com/changelog/elastic-build-machines-now-protect-against-out-of-memory-builds",
-          "publishedAt": "2026-06-01T18:30:00.000Z",
-          "author": "Mehul Kar",
-          "summary": "Elastic build machines now monitor your build's memory usage and automatically adjust to prevent out-of-memory (OOM) failures:\nThresholds are set conservatively to balance deployment reliability and cost. Vercel only considers your build's memory usage, not the memory used by Vercel's own build infrastructure.\nEnable elastic builds in your  or , or read the .team settingsproject settingsdocs\nRead more\n\nIf your build is fast but memory-intensive, we will no longer downgrade you to a smaller machine\n\nIf your build is close to running out of memory, we will automatically upgrade to a higher tier\n\nIf your build fails due to an out-of-memory error, the next deployment will automatically run on a higher tier",
           "source": "Vercel Changelog"
         }
       ]
@@ -111,8 +111,62 @@
       "rssUrl": "https://vercel.com/blog/rss",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-08T15:20:14.697Z",
+      "fetchedAt": "2026-06-11T15:20:47.422Z",
       "items": [
+        {
+          "title": "DeepSeek models now available via Azure on AI Gateway",
+          "link": "https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway",
+          "id": "https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway",
+          "publishedAt": "2026-06-11T00:00:00.000Z",
+          "author": "Aayush Kapoor",
+          "summary": "Azure is now a provider for DeepSeek V4 Pro and V4 Flash on .AI Gateway\nRequests to either model can route through Azure alongside the existing providers for another failover path. No code changes are required: default routing considers Azure automatically, and if a provider fails the gateway falls back through the remaining list.\nIf you want requests to try Azure first, use  in the gateway provider options to prefer Azure while keeping the other providers as fallback for  or  in the :orderdeepseek/deepseek-v4-prodeepseek/deepseek-v4-flashAI SDK\nIf you have existing Azure credentials, you can bring your own key and AI Gateway will use it for requests routed to Azure. See  for setup.API key authentication and BYOK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportbudgets for API keysBring Your Own Key\nLearn more about , view the  or try it in our .\nAI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Threshold billing is now enabled for Pro teams",
+          "link": "https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams",
+          "id": "https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams",
+          "publishedAt": "2026-06-10T00:00:00.000Z",
+          "author": "Bryan Mishkin",
+          "summary": "Threshold billing now sends Pro teams a partial invoice mid-cycle once on-demand usage reaches a threshold, instead of holding all charges until the end of the billing period. Partial invoices and the end-of-cycle invoice add up to your total usage, so the same usage is never billed twice.\nLearn more about .partial invoices\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Claude Fable 5 now available on AI Gateway",
+          "link": "https://vercel.com/changelog/claude-fable-5-now-available-on-ai-gateway",
+          "id": "https://vercel.com/changelog/claude-fable-5-now-available-on-ai-gateway",
+          "publishedAt": "2026-06-09T07:00:00.000Z",
+          "author": "Walter Korman",
+          "summary": "Claude Fable 5 from Anthropic is now available on . A Mythos-class model, Fable 5 is a notable step up over prior Claude models on long-running, ambiguous, multi-step tasks, executing end-to-end on work that previously required frequent human check-ins.AI Gateway\nThe model sustains productive output across multi-day runs and dependably dispatches parallel sub-agents, and lower effort settings often match what prior Claude models produced at their highest effort. Code review, bug-finding, and repository investigation are stronger, and first-shot correctness on complex problems is noticeably higher.\nFable 5 ships with blocking classifiers in place that refuse offensive cybersecurity, biology, and summarized-thinking extraction, because the model's capabilities in those areas introduce real misuse risk. Anthropic also does not support Zero Data Retention because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.\nTo use Fable 5, set model to  in the .anthropic/claude-fable-5AI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Budgets for API keys on AI Gateway",
+          "link": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+          "id": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+          "publishedAt": "2026-06-09T00:00:00.000Z",
+          "author": "Mark Roberts",
+          "summary": "AI costs are getting harder to forecast. As teams lean more on coding agents and other token-heavy workflows, a key can burn cost faster than anyone notices:\nSet a spend cap on any key, and  rejects further requests on that key once the limit is exceeded, until the budget resets or you raise it. The cap applies to all AI Gateway providers and models running through the key, making it easier to consolidate and govern AI costs.AI Gateway\nOn the , click , enable the  option, enter a limit in dollars, and choose a refresh period.AI Gateway API Keys pageCreate KeySpend Quota\nYou can also edit existing keys and add, change, or remove budgets by clicking the right hand side ... menu and .Edit Key\nCreate a budgeted API key programmatically via the Vercel CLI. The format is:\nPair a key with an optional refresh period (, , , or ) to scope the limit to a window. Each period resets at the start of its window in UTC.dailyweeklymonthlynone\nKeys created programmatically will also appear in your team , so you can see all keys in one place. AI Gateway API Keys view\nRead the  for more information about setting and using budgets for API keys.\nAPI keys documentation\nRead more\n\nAutonomous workflows that can loop or fan out without supervision\n\nDemos and prototypes that could catch unexpected traffic if shared or shipped\n\nDevelopers exploring or experimenting without a sense of per-model cost\n\nAPI key budgets in the Vercel Dashboard\nAPI key budgets in the Vercel CLI",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "Domain Search is now available through the Vercel CLI",
+          "link": "https://vercel.com/changelog/domain-search-is-now-available-through-the-vercel-cli",
+          "id": "https://vercel.com/changelog/domain-search-is-now-available-through-the-vercel-cli",
+          "publishedAt": "2026-06-09T00:00:00.000Z",
+          "author": "Can Temizyurek",
+          "summary": "You can now use the Vercel CLI to search domains. Using the  command, you can supply a domain name and retrieve availability and price results for all TLDs that Vercel supports. vercel domains search\nYou can also filter by TLD, apply sorting, and filter out unavailable domains.\nUpgrade your Vercel CLI to version  to get started.54.10.1\nRead more",
+          "source": "Vercel Blog"
+        },
+        {
+          "title": "DeepSeek enters the fight for token volume, Anthropic continues to dominate spend",
+          "link": "https://vercel.com/blog/ai-gateway-production-index-june-2026",
+          "id": "https://vercel.com/blog/ai-gateway-production-index-june-2026",
+          "publishedAt": "2026-06-08T04:00:00.000Z",
+          "author": "Jerilyn Zheng",
+          "summary": "Every month,  routes tens of trillions of tokens between production applications and AI labs, giving us visibility into what AI usage actually looks like, separate from leaderboards and benchmarks. We publish the data monthly in the AI Gateway production index. AI Gateway\nLast month, headlines about blown token budgets dominated tech news:  its annual Claude Code budget shortly after Q1 and Amazon  to curb unproductive tokenmaxxing. While runaway cost is a real problem, this month’s report shows that spend on production use cases still increased. Uber burned throughshut down KiroRank\nTwo insights emerged from AI Gateway data in May:\nFrom February to April, volume distribution across labs on AI Gateway changed slowly, but in May, DeepSeek V4's launch completely shifted token share. The low-cost end of the market that barely existed in April became AI Gateway’s third-largest provider by volume in May, without a significant impact on overall spend.\nIn April, DeepSeek accounted for less than 1% of AI Gateway tokens and less than 0.2% of spend. In May, its volume share jumped to 17% of tokens, putting it in third place, ahead of OpenAI. Almost all of the volume comes from two models:  and , both released in May.deepseek/deepseek-v4-flashdeepseek/deepseek-v4-pro\nThe spend picture tells the other half of the story. Even though DeepSeek’s token share grew to 17% in a single month, its cost share stayed near 1%.\nDeepSeek V4 Flash launched at $0.14 input / $0.28 output per million tokens, roughly 20–50× lower than comparable Anthropic models and 8–12× lower than other value-tier flagships like Qwen 3.6 Plus and Kimi K2.6. With a savings gap that big, teams adopted V4 Flash quickly. \nPrice alone wouldn’t have shifted DeepSeek’s volume that much in a month, meaning teams testing DeepSeek V4 against their existing evals found the output good enough to ship, not just low-cost enough to try. \nValue-tier models have always been available on AI Gateway, but have never captured token share at this scale, meaning DeepSeek V4 was the first model at its price point to clear the quality bar for production work.\nEven as the low-cost end of the market grew fastest in volume, the expensive end grew faster in dollars.\nAnthropic’s token share grew from 26% to 32%, and its spend share from 61% to 65%. OpenAI’s token share held near 13%, but its spend share ticked up from 12% to 13% on a much larger total, so customers were paying more per OpenAI token in May.\nThe average token got more expensive in May, even with DeepSeek pulling the average down. That increase happened because the work that demands frontier models grew faster than the work that doesn’t. The AI coding agent use case shows the low-cost/frontier split most clearly:\nLower-cost models are now a meaningful part of production workflows, but frontier model use is still growing, driving the increase in overall spend.\nThe frontier is getting more expensive per token, and customers are still paying. Anthropic continues to lead on spend, taking 65% of all gateway spend in May, and 70–80% of spend across every high-stakes use case. \nIncreased overall spend showed that demand for AI continued to grow in May, but teams applied more precision to their budgets through routing. They sent the cheap, high-volume work to lower-priced models and used frontier models where quality mattered most. Slow adoption of Google's latest Flash model is a clear example. \nGemini 3.5 Flash launched in May at a higher price point than Gemini 3.0 Flash, but migration didn’t happen at scale. By month-end, 3.5 held only 7% of the Flash family’s tokens while 3.0 held 90%. \nCompared to the rapid adoption of Gemini 3.1 Pro across February and March, slower migration to 3.5 Flash shows that teams happy with 3.0 Flash aren't willing to pay the higher cost yet. \nThis month's report signals increased pricing sensitivity in the market, even as overall spend and token volume grow. That means developers are looking for ways to get more out of every dollar. \nData revealed two optimization strategies: \nRouting gives teams the ability to adjust their model mix, and budget, in real time as the labs compete for different layers of production AI workloads. \nB2B applications run fewer, more expensive calls, while B2C applications run many cheap ones. On a per-token basis, B2B cost roughly 60% more than B2C in May. \nJust under a quarter of requests end in a tool call, but those requests carry well over half of all tokens. Both metrics are roughly flat month-over-month. \nThe more requests an app serves, the more models it runs in production. Single-model setups dominate the lowest-volume tier, while at 1M+ requests the majority of apps route across 11 or more models.\nUse case cost share indicates how expensive a wrong answer is, not how many tokens it burns. Personal assistants and coding agents run cheap per token, while back-office and recruiting work costs far more.\nRead the . April 2026 AI Gateway production index\nThis analysis is based on anonymized, aggregate routing data from the Vercel AI Gateway through May 2026.\nA few notes on measurement:\n\nRead more\nMay 2026 summary\nToken vs cost share by B2B classification\nAgent tool use across tokens and requests\nModel diversity distribution by request volume\nCost vs volume share by use case\nAbout this data\n\nTotal AI Gateway tokens grew ; total spend grew . Customers paid almost 20% more per token on average than in April.+20% MoM+43% MoM\n\nDeepSeek’s share of tokens jumped from under  in a single month, while its share of spend stayed near 1%.1% to 17%\n\nAnthropic’s share of spend grew from  in May, holding 70–80% of spend across every high-stakes use case (AI app generation, back office agents, and coding agents).61% to 65%\n\nCost-consciousness meant smarter routing between low-cost and frontier models. Customers got more deliberate about which model did which work, while overall usage kept climbing.\n\n\n New models shipped at price points that made the established labs look even more expensive, and they are capable enough to enter the mix in production.Low-cost models entered production:\n\n Teams are still increasing token budgets, but they are implementing smarter routing strategies to get more value out of every dollar.Spend is increasing, but with smarter model mixes:\n\n\nDeepSeek drove 49% of the segment’s token volume, but only 4% of the cost.\n\nAnthropic drove 28% of tokens and 70% of the cost.\n\n\nuses market-rate pricing (published list price) to provide a normalized view across teams that bring their own API keys.Spend \n\ncounts tokens routed through AI Gateway.Volume \n\n, , and  classificationsare aggregate. No individual team or workload is identified.B2CB2Buse-case \n\n\nLow-cost models saw significant production volume for the first time\nFrontier labs continued to capture a majority of new spend\nCost discipline became a routing strategy\nConclusion: Cost-effective, capable options mean smarter model mixes\nAppendix\nPrevious reports\n\n\n\n\n\n\n\nUsing DeepSeek's cheap, but capable V4 family for lower-risk, high-volume tasks\n\nChoosing to delay model family upgrades until the ROI makes sense",
+          "source": "Vercel Blog"
+        },
         {
           "title": "Drives for Vercel Sandbox in Private Beta",
           "link": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta",
@@ -147,60 +201,6 @@
           "publishedAt": "2026-06-04T07:00:00.000Z",
           "author": "Walter Korman",
           "summary": "Nemotron 3 Ultra from Nvidia is now available on .Vercel AI Gateway\nNemotron 3 Ultra is an open Mixture-of-Experts reasoning model built for orchestrating long-running agent workflows, with a 1M token context window. The model targets multi-turn agent workflows: planning, tool use, sub-agent delegation, and error recovery. Throughput reaches up to 350 tokens per second, with up to 30% lower cost on agentic tasks.\nTo use Nemotron 3 Ultra, set model to  in the .nvidia/nemotron-3-ultra-550b-a55bAI SDK\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests.custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own Key\nLearn more about , view the  or try it in our .AI GatewayAI Gateway model leaderboardmodel playground\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Build and deploy Shopify storefronts on Vercel",
-          "link": "https://vercel.com/changelog/build-and-deploy-shopify-storefronts-on-vercel",
-          "id": "https://vercel.com/changelog/build-and-deploy-shopify-storefronts-on-vercel",
-          "publishedAt": "2026-06-04T00:00:00.000Z",
-          "author": "Michael Toth",
-          "summary": "You can now create a  start building a production-ready storefront in minutes.Shopify store directly from Vercel and\n to automatically configure your Shopify credentials in Vercel. Create a free test store, build with  and deploy without leaving your workflow. When you're ready to launch, you can claim the store and take ownership of it.Install the Shopify integrationv0\nComing soon: Connect an existing Shopify store to Vercel.\nGet started by installing ,  , or  to start building your next .Shopify from the Vercel Marketplacev0Vercel CLIcommerce experience\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Trace any Vercel request from the CLI",
-          "link": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
-          "id": "https://vercel.com/changelog/trace-any-vercel-request-from-the-cli",
-          "publishedAt": "2026-06-03T00:00:00.000Z",
-          "author": "Andrew Gadzik",
-          "summary": "You can now generate  through the Vercel CLI.Session Traces\nUse the new  command to generate an OpenTelemetry trace to the specified endpoint from the terminal. vercel curl --trace\nUse the new  command to fetch the generated trace by request ID.vercel traces get\nAvailable on all plans.\n\nUpdate the Vercel CLI to the latest version and run  to get started. Learn more about the vercel curl --trace CLI command.vercel curl\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Grok Imagine Video 1.5 on AI Gateway",
-          "link": "https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway",
-          "id": "https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway",
-          "publishedAt": "2026-06-03T00:00:00.000Z",
-          "author": "Sam Chitgopekar",
-          "summary": "Grok Imagine Video 1.5 from xAI is now available on AI Gateway. The model generates video from an input image with synchronized audio in a single pass.\nThis release improves audio quality, prompt following, and photorealism. Face accuracy and character consistency are stronger across longer sequences, with better lighting and physical realism in the output. Reference image support has been expanded to give more control over visual style and subject.\nTo use this model, set model to  in the AI SDK. Chain an image model with Grok Imagine Video 1.5 to generate a still and animate it in one flow:xai/grok-imagine-video-1.5-preview\nYou can also try this Grok Imagine Video 1.5 directly in the .AI Gateway Playground\nAI Gateway provides a unified API for calling models, tracking usage and cost, and configuring retries, failover, and performance optimizations for higher-than-provider uptime. It includes built-in , , , and more. AI Gateway reflects provider pricing with no markup and does not charge a platform fee on inference, including on  (BYOK) requests. Learn more about  and view the .custom reportingZero Data Retention supportdynamic provider sorting by latency and costBring Your Own KeyAI GatewayAI Gateway model leaderboard\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Edit Git settings for all projects in a repo",
-          "link": "https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo",
-          "id": "https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo",
-          "publishedAt": "2026-06-02T06:00:00.000Z",
-          "author": "Mery Kaftar",
-          "summary": "Monorepos that deploy many projects can now configure all of their project's Git settings more conveniently. \nPreviously, if you wanted to consistently configure each project's settings for commit status, , etc., you had to click through to every project's settings and consistently apply the same setting. Now, you can do it all in one place. eventsrepository_dispatch\nTry it out in  or visit  to learn more!project settingsthe docs\nRead more",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Signed URLs are now available for Vercel Blob",
-          "link": "https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob",
-          "id": "https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob",
-          "publishedAt": "2026-06-02T00:00:00.000Z",
-          "author": "Agustin Falco",
-          "summary": "You can now generate time-bound signed URLs for . A signed URL is a scoped URL with an expiry that allows you to upload, download, inspect, or delete a specific object without giving access to your entire Blob store.Vercel Blob\nEach URL is scoped to a single operation (, , , or ), a single pathname, and an expiry you choose, up to 7 days. The signature covers the operation and constraints, so a URL signed for a  can't be reused as a .putgetheaddeleteGETPUT\nUpload URLs () support multipart, so the browser can stream large files straight to Blob storage without round-tripping through your server.put\nDelete URLs accept an  option so the delete only applies if the object hasn't been overwritten since you signed the URL:ifMatch\nSigned URLs work alongside . Your server authenticates to Blob via OIDC, generates a signed token, and produces narrowly scoped, time-bound URLs for the browser, so your long-lived  never leaves the server.OIDCBLOB_READ_WRITE_TOKEN\nUpdate  to  and  to get started.@vercel/blob2.4.0read the documentation\nRead more\n\n\nDirect uploads from the browser\nConditional deletes",
-          "source": "Vercel Blog"
-        },
-        {
-          "title": "Elastic Build Machines now protect against out of memory builds",
-          "link": "https://vercel.com/changelog/elastic-build-machines-now-protect-against-out-of-memory-builds",
-          "id": "https://vercel.com/changelog/elastic-build-machines-now-protect-against-out-of-memory-builds",
-          "publishedAt": "2026-06-01T18:30:00.000Z",
-          "author": "Mehul Kar",
-          "summary": "Elastic build machines now monitor your build's memory usage and automatically adjust to prevent out-of-memory (OOM) failures:\nThresholds are set conservatively to balance deployment reliability and cost. Vercel only considers your build's memory usage, not the memory used by Vercel's own build infrastructure.\nEnable elastic builds in your  or , or read the .team settingsproject settingsdocs\nRead more\n\nIf your build is fast but memory-intensive, we will no longer downgrade you to a smaller machine\n\nIf your build is close to running out of memory, we will automatically upgrade to a higher tier\n\nIf your build fails due to an out-of-memory error, the next deployment will automatically run on a higher tier",
           "source": "Vercel Blog"
         }
       ]

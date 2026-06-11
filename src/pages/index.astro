@@ -9,8 +9,9 @@ const generatedAt = new Date(dailyBrief.generatedAt).toLocaleString('en-US', {
 const displayDate = new Date(`${dailyBrief.date}T12:00:00.000Z`).toLocaleDateString('en-US', {
   dateStyle: 'full'
 });
+type DailyStub = (typeof dailyBrief.articleStubs)[number];
 const leadStub = dailyBrief.articleStubs[0];
-const remainingStubs = dailyBrief.articleStubs.slice(1);
+const remainingStubs: DailyStub[] = dailyBrief.articleStubs.slice(1);
 const baseUrl = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
@@ -71,7 +72,7 @@ const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
       </div>
 
       <div class="cards">
-        {remainingStubs.map((stub) => (
+        {remainingStubs.map((stub: DailyStub) => (
           <article class="article-card">
             <div class="card-meta">
               <time datetime={stub.latestPublishedAt}>{stub.latestPublishedAt?.slice(0, 10)}</time>
@@ -80,7 +81,7 @@ const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, '')}`;
             <h3><a href={withBase(stub.href)}>{stub.title}</a></h3>
             <p>{stub.dek}</p>
             <ul class="tags" aria-label="Tags">
-              {stub.tags.map((tag) => <li>{tag}</li>)}
+              {stub.tags.map((tag: string) => <li>{tag}</li>)}
             </ul>
           </article>
         ))}

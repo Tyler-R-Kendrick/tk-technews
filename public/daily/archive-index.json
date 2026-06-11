@@ -1,6 +1,14 @@
 {
-  "generatedAt": "2026-06-08T15:20:14.697Z",
+  "generatedAt": "2026-06-11T15:20:47.422Z",
   "days": [
+    {
+      "date": "2026-06-11",
+      "generatedAt": "2026-06-11T15:20:47.422Z",
+      "articleCount": 1,
+      "sourceItemCount": 6,
+      "leadSlug": "2026-06-11-github-vercel-labs-skills-update",
+      "leadTitle": "GitHub Vercel Labs Skills Update"
+    },
     {
       "date": "2026-06-08",
       "generatedAt": "2026-06-08T15:20:14.697Z",

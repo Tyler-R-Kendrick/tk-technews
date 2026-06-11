@@ -1,301 +1,13 @@
 {
-  "date": "2026-06-08",
-  "generatedAt": "2026-06-08T15:20:14.697Z",
-  "sourceItemCount": 7,
+  "date": "2026-06-11",
+  "generatedAt": "2026-06-11T15:20:47.422Z",
+  "sourceItemCount": 6,
   "articleStubs": [
     {
-      "id": "2026-06-08-google-tapped-intel-over-update",
-      "slug": "2026-06-08-google-tapped-intel-over-update",
-      "href": "/daily/2026-06-08/2026-06-08-google-tapped-intel-over-update/",
-      "title": "Google Tapped Intel Over Update",
-      "dek": "Google Cloud’s course applies AI agents to media production, with Gemini and cloud services used to ingest assets and coordinate editorial workflows.",
-      "status": "generated",
-      "bodySections": [
-        {
-          "heading": "Media Agents Become Workflow Orchestrators",
-          "intent": "Explain the cited technical development and its implementation consequence.",
-          "paragraphs": [
-            "The Google Cloud course is about building AI agents for media workflows, not only generating isolated drafts. The concrete claim is that agents can ingest assets, coordinate editorial steps, and automate production tasks with Gemini and cloud services rather than acting as standalone chat assistants. That makes the agent useful only if it understands where assets live, which review state applies, and what production action is allowed next."
-          ],
-          "citations": [
-            "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY3hGVVIwV1FQQkUzT1Fzc2YxT2RhNDJfVU1nN1VFTVltajVtWEJFenI5QlgyejE4SzlQdS1yMFhTOFNjaTY0VUMxVzFmWWNlbnRZaDdXUlhEZDBTdERqMF9Bay1PS254cTlPSm0xUTB1Yk5XZ1U0NGFOR05OYkpLcWZDMEdwNllsY2lpOGJBdHRlTlNiRTVSR0V2WTJNV2lrRnZienFRWnV6WlFFY0Y3Snl3?oc=5",
-            "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdEdGS2sxTmotT1ktRmRNS1FfbUdNOXlPU21MMUFEN0FPRTl4b2ZBWUJCTlZmY0xHQ19hMk5LTEYzeW1HVS1vSzNKQ2hUaFlteXRQbGlOQ29hOHBYdWhnMGU5TEUtT3VhSlNZVFpWQmJlS3U5WGNaVkpOVDdkX2ZjTDNfYURkN1M0d0JSejV6dHVyOTlIMVlBX01SWmsyVUhSZ3pDZUlTUHZwWllUNGdBd1dWN25iVVlfVHpfdVdB?oc=5",
-            "https://www.marktechpost.com/2026/06/08/google-research-adds-agentic-rag-to-gemini-enterprise-agent-platform-with-a-sufficient-context-agent-for-multi-hop-queries/"
-          ]
-        },
-        {
-          "heading": "The Architecture Is The Hard Part",
-          "intent": "Explain the cited technical development and its implementation consequence.",
-          "paragraphs": [
-            "The engineering constraint is integration. A useful media agent needs access to asset stores, review states, permissions, model calls, and production handoffs, while keeping editorial control visible. The benchmark is not whether the agent can draft text, but whether it can move work through the pipeline without breaking provenance or review quality."
-          ],
-          "citations": [
-            "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY3hGVVIwV1FQQkUzT1Fzc2YxT2RhNDJfVU1nN1VFTVltajVtWEJFenI5QlgyejE4SzlQdS1yMFhTOFNjaTY0VUMxVzFmWWNlbnRZaDdXUlhEZDBTdERqMF9Bay1PS254cTlPSm0xUTB1Yk5XZ1U0NGFOR05OYkpLcWZDMEdwNllsY2lpOGJBdHRlTlNiRTVSR0V2WTJNV2lrRnZienFRWnV6WlFFY0Y3Snl3?oc=5",
-            "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdEdGS2sxTmotT1ktRmRNS1FfbUdNOXlPU21MMUFEN0FPRTl4b2ZBWUJCTlZmY0xHQ19hMk5LTEYzeW1HVS1vSzNKQ2hUaFlteXRQbGlOQ29hOHBYdWhnMGU5TEUtT3VhSlNZVFpWQmJlS3U5WGNaVkpOVDdkX2ZjTDNfYURkN1M0d0JSejV6dHVyOTlIMVlBX01SWmsyVUhSZ3pDZUlTUHZwWllUNGdBd1dWN25iVVlfVHpfdVdB?oc=5",
-            "https://www.marktechpost.com/2026/06/08/google-research-adds-agentic-rag-to-gemini-enterprise-agent-platform-with-a-sufficient-context-agent-for-multi-hop-queries/"
-          ]
-        }
-      ],
-      "keyTakeaways": [
-        "The Google Cloud course is about agentic workflow orchestration for media teams.",
-        "The useful test is whether the agent improves asset handling, review flow, and production automation without weakening editorial controls."
-      ],
-      "sourceCount": 4,
-      "latestPublishedAt": "2026-06-08T13:20:35.000Z",
-      "tags": [
-        "Google",
-        "OpenAI",
-        "Anthropic",
-        "NVIDIA",
-        "google",
-        "tapped"
-      ],
-      "sources": [
-        {
-          "title": "Google Tapped Intel for Over 3 Million Chips, Information Says - Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY3hGVVIwV1FQQkUzT1Fzc2YxT2RhNDJfVU1nN1VFTVltajVtWEJFenI5QlgyejE4SzlQdS1yMFhTOFNjaTY0VUMxVzFmWWNlbnRZaDdXUlhEZDBTdERqMF9Bay1PS254cTlPSm0xUTB1Yk5XZ1U0NGFOR05OYkpLcWZDMEdwNllsY2lpOGJBdHRlTlNiRTVSR0V2WTJNV2lrRnZienFRWnV6WlFFY0Y3Snl3?oc=5",
-          "sourceName": "\"google\" - Google News",
-          "publishedAt": "2026-06-08T13:20:35.000Z",
-          "summary": "Google Tapped Intel for Over 3 Million Chips, Information Says Bloomberg.com Google reportedly orders 3 million AI chips from Intel for 2028 production Yahoo Finance Google orders 3 million TPUs from Intel as TSMC strains qz.com",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNY3hGVVIwV1FQQkUzT1Fzc2YxT2RhNDJfVU1nN1VFTVltajVtWEJFenI5QlgyejE4SzlQdS1yMFhTOFNjaTY0VUMxVzFmWWNlbnRZaDdXUlhEZDBTdERqMF9Bay1PS254cTlPSm0xUTB1Yk5XZ1U0NGFOR05OYkpLcWZDMEdwNllsY2lpOGJBdHRlTlNiRTVSR0V2WTJNV2lrRnZienFRWnV6WlFFY0Y3Snl3?oc=5",
-            "title": "Google Tapped Intel for Over 3 Million Chips, Information Says - Bloomberg.com",
-            "source": "\"google\" - Google News",
-            "snippet": "Google Tapped Intel for Over 3 Million Chips, Information Says Bloomberg.com Google reportedly orders 3 million AI chips from Intel for 2028 production Yahoo Finance Google orders 3 million TPUs from Intel as TSMC str...",
-            "host": "news.google.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "The €3trn question: Can markets handle SpaceX, OpenAI and Anthropic all at once? - Euronews.com",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdEdGS2sxTmotT1ktRmRNS1FfbUdNOXlPU21MMUFEN0FPRTl4b2ZBWUJCTlZmY0xHQ19hMk5LTEYzeW1HVS1vSzNKQ2hUaFlteXRQbGlOQ29hOHBYdWhnMGU5TEUtT3VhSlNZVFpWQmJlS3U5WGNaVkpOVDdkX2ZjTDNfYURkN1M0d0JSejV6dHVyOTlIMVlBX01SWmsyVUhSZ3pDZUlTUHZwWllUNGdBd1dWN25iVVlfVHpfdVdB?oc=5",
-          "sourceName": "\"openai\" - Google News",
-          "publishedAt": "2026-06-08T09:08:05.000Z",
-          "summary": "The €3trn question: Can markets handle SpaceX, OpenAI and Anthropic all at once? Euronews.com The $100,000 visa fee isn't stopping OpenAI, Anthropic, and Nvidia as they battle for AI talent Business Insider Investors: This Might Be the Easiest Way to Buy SpaceX, OpenAI, and Anthropic After Their IPOs Yahoo Finance",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdEdGS2sxTmotT1ktRmRNS1FfbUdNOXlPU21MMUFEN0FPRTl4b2ZBWUJCTlZmY0xHQ19hMk5LTEYzeW1HVS1vSzNKQ2hUaFlteXRQbGlOQ29hOHBYdWhnMGU5TEUtT3VhSlNZVFpWQmJlS3U5WGNaVkpOVDdkX2ZjTDNfYURkN1M0d0JSejV6dHVyOTlIMVlBX01SWmsyVUhSZ3pDZUlTUHZwWllUNGdBd1dWN25iVVlfVHpfdVdB?oc=5",
-            "title": "The €3trn question: Can markets handle SpaceX, OpenAI and Anthropic all at once? - Euronews.com",
-            "source": "\"openai\" - Google News",
-            "snippet": "The €3trn question: Can markets handle SpaceX, OpenAI and Anthropic all at once? Euronews.com The $100,000 visa fee isn't stopping OpenAI, Anthropic, and Nvidia as they battle for AI talent Business Insider Investors:...",
-            "host": "news.google.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "Google Research Adds Agentic RAG to Gemini Enterprise Agent Platform with a Sufficient Context Agent for multi-hop queries",
-          "url": "https://www.marktechpost.com/2026/06/08/google-research-adds-agentic-rag-to-gemini-enterprise-agent-platform-with-a-sufficient-context-agent-for-multi-hop-queries/",
-          "sourceName": "MarkTechPost",
-          "publishedAt": "2026-06-08T08:25:51.000Z",
-          "summary": "Google Research details an agentic RAG framework in Gemini Enterprise Agent Platform. A Sufficient Context Agent re-searches until multi-hop, multi-source queries have enough grounding to answer.",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://www.marktechpost.com/2026/06/08/google-research-adds-agentic-rag-to-gemini-enterprise-agent-platform-with-a-sufficient-context-agent-for-multi-hop-queries/",
-            "title": "Google Research Adds Agentic RAG to Gemini Enterprise Agent Platform with a Sufficient Context Agent for multi-hop queries",
-            "source": "MarkTechPost",
-            "snippet": "Google Research details an agentic RAG framework in Gemini Enterprise Agent Platform. A Sufficient Context Agent re-searches until multi-hop, multi-source queries have enough grounding to answer.",
-            "host": "marktechpost.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "Everyone Is Building on OpenClaw Now - The AI Economy | Ken Yeung",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4xaXpDUlV4Z0ktdThKYVB5Sm1Hd3Zid3BvajhzT1pnSy1VR2hVVFhjMFdGbDBtNi1YOFBvd1FYU3Z2YUt4REZwVVY0dWw2LXJhYTNQakNGejNla1dJcnNYdmNPdmQ0dm15NmM3YzdJWF8?oc=5",
-          "sourceName": "\"peter steinberger\" - Google News",
-          "publishedAt": "2026-06-08T03:09:12.000Z",
-          "summary": "Everyone Is Building on OpenClaw Now The AI Economy | Ken Yeung",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4xaXpDUlV4Z0ktdThKYVB5Sm1Hd3Zid3BvajhzT1pnSy1VR2hVVFhjMFdGbDBtNi1YOFBvd1FYU3Z2YUt4REZwVVY0dWw2LXJhYTNQakNGejNla1dJcnNYdmNPdmQ0dm15NmM3YzdJWF8?oc=5",
-            "title": "Everyone Is Building on OpenClaw Now - The AI Economy | Ken Yeung",
-            "source": "\"peter steinberger\" - Google News",
-            "snippet": "Everyone Is Building on OpenClaw Now The AI Economy | Ken Yeung",
-            "host": "news.google.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        }
-      ],
-      "evalReport": {
-        "score": 1,
-        "verdict": "pass",
-        "assertions": [
-          {
-            "name": "citation-coverage",
-            "text": "Citation coverage passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation coverage",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "citation-richness",
-            "text": "Citation richness passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Citation richness",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "link-health",
-            "text": "Link syntax passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Link health",
-            "required": true,
-            "weight": 0.09
-          },
-          {
-            "name": "grounding",
-            "text": "Grounding passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Grounding",
-            "required": true,
-            "weight": 0.14
-          },
-          {
-            "name": "relevance",
-            "text": "Relevance passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Relevance",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "speculation-boundary",
-            "text": "No speculation boundary needed.",
-            "passed": true,
-            "score": 1,
-            "label": "Speculation boundary",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "reader-facing-language",
-            "text": "Reader-facing language passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Reader-facing language",
-            "required": true,
-            "weight": 0.07
-          },
-          {
-            "name": "tone-match",
-            "text": "Tone match passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Tone match",
-            "required": true,
-            "weight": 0.1
-          },
-          {
-            "name": "word-choice",
-            "text": "Word choice passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Word choice",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "detail-level",
-            "text": "Level of detail passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Level of detail",
-            "required": true,
-            "weight": 0.08
-          },
-          {
-            "name": "voice-adherence",
-            "text": "Voice adherence passed.",
-            "passed": true,
-            "score": 1,
-            "label": "Voice adherence",
-            "required": false,
-            "weight": 0.04
-          },
-          {
-            "name": "daily-article-word-count",
-            "text": "daily-article-word-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-section-count",
-            "text": "daily-article-section-count passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-title-echo-paragraphs",
-            "text": "daily-article-no-title-echo-paragraphs passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-template-headings",
-            "text": "daily-article-no-template-headings passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-hard-science-detail",
-            "text": "daily-article-hard-science-detail passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-copied-source-headlines",
-            "text": "daily-article-no-copied-source-headlines passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-no-generation-instructions",
-            "text": "daily-article-no-generation-instructions passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-has-usable-source-evidence",
-            "text": "daily-article-has-usable-source-evidence passed.",
-            "passed": true,
-            "score": 1
-          },
-          {
-            "name": "daily-article-grounded-in-source-terms",
-            "text": "daily-article-grounded-in-source-terms passed.",
-            "passed": true,
-            "score": 1
-          }
-        ],
-        "feedback": [],
-        "requiredFixes": []
-      },
-      "evalScore": 1,
-      "evalAttempts": 1,
-      "evalStatus": "passed",
-      "provider": "deterministic-daily-journalist",
-      "model": null
-    },
-    {
-      "id": "2026-06-08-github-vercel-labs-open-update",
-      "slug": "2026-06-08-github-vercel-labs-open-update",
-      "href": "/daily/2026-06-08/2026-06-08-github-vercel-labs-open-update/",
-      "title": "GitHub Vercel Labs Open Update",
+      "id": "2026-06-11-github-vercel-labs-skills-update",
+      "slug": "2026-06-11-github-vercel-labs-skills-update",
+      "href": "/daily/2026-06-11/2026-06-11-github-vercel-labs-skills-update/",
+      "title": "GitHub Vercel Labs Skills Update",
       "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
       "status": "generated",
       "bodySections": [
@@ -306,7 +18,8 @@
             "The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer."
           ],
           "citations": [
-            "https://github.com/vercel-labs/open-agents"
+            "https://github.com/vercel-labs/skills",
+            "https://github.com/vercel-labs/agent-browser"
           ]
         },
         {
@@ -316,7 +29,8 @@
             "The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow."
           ],
           "citations": [
-            "https://github.com/vercel-labs/open-agents"
+            "https://github.com/vercel-labs/skills",
+            "https://github.com/vercel-labs/agent-browser"
           ]
         }
       ],
@@ -324,30 +38,48 @@
         "The Vercel Labs items are best read together as an agent-infrastructure experiment.",
         "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
       ],
-      "sourceCount": 1,
-      "latestPublishedAt": "2026-06-08T07:40:31Z",
+      "sourceCount": 2,
+      "latestPublishedAt": "2026-06-11T15:12:03Z",
       "tags": [
         "GitHub",
         "Vercel",
         "vercel",
         "labs",
-        "open",
-        "agents"
+        "skills",
+        "github"
       ],
       "sources": [
         {
-          "title": "vercel-labs/open-agents",
-          "url": "https://github.com/vercel-labs/open-agents",
+          "title": "vercel-labs/skills",
+          "url": "https://github.com/vercel-labs/skills",
           "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-08T07:40:31Z",
-          "summary": "An open source template for building cloud agents.",
+          "publishedAt": "2026-06-11T15:12:03Z",
+          "summary": "The open agent skills tool - npx skills",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://github.com/vercel-labs/open-agents",
-            "title": "vercel-labs/open-agents",
+            "href": "https://github.com/vercel-labs/skills",
+            "title": "vercel-labs/skills",
             "source": "vercel-labs GitHub",
-            "snippet": "An open source template for building cloud agents.",
+            "snippet": "The open agent skills tool - npx skills",
+            "host": "github.com",
+            "thumbnailUrl": null,
+            "social": null
+          }
+        },
+        {
+          "title": "vercel-labs/agent-browser",
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "sourceName": "vercel-labs GitHub",
+          "publishedAt": "2026-06-11T05:12:43Z",
+          "summary": "Browser automation CLI for AI agents",
+          "preview": {
+            "kind": "source",
+            "label": "Source",
+            "href": "https://github.com/vercel-labs/agent-browser",
+            "title": "vercel-labs/agent-browser",
+            "source": "vercel-labs GitHub",
+            "snippet": "Browser automation CLI for AI agents",
             "host": "github.com",
             "thumbnailUrl": null,
             "social": null

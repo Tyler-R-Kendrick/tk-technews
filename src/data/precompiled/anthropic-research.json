@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T15:20:14.697Z",
+  "generatedAt": "2026-06-11T15:20:47.422Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-08T15:20:14.697Z",
+    "fetchedAt": "2026-06-11T15:20:47.422Z",
     "items": [
+      {
+        "title": "Paving the way for agents in biology",
+        "link": "https://www.anthropic.com/research/agents-in-biology",
+        "id": "https://www.anthropic.com/research/agents-in-biology",
+        "publishedAt": "2026-06-08T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Science"
+      },
       {
         "title": "Making Claude a chemist",
         "link": "https://www.anthropic.com/research/making-claude-a-chemist",
@@ -80,15 +89,6 @@
         "author": "Anthropic",
         "summary": "",
         "category": "Policy"
-      },
-      {
-        "title": "How people ask Claude for personal guidance",
-        "link": "https://www.anthropic.com/research/claude-personal-guidance",
-        "id": "https://www.anthropic.com/research/claude-personal-guidance",
-        "publishedAt": "2026-04-30T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Societal Impacts"
       },
       {
         "title": "Project Vend: Phase two",

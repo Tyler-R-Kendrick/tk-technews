@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:20:47.422Z",
+  "generatedAt": "2026-06-12T16:27:56.373Z",
   "source": {
     "id": "huggingface-daily-papers-2026-05-20",
     "category": "academics",
@@ -9,7 +9,7 @@
     "sourceUrl": "https://huggingface.co/papers/date/2026-05-20",
     "apiUrl": "https://huggingface.co/api/daily_papers?p=0&limit=20&date=2026-05-20&sort=publishedAt",
     "status": "ok",
-    "fetchedAt": "2026-06-11T15:20:47.422Z",
+    "fetchedAt": "2026-06-12T16:27:56.373Z",
     "items": [
       {
         "title": "Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information",
@@ -87,7 +87,7 @@
           "Huaxiu Yao"
         ],
         "summary": "AutoResearchClaw is a multi-agent autonomous research system that improves scientific discovery through structured debate, self-healing execution, verifiable reporting, human collaboration, and evolutionary learning, outperforming previous systems on a benchmark while maintaining human oversight.",
-        "upvotes": 187,
+        "upvotes": 188,
         "comments": 1,
         "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.20025.png",
         "projectPage": "https://github.com/aiming-lab/AutoResearchClaw",
@@ -710,6 +710,37 @@
         ]
       },
       {
+        "title": "Fast 4D Mesh Generation by Spatio-Temporal Attention Chains",
+        "link": "https://huggingface.co/papers/2605.19786",
+        "id": "2605.19786",
+        "publishedAt": "2026-05-19T00:00:00.000Z",
+        "submittedAt": "2026-05-20T00:00:00.000Z",
+        "author": "Dvir Samuel, Yuval Atzmon, Gal Chechik",
+        "authors": [
+          "Dvir Samuel",
+          "Yuval Atzmon",
+          "Gal Chechik",
+          "Yoni Kasten"
+        ],
+        "summary": "A training-free 4D mesh generation approach uses spatio-temporal attention chains to accelerate mesh creation while improving temporal correspondence quality and enabling scalable long-sequence processing.",
+        "upvotes": 11,
+        "comments": 1,
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19786.png",
+        "projectPage": "https://research.nvidia.com/labs/par/fast4dmesh/",
+        "githubRepo": null,
+        "keywords": [
+          "4D mesh generation",
+          "spatio-temporal attention chain",
+          "temporal correspondences",
+          "latent tokens",
+          "latent-to-vertex attention",
+          "anchor mesh",
+          "2D object tracking",
+          "4D tracking",
+          "camera estimation"
+        ]
+      },
+      {
         "title": "Semantic Generative Tuning for Unified Multimodal Models",
         "link": "https://huggingface.co/papers/2605.18714",
         "id": "2605.18714",
@@ -745,37 +776,6 @@
           "Semantic Generative Tuning",
           "feature linear separability",
           "visual-textual attention allocation"
-        ]
-      },
-      {
-        "title": "Fast 4D Mesh Generation by Spatio-Temporal Attention Chains",
-        "link": "https://huggingface.co/papers/2605.19786",
-        "id": "2605.19786",
-        "publishedAt": "2026-05-19T00:00:00.000Z",
-        "submittedAt": "2026-05-20T00:00:00.000Z",
-        "author": "Dvir Samuel, Yuval Atzmon, Gal Chechik",
-        "authors": [
-          "Dvir Samuel",
-          "Yuval Atzmon",
-          "Gal Chechik",
-          "Yoni Kasten"
-        ],
-        "summary": "A training-free 4D mesh generation approach uses spatio-temporal attention chains to accelerate mesh creation while improving temporal correspondence quality and enabling scalable long-sequence processing.",
-        "upvotes": 10,
-        "comments": 1,
-        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2605.19786.png",
-        "projectPage": "https://research.nvidia.com/labs/par/fast4dmesh/",
-        "githubRepo": null,
-        "keywords": [
-          "4D mesh generation",
-          "spatio-temporal attention chain",
-          "temporal correspondences",
-          "latent tokens",
-          "latent-to-vertex attention",
-          "anchor mesh",
-          "2D object tracking",
-          "4D tracking",
-          "camera estimation"
         ]
       }
     ]

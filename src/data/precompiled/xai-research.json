@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:20:47.422Z",
+  "generatedAt": "2026-06-12T16:27:56.373Z",
   "sources": [
     {
       "id": "xai-official-news",
@@ -10,7 +10,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=site%3Ax.ai%2Fnews+xAI+Grok+research+labs&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-11T15:20:47.422Z",
+      "fetchedAt": "2026-06-12T16:27:56.373Z",
       "items": [
         {
           "title": "Grok-2 Beta Release - xAI",
@@ -86,7 +86,7 @@
       "rssUrl": "https://news.google.com/rss/search?q=xAI+research+labs+Grok+model&hl=en-US&gl=US&ceid=US%3Aen",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-11T15:20:47.422Z",
+      "fetchedAt": "2026-06-12T16:27:56.373Z",
       "items": [
         {
           "title": "Researchers Put AI Models in Charge of a Simulated Society. Grok Oversaw a Crime Spree - Gizmodo",
@@ -125,21 +125,21 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "xAI's Superintelligence Push Just Got a Co-Founder of Mistral AI and a Member of Mira Murati's Founding Team - FinTech Weekly",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPQlgtbnNTY2ZNeG1QbmVyeFNsMENJQTFoTmJ6OUN6RWRsdFBpZVpxUmRza2hiejFFaVV6STdVUVEwNXNrc3l4WjhhSTFERlcyRzNfOVliaWdXdkx0a1EtZmliSm9xdmxaRHpHOUt1eEQzUl9tXzlGV3BrTDhtNHFRVFVWcnZHT1ZoRG1IX2FpT3RyVG5QT3NkRFhDN2g5c3ZUV1ZlUGt0N05QbF9KaFlWdVVOa1lhN21sYzZr?oc=5",
-          "id": "CBMiuwFBVV95cUxPQlgtbnNTY2ZNeG1QbmVyeFNsMENJQTFoTmJ6OUN6RWRsdFBpZVpxUmRza2hiejFFaVV6STdVUVEwNXNrc3l4WjhhSTFERlcyRzNfOVliaWdXdkx0a1EtZmliSm9xdmxaRHpHOUt1eEQzUl9tXzlGV3BrTDhtNHFRVFVWcnZHT1ZoRG1IX2FpT3RyVG5QT3NkRFhDN2g5c3ZUV1ZlUGt0N05QbF9KaFlWdVVOa1lhN21sYzZr",
-          "publishedAt": "2026-03-14T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "xAI's Superintelligence Push Just Got a Co-Founder of Mistral AI and a Member of Mira Murati's Founding Team  FinTech Weekly",
-          "source": "xAI Research and Labs"
-        },
-        {
           "title": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026] - tech-insider.org",
           "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw?oc=5",
           "id": "CBMifEFVX3lxTE9MbGRFaHRWWFp0VU9rb1lqeUZRLWJ3TDIwREtzeFdZNjlHbGJGTy1DT2pPWE4yb3FZSzRzOWZNSWU2OElxVWotb0ZVeTViLS1OSjlyWmZwVG9PWl9jTkZVdlNvTGxuV0VPdGlLd0VGLVdhWTBvcWhJc3Z5SUw",
           "publishedAt": "2026-04-01T07:00:00.000Z",
           "author": "xAI",
           "summary": "9 of 12 xAI Co-Founders Have Left Musks Lab [2026]  tech-insider.org",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "xAI's Superintelligence Push Just Got a Co-Founder of Mistral AI and a Member of Mira Murati's Founding Team - FinTech Weekly",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPQlgtbnNTY2ZNeG1QbmVyeFNsMENJQTFoTmJ6OUN6RWRsdFBpZVpxUmRza2hiejFFaVV6STdVUVEwNXNrc3l4WjhhSTFERlcyRzNfOVliaWdXdkx0a1EtZmliSm9xdmxaRHpHOUt1eEQzUl9tXzlGV3BrTDhtNHFRVFVWcnZHT1ZoRG1IX2FpT3RyVG5QT3NkRFhDN2g5c3ZUV1ZlUGt0N05QbF9KaFlWdVVOa1lhN21sYzZr?oc=5",
+          "id": "CBMiuwFBVV95cUxPQlgtbnNTY2ZNeG1QbmVyeFNsMENJQTFoTmJ6OUN6RWRsdFBpZVpxUmRza2hiejFFaVV6STdVUVEwNXNrc3l4WjhhSTFERlcyRzNfOVliaWdXdkx0a1EtZmliSm9xdmxaRHpHOUt1eEQzUl9tXzlGV3BrTDhtNHFRVFVWcnZHT1ZoRG1IX2FpT3RyVG5QT3NkRFhDN2g5c3ZUV1ZlUGt0N05QbF9KaFlWdVVOa1lhN21sYzZr",
+          "publishedAt": "2026-03-14T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "xAI's Superintelligence Push Just Got a Co-Founder of Mistral AI and a Member of Mira Murati's Founding Team  FinTech Weekly",
           "source": "xAI Research and Labs"
         },
         {
@@ -152,21 +152,21 @@
           "source": "xAI Research and Labs"
         },
         {
-          "title": "SpaceXAI's staff exits are putting Musk's AI strategy under pressure - Startup Fortune",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcHBvQk5HLUpoSnBIamx0NkhSQV9CNzA5d29IY21la2REaXFiSk5BX1lGa3ctZGo3WXlkZnViMWhiRmU1b3pVRVFkUkpZaUl3eUFRemk5RHh1bjNTdEJKMURlc0I4VU5BRVNqenktVTVsTXNUSlNLZU8tZkVLVk5fcEp5LWV3UFFaX2lCUGZremRRSzliZmRqRGdn?oc=5",
-          "id": "CBMimgFBVV95cUxQcHBvQk5HLUpoSnBIamx0NkhSQV9CNzA5d29IY21la2REaXFiSk5BX1lGa3ctZGo3WXlkZnViMWhiRmU1b3pVRVFkUkpZaUl3eUFRemk5RHh1bjNTdEJKMURlc0I4VU5BRVNqenktVTVsTXNUSlNLZU8tZkVLVk5fcEp5LWV3UFFaX2lCUGZremRRSzliZmRqRGdn",
-          "publishedAt": "2026-05-15T07:00:00.000Z",
-          "author": "xAI",
-          "summary": "SpaceXAI's staff exits are putting Musk's AI strategy under pressure  Startup Fortune",
-          "source": "xAI Research and Labs"
-        },
-        {
           "title": "Grok Revenue and Usage Statistics (2026) - Business of Apps",
           "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43eTFobmtwVHhMR0t4OEFrVzk5dHpvdUZRVGhaSUJyVlkwcE51R255aDZKQ1U5QUdWcUVwWEFhckhQVkpZNUs2UHlXVnVodllLOGFWLXBiSkVQWFR0bXNfSVd3?oc=5",
           "id": "CBMiYkFVX3lxTE43eTFobmtwVHhMR0t4OEFrVzk5dHpvdUZRVGhaSUJyVlkwcE51R255aDZKQ1U5QUdWcUVwWEFhckhQVkpZNUs2UHlXVnVodllLOGFWLXBiSkVQWFR0bXNfSVd3",
           "publishedAt": "2026-03-31T07:00:00.000Z",
           "author": "xAI",
           "summary": "Grok Revenue and Usage Statistics (2026)  Business of Apps",
+          "source": "xAI Research and Labs"
+        },
+        {
+          "title": "SpaceXAI's staff exits are putting Musk's AI strategy under pressure - Startup Fortune",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcHBvQk5HLUpoSnBIamx0NkhSQV9CNzA5d29IY21la2REaXFiSk5BX1lGa3ctZGo3WXlkZnViMWhiRmU1b3pVRVFkUkpZaUl3eUFRemk5RHh1bjNTdEJKMURlc0I4VU5BRVNqenktVTVsTXNUSlNLZU8tZkVLVk5fcEp5LWV3UFFaX2lCUGZremRRSzliZmRqRGdn?oc=5",
+          "id": "CBMimgFBVV95cUxQcHBvQk5HLUpoSnBIamx0NkhSQV9CNzA5d29IY21la2REaXFiSk5BX1lGa3ctZGo3WXlkZnViMWhiRmU1b3pVRVFkUkpZaUl3eUFRemk5RHh1bjNTdEJKMURlc0I4VU5BRVNqenktVTVsTXNUSlNLZU8tZkVLVk5fcEp5LWV3UFFaX2lCUGZremRRSzliZmRqRGdn",
+          "publishedAt": "2026-05-15T07:00:00.000Z",
+          "author": "xAI",
+          "summary": "SpaceXAI's staff exits are putting Musk's AI strategy under pressure  Startup Fortune",
           "source": "xAI Research and Labs"
         },
         {

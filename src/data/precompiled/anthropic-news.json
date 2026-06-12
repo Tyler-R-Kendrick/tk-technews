@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:20:47.422Z",
+  "generatedAt": "2026-06-12T16:27:56.373Z",
   "source": {
     "id": "anthropic-news",
     "category": "news",
@@ -7,8 +7,17 @@
     "sourceUrl": "https://www.anthropic.com/news",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-11T15:20:47.422Z",
+    "fetchedAt": "2026-06-12T16:27:56.373Z",
     "items": [
+      {
+        "title": "Results from the first Anthropic Public Record",
+        "link": "https://www.anthropic.com/news/anthropic-public-record",
+        "id": "https://www.anthropic.com/news/anthropic-public-record",
+        "publishedAt": "2026-06-12T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
+        "category": "Announcements"
+      },
       {
         "title": "Introducing Claude Corps",
         "link": "https://www.anthropic.com/news/claude-corps",
@@ -16,6 +25,15 @@
         "publishedAt": "2026-06-11T05:00:00.000Z",
         "author": "Anthropic",
         "summary": "We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.",
+        "category": "Announcements"
+      },
+      {
+        "title": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
+        "link": "https://www.anthropic.com/news/dxc-anthropic-alliance",
+        "id": "https://www.anthropic.com/news/dxc-anthropic-alliance",
+        "publishedAt": "2026-06-11T05:00:00.000Z",
+        "author": "Anthropic",
+        "summary": "",
         "category": "Announcements"
       },
       {
@@ -80,24 +98,6 @@
         "author": "Anthropic",
         "summary": "",
         "category": "Product"
-      },
-      {
-        "title": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
-        "link": "https://www.anthropic.com/news/milan-office-opening",
-        "id": "https://www.anthropic.com/news/milan-office-opening",
-        "publishedAt": "2026-05-27T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
-      },
-      {
-        "title": "Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening",
-        "link": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
-        "id": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
-        "publishedAt": "2026-05-26T05:00:00.000Z",
-        "author": "Anthropic",
-        "summary": "",
-        "category": "Announcements"
       }
     ]
   }

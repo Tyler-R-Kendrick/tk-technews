@@ -1,86 +1,67 @@
 {
-  "date": "2026-06-11",
-  "generatedAt": "2026-06-11T15:20:47.422Z",
-  "sourceItemCount": 6,
+  "date": "2026-06-12",
+  "generatedAt": "2026-06-12T16:27:56.373Z",
+  "sourceItemCount": 4,
   "articleStubs": [
     {
-      "id": "2026-06-11-github-vercel-labs-skills-update",
-      "slug": "2026-06-11-github-vercel-labs-skills-update",
-      "href": "/daily/2026-06-11/2026-06-11-github-vercel-labs-skills-update/",
-      "title": "GitHub Vercel Labs Skills Update",
-      "dek": "Vercel Labs is publishing agent infrastructure building blocks: a language experiment, a cloud-agent template, and a reusable skill collection.",
+      "id": "2026-06-12-zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-c",
+      "slug": "2026-06-12-zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-c",
+      "href": "/daily/2026-06-12/2026-06-12-zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-c/",
+      "title": "Zyphra Release Zamba2-VL: Hybrid Mamba2–Transformer Vision-Language Models That Cut Time-...",
+      "dek": "Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters.",
       "status": "generated",
       "bodySections": [
         {
-          "heading": "Vercel Labs Is Packaging Agent Primitives",
-          "intent": "Explain the cited technical development and its implementation consequence.",
+          "heading": "Transformer Vision-Language Models Defines The Technical Claim",
+          "intent": "Explain the source-backed development and its technical consequence.",
           "paragraphs": [
-            "The Vercel Labs repositories describe three adjacent pieces of agent infrastructure that sit below an application UI. Zerolang is framed as a programming language for agents, Open Agents is an open-source template for building cloud agents, and Agent Skills collects reusable agent capabilities. The evidence points to a stack-level experiment rather than a single application launch, with each repository covering a different implementation layer."
+            "Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters. The reported detail gives readers an implementation point to verify before treating the claim as production-ready.",
+            "The models use a hybrid Mamba2 state-space and Transformer backbone, shipping under Apache 2.0. The practical next step is to connect that detail to benchmarks, architecture, cost, or workflow behavior."
           ],
           "citations": [
-            "https://github.com/vercel-labs/skills",
-            "https://github.com/vercel-labs/agent-browser"
+            "https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/"
           ]
         },
         {
-          "heading": "The Engineering Question Is Composability",
-          "intent": "Explain the cited technical development and its implementation consequence.",
+          "heading": "The Mechanism Needs A Check",
+          "intent": "Explain the technical consequence of the extracted evidence.",
           "paragraphs": [
-            "The practical trade-off is whether agent behavior can move from one-off prompt text into project structure that teams can compose, review, and maintain. A language layer, a cloud template, and shared skills each attack a different part of that architecture: expression, deployment, and reusable behavior. The benchmark is maintainability: whether teams can change agent behavior without rewriting the whole workflow."
+            "Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters. The engineering consequence is to test the mechanism against benchmarks, workflow constraints, architecture fit, and operational trade-offs before treating it as production-ready. The important measurement is whether the tool changes real developer work under repeatable conditions, not whether the announcement sounds complete."
           ],
           "citations": [
-            "https://github.com/vercel-labs/skills",
-            "https://github.com/vercel-labs/agent-browser"
+            "https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/"
           ]
         }
       ],
       "keyTakeaways": [
-        "The Vercel Labs items are best read together as an agent-infrastructure experiment.",
-        "The technical bet is composability: agent behavior becomes easier to build if language, hosting, and reusable skills share a project shape."
+        "Transformer Vision-Language Models Defines The Technical Claim matters because it connects the reported detail to implementation constraints, benchmarks, architecture, or workflow behavior.",
+        "Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters. is the concrete technical detail readers should test before treating it as production guidance."
       ],
-      "sourceCount": 2,
-      "latestPublishedAt": "2026-06-11T15:12:03Z",
+      "sourceCount": 1,
+      "latestPublishedAt": "2026-06-12T08:06:26.000Z",
       "tags": [
-        "GitHub",
-        "Vercel",
-        "vercel",
-        "labs",
-        "skills",
-        "github"
+        "zyphra",
+        "zamba2",
+        "hybrid",
+        "mamba2",
+        "transformer",
+        "vision"
       ],
       "sources": [
         {
-          "title": "vercel-labs/skills",
-          "url": "https://github.com/vercel-labs/skills",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-11T15:12:03Z",
-          "summary": "The open agent skills tool - npx skills",
+          "title": "Zyphra Release Zamba2-VL: Hybrid Mamba2–Transformer Vision-Language Models That Cut Time-to-First-Token by About an Order of Magnitude",
+          "url": "https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/",
+          "sourceName": "MarkTechPost",
+          "publishedAt": "2026-06-12T08:06:26.000Z",
+          "summary": "Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters. The models use a hybrid Mamba2 state-space and Transformer backbone, shipping under Apache 2.0.",
           "preview": {
             "kind": "source",
             "label": "Source",
-            "href": "https://github.com/vercel-labs/skills",
-            "title": "vercel-labs/skills",
-            "source": "vercel-labs GitHub",
-            "snippet": "The open agent skills tool - npx skills",
-            "host": "github.com",
-            "thumbnailUrl": null,
-            "social": null
-          }
-        },
-        {
-          "title": "vercel-labs/agent-browser",
-          "url": "https://github.com/vercel-labs/agent-browser",
-          "sourceName": "vercel-labs GitHub",
-          "publishedAt": "2026-06-11T05:12:43Z",
-          "summary": "Browser automation CLI for AI agents",
-          "preview": {
-            "kind": "source",
-            "label": "Source",
-            "href": "https://github.com/vercel-labs/agent-browser",
-            "title": "vercel-labs/agent-browser",
-            "source": "vercel-labs GitHub",
-            "snippet": "Browser automation CLI for AI agents",
-            "host": "github.com",
+            "href": "https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/",
+            "title": "Zyphra Release Zamba2-VL: Hybrid Mamba2–Transformer Vision-Language Models That Cut Time-to-First-Token by About an Order of Magnitude",
+            "source": "MarkTechPost",
+            "snippet": "Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters. The models use a hybrid Mamba2 state-space and Transformer backbone, shipping under Apache 2.0.",
+            "host": "marktechpost.com",
             "thumbnailUrl": null,
             "social": null
           }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:20:47.422Z",
+  "generatedAt": "2026-06-12T16:27:56.373Z",
   "source": {
     "id": "anthropic-research",
     "category": "research",
@@ -7,7 +7,7 @@
     "sourceUrl": "https://www.anthropic.com/research",
     "limit": 10,
     "status": "ok",
-    "fetchedAt": "2026-06-11T15:20:47.422Z",
+    "fetchedAt": "2026-06-12T16:27:56.373Z",
     "items": [
       {
         "title": "Paving the way for agents in biology",

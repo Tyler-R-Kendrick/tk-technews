@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:20:47.422Z",
+  "generatedAt": "2026-06-12T16:27:56.373Z",
   "sources": [
     {
       "id": "towards-data-science",
@@ -9,7 +9,7 @@
       "rssUrl": "https://medium.com/feed/towards-data-science",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-11T15:20:47.422Z",
+      "fetchedAt": "2026-06-12T16:27:56.373Z",
       "items": [
         {
           "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
@@ -181,8 +181,109 @@
       "rssUrl": "https://www.marktechpost.com/feed/",
       "limit": 10,
       "status": "ok",
-      "fetchedAt": "2026-06-11T15:20:47.422Z",
+      "fetchedAt": "2026-06-12T16:27:56.373Z",
       "items": [
+        {
+          "title": "Moonshot AI Launches Kimi Work, a Local Desktop Agent Reportedly Running on Kimi K2.6 With a 300-Sub-Agent Agent Swarm",
+          "link": "https://www.marktechpost.com/2026/06/12/moonshot-ai-launches-kimi-work-a-local-desktop-agent-reportedly-running-on-kimi-k2-6-with-a-300-sub-agent-agent-swarm/",
+          "id": "https://www.marktechpost.com/?p=80469",
+          "publishedAt": "2026-06-12T09:37:30.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Moonshot AI's Kimi Work is a local desktop agent for macOS and Windows. It runs a 300-sub-agent swarm, drives your logged-in browser via WebBridge, and schedules background jobs.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/12/moonshot-ai-launches-kimi-work-a-local-desktop-agent-reportedly-running-on-kimi-k2-6-with-a-300-sub-agent-agent-swarm/\">Moonshot AI Launches Kimi Work, a Local Desktop Agent Reportedly Running on Kimi K2.6 With a 300-Sub-Agent Agent Swarm</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Editors Pick",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Zyphra Release Zamba2-VL: Hybrid Mamba2–Transformer Vision-Language Models That Cut Time-to-First-Token by About an Order of Magnitude",
+          "link": "https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/",
+          "id": "https://www.marktechpost.com/?p=80461",
+          "publishedAt": "2026-06-12T08:06:26.000Z",
+          "author": "Asif Razzaq",
+          "summary": "<p>Zyphra has released Zamba2-VL, a family of open vision-language models at 1.2B, 2.7B, and 7B parameters. The models use a hybrid Mamba2 state-space and Transformer backbone, shipping under Apache 2.0. They stay competitive with comparable Transformer VLMs while cutting time-to-first-token by about an order of magnitude.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/12/zyphra-release-zamba2-vl-hybrid-mamba2-transformer-vision-language-models-that-cut-time-to-first-token-by-about-an-order-of-magnitude/\">Zyphra Release Zamba2-VL: Hybrid Mamba2–Transformer Vision-Language Models That Cut Time-to-First-Token by About an Order of Magnitude</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "AI Shorts",
+            "Applications",
+            "Artificial Intelligence",
+            "Computer Vision",
+            "Editors Pick",
+            "Language Model",
+            "Large Language Model",
+            "Machine Learning",
+            "New Releases",
+            "Open Source",
+            "Software Engineering",
+            "Staff",
+            "Tech News",
+            "Technology",
+            "Uncategorized",
+            "Vision Language Model"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "A Coding Implementation on MONAI for End-to-End 3D Spleen Segmentation Using UNet on Medical CT Volumes",
+          "link": "https://www.marktechpost.com/2026/06/12/a-coding-implementation-on-monai-for-end-to-end-3d-spleen-segmentation-using-unet-on-medical-ct-volumes/",
+          "id": "https://www.marktechpost.com/?p=80458",
+          "publishedAt": "2026-06-12T07:10:00.000Z",
+          "author": "Sana Hassan",
+          "summary": "<p>In this tutorial, we build an end-to-end 3D medical image segmentation pipeline using MONAI to segment the spleen on the Medical Segmentation Decathlon Task09 dataset. We work with volumetric CT scans, apply medical imaging transformations such as orientation alignment, voxel-spacing normalization, intensity windowing, foreground cropping, and patch-based sampling, and then train a 3D UNet model [&#8230;]</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/12/a-coding-implementation-on-monai-for-end-to-end-3d-spleen-segmentation-using-unet-on-medical-ct-volumes/\">A Coding Implementation on MONAI for End-to-End 3D Spleen Segmentation Using UNet on Medical CT Volumes</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Applications",
+            "Artificial Intelligence",
+            "Deep Learning",
+            "Editors Pick",
+            "Staff",
+            "Technology",
+            "Tutorials"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "Perplexity Moves Deep Research Into Computer, Routing Research Subtasks Across 20+ Frontier Models For Reports, Decks, And Dashboards",
+          "link": "https://www.marktechpost.com/2026/06/11/perplexity-moves-deep-research-into-computer-routing-research-subtasks-across-20-frontier-models-for-reports-decks-and-dashboards/",
+          "id": "https://www.marktechpost.com/?p=80455",
+          "publishedAt": "2026-06-11T22:21:32.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Deep Research now lives inside Perplexity Computer, breaking hard questions into subtasks and routing across 20+ frontier models.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/11/perplexity-moves-deep-research-into-computer-routing-research-subtasks-across-20-frontier-models-for-reports-decks-and-dashboards/\">Perplexity Moves Deep Research Into Computer, Routing Research Subtasks Across 20+ Frontier Models For Reports, Decks, And Dashboards</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "Editors Pick",
+            "New Releases",
+            "Software Engineering",
+            "Staff"
+          ],
+          "source": "MarkTechPost"
+        },
+        {
+          "title": "xAI Ships Grok Build Plugin Marketplace With MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare, and Superpowers Plugins at Launch",
+          "link": "https://www.marktechpost.com/2026/06/11/xai-ships-grok-build-plugin-marketplace-with-mongodb-vercel-sentry-chrome-devtools-cloudflare-and-superpowers-plugins-at-launch/",
+          "id": "https://www.marktechpost.com/?p=80452",
+          "publishedAt": "2026-06-11T21:30:31.000Z",
+          "author": "Michal Sutter",
+          "summary": "<p>Grok Build's in-terminal marketplace bundles skills, agents, hooks, and MCP servers, with commit-SHA verification on every remote plugin.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/11/xai-ships-grok-build-plugin-marketplace-with-mongodb-vercel-sentry-chrome-devtools-cloudflare-and-superpowers-plugins-at-launch/\">xAI Ships Grok Build Plugin Marketplace With MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare, and Superpowers Plugins at Launch</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+          "categories": [
+            "Agentic AI",
+            "AI Agents",
+            "Editors Pick",
+            "New Releases",
+            "Software Engineering",
+            "Staff",
+            "Tech News"
+          ],
+          "source": "MarkTechPost"
+        },
         {
           "title": "Nous Research Ships Hermes Agent Profile Builder: Identity, Model, Skills, and MCP Servers in One Dashboard Flow",
           "link": "https://www.marktechpost.com/2026/06/11/nous-research-ships-hermes-agent-profile-builder-identity-model-skills-and-mcp-servers-in-one-dashboard-flow/",
@@ -290,111 +391,6 @@
             "Tech News",
             "Technology",
             "Top",
-            "Uncategorized"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Anthropic Releases Claude Fable 5 and Claude Mythos 5: Same Underlying Model, Different Safeguards, New Mythos-Class Tier",
-          "link": "https://www.marktechpost.com/2026/06/10/anthropic-releases-claude-fable-5-and-claude-mythos-5-same-underlying-model-different-safeguards-new-mythos-class-tier/",
-          "id": "https://www.marktechpost.com/?p=80415",
-          "publishedAt": "2026-06-10T08:26:21.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Claude Fable 5 ships generally available with classifiers; Mythos 5 stays limited, cyber safeguards lifted, through Project Glasswing.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/10/anthropic-releases-claude-fable-5-and-claude-mythos-5-same-underlying-model-different-safeguards-new-mythos-class-tier/\">Anthropic Releases Claude Fable 5 and Claude Mythos 5: Same Underlying Model, Different Safeguards, New Mythos-Class Tier</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Language Model",
-            "Large Language Model",
-            "Machine Learning",
-            "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology",
-            "Uncategorized"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Building a Code Dataset Pipeline from NVIDIA Nemotron-Pretraining-Code-v3 Metadata with Streaming, Pandas, and tiktoken",
-          "link": "https://www.marktechpost.com/2026/06/09/building-a-code-dataset-pipeline-from-nvidia-nemotron-pretraining-code-v3-metadata-with-streaming-pandas-and-tiktoken/",
-          "id": "https://www.marktechpost.com/?p=80412",
-          "publishedAt": "2026-06-10T04:52:33.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>In this tutorial, we work with NVIDIA's Nemotron-Pretraining-Code-v3 dataset as a large-scale metadata index for code pretraining research. We stream the dataset instead of downloading it, inspect its schema, and build a manageable sample. We analyze languages, file extensions, repository frequency, and directory depth to understand the index structure. We then reconstruct raw GitHub URLs, fetch real source files, and estimate the token scale of the fetched code.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/09/building-a-code-dataset-pipeline-from-nvidia-nemotron-pretraining-code-v3-metadata-with-streaming-pandas-and-tiktoken/\">Building a Code Dataset Pipeline from NVIDIA Nemotron-Pretraining-Code-v3 Metadata with Streaming, Pandas, and tiktoken</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Artificial Intelligence",
-            "Big Data",
-            "Data Science",
-            "Editors Pick",
-            "Staff",
-            "Technology",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "Google Releases Gemini 3.5 Live Translate, a Streaming Speech-to-Speech Audio Model Covering 70+ Languages Across Meet, Translate, and the Live API",
-          "link": "https://www.marktechpost.com/2026/06/09/google-releases-gemini-3-5-live-translate-a-streaming-speech-to-speech-audio-model-covering-70-languages-across-meet-translate-and-the-live-api/",
-          "id": "https://www.marktechpost.com/?p=80409",
-          "publishedAt": "2026-06-09T17:24:11.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>Gemini 3.5 Live Translate streams speech-to-speech translation across 70+ languages. It generates audio continuously, staying a few seconds behind the speaker. The model reaches developers via the Gemini Live API, plus Google Meet and the Translate app.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/09/google-releases-gemini-3-5-live-translate-a-streaming-speech-to-speech-audio-model-covering-70-languages-across-meet-translate-and-the-live-api/\">Google Releases Gemini 3.5 Live Translate, a Streaming Speech-to-Speech Audio Model Covering 70+ Languages Across Meet, Translate, and the Live API</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "Artificial Intelligence",
-            "Audio Language Model",
-            "Editors Pick",
-            "Language Model",
-            "New Releases",
-            "Software Engineering",
-            "Staff",
-            "Technology",
-            "Voice AI"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "NVIDIA cuTile Python Tutorial: Building Tiled GPU Kernels for Vector Addition, Matrix Addition, and Matrix Multiplication in Colab",
-          "link": "https://www.marktechpost.com/2026/06/09/nvidia-cutile-python-tutorial-building-tiled-gpu-kernels-for-vector-addition-matrix-addition-and-matrix-multiplication-in-colab/",
-          "id": "https://www.marktechpost.com/?p=80404",
-          "publishedAt": "2026-06-09T08:37:48.000Z",
-          "author": "Sana Hassan",
-          "summary": "<p>In this tutorial, we implement a hands-on workflow for NVIDIA cuTile Python, a tile-based GPU programming interface for CUDA-style kernels in Python. We prepare a Colab-friendly environment and check GPU, driver, CUDA, and cuTile availability before running kernels. We then build tiled vector addition, matrix addition, and matrix multiplication, keeping a PyTorch fallback so the notebook stays executable. We validate correctness against PyTorch and benchmark median runtimes at every stage.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/09/nvidia-cutile-python-tutorial-building-tiled-gpu-kernels-for-vector-addition-matrix-addition-and-matrix-multiplication-in-colab/\">NVIDIA cuTile Python Tutorial: Building Tiled GPU Kernels for Vector Addition, Matrix Addition, and Matrix Multiplication in Colab</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "AI Infrastructure",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Staff",
-            "Technology",
-            "Tutorials"
-          ],
-          "source": "MarkTechPost"
-        },
-        {
-          "title": "A New Study from Harvard and Perplexity Finds AI Agents Perform 26 Minutes of Autonomous Work per Session vs 33 Seconds for Search",
-          "link": "https://www.marktechpost.com/2026/06/08/a-new-study-from-harvard-and-perplexity-finds-ai-agents-perform-26-minutes-of-autonomous-work-per-session-vs-33-seconds-for-search/",
-          "id": "https://www.marktechpost.com/?p=80389",
-          "publishedAt": "2026-06-09T05:53:36.000Z",
-          "author": "Asif Razzaq",
-          "summary": "<p>A new Harvard and Perplexity paper uses matched-pair sessions to compare an autonomous agent with a search assistant. It finds large gains in autonomy, time, and cost, plus broader scope of work attempted.</p> <p>The post <a href=\"https://www.marktechpost.com/2026/06/08/a-new-study-from-harvard-and-perplexity-finds-ai-agents-perform-26-minutes-of-autonomous-work-per-session-vs-33-seconds-for-search/\">A New Study from Harvard and Perplexity Finds AI Agents Perform 26 Minutes of Autonomous Work per Session vs 33 Seconds for Search</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-          "categories": [
-            "Agentic AI",
-            "AI Infrastructure",
-            "AI Paper Summary",
-            "AI Shorts",
-            "Applications",
-            "Artificial Intelligence",
-            "Editors Pick",
-            "Software Engineering",
-            "Staff",
-            "Tech News",
-            "Technology",
             "Uncategorized"
           ],
           "source": "MarkTechPost"
